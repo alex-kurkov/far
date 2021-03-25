@@ -1,7 +1,5 @@
 <template>
   <div class="container">
-    <Hamburger/>
-    <Header/>
     <About/>
     <Promo/>
     <Intro/>
@@ -9,23 +7,11 @@
     <Achievements/>
     <Help/>
     <Support/>
-    <Footer/>
   </div>
 </template>
 
 <script>
-import About from '~/components/About'
-import Achievements from '~/components/Achievements'
-import Footer from '~/components/Footer'
-import Hamburger from '~/components/Hamburger'
-import Help from '~/components/Help'
-import Intro from '~/components/Intro'
-import Mission from '~/components/Mission'
-import Promo from '~/components/Promo'
-import Support from '~/components/Support'
-import Header from '../components/Header'
 export default {
-  components: { Hamburger, Footer, Support, Help, Achievements, Mission, Intro, Promo, About, Header }
 }
 </script>
 
