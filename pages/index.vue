@@ -1,34 +1,32 @@
 <template>
   <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        far
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+    <Hamburger/>
+    <Header/>
+    <About/>
+    <Promo/>
+    <Intro/>
+    <Mission/>
+    <Achievements/>
+    <Help/>
+    <Support/>
+    <Footer/>
   </div>
 </template>
 
 <script>
-export default {}
+import About from '~/components/About'
+import Achievements from '~/components/Achievements'
+import Footer from '~/components/Footer'
+import Hamburger from '~/components/Hamburger'
+import Help from '~/components/Help'
+import Intro from '~/components/Intro'
+import Mission from '~/components/Mission'
+import Promo from '~/components/Promo'
+import Support from '~/components/Support'
+import Header from '../components/Header'
+export default {
+  components: { Hamburger, Footer, Support, Help, Achievements, Mission, Intro, Promo, About, Header }
+}
 </script>
 
 <style>
@@ -36,9 +34,11 @@ export default {}
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   text-align: center;
+  position: relative;
 }
 
 .title {
