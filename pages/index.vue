@@ -3,10 +3,14 @@
     <About/>
     <Promo/>
     <Intro/>
-    <Mission/>
-    <Achievements/>
-    <Help/>
-    <Support/>
+    <div class='container__info'>
+      <Mission/>
+      <Achievements/>
+    </div>
+    <div class='container__action'>
+      <Help/>
+      <Support/>
+    </div>
   </div>
 </template>
 
@@ -17,43 +21,29 @@ export default {
 
 <style>
 .container {
-  margin: 0 auto;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   text-align: center;
-  position: relative;
 }
 
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.container__info{
+  display: flex;
+  flex-direction: row;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+.container__action{
+  display: flex;
+  flex-direction: row-reverse;
 }
 
-.links {
-  padding-top: 15px;
+@media screen and (max-width: 768px) {
+  .container__info,
+  .container__action{
+    display: unset;
+  }
 }
+
+
 </style>

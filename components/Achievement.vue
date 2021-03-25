@@ -17,8 +17,7 @@ export default {
 <style scoped>
 .achievement{
   width: 100%;
-  min-height: 100px;
+  min-height: 100%;
   background: coral;
-
 }
 </style>

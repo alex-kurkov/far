@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class='body'>
     <Header />
     <Hamburger />
     <Nuxt />
@@ -15,6 +15,16 @@
   box-sizing: border-box;
   margin: 0;
 }
+
+.body{
+  margin: 0 auto;
+  max-width: 1280px;
+  position: relative;
+}
+
+
+
+
 .notifications-wrap {
   padding: 15px;
   margin: 15px;

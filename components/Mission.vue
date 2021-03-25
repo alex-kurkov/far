@@ -25,7 +25,6 @@ export default {
 <style scoped>
 .mission{
   width: 100%;
-  min-height: 150px;
   background: burlywood;
 }
 
