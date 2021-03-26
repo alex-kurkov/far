@@ -1,17 +1,17 @@
 <template>
-<nav class='hamburger'>
-<p>Hamburger</p>
-</nav>
+  <nav class="hamburger">
+    <p>Hamburger</p>
+  </nav>
 </template>
 
 <script>
 export default {
-  name: 'Hamburger'
+  name: 'Hamburger',
 }
 </script>
 
 <style scoped>
-.hamburger{
+.hamburger {
   position: absolute;
   top: 10px;
   right: 10px;

@@ -1,22 +1,21 @@
 <template>
   <div class="container">
-    <About/>
-    <Promo/>
-    <Intro/>
-    <div class='container__info'>
-      <Mission/>
-      <Achievements/>
+    <About />
+    <Promo />
+    <Intro />
+    <div class="container__info">
+      <Mission />
+      <Achievements />
     </div>
-    <div class='container__action'>
-      <Help/>
-      <Support/>
+    <div class="container__action">
+      <Help />
+      <Support />
     </div>
   </div>
 </template>
 
 <script>
-export default {
-}
+export default {}
 </script>
 
 <style>
@@ -28,22 +27,20 @@ export default {
   text-align: center;
 }
 
-.container__info{
+.container__info {
   display: flex;
   flex-direction: row;
 }
 
-.container__action{
+.container__action {
   display: flex;
   flex-direction: row-reverse;
 }
 
 @media screen and (max-width: 768px) {
   .container__info,
-  .container__action{
+  .container__action {
     display: unset;
   }
 }
-
-
 </style>

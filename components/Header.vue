@@ -1,5 +1,5 @@
 <template>
-  <section class='header'>
+  <section class="header">
     <p>Header</p>
     <p>Это компонент Header</p>
   </section>
@@ -7,12 +7,12 @@
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
 }
 </script>
 
 <style scoped>
-.header{
+.header {
   width: 100%;
   min-height: 70px;
   background: #3b8070;

@@ -1,18 +1,18 @@
 <template>
-<section class='support'>
-<p>Поддержать ФАР</p>
-  <p>Это компонент Support</p>
-</section>
+  <section class="support">
+    <p>Поддержать ФАР</p>
+    <p>Это компонент Support</p>
+  </section>
 </template>
 
 <script>
 export default {
-  name: 'Support'
+  name: 'Support',
 }
 </script>
 
 <style scoped>
-.support{
+.support {
   width: 100%;
   min-height: 70px;
   background: darksalmon;
