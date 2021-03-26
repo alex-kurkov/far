@@ -1,6 +1,5 @@
 # far
 
-
 ## Build Setup
 
 ```bash
@@ -19,4 +18,3 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
-
