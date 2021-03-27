@@ -2,7 +2,7 @@
   <section class="header">
     <p>Header</p>
     <p>Это компонент Header</p>
-    <icon name='moscow' class="icons_r"></icon>
+    <icon name='bond' class="icons_r"></icon>
   </section>
 </template>
 
@@ -27,10 +27,11 @@
 }
 
 .icons_r {
-  fill: yellow;
+  fill: grey;
   width: 100%;
   height: 200px;
-  stroke: red;
+  stroke: white;
+  stroke-width: 10px;
 }
 
 </style>
