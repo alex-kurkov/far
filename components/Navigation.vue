@@ -5,42 +5,41 @@
     @after-enter="afterEnter"
     @leave="leave"
   >
-  <nav v-show='isMenOpen' class="navigation">
-    <ul class="navigation__menu">
-      <li
-        v-for="(element, index) in elements"
-        class="navigation__menu-item"
-        @click="element.open = !element.open"
-        :key="element.title + index"
-      >
-        <NuxtLink :to="element.to" class="navigation__link">
-          {{ element.title }}
-        </NuxtLink>
-        <span
-          v-if="element.submenu"
-          :class="[
-            element.open
-              ? 'navigation__arrow navigation__arrow_open'
-              : 'navigation__arrow',
-          ]"
-          >{{ element.open ? '&#8595;' : '&#8594;' }}</span
+    <nav v-show="isMenOpen" class="navigation">
+      <ul class="navigation__menu">
+        <li
+          v-for="(element, index) in elements"
+          class="navigation__menu-item"
+          @click="element.open = !element.open"
+          :key="element.title + index"
         >
-        <SubMenu v-if="element.submenu" :subMenuList="element" />
-      </li>
-    </ul>
-  </nav>
+          <NuxtLink :to="element.to" class="navigation__link">
+            {{ element.title }}
+          </NuxtLink>
+          <span
+            v-if="element.submenu"
+            ><icon name="arrow-right"
+            class='navigation__arrow-right'
+            :class="[
+              element.open
+                ? 'navigation__arrow navigation__arrow_open'
+                : 'navigation__arrow',
+            ]"/></span
+          >
+          <SubMenu v-if="element.submenu" :subMenuList="element" />
+        </li>
+      </ul>
+    </nav>
   </transition>
-
 </template>
 
 <script>
 import SubMenu from '@/components/SubMenu'
+import Icon from '@/components/Icon'
 export default {
   name: 'Navigation',
-  components: { SubMenu },
-  props: [
-    'isMenOpen'
-  ],
+  components: { SubMenu, Icon },
+  props: ['isMenOpen'],
   data() {
     return {
       elements: [
@@ -104,7 +103,7 @@ export default {
 </script>
 
 <style scoped>
-.navigation{
+.navigation {
   position: absolute;
   top: 10px;
   right: 50px;
@@ -129,7 +128,6 @@ export default {
 }
 
 .navigation__arrow {
-  font-size: 20px;
   transition: transform 0.5s ease-in-out;
 }
 
@@ -137,10 +135,14 @@ export default {
   transform: rotate(90deg);
 }
 
+.navigation__arrow-right{
+  width: 20px;
+  height: 20px;
+}
+
 .expand-width-enter-active,
 .expand-width-leave-active {
   transition: width 0.5s ease-in-out;
   overflow: hidden;
 }
-
 </style>

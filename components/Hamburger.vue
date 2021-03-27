@@ -1,19 +1,16 @@
 <template>
-
-  <div class="hamburger" >
-    <div @click='isMenOpen =!isMenOpen'>
-      <icon name='burger' class="hamburger__icon" />
+  <div class="hamburger">
+    <div @click="isMenOpen = !isMenOpen">
+      <icon name="burger" class="hamburger__icon" />
     </div>
 
-    <Navigation :isMenOpen='isMenOpen'/>
-
+    <Navigation :isMenOpen="isMenOpen" />
   </div>
-
 </template>
 
 <script>
 import Navigation from '~/components/Navigation'
-import Icon from '~/components/Icon';
+import Icon from '~/components/Icon'
 export default {
   name: 'Hamburger',
   components: { Navigation, Icon },
@@ -23,8 +20,6 @@ export default {
       counter: 0,
     }
   },
-
-
 }
 </script>
 
@@ -35,7 +30,7 @@ export default {
   background: #ffffff;
 }
 
-.hamburger__icon{
+.hamburger__icon {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -44,6 +39,6 @@ export default {
 }
 
 .test {
-  color: red
+  color: red;
 }
 </style>
