@@ -1,12 +1,14 @@
 <template>
-  <nav class="hamburger">
-    <p>Hamburger</p>
-  </nav>
+  <div class="hamburger">
+    <Navigation />
+  </div>
 </template>
 
 <script>
+import Navigation from '~/components/Navigation'
 export default {
   name: 'Hamburger',
+  components: { Navigation },
 }
 </script>
 
@@ -16,6 +18,6 @@ export default {
   top: 10px;
   right: 10px;
   color: white;
-  background: black;
+  background: #ffffff;
 }
 </style>
