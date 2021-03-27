@@ -5,7 +5,7 @@
     <Intro />
     <div class="container__info">
       <Mission />
-      <Achievements />
+      <Achievement />
     </div>
     <div class="container__action">
       <Help />

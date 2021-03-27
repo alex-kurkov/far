@@ -1,28 +1,29 @@
 <template>
   <section class="achievement">
-    <p>Итоги нашей работы в 2020</p>
-    <p>Спасено жизней</p>
-    <p>
-      при помощи выданного нами Налоксона (средство от передозировок опиатами),
-      консультации, обучение по вопросам профилактики передозировок
-    </p>
-    <p>
-      Это компонент Achievement, который находится внутри компонента
-      Achievements
-    </p>
+    <h3 class="achievement__title">Итоги нашей работы в 2020</h3>
+    <Achievements />
+    <p>Получить помощь</p>
+    <i>ФАР ЛОГО</i>
   </section>
 </template>
 
 <script>
 export default {
-  name: 'Achievement',
 }
 </script>
 
-<style scoped>
+<style>
 .achievement {
-  width: 100%;
-  min-height: 100%;
-  background: coral;
+  max-width: calc(100vw / 2);
+  min-height: 506px;
+  background: #ccc;
 }
+.achievement__title {
+  font-family: 'Vollkorn', serif;
+  font-weight: bold;
+  color: #000;
+  font-size: 40px;
+  line-height: 28px;
+}
+
 </style>
