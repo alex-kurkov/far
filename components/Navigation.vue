@@ -1,5 +1,11 @@
 <template>
-  <nav class="navigation">
+  <transition
+    name="expand-width"
+    @enter="enter"
+    @after-enter="afterEnter"
+    @leave="leave"
+  >
+  <nav v-show='isMenOpen' class="navigation">
     <ul class="navigation__menu">
       <li
         v-for="(element, index) in elements"
@@ -23,6 +29,8 @@
       </li>
     </ul>
   </nav>
+  </transition>
+
 </template>
 
 <script>
@@ -30,6 +38,9 @@ import SubMenu from '@/components/SubMenu'
 export default {
   name: 'Navigation',
   components: { SubMenu },
+  props: [
+    'isMenOpen'
+  ],
   data() {
     return {
       elements: [
@@ -68,10 +79,37 @@ export default {
       ],
     }
   },
+  methods: {
+    enter(el) {
+      el.style.width = 'auto'
+      const width = getComputedStyle(el).width
+      el.style.width = 0
+      getComputedStyle(el)
+      setTimeout(() => {
+        el.style.width = width
+      })
+    },
+    afterEnter(el) {
+      el.style.width = 'auto'
+    },
+    leave(el) {
+      el.style.width = getComputedStyle(el).width
+      getComputedStyle(el)
+      setTimeout(() => {
+        el.style.width = 0
+      })
+    },
+  },
 }
 </script>
 
 <style scoped>
+.navigation{
+  position: absolute;
+  top: 10px;
+  right: 50px;
+}
+
 .navigation__menu {
   padding: 0;
   list-style: none;
@@ -98,4 +136,11 @@ export default {
 .navigation__arrow_open {
   transform: rotate(90deg);
 }
+
+.expand-width-enter-active,
+.expand-width-leave-active {
+  transition: width 0.5s ease-in-out;
+  overflow: hidden;
+}
+
 </style>

@@ -1,6 +1,6 @@
 <template>
   <transition
-    name="expand"
+    name="expand-height"
     @enter="enter"
     @after-enter="afterEnter"
     @leave="leave"
@@ -63,8 +63,8 @@ export default {
   text-decoration: none;
 }
 
-.expand-enter-active,
-.expand-leave-active {
+.expand-height-enter-active,
+.expand-height-leave-active {
   transition: height 0.5s ease-in-out;
   overflow: hidden;
 }
