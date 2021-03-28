@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="card__stamp">
-      <span class="card__stamp-text">{{ news.stamp }}</span>
+      <p class="card__stamp-text">{{ news.stamp }}</p>
     </div> 
     <div class="card__info">
       <h3 class="card__title">{{ news.title }}</h3>
@@ -45,6 +45,7 @@
     display: flex;
     min-width: 150px;
     max-width: 150px;
+    justify-content: center;
   }
   .card__info {
     width: calc(100% - 150px);
@@ -53,14 +54,15 @@
   }
   .card__stamp-text {
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 60px;
+    font-family: 'Tomorrow Wind', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 114px;
     color: #fff;
-    letter-spacing: -9px;
     z-index: 6;
     align-self: center;
     justify-self: center;
-/*     transform: translateX(-8px); */
+    transform: translateX(-16px);
   }
   .card__title {
     color: #b23438;
@@ -86,9 +88,9 @@
     color: #313131;
     text-align: left;
   }
-  @media screen and (max-width: 768px) {
+/*   @media screen and (max-width: 768px) {
     .card__stamp-text {
       transform: none;
     }
-  }
+  } */
 </style>

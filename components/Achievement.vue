@@ -4,7 +4,7 @@
     <Achievements />
     <div class="achievement__gethelp-wrapper">
       <nuxt-link to="#" class="achievement__gethelp">Получить помощь&rsaquo;</nuxt-link>
-      <nuxt-link to="#"> 
+      <nuxt-link class="achievement__logo-link" to="#"> 
       <Icon name="logo" class="achievement__logo">ФАР ЛОГО</Icon>
       </nuxt-link>  
     </div>
@@ -28,18 +28,23 @@ export default {
 .achievement__title {
   font-family: 'Vollkorn', serif;
   font-weight: bold;
-  color: #000;
   font-size: 40px;
   line-height: 1.2;
   padding: 16px;
+  color: #d5d5d5;
+  text-shadow: 0 0 4px #000;
+  -webkit-text-stroke: 2px #000;
+  text-align: left;
 }
 .achievement__gethelp-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 8px;
+  padding: 8px 8px 8px 24px;
 }
-
+.achievement__logo-link {
+  display: none;
+}
 .achievement__logo {
   width: 136px;
   height: 104px;
@@ -57,6 +62,12 @@ export default {
 @media screen and (max-width: 768px) {
   .achievement {
     width: 100%;
+  }
+  .achievement__logo-link {
+    display: block;
+  }
+  .achievement__gethelp-wrapper {
+    padding: 8px;
   }
 }
 </style>
