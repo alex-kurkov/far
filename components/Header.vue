@@ -2,20 +2,18 @@
   <section class="header">
     <p>Header</p>
     <p>Это компонент Header</p>
-    <icon name='moscow' class="icons_r"></icon>
+    <icon name='bond' class="icons_r"></icon>
   </section>
 </template>
 
 <script>
-  import Icon from '~/components/Icon';
-  export default {
-    name: 'Header',
-    components: {
-      Icon,
-    }
-
-  }
-
+import Icon from '~/components/Icon'
+export default {
+  name: 'Header',
+  components: {
+    Icon,
+  },
+}
 </script>
 
 <style scoped>
@@ -27,12 +25,10 @@
 }
 
 .icons_r {
-  fill: yellow;
+  fill: grey;
   width: 100%;
   height: 200px;
-  stroke: red;
+  stroke: white;
+  stroke-width: 10px;
 }
-
 </style>
-
-

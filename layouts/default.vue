@@ -1,7 +1,7 @@
 <template>
   <div class="body">
-    <Header />
     <Hamburger />
+    <Header />
     <Nuxt />
     <Footer />
     <notifications classes="notifications-wrap" group="foo" />
