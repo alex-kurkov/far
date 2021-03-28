@@ -11,21 +11,28 @@
           v-for="(element, index) in elements"
           class="navigation__menu-item"
           @click="element.open = !element.open"
-          :key="element.title + index"
         >
-          <NuxtLink :to="element.to" class="navigation__link">
-            {{ element.title }}
-          </NuxtLink>
-          <span
-            v-if="element.submenu"
-            ><icon name="arrow-right"
-            class='navigation__arrow-right'
+          <div
             :class="[
-              element.open
-                ? 'navigation__arrow navigation__arrow_open'
-                : 'navigation__arrow',
-            ]"/></span
+                  index === elements.length-1
+                    ? 'navigation__main-menu-item navigation__main-menu-item_style'
+                    : 'navigation__main-menu-item',
+                ]"
           >
+            <NuxtLink :to="element.to" class="navigation__link" :key="element.title + index">
+              {{ element.title }}
+            </NuxtLink>
+            <span v-show="element.submenu"
+              ><icon
+                name="arrow-right"
+                class="navigation__arrow-right"
+                :class="[
+                  element.open
+                    ? 'navigation__arrow navigation__arrow_open'
+                    : 'navigation__arrow',
+                ]"
+            /></span>
+          </div>
           <SubMenu v-if="element.submenu" :subMenuList="element" />
         </li>
       </ul>
@@ -45,36 +52,63 @@ export default {
       elements: [
         {
           to: '#',
-          title: 'Parent-1 ',
+          title: 'О НАС',
           open: false,
           submenu: [
             {
               to: '/?parent11-child1',
-              title: 'Child-1',
+              title: 'кто такой Андрей Рыльков',
             },
             {
               to: '/?parent11-child1',
-              title: 'Child-2',
+              title: 'миссия и стратегии',
+            },
+            {
+              to: '/?parent11-child1',
+              title: 'команда ФАР',
+            },
+            {
+              to: '/?parent11-child1',
+              title: 'проекты и отчёты',
+            },
+            {
+              to: '/?parent11-child1',
+              title: 'годовые отчёты',
+            },
+            {
+              to: '/?parent11-child1',
+              title: 'учредительные документы',
             },
           ],
         },
-        { to: '/?single2', title: 'Single-2' },
         {
-          to: '#',
-          title: 'Parent-3',
+          to: '/?single2',
+          title: 'ПОДДЕРЖАТЬ ФАР',
           open: false,
           submenu: [
             {
               to: '/?parent3-child3',
-              title: 'Child-3',
+              title: 'сделать пожертвование',
             },
             {
               to: '/?parent3-child4',
-              title: 'Child-4',
+              title: 'волонтёрство в ФАР',
+            },
+            {
+              to: '/?parent3-child4',
+              title: 'стажировка в ФАР',
+            },
+            {
+              to: '/?parent3-child4',
+              title: 'партнёрство с ФАР',
             },
           ],
         },
-        { to: '/?single', title: 'Single-4' },
+        {
+          to: '/?single',
+          title: 'ПОЛУЧИТЬ ПОМОЩЬ',
+        },
+        { to: '/?single', title: 'КОНТАКТЫ' },
       ],
     }
   },
@@ -106,20 +140,36 @@ export default {
 .navigation {
   position: absolute;
   top: 10px;
-  right: 50px;
+  right: 10px;
+  background-color: black;
 }
 
 .navigation__menu {
-  padding: 0;
+  padding: 0 53px 0 17px;
   list-style: none;
-  min-width: 200px;
+  min-width: 285px;
+}
+
+.navigation__main-menu-item {
+  border-bottom: 1px solid #fdf5d8;
+  min-height: 45px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation__main-menu-item_style {
+  border-bottom: unset;
 }
 
 .navigation__menu-item {
-  background: #75a6f5;
-  border-top: 1px solid #fdf5d8;
-  min-height: 25px;
   position: relative;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
 }
 
 .navigation__link {
@@ -135,9 +185,11 @@ export default {
   transform: rotate(90deg);
 }
 
-.navigation__arrow-right{
-  width: 20px;
-  height: 20px;
+.navigation__arrow-right {
+  width: 18px;
+  height: 15px;
+  fill: #ffffff;
+  cursor: pointer;
 }
 
 .expand-width-enter-active,
