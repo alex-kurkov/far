@@ -3,14 +3,10 @@
     <About />
     <Promo />
     <Intro />
-    <div class="container__info">
-      <Mission />
-      <Achievements />
-    </div>
-    <div class="container__action">
-      <Help />
-      <Support />
-    </div>
+    <Mission />
+    <Achievement />
+    <Help />
+    <Support />
   </div>
 </template>
 
@@ -21,26 +17,16 @@ export default {}
 <style>
 .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
   text-align: center;
-}
-
-.container__info {
-  display: flex;
-  flex-direction: row;
-}
-
-.container__action {
-  display: flex;
-  flex-direction: row-reverse;
+  flex-wrap: wrap;
 }
 
 @media screen and (max-width: 768px) {
-  .container__info,
-  .container__action {
-    display: unset;
+  container {
+    flex-direction: column;
   }
 }
 </style>

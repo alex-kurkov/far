@@ -13,7 +13,7 @@ export default {
 
 <style scoped>
 .support {
-  width: 100%;
+  width: calc(100% / 2);
   min-height: 70px;
   background: darksalmon;
 }

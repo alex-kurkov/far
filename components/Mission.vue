@@ -23,7 +23,12 @@ export default {
 
 <style scoped>
 .mission {
-  width: 100%;
+  width: calc(100% / 2);
   background: burlywood;
+}
+@media screen and (max-width: 768px) {
+  .achievement {
+    width: 100%;
+  }
 }
 </style>

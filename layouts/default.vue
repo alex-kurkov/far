@@ -19,6 +19,8 @@
 .body {
   margin: 0 auto;
   max-width: 1280px;
+  width: 100%;
+  position: relative;
 }
 
 .notifications-wrap {
@@ -31,4 +33,5 @@
   bottom: 0;
   transition: 0.3s;
 }
+
 </style>
