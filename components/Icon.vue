@@ -435,11 +435,8 @@
   <!--v-else-if="name === 'moscow'"-->
 </template>
 
-
-
 <script>
 export default {
   props: ['name'],
 }
 </script>
-

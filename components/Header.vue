@@ -7,15 +7,13 @@
 </template>
 
 <script>
-  import Icon from '~/components/Icon';
-  export default {
-    name: 'Header',
-    components: {
-      Icon,
-    }
-
-  }
-
+import Icon from '~/components/Icon'
+export default {
+  name: 'Header',
+  components: {
+    Icon,
+  },
+}
 </script>
 
 <style scoped>
@@ -33,7 +31,4 @@
   stroke: white;
   stroke-width: 10px;
 }
-
 </style>
-
-
