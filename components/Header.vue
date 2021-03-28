@@ -1,34 +1,26 @@
 <template>
-  <section class="header">
-    <p>Header</p>
-    <p>Это компонент Header</p>
-    <icon name="bond" class="icons_r"></icon>
-  </section>
+  <section class="header"/>
 </template>
 
 <script>
-import Icon from '~/components/Icon'
+import BackGroundTextRu from './header/header-text-ru.svg'
 export default {
   name: 'Header',
-  components: {
-    Icon,
-  },
+  mounted () {
+    const element=document.querySelector('.header')
+    element.style.backgroundImage = `url(${BackGroundTextRu})`;
+    element.style.backgroundRepeat='repeat-x';
+    element.style.backgroundColor='#b13438'
+    element.style.backgroundPosition='60px 25px'
+
+  }
 }
 </script>
 
 <style scoped>
 .header {
   width: 100%;
-  height: 400px;
-  min-height: 70px;
-  background: #3b8070;
-}
-
-.icons_r {
-  fill: grey;
-  width: 100%;
-  height: 200px;
-  stroke: white;
-  stroke-width: 10px;
+  height: 54px;
 }
 </style>
+
