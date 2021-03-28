@@ -48,6 +48,7 @@ export default {
   data() {
       return {
         swiperOptions: {
+          effect: 'flip',
           loop: true,
           slidesPerView: 1,
           centeredSlides: true,
