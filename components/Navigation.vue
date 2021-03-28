@@ -11,15 +11,16 @@
           v-for="(element, index) in elements"
           class="navigation__menu-item"
           @click="element.open = !element.open"
+          :key="element.title + index"
         >
           <div
             :class="[
-                  index === elements.length-1
-                    ? 'navigation__main-menu-item navigation__main-menu-item_style'
-                    : 'navigation__main-menu-item',
-                ]"
+              index === elements.length - 1
+                ? 'navigation__main-menu-item navigation__main-menu-item_style'
+                : 'navigation__main-menu-item',
+            ]"
           >
-            <NuxtLink :to="element.to" class="navigation__link" :key="element.title + index">
+            <NuxtLink :to="element.to" class="navigation__link">
               {{ element.title }}
             </NuxtLink>
             <span v-show="element.submenu"

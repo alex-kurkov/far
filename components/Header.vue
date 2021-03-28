@@ -2,7 +2,7 @@
   <section class="header">
     <p>Header</p>
     <p>Это компонент Header</p>
-    <icon name='bond' class="icons_r"></icon>
+    <icon name="bond" class="icons_r"></icon>
   </section>
 </template>
 
