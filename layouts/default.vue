@@ -1,7 +1,7 @@
 <template>
   <div class="body">
-    <Header />
     <Hamburger />
+    <Header />
     <Nuxt />
     <Footer />
     <notifications classes="notifications-wrap" group="foo" />
@@ -19,7 +19,6 @@
 .body {
   margin: 0 auto;
   max-width: 1280px;
-  position: relative;
 }
 
 .notifications-wrap {

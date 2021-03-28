@@ -1,6 +1,6 @@
 <template>
   <transition
-    name="expand"
+    name="expand-height"
     @enter="enter"
     @after-enter="afterEnter"
     @leave="leave"
@@ -9,9 +9,9 @@
       <li
         v-for="(element, index) in subMenuList.submenu"
         class="navigation__sub-menu-item"
-        :key="element.title + index"
+
       >
-        <NuxtLink :to="element.to" class="navigation__sub-link">{{
+        <NuxtLink :to="element.to" class="navigation__sub-link" :key="element.title + index">{{
           element.title
         }}</NuxtLink>
       </li>
@@ -37,6 +37,7 @@ export default {
       el.style.height = 'auto'
     },
     leave(el) {
+      console.log(el.classList)
       el.style.height = getComputedStyle(el).height
       getComputedStyle(el)
       setTimeout(() => {
@@ -55,16 +56,21 @@ export default {
 }
 
 .navigation__sub-menu-item {
-  background: #c4d77b;
+  background: #000000;
 }
 
 .navigation__sub-link {
-  color: blueviolet;
   text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 26.37px;
 }
 
-.expand-enter-active,
-.expand-leave-active {
+.expand-height-enter-active,
+.expand-height-leave-active {
   transition: height 0.5s ease-in-out;
   overflow: hidden;
 }
