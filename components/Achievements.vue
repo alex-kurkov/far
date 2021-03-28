@@ -5,24 +5,25 @@
       <div class="achievements__swiper-pagination"></div>
       <ArrowIcon class="achievements__swiper-btn-next"></ArrowIcon>
     </div>
+    <div class="achievements__carousel">
+      <Icon name="stamp" class="achievements__stamp-icon"/>
+      <swiper
+        :slides-per-view="1"
+        :space-between="10"
+        ref="mySwiper" 
+        :options="swiperOptions"
+        virtual
+        >
 
-    <swiper
-      :slides-per-view="1"
-      :space-between="10"
-      ref="mySwiper" 
-      :options="swiperOptions"
-      virtual
-      >
-
-      <swiper-slide
-        v-for="news in newsArray"
-        :key="news.id"
-        :virtualIndex="index"
-      >
-        <Card :news="news" />
-      </swiper-slide>
-
-    </swiper>
+        <swiper-slide
+          v-for="(news, index) in newsArray"
+          :key="news.id"
+          :virtualIndex="index"
+        >
+          <Card :news="news" />
+        </swiper-slide>
+      </swiper>
+    </div>
   </div>
 </template>
 
@@ -30,15 +31,16 @@
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 import ArrowIcon from './achievments/Swiper-arrow'
+import Icon from '@/components/Icon';
 import Card from './achievments/Card'
 
 export default {
-  name: 'Achievements',
   components: {
     Swiper,
     SwiperSlide,
     ArrowIcon,
-    Card
+    Card,
+    Icon
   },
   directives: {
     swiper: directive
@@ -112,13 +114,11 @@ export default {
 <style>
 .achievments {
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
   height: 400px;
 }
 .achievements__swiper-controls {
-  width: 80%;
-  margin: 0 auto;
-  padding: 4px;
+  padding: 4px 16px 16px 16px;
   display: flex;
   justify-items: center;
   justify-content: space-between;
@@ -128,24 +128,12 @@ export default {
   display: flex;
   align-items: center;
 }
-
 .achievements__swiper-btn-prev {
   height: 24px;
 }
 .achievements__swiper-btn-next {
   height: 24px;
   transform: rotate(180deg);
-}
-.swiper-slide {
-  text-align: center;
-  font-size: 16px;
-  font-weight: 700;
-  background-color: #eee;
-  display: flex;
-  height: 200px;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
 }
 .swiper-pagination-bullet {
   background-color: #fff;
@@ -155,5 +143,29 @@ export default {
 .swiper-pagination-bullet-active {
   background-color: #f00;
 }
-
+.achievements__carousel {
+  position: relative;
+  overflow: visible;
+}
+.achievements__stamp-icon {
+  position: absolute;
+  top: 0;
+  left: -44px;
+  width: 198px;
+  height: 198px;
+  background: transparent;
+  fill: #000;
+  z-index: 2;
+}
+.swiper-wrapper, .swiper-container {
+  z-index: 5;
+}
+@media screen and (max-width: 768px) {
+  .achievements {
+    overflow: hidden;
+  }
+  .achievements__carousel {
+    overflow: hidden;
+  }
+}
 </style>

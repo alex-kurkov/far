@@ -2,19 +2,22 @@
   <div class="card">
     <div class="card__stamp">
       <span class="card__stamp-text">{{ news.stamp }}</span>
-    </div>
+    </div> 
     <div class="card__info">
-      <h3>{{ news.title }}</h3>
+      <h3 class="card__title">{{ news.title }}</h3>
       <div class="card__line"></div>
-      <p> {{ news.text }} </p>
+      <p class="card__text"> {{ news.text }} </p>
     </div>
   </div>
 </template>
 
 <script>
-  import { SwiperSlide } from 'vue-awesome-swiper'
+  import Icon from '@/components/Icon';
   export default {
-     props: {
+    components: {
+      Icon
+    },
+    props: {
       news: {
         type: Object,
         default: () => (
@@ -32,32 +35,60 @@
 <style scoped>
   .card {
     width: 100%;
+    height: 198px;
     display: flex;
     overflow: hidden;
+    flex-wrap: nowrap;
+    background: transparent;
   }
   .card__stamp {
-    width: 198px;
-    height: 198px;
-    transform: translateX(-44px);
-    background: black;
-    position: relative;
+    display: flex;
+    min-width: 150px;
+    max-width: 150px;
   }
   .card__info {
-    width: calc (100% + 44px - 198px);
+    width: calc(100% - 150px);
+    padding: 12px;
+    overflow: hidden;
   }
   .card__stamp-text {
-    position: absolute;
     text-align: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     font-family: 'Courier New', Courier, monospace;
     font-size: 60px;
-    color: white;
+    color: #fff;
+    letter-spacing: -9px;
+    z-index: 6;
+    align-self: center;
+    justify-self: center;
+/*     transform: translateX(-8px); */
+  }
+  .card__title {
+    color: #b23438;
+    font-family: 'Vollkorn', 'Times New Roman', serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.15;
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom: 4px;
   }
   .card__line {
     width: 100%;
-    height: 4px;
+    height: 2px;
     background: #fff;
+    margin-bottom: 4px;
+  }
+  .card__text {
+    font-family: 'Vollkorn', serif;
+    font-size: 14px;
+    font-weight: 400;
+    overflow: hidden;
+    color: #313131;
+    text-align: left;
+  }
+  @media screen and (max-width: 768px) {
+    .card__stamp-text {
+      transform: none;
+    }
   }
 </style>

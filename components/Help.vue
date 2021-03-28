@@ -18,7 +18,7 @@ export default {
 
 <style scoped>
 .help {
-  width: 100%;
+  width: calc(100% / 2);
   min-height: 100px;
   background: #16835e;
 }
