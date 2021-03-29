@@ -1,13 +1,7 @@
 <template>
   <div class="hamburger">
     <div class="hamburger__title">МЕНЮ</div>
-    <button
-      class="hamburger-icon"
-      @click="isMenOpen = !isMenOpen"
-      onclick="this.classList.toggle('hamburger-icon_state_opened');
-                this.setAttribute('aria-expanded', this.classList.contains('hamburger-icon_state_opened'))"
-      aria-label="Main Menu"
-    >
+    <button class="hamburger-icon" @click="handleClick" aria-label="Main Menu">
       <svg width="33" height="28" viewBox="0 0 100 100">
         <path
           class="hamburger-icon_path_line hamburger-icon_path_line1"
@@ -53,8 +47,17 @@ export default {
     }
   },
   methods: {
+    handleClick() {
+      this.isMenOpen = !this.isMenOpen
+      const hamburgerIconElement = document.querySelector('.hamburger-icon')
+      hamburgerIconElement.classList.toggle('hamburger-icon_state_opened')
+      const isOpen = hamburgerIconElement.classList.contains(
+        'hamburger-icon_state_opened'
+      )
+      hamburgerIconElement.setAttribute('aria-expanded', `${isOpen}`)
+    },
     enter(el) {
-      el.style.top = 0
+      el.style.top = '10px'
       setTimeout(() => {
         el.style.top = '281px'
       }, 0)
@@ -102,7 +105,7 @@ export default {
 }
 
 .hamburger__drop_color {
-  fill: #b13438;
+  fill: #8c8c8c;
   width: 34px;
   height: 60px;
   right: 11px;
@@ -131,41 +134,41 @@ export default {
 .hamburger-icon_path_line {
   fill: none;
   stroke: #cbcbcb;
-  stroke-width: 6;
+  stroke-width: 8;
   transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
     stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hamburger-icon_path_line1 {
   stroke-dasharray: 60 207;
-  stroke-width: 6;
+  stroke-width: 8;
 }
 
 .hamburger-icon_path_line2 {
   stroke-dasharray: 60 60;
-  stroke-width: 6;
+  stroke-width: 8;
 }
 
 .hamburger-icon_path_line3 {
   stroke-dasharray: 60 207;
-  stroke-width: 6;
+  stroke-width: 8;
 }
 
 .hamburger-icon_state_opened .hamburger-icon_path_line1 {
   stroke-dasharray: 90 207;
   stroke-dashoffset: -134;
-  stroke-width: 6;
+  stroke-width: 8;
 }
 
 .hamburger-icon_state_opened .hamburger-icon_path_line2 {
   stroke-dasharray: 1 60;
   stroke-dashoffset: -30;
-  stroke-width: 6;
+  stroke-width: 8;
 }
 
 .hamburger-icon_state_opened .hamburger-icon_path_line3 {
   stroke-dasharray: 90 207;
   stroke-dashoffset: -134;
-  stroke-width: 6;
+  stroke-width: 8;
 }
 </style>
