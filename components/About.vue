@@ -1,8 +1,9 @@
 <template>
   <section class="about">
     <h1 class="about__text">
-      <span class="about__text_style">ФАР</span> - это организация-сообщество,
-      площадка для инициатив в сфере гуманизации наркополитики
+      <span class="about__text_style">ФАР&nbsp;</span> &#8212; это
+      организация-сообщество, площадка для инициатив в сфере гуманизации
+      наркополитики
     </h1>
   </section>
 </template>
@@ -21,7 +22,7 @@ export default {
 }
 
 .about__text {
-  width: 570px;
+  width: 600px;
   min-height: 104px;
   color: #313131;
   font-family: Vollkorn, Arial, sans-serif;
@@ -29,15 +30,14 @@ export default {
   font-style: italic;
   letter-spacing: normal;
   font-weight: normal;
-  line-height: 35px;
+  line-height: 34px;
   text-align: left;
-  margin: 80px 0 80px 200px;
+  margin: 60px 0 88px 183px;
   padding: 0;
 }
 
 .about__text_style {
   font-weight: 700;
-  font-style: normal;
 }
 
 .about__text::before {
@@ -46,7 +46,33 @@ export default {
   width: 93px;
   position: absolute;
   background-color: #b33438;
-  top: 157px;
-  left: 198px;
+  top: 131px;
+  left: 181px;
 }
+
+.about__text_whitespace{
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+
+  }
+
+  .about__text {
+    width: 520px;
+    font-size: 48px;
+    line-height: 43px;
+    margin: 33px 0 29px 55px;
+  }
+
+  .about__text::before {
+    height: 18px;
+    width: 107px;
+    top: 123px;
+    left: 54px;
+  }
+
+}
+
 </style>

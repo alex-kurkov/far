@@ -157,6 +157,7 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  min-height: 50px;
 }
 
 .navigation__main-menu-item_style {
@@ -171,7 +172,6 @@ export default {
   font-style: normal;
   letter-spacing: normal;
   font-family: PT, Arial, sans-serif;
-  line-height: 40px;
   text-align: left;
 }
 
@@ -189,8 +189,8 @@ export default {
 }
 
 .navigation__arrow-right {
-  width: 18px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
   fill: #ffffff;
   cursor: pointer;
 }

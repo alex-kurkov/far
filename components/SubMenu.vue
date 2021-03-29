@@ -50,7 +50,7 @@ export default {
 
 <style scoped>
 .navigation__sub-menu {
-  padding: 0;
+  padding: 15px 0;
   width: 100%;
   list-style: none;
 }

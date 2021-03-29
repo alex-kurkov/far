@@ -2,7 +2,7 @@
   <div class="hamburger">
     <div class="hamburger__title">МЕНЮ</div>
     <button class="hamburger-icon" @click="handleClick" aria-label="Main Menu">
-      <svg width="33" height="28" viewBox="0 0 100 100">
+      <svg width="48" height="42" viewBox="0 0 100 100">
         <path
           class="hamburger-icon_path_line hamburger-icon_path_line1"
           d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
@@ -17,20 +17,15 @@
         />
       </svg>
     </button>
-    <Navigation :isMenOpen="isMenOpen" />
     <icon name="drop" class="hamburger__drop"></icon>
-    <transition
-      name="drop-position"
-      @enter="enter"
-      @after-enter="afterEnter"
-      @leave="leave"
-    >
+    <transition name="drop-position" @enter="enter" @after-enter="afterEnter">
       <icon
         v-show="isMenOpen"
         name="drop"
         class="hamburger__drop hamburger__drop_color"
       ></icon>
     </transition>
+    <Navigation :isMenOpen="isMenOpen" />
   </div>
 </template>
 
@@ -59,13 +54,12 @@ export default {
     enter(el) {
       el.style.top = '10px'
       setTimeout(() => {
-        el.style.top = '281px'
+        el.style.top = '269px'
       }, 0)
     },
     afterEnter(el) {
-      el.style.top = '281px'
+      el.style.top = '269px'
     },
-    leave(el) {},
   },
 }
 </script>
@@ -80,24 +74,25 @@ export default {
 .hamburger__title {
   background-color: #000000;
   transform: rotate(270deg);
-  height: 33px;
-  width: 136px;
+  height: 48px;
+  width: 159px;
   color: #ffffff;
-  font-size: 26px;
+  font-size: 36px;
+  line-height: normal;
   font-style: italic;
   letter-spacing: normal;
-  line-height: normal;
   display: grid;
   place-items: center;
+  padding: 3px 0 0 0;
   position: absolute;
-  top: 88px;
-  right: -41px;
+  top: 106px;
+  right: -45px;
   z-index: 10;
 }
 
 .hamburger__drop {
   position: absolute;
-  top: 280px;
+  top: 268px;
   right: 10px;
   width: 36px;
   height: 62px;
@@ -126,8 +121,8 @@ export default {
   cursor: pointer;
   display: flex;
   padding: 0;
-  width: 33px;
-  height: 28px;
+  width: 48px;
+  height: 42px;
   z-index: 10;
 }
 
