@@ -56,14 +56,8 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-<<<<<<< HEAD
-  src:  local('Tomorrow Wind'),
-        url('~assets/fonts/Tomorrowwind.woff2') format('woff2'),
-        url('~assets/fonts/Tomorrowwind.woff') format('woff');
-=======
   src: url('~assets/fonts/Tomorrowwind.woff2') format('woff2'),
     url('~assets/fonts/Tomorrowwind.woff') format('woff');
->>>>>>> develop
 }
 /*DrukCyr-Medium*/
 @font-face {

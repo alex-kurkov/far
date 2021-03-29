@@ -16,7 +16,7 @@ export default {
     },
   },
   mounted() {
-    console.log(this.error, 'ERROR OBJECT')
+    console.log(this.error)
   },
 }
 </script>
