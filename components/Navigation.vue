@@ -121,7 +121,7 @@ export default {
       getComputedStyle(el)
       setTimeout(() => {
         el.style.width = width
-      })
+      }, 0)
     },
     afterEnter(el) {
       el.style.width = 'auto'
@@ -131,7 +131,7 @@ export default {
       getComputedStyle(el)
       setTimeout(() => {
         el.style.width = 0
-      })
+      }, 0)
     },
   },
 }
@@ -148,12 +148,11 @@ export default {
 .navigation__menu {
   padding: 0 53px 0 17px;
   list-style: none;
-  min-width: 285px;
+  min-width: 300px;
 }
 
 .navigation__main-menu-item {
   border-bottom: 1px solid #fdf5d8;
-  min-height: 45px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -171,6 +170,9 @@ export default {
   font-weight: 400;
   font-style: normal;
   letter-spacing: normal;
+  font-family: PT, Arial, sans-serif;
+  line-height: 40px;
+  text-align: left;
 }
 
 .navigation__link {

@@ -1,19 +1,21 @@
 <template>
-  <section class="header"/>
+  <section :style="cssProps" class="header" />
 </template>
 
 <script>
 import BackGroundTextRu from './header/header-text-ru.svg'
 export default {
   name: 'Header',
-  mounted () {
-    const element=document.querySelector('.header')
-    element.style.backgroundImage = `url(${BackGroundTextRu})`;
-    element.style.backgroundRepeat='repeat-x';
-    element.style.backgroundColor='#b13438'
-    element.style.backgroundPosition='60px 25px'
-
-  }
+  data() {
+    return {
+      cssProps: {
+        backgroundImage: `url(${BackGroundTextRu})`,
+        backgroundRepeat: 'repeat-x',
+        backgroundColor: '#b13438',
+        backgroundPosition: '65px 25px',
+      },
+    }
+  },
 }
 </script>
 
@@ -23,4 +25,3 @@ export default {
   height: 54px;
 }
 </style>
-

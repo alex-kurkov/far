@@ -21,6 +21,7 @@
   max-width: 1280px;
   width: 100%;
   position: relative;
+  font-family: Vollkorn, Arial, sans-serif;
 }
 
 .notifications-wrap {

@@ -31,7 +31,7 @@ export default {
       getComputedStyle(el)
       setTimeout(() => {
         el.style.height = height
-      })
+      }, 0)
     },
     afterEnter(el) {
       el.style.height = 'auto'
@@ -42,7 +42,7 @@ export default {
       getComputedStyle(el)
       setTimeout(() => {
         el.style.height = 0
-      })
+      }, 0)
     },
   },
 }
@@ -62,6 +62,7 @@ export default {
 .navigation__sub-link {
   text-decoration: none;
   color: #ffffff;
+  font-family: PT, Arial, sans-serif;
   font-size: 18px;
   font-weight: 400;
   font-style: normal;
