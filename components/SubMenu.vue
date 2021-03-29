@@ -9,9 +9,9 @@
       <li
         v-for="(element, index) in subMenuList.submenu"
         class="navigation__sub-menu-item"
-
+        :key="element.title + index"
       >
-        <NuxtLink :to="element.to" class="navigation__sub-link" :key="element.title + index">{{
+        <NuxtLink :to="element.to" class="navigation__sub-link">{{
           element.title
         }}</NuxtLink>
       </li>
@@ -31,7 +31,7 @@ export default {
       getComputedStyle(el)
       setTimeout(() => {
         el.style.height = height
-      })
+      }, 0)
     },
     afterEnter(el) {
       el.style.height = 'auto'
@@ -42,7 +42,7 @@ export default {
       getComputedStyle(el)
       setTimeout(() => {
         el.style.height = 0
-      })
+      }, 0)
     },
   },
 }
@@ -62,6 +62,7 @@ export default {
 .navigation__sub-link {
   text-decoration: none;
   color: #ffffff;
+  font-family: PT, Arial, sans-serif;
   font-size: 18px;
   font-weight: 400;
   font-style: normal;

@@ -21,6 +21,7 @@
   max-width: 1280px;
   width: 100%;
   position: relative;
+  font-family: Vollkorn, Arial, sans-serif;
 }
 
 .notifications-wrap {
@@ -33,5 +34,4 @@
   bottom: 0;
   transition: 0.3s;
 }
-
 </style>
