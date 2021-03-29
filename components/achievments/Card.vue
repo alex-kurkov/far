@@ -56,7 +56,7 @@ export default {
   font-size: 104px;
   color: #fff;
   z-index: 6;
-  transform: translateX(-20px);
+  transform: translateX(-22px);
 }
 .card__title {
   color: #b23438;
@@ -84,7 +84,7 @@ export default {
 }
 @media screen and (max-width: 768px) {
   .card__stamp-text {
-    transform: none;
+    transform: translateX(-16px);
   }
 }
 </style>
