@@ -6,15 +6,14 @@
       <ArrowIcon class="achievements__swiper-btn-next"></ArrowIcon>
     </div>
     <div class="achievements__carousel">
-      <Icon name="stamp" class="achievements__stamp-icon"/>
+      <Icon name="stamp" class="achievements__stamp-icon" />
       <swiper
         :slides-per-view="1"
         :space-between="10"
-        ref="mySwiper" 
+        ref="mySwiper"
         :options="swiperOptions"
         virtual
-        >
-
+      >
         <swiper-slide
           v-for="(news, index) in newsArray"
           :key="news.id"
@@ -31,7 +30,7 @@
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 import ArrowIcon from './achievments/Swiper-arrow'
-import Icon from '@/components/Icon';
+import Icon from '@/components/Icon'
 import Card from './achievments/Card'
 
 export default {
@@ -40,76 +39,79 @@ export default {
     SwiperSlide,
     ArrowIcon,
     Card,
-    Icon
+    Icon,
   },
   directives: {
-    swiper: directive
+    swiper: directive,
   },
   data() {
-      return {
-        swiperOptions: {
-          effect: 'flip',
-          loop: true,
-          slidesPerView: 1,
-          centeredSlides: true,
-          spaceBetween: 10,
-          pagination: {
-            el: '.achievements__swiper-pagination',
-            dynamicBullets: false,
-            clickable: true
-          },
-          navigation: {
-            nextEl: '.achievements__swiper-btn-next',
-            prevEl: '.achievements__swiper-btn-prev',
-          },
-        }
-      }
-    },
-    computed: {
-      swiper() {
-        return this.$refs.mySwiper.$swiper
+    return {
+      swiperOptions: {
+        effect: 'flip',
+        loop: true,
+        slidesPerView: 1,
+        centeredSlides: true,
+        spaceBetween: 10,
+        pagination: {
+          el: '.achievements__swiper-pagination',
+          dynamicBullets: false,
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.achievements__swiper-btn-next',
+          prevEl: '.achievements__swiper-btn-prev',
+        },
       },
-      newsArray() {
-        return [
-          {
-            title: 'HIV Testing',
-            text: 'men were provided with HIV-sets and were consulted on self-inquiry',
-            stamp: '1017',
-            id: 'scjweoicjwepockwe233'
-          },
-          {
-            title: 'Консультации по медицинским вопросам',
-            text: 'консультаций медицинских специалистов по постинъекционным осложнениям',
-            stamp: '256',
-            id: 'scjweoicjwepockwe23wefw'
-          },
-          {
-            title: 'Служба поддержки психического здоровья',
-            text: 'консультаций по вопросам зависимости и проблемного употребления веществ, психологическая поддержка ',
-            stamp: '706',
-            id: 'scjw123eoicjwepdssockwe23wefw'
-          },
-          {
-            title: 'Получили помощь',
-            text: 'уличной социальной службы ФАР: чистые шприцы, презервативы, тесты на ВИЧ, поддержку и направления',
-            stamp: '3779',
-            id: 'scjweoicjwwqf322ssockwe23wefw'
-          },
-          {
-            title: 'Юридические вопросы',
-            text: 'консультаций для людей, подвергшихся правовому преследованию в связи с наркотиками',
-            stamp: '640',
-            id: 'scjwe234redwpdssockwe23wefw'
-          },
-        ]
-      }
-    },
-    mounted() {
-      console.log('Current Swiper instance object', this.swiper)
     }
+  },
+  computed: {
+    swiper() {
+      return this.$refs.mySwiper.$swiper
+    },
+    newsArray() {
+      return [
+        {
+          title: 'HIV Testing',
+          text:
+            'men were provided with HIV-sets and were consulted on self-inquiry',
+          stamp: '1017',
+          id: 'scjweoicjwepockwe233',
+        },
+        {
+          title: 'Консультации по медицинским вопросам',
+          text:
+            'консультаций медицинских специалистов по постинъекционным осложнениям',
+          stamp: '256',
+          id: 'scjweoicjwepockwe23wefw',
+        },
+        {
+          title: 'Служба поддержки психического здоровья',
+          text:
+            'консультаций по вопросам зависимости и проблемного употребления веществ, психологическая поддержка ',
+          stamp: '706',
+          id: 'scjw123eoicjwepdssockwe23wefw',
+        },
+        {
+          title: 'Получили помощь',
+          text:
+            'уличной социальной службы ФАР: чистые шприцы, презервативы, тесты на ВИЧ, поддержку и направления',
+          stamp: '3779',
+          id: 'scjweoicjwwqf322ssockwe23wefw',
+        },
+        {
+          title: 'Юридические вопросы',
+          text:
+            'консультаций для людей, подвергшихся правовому преследованию в связи с наркотиками',
+          stamp: '640',
+          id: 'scjwe234redwpdssockwe23wefw',
+        },
+      ]
+    },
+  },
+  mounted() {
+    console.log('Current Swiper instance object', this.swiper)
+  },
 }
-
-
 </script>
 
 <style>
@@ -158,7 +160,8 @@ export default {
   fill: #000;
   z-index: 2;
 }
-.swiper-wrapper, .swiper-container {
+.swiper-wrapper,
+.swiper-container {
   z-index: 5;
 }
 @media screen and (max-width: 768px) {

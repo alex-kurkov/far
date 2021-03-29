@@ -4,8 +4,8 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src:  url('~assets/fonts/Vollkornregular.woff2') format('woff2'),
-        url('~assets/fonts/Vollkornregular.woff') format('woff');
+  src: url('~assets/fonts/Vollkornregular.woff2') format('woff2'),
+    url('~assets/fonts/Vollkornregular.woff') format('woff');
 }
 
 /*Vollkorn Italic*/
@@ -15,8 +15,8 @@
   font-weight: 400;
   font-style: italic;
   font-display: swap;
-  src:  url('~assets/fonts/Vollkornitalic.woff2') format('woff2'),
-        url('~assets/fonts/Vollkornitalic.woff') format('woff');
+  src: url('~assets/fonts/Vollkornitalic.woff2') format('woff2'),
+    url('~assets/fonts/Vollkornitalic.woff') format('woff');
 }
 
 /* bold*/
@@ -25,8 +25,8 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src:  url('~assets/fonts/Vollkornbold.woff2') format('woff2'),
-        url('~assets/fonts/Vollkornbold.woff') format('woff');
+  src: url('~assets/fonts/Vollkornbold.woff2') format('woff2'),
+    url('~assets/fonts/Vollkornbold.woff') format('woff');
 }
 
 /*Vollkorn BoldItalic*/
@@ -35,8 +35,8 @@
   font-style: italic;
   font-weight: 700;
   font-display: swap;
-  src:  url('~assets/fonts/Vollkornbolditalic.woff2') format('woff2'),
-        url('~assets/fonts/Vollkornbolditalic.woff') format('woff');
+  src: url('~assets/fonts/Vollkornbolditalic.woff2') format('woff2'),
+    url('~assets/fonts/Vollkornbolditalic.woff') format('woff');
 }
 
 /*Vollkorn ExtraBoldItalic */
@@ -45,8 +45,8 @@
   font-weight: 800;
   font-style: italic;
   font-display: swap;
-  src:  url('~assets/fonts/Vollkornextrabolditalic.woff2') format('woff2'),
-        url('~assets/fonts/Vollkornextrabolditalic.woff') format('woff');
+  src: url('~assets/fonts/Vollkornextrabolditalic.woff2') format('woff2'),
+    url('~assets/fonts/Vollkornextrabolditalic.woff') format('woff');
 }
 
 /*Tomorrow Wind*/
@@ -56,9 +56,14 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
+<<<<<<< HEAD
   src:  local('Tomorrow Wind'),
         url('~assets/fonts/Tomorrowwind.woff2') format('woff2'),
         url('~assets/fonts/Tomorrowwind.woff') format('woff');
+=======
+  src: url('~assets/fonts/Tomorrowwind.woff2') format('woff2'),
+    url('~assets/fonts/Tomorrowwind.woff') format('woff');
+>>>>>>> develop
 }
 /*DrukCyr-Medium*/
 @font-face {
@@ -66,8 +71,8 @@
   font-weight: 500;
   font-style: normal;
   font-display: swap;
-  src:  url('~assets/fonts/DrukCyr-Medium.woff2') format('woff2'),
-        url('~assets/fonts/DrukCyr-Medium.woff') format('woff');
+  src: url('~assets/fonts/DrukCyr-Medium.woff2') format('woff2'),
+    url('~assets/fonts/DrukCyr-Medium.woff') format('woff');
 }
 
 /* minion  для бургера заменила на PTSerif-Regular.woff*/
@@ -76,10 +81,9 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src:  url('~assets/fonts/PTSerif-Regular.woff2') format('woff2'),
-        url('~assets/fonts/PTSerif-Regular.woff') format('woff');
+  src: url('~assets/fonts/PTSerif-Regular.woff2') format('woff2'),
+    url('~assets/fonts/PTSerif-Regular.woff') format('woff');
 }
-
 
 /* roboto */
 @font-face {
@@ -87,6 +91,6 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src:  url('~assets/fonts/RobotoSlab-Regular.woff2') format('woff2'),
-        url('~assets/fonts/RobotoSlab-Regular.woff') format('woff');
+  src: url('~assets/fonts/RobotoSlab-Regular.woff2') format('woff2'),
+    url('~assets/fonts/RobotoSlab-Regular.woff') format('woff');
 }
