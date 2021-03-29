@@ -67,7 +67,19 @@ export default {
   font-weight: 400;
   font-style: normal;
   letter-spacing: normal;
-  line-height: 26.37px;
+  line-height: 26px;
+}
+
+@media screen and (max-width: 768px) {
+  .navigation__sub-link {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .navigation__sub-link {
+    font-size: 14px;
+  }
 }
 
 .expand-height-enter-active,

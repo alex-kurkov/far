@@ -143,6 +143,7 @@ export default {
   top: 10px;
   right: 10px;
   background-color: black;
+  z-index: 5;
 }
 
 .navigation__menu {
@@ -193,6 +194,50 @@ export default {
   height: 20px;
   fill: #ffffff;
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .navigation__menu {
+    padding: 0 70px 0 20px;
+    min-width: 370px;
+  }
+
+  .navigation__menu-item {
+    font-size: 25px;
+  }
+
+  .navigation__arrow-right {
+    width: 22px;
+    height: 22px;
+  }
+  .navigation__main-menu-item {
+    min-height: 58px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .navigation {
+    top: 5px;
+    right: 5px;
+  }
+
+  .navigation__menu {
+    padding: 0 44px 0 13px;
+    min-width: 240px;
+  }
+
+  .navigation__menu-item {
+    font-size: 16px;
+    line-height: 32px;
+  }
+
+  .navigation__arrow-right {
+    width: 14px;
+    height: 14px;
+  }
+  .navigation__main-menu-item {
+    min-height: 38px;
+  }
 }
 
 .expand-width-enter-active,

@@ -34,6 +34,7 @@ export default {
   text-align: left;
   margin: 60px 0 88px 183px;
   padding: 0;
+  position: relative;
 }
 
 .about__text_style {
@@ -46,19 +47,21 @@ export default {
   width: 93px;
   position: absolute;
   background-color: #b33438;
-  top: 131px;
-  left: 181px;
+  top: 20px;
+  left: 0;
 }
 
-.about__text_whitespace{
+.about__text_whitespace {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
-  .about {
-
+@media screen and (max-width: 850px) {
+  .about__text {
+    margin-left: 100px;
   }
+}
 
+@media screen and (max-width: 768px) {
   .about__text {
     width: 520px;
     font-size: 48px;
@@ -69,10 +72,24 @@ export default {
   .about__text::before {
     height: 18px;
     width: 107px;
-    top: 123px;
-    left: 54px;
+    top: 26px;
+    left: 0;
   }
-
 }
 
+@media screen and (max-width: 450px) {
+  .about__text {
+    width: 263px;
+    font-size: 25px;
+    line-height: 23px;
+    margin: 23px 0 32px 14px;
+  }
+
+  .about__text::before {
+    height: 11px;
+    width: 71px;
+    top: 14px;
+    left: 0;
+  }
+}
 </style>

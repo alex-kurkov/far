@@ -12,7 +12,6 @@ export default {
         backgroundImage: `url(${BackGroundTextRu})`,
         backgroundRepeat: 'repeat-x',
         backgroundColor: '#b13438',
-
       },
     }
   },
@@ -33,4 +32,10 @@ export default {
   }
 }
 
+@media screen and (max-width: 450px) {
+  .header {
+    height: 40px;
+    background-position: 65px 17px;
+  }
+}
 </style>

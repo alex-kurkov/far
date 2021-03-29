@@ -2,7 +2,7 @@
   <div class="hamburger">
     <div class="hamburger__title">МЕНЮ</div>
     <button class="hamburger-icon" @click="handleClick" aria-label="Main Menu">
-      <svg width="48" height="42" viewBox="0 0 100 100">
+      <svg viewBox="0 0 100 100">
         <path
           class="hamburger-icon_path_line hamburger-icon_path_line1"
           d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
@@ -124,6 +124,65 @@ export default {
   width: 48px;
   height: 42px;
   z-index: 10;
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger-icon {
+    top: 10px;
+    right: 10px;
+    width: 59px;
+    height: 52px;
+  }
+
+  .hamburger__title {
+    font-size: 45px;
+    line-height: 41px;
+    padding: 3px 0 0 0;
+    height: 59px;
+    width: 181px;
+    top: 122px;
+    right: -51px;
+  }
+
+  .hamburger__drop {
+    right: 21px;
+  }
+
+  .hamburger__drop_color {
+    right: 22px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .hamburger-icon {
+    top: 5px;
+    right: 5px;
+    width: 38px;
+    height: 35px;
+  }
+
+  .hamburger__title {
+    font-size: 29px;
+    line-height: 26px;
+    padding: 3px 0 0 0;
+    height: 38px;
+    width: 117px;
+    top: 79px;
+    right: -34px;
+  }
+
+  .hamburger__drop {
+    right: 12px;
+    top: 175px;
+    width: 24px;
+    height: 42px;
+  }
+
+  .hamburger__drop_color {
+    width: 22px;
+    height: 40px;
+    right: 13px;
+  }
 }
 
 .hamburger-icon_path_line {
