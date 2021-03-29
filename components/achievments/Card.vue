@@ -41,8 +41,9 @@ export default {
 }
 .card__stamp {
   display: flex;
-  min-width: 150px;
-  max-width: 150px;
+  width: 150px;
+  justify-content: center;
+  align-items: center;
 }
 .card__info {
   width: calc(100% - 150px);
@@ -51,14 +52,11 @@ export default {
 }
 .card__stamp-text {
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 60px;
+  font-family: 'Tomorrow Wind', sans-serif;
+  font-size: 104px;
   color: #fff;
-  letter-spacing: -9px;
   z-index: 6;
-  align-self: center;
-  justify-self: center;
-  /*     transform: translateX(-8px); */
+  transform: translateX(-20px);
 }
 .card__title {
   color: #b23438;

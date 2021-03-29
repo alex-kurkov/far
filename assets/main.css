@@ -52,7 +52,7 @@
 /*Tomorrow Wind*/
 /*font-family: 'Tomorrow Wind', sans-serif;*/
 @font-face {
-  font-family: 'Tomorrow Wind', sans-serif;
+  font-family: 'Tomorrow Wind';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -81,7 +81,7 @@
 
 /* roboto */
 @font-face {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Roboto Slab';
   font-weight: 400;
   font-style: normal;
   font-display: swap;

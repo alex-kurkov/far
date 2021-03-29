@@ -3,11 +3,11 @@
     <h3 class="achievement__title">Итоги нашей работы в 2020</h3>
     <Achievements />
     <div class="achievement__gethelp-wrapper">
-      <nuxt-link to="#" class="achievement__gethelp"
-        >Получить помощь&rsaquo;</nuxt-link
+      <nuxt-link to="#" class="achievement__gethelp-link"
+        >Получить помощь &rsaquo;</nuxt-link
       >
       <nuxt-link to="#">
-        <Icon name="logo" class="achievement__logo">ФАР ЛОГО</Icon>
+        <Icon name="logo" class="achievement__logo" />
       </nuxt-link>
     </div>
   </section>
@@ -26,27 +26,34 @@ export default {
 .achievement {
   width: calc(100% / 2);
   background: #d5d5d5;
+  height: 440px;
 }
 .achievement__title {
   font-family: 'Vollkorn', serif;
   font-weight: bold;
-  color: #000;
   font-size: 40px;
-  line-height: 1.2;
+  line-height: 0.8;
   padding: 16px;
+  color: #d5d5d5;
+  /*   text-shadow: 0 0 4px #000; */
+  -webkit-text-stroke: 1px #000;
+  text-align: left;
 }
 .achievement__gethelp-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 8px;
+  padding: 8px 8px 8px 24px;
 }
-
+.achievement__logo-link {
+  display: none;
+}
 .achievement__logo {
-  width: 136px;
-  height: 104px;
+  width: 180px;
+  height: auto;
+  display: none;
 }
-.achievement__gethelp {
+.achievement__gethelp-link {
   font-family: 'Vollkorn', serif;
   color: #b23438;
   font-size: 16px;
@@ -59,6 +66,13 @@ export default {
 @media screen and (max-width: 768px) {
   .achievement {
     width: 100%;
+    height: auto;
+  }
+  .achievement__logo {
+    display: block;
+  }
+  .achievement__gethelp-wrapper {
+    padding: 8px;
   }
 }
 </style>

@@ -121,10 +121,12 @@ export default {
   height: 400px;
 }
 .achievements__swiper-controls {
-  padding: 4px 16px 16px 16px;
+  padding: 4px 4px 16px 4px;
+  margin: 0 auto;
   display: flex;
   justify-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 20px;
 }
 .achievements__swiper-pagination {
   position: relative;
