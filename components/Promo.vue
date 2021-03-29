@@ -22,7 +22,6 @@ export default {
 <style scoped>
 .promo {
   width: 100vw;
-  min-height: 426px;
   color: white;
   background: linear-gradient(to bottom, #b23438 51px, #cbcbcb 51px);
   text-align: left;
