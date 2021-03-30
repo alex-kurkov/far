@@ -71,7 +71,7 @@ export default {
   }
 
   .intro__text {
-    width: 56vw;
+    width: 56%;
     font-size: 36px;
     line-height: 0.8;
     background: #b23438;
@@ -84,9 +84,10 @@ export default {
 
   .intro__images {
     display: block;
-    width: 44vw;
+    width: 44%;
     min-height: 128px;
-    background: center/90px 82px url('./intro/diamond.svg') repeat-x #fff;
+    background: center/90px 82px url('./intro/diamond.svg') #fff;
+    background-repeat: space no-repeat;
   }
 }
 
@@ -102,7 +103,8 @@ export default {
 
   .intro__images {
     min-height: 128px;
-    background: center/110px 82px url('./intro/diamond.svg') repeat-x #fff;
+    background: center/110px 82px url('./intro/diamond.svg') #fff;
+    background-repeat: space no-repeat;
   }
 }
 </style>

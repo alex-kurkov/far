@@ -1,24 +1,29 @@
 <template>
   <section class="mission">
-    <div class="mission__info-wrapper">
-      <h2 class="mission__title">Наша миссия:</h2>
-      <p class="mission__text">
-        способствовать развитию наркополитики, основанной на гуманности,
-        терпимости, защите здоровья, достоинства и прав человека.
-      </p>
-      <p class="mission__text">
-        Работа ФАР строится на принципах горизонтального управления и развития
-        проектов на основе инициатив людей, употребляющих наркотики, активистов
-        и активисток, профессионалов и профессионалок в области общественного
-        здравоохранения и защиты прав человека.
-      </p>
+    <div class="mission__sideblock">
+
     </div>
-    <nuxt-link class="mission__about-link" to="/about"
-      >Подробнее о нас &rsaquo;</nuxt-link
-    >
-    <div class="mission__graphics-wrapper">
-      <div class="mission__graphics-road"><Icon name="road" /></div>
-      <div class="mission__graphics-logo"><Icon name="logo" /></div>
+    <div class="mission__content">
+      <div class="mission__info-wrapper">
+        <h2 class="mission__title">Наша миссия:</h2>
+        <p class="mission__text">
+          способствовать развитию наркополитики, основанной на гуманности,
+          терпимости, защите здоровья, достоинства и прав человека.
+        </p>
+        <p class="mission__text">
+          Работа ФАР строится на принципах горизонтального управления и развития
+          проектов на основе инициатив людей, употребляющих наркотики, активистов
+          и активисток, профессионалов и профессионалок в области общественного
+          здравоохранения и защиты прав человека.
+        </p>
+      </div>
+      <nuxt-link class="mission__about-link" to="/about"
+        >Подробнее о нас &rsaquo;</nuxt-link
+      >
+      <div class="mission__graphics-wrapper">
+        <div class="mission__graphics-road"><Icon name="road" /></div>
+        <div class="mission__graphics-logo"><Icon name="logo" /></div>
+      </div>
     </div>
   </section>
 </template>
@@ -31,18 +36,26 @@ export default {
 
 <style scoped>
 .mission {
-  width: calc(100% / 2);
+  width: 56%;
   background: none;
   height: 440px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+}
+.mission__sideblock {
+  width: 100px;
+  background: #d5d5d5;
 }
 .mission__info-wrapper {
   display: block;
   padding: 16px 32px 16px 16px;
   text-align: left;
   overflow: hidden;
+}
+.mission__content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .mission__title {
   font-family: 'Vollkorn', serif;
@@ -93,6 +106,9 @@ export default {
   .mission {
     width: 100%;
     height: auto;
+  }
+  .mission__sideblock {
+    display: none;
   }
   .mission__info-wrapper {
     padding: 12px;

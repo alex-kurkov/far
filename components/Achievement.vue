@@ -24,7 +24,7 @@ export default {
 
 <style>
 .achievement {
-  width: calc(100% / 2);
+  width: 44%;
   background: #d5d5d5;
   height: 440px;
 }
