@@ -39,6 +39,7 @@ export default {
     return {
       isMenOpen: false,
       counter: 0,
+      topGreyDropPosition: 268,
     }
   },
   methods: {
@@ -54,12 +55,26 @@ export default {
     enter(el) {
       el.style.top = '10px'
       setTimeout(() => {
-        el.style.top = '269px'
+        el.style.top = this.topGreyDropPosition + 'px'
       }, 0)
     },
     afterEnter(el) {
-      el.style.top = '269px'
+      el.style.top = this.topGreyDropPosition + 'px'
     },
+    handleWindowResize() {
+      if (window.innerWidth < 450) {
+        this.topGreyDropPosition = 176
+      } else {
+        this.topGreyDropPosition = 268
+      }
+    },
+  },
+  mounted() {
+    window.addEventListener('resize', this.handleWindowResize)
+    this.handleWindowResize()
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.handleWindowResize)
   },
 }
 </script>
