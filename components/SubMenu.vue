@@ -76,7 +76,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 640px) {
   .navigation__sub-link {
     font-size: 14px;
   }

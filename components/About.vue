@@ -77,9 +77,9 @@ export default {
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 640px) {
   .about__text {
-    width: 263px;
+    width: 350px;
     font-size: 25px;
     line-height: 23px;
     margin: 23px 0 32px 14px;
@@ -90,6 +90,12 @@ export default {
     width: 71px;
     top: 14px;
     left: 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .about__text {
+    width: 263px;
   }
 }
 </style>

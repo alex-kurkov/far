@@ -219,7 +219,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 640px) {
   .navigation {
     top: 5px;
     right: 5px;

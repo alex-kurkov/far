@@ -66,7 +66,7 @@ export default {
       el.style.top = this.greyDropTopPosition + 'px'
     },
     handleWindowResize() {
-      if (window.innerWidth < 450) {
+      if (window.innerWidth < 640) {
         this.greyDropTopPosition = 176
       } else {
         this.greyDropTopPosition = 268
@@ -172,7 +172,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 640px) {
   .hamburger-icon {
     top: 5px;
     right: 5px;

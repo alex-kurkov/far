@@ -32,7 +32,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 640px) {
   .header {
     height: 40px;
     background-position: 65px 17px;
