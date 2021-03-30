@@ -1,7 +1,11 @@
 <template>
   <div class="hamburger">
     <div class="hamburger__title">МЕНЮ</div>
-    <button class="hamburger-icon" @click="handleClick" aria-label="Main Menu">
+    <button
+      class="hamburger-icon"
+      @click="handleMenuClick"
+      aria-label="Main Menu"
+    >
       <svg viewBox="0 0 100 100">
         <path
           class="hamburger-icon_path_line hamburger-icon_path_line1"
@@ -20,12 +24,12 @@
     <icon name="drop" class="hamburger__drop"></icon>
     <transition name="drop-position" @enter="enter" @after-enter="afterEnter">
       <icon
-        v-show="isMenOpen"
+        v-show="isMenuOpen"
         name="drop"
         class="hamburger__drop hamburger__drop_color"
       ></icon>
     </transition>
-    <Navigation :isMenOpen="isMenOpen" />
+    <Navigation :isMenuOpen="isMenuOpen" />
   </div>
 </template>
 
@@ -37,14 +41,14 @@ export default {
   components: { Navigation, Icon },
   data() {
     return {
-      isMenOpen: false,
+      isMenuOpen: false,
       counter: 0,
-      topGreyDropPosition: 268,
+      greyDropTopPosition: 268,
     }
   },
   methods: {
-    handleClick() {
-      this.isMenOpen = !this.isMenOpen
+    handleMenuClick() {
+      this.isMenuOpen = !this.isMenuOpen
       const hamburgerIconElement = document.querySelector('.hamburger-icon')
       hamburgerIconElement.classList.toggle('hamburger-icon_state_opened')
       const isOpen = hamburgerIconElement.classList.contains(
@@ -55,17 +59,17 @@ export default {
     enter(el) {
       el.style.top = '10px'
       setTimeout(() => {
-        el.style.top = this.topGreyDropPosition + 'px'
+        el.style.top = this.greyDropTopPosition + 'px'
       }, 0)
     },
     afterEnter(el) {
-      el.style.top = this.topGreyDropPosition + 'px'
+      el.style.top = this.greyDropTopPosition + 'px'
     },
     handleWindowResize() {
       if (window.innerWidth < 450) {
-        this.topGreyDropPosition = 176
+        this.greyDropTopPosition = 176
       } else {
-        this.topGreyDropPosition = 268
+        this.greyDropTopPosition = 268
       }
     },
   },

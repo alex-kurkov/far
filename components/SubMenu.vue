@@ -5,9 +5,9 @@
     @after-enter="afterEnter"
     @leave="leave"
   >
-    <ul v-show="subMenuList.open" class="navigation__sub-menu">
+    <ul v-show="isOpen" class="navigation__sub-menu">
       <li
-        v-for="(element, index) in subMenuList.submenu"
+        v-for="(element, index) in subMenuList"
         class="navigation__sub-menu-item"
         :key="element.title + index"
       >
@@ -22,7 +22,7 @@
 <script>
 export default {
   name: 'SubMenu',
-  props: ['subMenuList'],
+  props: ['isOpen', 'subMenuList'],
   methods: {
     enter(el) {
       el.style.height = 'auto'

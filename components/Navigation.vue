@@ -5,7 +5,7 @@
     @after-enter="afterEnter"
     @leave="leave"
   >
-    <nav v-show="isMenOpen" class="navigation">
+    <nav v-show="isMenuOpen" class="navigation">
       <ul class="navigation__menu">
         <li
           v-for="(element, index) in elements"
@@ -23,7 +23,7 @@
             <NuxtLink :to="element.to" class="navigation__link">
               {{ element.title }}
             </NuxtLink>
-            <span v-show="element.submenu"
+            <span v-show="element.subMenuList"
               ><icon
                 name="arrow-right"
                 class="navigation__arrow-right"
@@ -34,7 +34,11 @@
                 ]"
             /></span>
           </div>
-          <SubMenu v-if="element.submenu" :subMenuList="element" />
+          <SubMenu
+            v-if="element.subMenuList"
+            :subMenuList="element.subMenuList"
+            :isOpen="element.open"
+          />
         </li>
       </ul>
     </nav>
@@ -47,7 +51,7 @@ import Icon from '@/components/Icon'
 export default {
   name: 'Navigation',
   components: { SubMenu, Icon },
-  props: ['isMenOpen'],
+  props: ['isMenuOpen'],
   data() {
     return {
       elements: [
@@ -55,7 +59,7 @@ export default {
           to: '#',
           title: 'О НАС',
           open: false,
-          submenu: [
+          subMenuList: [
             {
               to: '/?parent11-child1',
               title: 'кто такой Андрей Рыльков',
@@ -86,7 +90,7 @@ export default {
           to: '/?single2',
           title: 'ПОДДЕРЖАТЬ ФАР',
           open: false,
-          submenu: [
+          subMenuList: [
             {
               to: '/?parent3-child3',
               title: 'сделать пожертвование',
