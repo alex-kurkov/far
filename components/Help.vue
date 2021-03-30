@@ -6,7 +6,7 @@
       защиты прав, консультации психолога, профилактические материалы и тд,
       свяжитесь с нами
     </p>
-    <icon name="blade" class="help__blade"></icon>
+    <Icon name="blade" class="help__blade"></Icon>
     <nuxt-link to="#" class="help__link">Подробнее &rsaquo;</nuxt-link>
     <a href="tel:+7926-897-90-87" class="help__ellipse help__ellipse_type_tel">+7-(926)-897-90-87</a>
     <a href="mailto:rylkov.foundation@gmail.com" target="_blank" rel="noreferrer noopener"
@@ -19,8 +19,12 @@
 </template>
 
 <script>
+import Icon from '~/components/Icon';
 export default {
   name: 'Help',
+  components: {
+    Icon
+  }
 }
 </script>
 
