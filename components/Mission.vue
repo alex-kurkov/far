@@ -24,18 +24,13 @@
       <div class="mission__graphics-wrapper">
         <div class="mission__graphics-road"><Icon name="road" /></div>
         <div class="mission__graphics-logo"><Icon name="logo" /></div>
-        <div class="test"><FarRus mainColor="red" /></div>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import FarRus from '@/components/icons/FarRus';
 export default {
-  components: {
-    FarRus
-  },
   name: 'Mission',
 }
 </script>
@@ -122,9 +117,5 @@ export default {
   .mission__about-link {
     padding-left: 12px;
   }
-}
-.test {
-  width: 30px;
-  height: auto;
 }
 </style>
