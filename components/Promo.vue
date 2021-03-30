@@ -30,7 +30,7 @@ export default {
   justify-items: flex-start;
   column-gap: 12px;
   padding-top: 18px;
-  grid-template-rows: repeat(5, minmax(min-content, max-content)) ;
+  grid-template-rows: repeat(5, minmax(min-content, max-content));
   grid-template-columns: repeat(2, minmax(min-content, max-content)) 1fr;
 }
 
@@ -111,7 +111,7 @@ export default {
 @media screen and (min-width: 768px) {
   .promo {
     column-gap: 25px;
-      background: linear-gradient(to bottom, #b23438 78px, #cbcbcb 78px);
+    background: linear-gradient(to bottom, #b23438 78px, #cbcbcb 78px);
   }
 
   .promo__donation {
@@ -145,7 +145,7 @@ export default {
     align-items: center;
     justify-content: center;
     background: linear-gradient(to bottom, #b23438 96px, #cbcbcb 96px);
-    grid-template-rows: repeat(4,0.25fr) 1fr;
+    grid-template-rows: repeat(4, 0.25fr) 1fr;
     grid-template-columns:
       0.8fr minmax(min-content, max-content)
       minmax(min-content, max-content);

@@ -5,9 +5,9 @@
     @after-enter="afterEnter"
     @leave="leave"
   >
-    <ul v-show="subMenuList.open" class="navigation__sub-menu">
+    <ul v-show="isOpen" class="navigation__sub-menu">
       <li
-        v-for="(element, index) in subMenuList.submenu"
+        v-for="(element, index) in subMenuList"
         class="navigation__sub-menu-item"
         :key="element.title + index"
       >
@@ -22,7 +22,7 @@
 <script>
 export default {
   name: 'SubMenu',
-  props: ['subMenuList'],
+  props: ['isOpen', 'subMenuList'],
   methods: {
     enter(el) {
       el.style.height = 'auto'
@@ -50,13 +50,14 @@ export default {
 
 <style scoped>
 .navigation__sub-menu {
-  padding: 0;
+  padding: 15px 0;
   width: 100%;
   list-style: none;
 }
 
 .navigation__sub-menu-item {
   background: #000000;
+  opacity: 1;
 }
 
 .navigation__sub-link {
@@ -67,7 +68,25 @@ export default {
   font-weight: 400;
   font-style: normal;
   letter-spacing: normal;
-  line-height: 26.37px;
+  line-height: 26px;
+  transition: opacity 0.5s linear;
+}
+
+.navigation__sub-link:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .navigation__sub-link {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .navigation__sub-link {
+    font-size: 14px;
+  }
 }
 
 .expand-height-enter-active,

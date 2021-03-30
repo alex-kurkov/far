@@ -5,7 +5,7 @@
     @after-enter="afterEnter"
     @leave="leave"
   >
-    <nav v-show="isMenOpen" class="navigation">
+    <nav v-show="isMenuOpen" class="navigation">
       <ul class="navigation__menu">
         <li
           v-for="(element, index) in elements"
@@ -23,7 +23,7 @@
             <NuxtLink :to="element.to" class="navigation__link">
               {{ element.title }}
             </NuxtLink>
-            <span v-show="element.submenu"
+            <span v-show="element.subMenuList"
               ><icon
                 name="arrow-right"
                 class="navigation__arrow-right"
@@ -34,7 +34,11 @@
                 ]"
             /></span>
           </div>
-          <SubMenu v-if="element.submenu" :subMenuList="element" />
+          <SubMenu
+            v-if="element.subMenuList"
+            :subMenuList="element.subMenuList"
+            :isOpen="element.open"
+          />
         </li>
       </ul>
     </nav>
@@ -47,7 +51,7 @@ import Icon from '@/components/Icon'
 export default {
   name: 'Navigation',
   components: { SubMenu, Icon },
-  props: ['isMenOpen'],
+  props: ['isMenuOpen'],
   data() {
     return {
       elements: [
@@ -55,7 +59,7 @@ export default {
           to: '#',
           title: 'О НАС',
           open: false,
-          submenu: [
+          subMenuList: [
             {
               to: '/?parent11-child1',
               title: 'кто такой Андрей Рыльков',
@@ -86,7 +90,7 @@ export default {
           to: '/?single2',
           title: 'ПОДДЕРЖАТЬ ФАР',
           open: false,
-          submenu: [
+          subMenuList: [
             {
               to: '/?parent3-child3',
               title: 'сделать пожертвование',
@@ -143,6 +147,7 @@ export default {
   top: 10px;
   right: 10px;
   background-color: black;
+  z-index: 5;
 }
 
 .navigation__menu {
@@ -157,6 +162,7 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  min-height: 50px;
 }
 
 .navigation__main-menu-item_style {
@@ -171,17 +177,27 @@ export default {
   font-style: normal;
   letter-spacing: normal;
   font-family: PT, Arial, sans-serif;
-  line-height: 40px;
   text-align: left;
 }
 
 .navigation__link {
   text-decoration: none;
   color: #ffffff;
+  transition: opacity 0.5s linear;
+}
+
+.navigation__link:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .navigation__arrow {
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, opacity 0.5s linear;
+}
+
+.navigation__arrow:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .navigation__arrow_open {
@@ -189,10 +205,54 @@ export default {
 }
 
 .navigation__arrow-right {
-  width: 18px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
   fill: #ffffff;
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .navigation__menu {
+    padding: 0 70px 0 20px;
+    min-width: 370px;
+  }
+
+  .navigation__menu-item {
+    font-size: 25px;
+  }
+
+  .navigation__arrow-right {
+    width: 22px;
+    height: 22px;
+  }
+  .navigation__main-menu-item {
+    min-height: 58px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .navigation {
+    top: 5px;
+    right: 5px;
+  }
+
+  .navigation__menu {
+    padding: 0 44px 0 13px;
+    min-width: 240px;
+  }
+
+  .navigation__menu-item {
+    font-size: 16px;
+    line-height: 32px;
+  }
+
+  .navigation__arrow-right {
+    width: 14px;
+    height: 14px;
+  }
+  .navigation__main-menu-item {
+    min-height: 38px;
+  }
 }
 
 .expand-width-enter-active,
