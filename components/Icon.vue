@@ -26,13 +26,6 @@
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 4233.32 4233.32"
   >
-    <defs>
-      <style>
-        .fil0 {
-          fill: #fefefe;
-        }
-      </style>
-    </defs>
     <g id="Слой_x0020_1">
       <g id="_2521158034784">
         <path
