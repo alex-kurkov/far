@@ -5,7 +5,8 @@
     </div>
     <div class="mission__content">
       <div class="mission__info-wrapper">
-        <h2 class="mission__title">Наша миссия:</h2>
+        <h2 class="mission__title">Наша
+миссия:</h2>
         <p class="mission__text">
           способствовать развитию наркополитики, основанной на гуманности,
           терпимости, защите здоровья, достоинства и прав человека.
