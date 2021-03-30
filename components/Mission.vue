@@ -118,4 +118,8 @@ export default {
     padding-left: 12px;
   }
 }
+.test {
+  width: 30px;
+  height: auto;
+}
 </style>
