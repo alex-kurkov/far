@@ -183,10 +183,21 @@ export default {
 .navigation__link {
   text-decoration: none;
   color: #ffffff;
+  transition: opacity 0.5s linear;
+}
+
+.navigation__link:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .navigation__arrow {
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, opacity 0.5s linear;
+}
+
+.navigation__arrow:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .navigation__arrow_open {

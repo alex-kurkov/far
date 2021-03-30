@@ -143,6 +143,12 @@ export default {
   width: 48px;
   height: 42px;
   z-index: 10;
+  transition: opacity 0.5s linear;
+}
+
+.hamburger-icon:hover {
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {

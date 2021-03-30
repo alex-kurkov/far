@@ -57,6 +57,7 @@ export default {
 
 .navigation__sub-menu-item {
   background: #000000;
+  opacity: 1;
 }
 
 .navigation__sub-link {
@@ -68,6 +69,12 @@ export default {
   font-style: normal;
   letter-spacing: normal;
   line-height: 26px;
+  transition: opacity 0.5s linear;
+}
+
+.navigation__sub-link:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
