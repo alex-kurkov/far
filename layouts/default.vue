@@ -9,30 +9,51 @@
       group="breaking-news"
       closeOnClick="true" 
     />
+    
     <notifications 
       classes="notifications-wrap notifications-info" 
       group="app-informer" 
       closeOnClick="true"
+      position="bottom right"
+      animation-type="css"
       duration="10000"
-      max="1"
-    />
+      max="2"
+    >
+      <template slot="body" slot-scope="{ item, close }">
+        <div class="">
+          <p class="notification-title">
+            {{ item.title }}
+          </p>
+          <button class="close" @click="close">
+            Закрыть
+          </button>
+          <button class="close" @click="item.func">
+            Кастомная кнопка
+          </button>
+          <div v-html="props.item.text"/>
+          <div v-html="props.item.action"/>
+        </div>
+      </template>
+    </notifications>
   </div>
 </template>
 <script>
 export default {
   mounted() {
-    setTimeout(() => {
-      this.$notify({
-        group: 'app-informer',
-        title: 'Cookies',
-        text: 'Сайт использует куки-файлы - разве? <a>Понятно</a>'
-      })
-    });
+    this.$notify({
+      group: 'app-informer',
+      title: 'Cookies',
+      text: 'Сайт использует куки-файлы - разве?',
+      action: 'Понятно',
+      fn() {console.log('я понял и иду на это!')}
+    }, () => {})
     setTimeout(() => {
       this.$notify({
         group: 'app-informer',
         title: 'Подтвердите действие на странице rylkov-fond.org.',
-        text: 'Данные материалы изданы и (или) распространяются некоммерческой организацией, выполняющей функции иностранного агента. <a>Скачать материал</a>'
+        text: 'Данные материалы изданы и (или) распространяются некоммерческой организацией, выполняющей функции иностранного агента.',
+        action: 'Понятно',
+        fn() {console.log('я понял и иду на это!')}
       })
     }, 5000)
   }
@@ -62,8 +83,8 @@ export default {
   padding: 20px;
   margin: 12px;
   position: fixed;
-  right: 40px;
-  bottom: 40px;
+  bottom: 0;
+  right: 0;
   transition: 0.3s;
   box-shadow: 0 0 4px #000;
   z-index: 20;
