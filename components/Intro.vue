@@ -5,13 +5,17 @@
       Рылькова
     </h1>
     <div class="intro__images"></div>
-    <icon name="diamond" class="intro__image"></icon>
+    <Icon name="diamond" class="intro__image"></Icon>
   </section>
 </template>
 
 <script>
+import Icon from '~/components/Icon';
 export default {
   name: 'Intro',
+  components: {
+    Icon
+  }
 }
 </script>
 
