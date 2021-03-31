@@ -1,7 +1,7 @@
 <template>
   <section class="achievement">
     <h3 class="achievement__title">Итоги нашей работы в 2020</h3>
-    <Achievements />
+    <Achievements/>
     <div class="achievement__gethelp-wrapper">
       <nuxt-link to="#" class="achievement__gethelp-link"
         >Получить помощь &rsaquo;</nuxt-link
@@ -14,9 +14,11 @@
 </template>
 
 <script>
+import Achievements from '@/components/Achievements'
 import Icon from '~/components/Icon'
 export default {
   components: {
+    Achievements,
     Icon,
   },
 }

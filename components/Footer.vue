@@ -1,7 +1,7 @@
 <template>
   <section class="footer">
     <div class="footer__social">
-       <p class="footer__social-text">МЫ В СОЦСЕТЯХ</p>
+      <p class="footer__social-text">МЫ В СОЦСЕТЯХ</p>
       <Social />
       <Icon name="bond" class="footer__logo" />
     </div>
@@ -11,17 +11,23 @@
     </p>
     <p class="footer__license">
       За исключением специально оговоренных случаев, содержание сайта
-      залицензировано под <a class="footer__link" href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License</a>
+      залицензировано под
+      <a
+        class="footer__link"
+        href="https://creativecommons.org/licenses/by/3.0/"
+        >Creative Commons Attribution 3.0 License</a
+      >
     </p>
     <p class="footer__copyright">ФАР 2021</p>
   </section>
 </template>
 
 <script>
+import Icon from '@/components/Icon'
 import Social from '~/components/Social'
 export default {
   name: 'Footer',
-  components: { Social },
+  components: { Icon, Social },
 }
 </script>
 
@@ -39,14 +45,14 @@ export default {
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab',sans-serif;
   font-weight: 400;
   font-size: 11px;
   color: #999;
 }
 
 .footer__social-text {
-  font-family: 'Roboto Slab';
+  font-family: 'Roboto Slab',sans-serif;
   font-weight: 400;
 }
 
@@ -83,11 +89,11 @@ export default {
   padding: 25px 0 25px 0;
 }
 
-.footer__link{
+.footer__link {
   color: #999;
 }
 
-@media screen and (min-width: 500px) and (max-width: 1023px){
+@media screen and (min-width: 500px) and (max-width: 1023px) {
   .footer {
     grid-template-columns: auto;
     grid-template-rows: repeat(4, auto);
@@ -96,7 +102,7 @@ export default {
       'disclamer'
       'license'
       'copyright';
-      font-size: 30px;
+    font-size: 30px;
   }
   .footer__logo {
     width: 105px;
@@ -138,9 +144,8 @@ export default {
     width: 42px;
   }
 
-  .footer__copyright{
+  .footer__copyright {
     padding: 4px 0 25px 0;
   }
 }
-
 </style>
