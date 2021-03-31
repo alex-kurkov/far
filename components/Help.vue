@@ -270,6 +270,7 @@ export default {
   .help__ellipse_type_email {
     min-height: 101px;
     font-size: 25px;
+    margin: 0;
   }
 
   .help__side-text {

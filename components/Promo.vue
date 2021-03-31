@@ -104,6 +104,7 @@ export default {
 .promo__eye {
   margin: 20px 0;
   width: 100%;
+  max-height: 210px;
   grid-row: 4;
   grid-column: 1/4;
 }
@@ -112,6 +113,11 @@ export default {
   .promo {
     column-gap: 25px;
     background: linear-gradient(to bottom, #b23438 78px, #cbcbcb 78px);
+  }
+
+  .promo__eye {
+    max-height: 375px;
+    margin: 0;
   }
 
   .promo__donation {
@@ -149,6 +155,10 @@ export default {
     grid-template-columns:
       0.8fr minmax(min-content, max-content)
       minmax(min-content, max-content);
+  }
+
+  .promo__eye {
+    max-height: 410px;
   }
 
   .promo__donation {

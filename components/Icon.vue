@@ -59,6 +59,7 @@
     v-else-if="name === 'eye'"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 2709.32 1693.32"
+    preserveAspectRatio="none"
   >
     <g id="Слой_x0020_1">
       <g id="_2521316403456">
