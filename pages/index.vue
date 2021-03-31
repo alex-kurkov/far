@@ -13,7 +13,6 @@
 <script>
 import About from '@/components/About'
 import Achievement from '@/components/Achievement'
-import HeaderOld from '@/components/HeaderOld'
 import Help from '@/components/Help'
 import Intro from '@/components/Intro'
 import Mission from '@/components/Mission'
