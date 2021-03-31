@@ -21,7 +21,16 @@ import Promo from '@/components/Promo'
 import SubMenu from '@/components/SubMenu'
 import Support from '@/components/Support'
 export default {
-  components: { Support, SubMenu, Help, Achievement, Mission, Intro, Promo, About }
+  components: {
+    Support,
+    SubMenu,
+    Help,
+    Achievement,
+    Mission,
+    Intro,
+    Promo,
+    About,
+  },
 }
 </script>
 

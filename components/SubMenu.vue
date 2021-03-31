@@ -58,6 +58,7 @@ export default {
 .navigation__sub-menu-item {
   background: #000000;
   opacity: 1;
+
 }
 
 .navigation__sub-link {
@@ -70,6 +71,7 @@ export default {
   letter-spacing: normal;
   line-height: 26px;
   transition: opacity 0.5s linear;
+  text-transform: none;
 }
 
 .navigation__sub-link:hover {

@@ -47,7 +47,6 @@ export default {
 }
 
 @media screen and (min-width: 500px) {
-
   .intro__text {
     font-size: 43px;
     line-height: 0.9;
@@ -91,7 +90,7 @@ export default {
   }
 }
 
-@media screen and (min-width:1280px) {
+@media screen and (min-width: 1280px) {
   .intro {
     min-height: 128px;
   }

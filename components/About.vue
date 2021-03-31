@@ -57,7 +57,7 @@ export default {
   }
 }
 
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 640px) {
   .about__text {
     width: 520px;
     font-size: 48px;
@@ -72,7 +72,6 @@ export default {
   }
 }
 
-
 @media screen and (min-width: 769px) {
   .about__text {
     width: 600px;
@@ -81,7 +80,7 @@ export default {
     margin: 60px 0 88px 100px;
   }
 
-  .about__text::before{
+  .about__text::before {
     height: 11px;
     width: 93px;
     top: 20px;
@@ -93,5 +92,4 @@ export default {
     margin-left: 183px;
   }
 }
-
 </style>

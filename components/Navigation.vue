@@ -178,6 +178,7 @@ export default {
   letter-spacing: normal;
   font-family: PT, Arial, sans-serif;
   text-align: left;
+  text-transform: uppercase;
 }
 
 .navigation__link {
@@ -230,7 +231,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 639px) {
   .navigation {
     top: 5px;
     right: 5px;

@@ -20,7 +20,7 @@ export default {
 .header {
   width: 100%;
   height: 41px;
-  background: #b13438 repeat-x ;
+  background: #b13438 repeat-x;
   background-position: -194px 4px;
   background-size: 594px 60px;
 }
@@ -29,7 +29,7 @@ export default {
   .header {
     width: 100%;
     height: 64px;
-    background: #b13438 repeat-x ;
+    background: #b13438 repeat-x;
     background-position: -286px 15px;
     background-size: 1250px 76px;
   }
@@ -44,8 +44,4 @@ export default {
     }
   }
 }
-
-
-
-
 </style>
