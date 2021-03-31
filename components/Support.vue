@@ -5,16 +5,30 @@
       <h3 class="support__title">
         Поддержать <span class="support__span">ФАР</span>
       </h3>
-      <SmileIcon class="support__smile" backgroundColor="#fff" mainColor="#000" />
-      <Tumbler/>
-      <PayOptions :options="{ first: 'Карта', second: 'ЮMoney', third: 'Терминал' }" />
+      <SmileIcon
+        class="support__smile"
+        backgroundColor="#fff"
+        mainColor="#000"
+      />
+      <Tumbler />
+      <PayOptions
+        :options="{ first: 'Карта', second: 'ЮMoney', third: 'Терминал' }"
+      />
       <MoneyOptions :values="{ big: 1000, average: 500, small: 200 }" />
       <input class="support__input" type="text" required placeholder="Имя" />
-      <input class="support__input" type="email" required placeholder="Email"
+      <input
+        class="support__input"
+        type="email"
+        required
+        placeholder="Email"
         pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[a-z]{2,})\b"
       />
-      <button class="support__submit-btn" type="submit"> Перейти к оплате</button>
-      <NuxtLink class="support__link" to="#">Политика конфеденциальности</NuxtLink>
+      <button class="support__submit-btn" type="submit">
+        Перейти к оплате
+      </button>
+      <NuxtLink class="support__link" to="#"
+        >Политика конфеденциальности</NuxtLink
+      >
     </form>
   </section>
 </template>
@@ -145,7 +159,7 @@ export default {
 
 @media screen and (min-width: 500px) {
   .support__title {
-    word-wrap: none;
+    word-wrap: unset;
     width: 60%;
   }
 }
