@@ -1,6 +1,6 @@
 <template>
   <div class="hamburger">
-    <div class='hamburger__menu'>
+    <div class="hamburger__menu">
       <button
         class="hamburger-icon"
         @click="handleMenuClick"
@@ -22,14 +22,9 @@
         </svg>
       </button>
       <icon name="drop" class="hamburger__drop"></icon>
-
     </div>
     <transition name="falling-drop" @enter="enter" @after-enter="afterEnter">
-      <icon
-        v-show="isMenuOpen"
-        name="drop"
-        class="falling-drop"
-      ></icon>
+      <icon v-show="isMenuOpen" name="drop" class="falling-drop"></icon>
     </transition>
     <Navigation :isMenuOpen="isMenuOpen" />
   </div>
@@ -71,7 +66,7 @@ export default {
         this.greyDropTopPosition = 264
       } else if (window.innerWidth < 769 && window.innerWidth >= 640) {
         this.greyDropTopPosition = 304
-      } else if (window.innerWidth <640) {
+      } else if (window.innerWidth < 640) {
         this.greyDropTopPosition = 172
       }
     },
@@ -93,7 +88,7 @@ export default {
   position: relative;
 }
 
-.hamburger__menu{
+.hamburger__menu {
   position: absolute;
   top: 5px;
   right: 5px;
@@ -122,7 +117,7 @@ export default {
   cursor: pointer;
 }
 
-.hamburger-icon::after{
+.hamburger-icon::after {
   content: 'МЕНЮ';
   background-color: #000000;
   transform: translateY(152px) rotate(-90deg);
@@ -149,7 +144,7 @@ export default {
 
 .falling-drop {
   position: absolute;
-  right:13px;
+  right: 13px;
   fill: #8c8c8c;
   width: 22px;
   height: 40px;
@@ -161,13 +156,13 @@ export default {
 }
 
 @media screen and (min-width: 640px) {
-  .hamburger__menu{
-    top:10px;
-    right:10px;
+  .hamburger__menu {
+    top: 10px;
+    right: 10px;
     height: 355px;
   }
 
-  .hamburger-icon{
+  .hamburger-icon {
     width: 59px;
     height: 52px;
   }
@@ -187,20 +182,20 @@ export default {
   }
 
   .falling-drop {
-    right:22px;
+    right: 22px;
     width: 34px;
     height: 60px;
   }
 }
 
 @media screen and (min-width: 769px) {
-  .hamburger__menu{
-    top:10px;
-    right:10px;
+  .hamburger__menu {
+    top: 10px;
+    right: 10px;
     height: 316px;
   }
 
-  .hamburger-icon{
+  .hamburger-icon {
     width: 48px;
     height: 42px;
   }
@@ -215,7 +210,7 @@ export default {
   }
 
   .falling-drop {
-    right:17px;
+    right: 17px;
     width: 34px;
     height: 60px;
   }

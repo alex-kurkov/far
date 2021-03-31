@@ -144,16 +144,16 @@ export default {
 <style scoped>
 .navigation {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 5px;
+  right: 5px;
   background-color: black;
   z-index: 5;
 }
 
 .navigation__menu {
-  padding: 0 53px 0 17px;
+  padding: 0 44px 0 13px;
   list-style: none;
-  min-width: 300px;
+  min-width: 240px;
 }
 
 .navigation__main-menu-item {
@@ -162,7 +162,7 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  min-height: 50px;
+  min-height: 38px;
 }
 
 .navigation__main-menu-item_style {
@@ -172,7 +172,8 @@ export default {
 .navigation__menu-item {
   position: relative;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 16px;
+  line-height: 32px;
   font-weight: 400;
   font-style: normal;
   letter-spacing: normal;
@@ -206,13 +207,18 @@ export default {
 }
 
 .navigation__arrow-right {
-  width: 20px;
-  height: 20px;
+  width: 14px;
+  height: 14px;
   fill: #ffffff;
   cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 640px) {
+  .navigation {
+    top: 10px;
+    right: 10px;
+  }
+
   .navigation__menu {
     padding: 0 70px 0 20px;
     min-width: 370px;
@@ -231,28 +237,22 @@ export default {
   }
 }
 
-@media screen and (max-width: 639px) {
-  .navigation {
-    top: 5px;
-    right: 5px;
-  }
-
+@media screen and (min-width: 769px) {
   .navigation__menu {
-    padding: 0 44px 0 13px;
-    min-width: 240px;
+    padding: 0 53px 0 17px;
+    min-width: 300px;
   }
 
   .navigation__menu-item {
-    font-size: 16px;
-    line-height: 32px;
+    font-size: 20px;
   }
 
   .navigation__arrow-right {
-    width: 14px;
-    height: 14px;
+    width: 20px;
+    height: 20px;
   }
   .navigation__main-menu-item {
-    min-height: 38px;
+    min-height: 50px;
   }
 }
 

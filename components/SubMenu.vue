@@ -58,7 +58,6 @@ export default {
 .navigation__sub-menu-item {
   background: #000000;
   opacity: 1;
-
 }
 
 .navigation__sub-link {
