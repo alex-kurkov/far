@@ -10,8 +10,6 @@ export default {
     return {
       cssProps: {
         backgroundImage: `url(${BackGroundTextRu})`,
-        backgroundRepeat: 'repeat-x',
-        backgroundColor: '#b13438',
       },
     }
   },
@@ -21,21 +19,29 @@ export default {
 <style scoped>
 .header {
   width: 100%;
-  height: 52px;
-  background-position: 65px 19px;
+  height: 41px;
+  background: #b13438 repeat-x;
+  background-position: -194px 4px;
+  background-size: 594px 60px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 640px) {
   .header {
-    height: 65px;
-    background-position: 65px 27px;
+    width: 100%;
+    height: 64px;
+    background: #b13438 repeat-x;
+    background-position: -286px 15px;
+    background-size: 1250px 76px;
   }
-}
 
-@media screen and (max-width: 640px) {
-  .header {
-    height: 40px;
-    background-position: 65px 17px;
+  @media screen and (min-width: 769px) {
+    .header {
+      width: 100%;
+      height: 53px;
+      background: #b13438 repeat-x;
+      background-position: -286px 2px;
+      background-size: 1089px 81px;
+    }
   }
 }
 </style>

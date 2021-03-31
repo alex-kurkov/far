@@ -11,7 +11,26 @@
 </template>
 
 <script>
-export default {}
+import About from '@/components/About'
+import Achievement from '@/components/Achievement'
+import Help from '@/components/Help'
+import Intro from '@/components/Intro'
+import Mission from '@/components/Mission'
+import Promo from '@/components/Promo'
+import SubMenu from '@/components/SubMenu'
+import Support from '@/components/Support'
+export default {
+  components: {
+    Support,
+    SubMenu,
+    Help,
+    Achievement,
+    Mission,
+    Intro,
+    Promo,
+    About,
+  },
+}
 </script>
 
 <style>
