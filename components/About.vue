@@ -22,17 +22,17 @@ export default {
 }
 
 .about__text {
-  width: 600px;
+  width: 263px;
   min-height: 104px;
   color: #313131;
   font-family: Vollkorn, Arial, sans-serif;
-  font-size: 36px;
   font-style: italic;
+  font-size: 25px;
+  line-height: 23px;
   letter-spacing: normal;
   font-weight: normal;
-  line-height: 34px;
   text-align: left;
-  margin: 60px 0 88px 183px;
+  margin: 23px 0 23px 14px;
   padding: 0;
   position: relative;
 }
@@ -44,24 +44,20 @@ export default {
 .about__text::before {
   content: '';
   height: 11px;
-  width: 93px;
+  width: 71px;
   position: absolute;
   background-color: #b33438;
-  top: 20px;
+  top: 14px;
   left: 0;
 }
 
-.about__text_whitespace {
-  display: none;
-}
-
-@media screen and (max-width: 850px) {
+@media screen and (min-width: 450px) {
   .about__text {
-    margin-left: 100px;
+    width: 350px;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 650px) {
   .about__text {
     width: 520px;
     font-size: 48px;
@@ -73,29 +69,29 @@ export default {
     height: 18px;
     width: 107px;
     top: 26px;
-    left: 0;
   }
 }
 
-@media screen and (max-width: 640px) {
+
+@media screen and (min-width: 769px) {
   .about__text {
-    width: 350px;
-    font-size: 25px;
-    line-height: 23px;
-    margin: 23px 0 32px 14px;
+    width: 600px;
+    font-size: 36px;
+    line-height: 34px;
+    margin: 60px 0 88px 100px;
   }
 
-  .about__text::before {
+  .about__text::before{
     height: 11px;
-    width: 71px;
-    top: 14px;
-    left: 0;
+    width: 93px;
+    top: 20px;
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (min-width: 850px) {
   .about__text {
-    width: 263px;
+    margin-left: 183px;
   }
 }
+
 </style>
