@@ -1,15 +1,15 @@
 <template>
   <section class="achievement">
-    <h3 class="achievement__title">Итоги нашей работы в 2020</h3>
-    <Achievements />
-    <div class="achievement__gethelp-wrapper">
-      <nuxt-link to="#" class="achievement__gethelp-link"
-        >Получить помощь &rsaquo;</nuxt-link
-      >
-      <nuxt-link to="#" class="achievement__logo-link">
-        <Icon name="logo" class="achievement__logo" />
-      </nuxt-link>
-    </div>
+      <h3 class="achievement__title">Итоги нашей работы в 2020</h3>
+      <Achievements />
+      <div class="achievement__gethelp-wrapper">
+        <nuxt-link to="#" class="achievement__gethelp-link"
+          >Получить помощь &rsaquo;</nuxt-link
+        >
+        <nuxt-link to="#" class="achievement__logo-link">
+          <Icon name="logo" class="achievement__logo" />
+        </nuxt-link>
+      </div>
   </section>
 </template>
 
@@ -26,10 +26,11 @@ export default {
 
 <style>
 .achievement {
-  width: 100%;
+  width: 100vw;
   height: auto;
   background: #d5d5d5;
 }
+
 .achievement__title {
   font-family: 'Vollkorn', serif;
   font-weight: bold;
@@ -93,7 +94,10 @@ export default {
   .achievement {
     width: 44%;
     min-height: 440px;
+    max-width: 564px;
+    justify-self: center;
   }
+
   .achievement__title {
     padding: 27px 116px 21px 34px;
     font-size: 63px;
@@ -113,6 +117,5 @@ export default {
   .achievement__logo {
     display: none;
   }
-
 }
 </style>

@@ -131,6 +131,8 @@ export default {
   .card__text {
     margin-top: 10px;
     font-size: 21px;
+    /* sfsf */
+    max-width: 260px;
   }
 
   .card__info {

@@ -212,10 +212,11 @@ export default {
   .support {
     width: 56%;
     padding: 0;
+    max-width: 717px;
   }
 
-  .support .container:nth-child(7) {
-    order: 6;
+  .support .container__donations:nth-child(2) {
+    order: 1;
   }
 
   .support__sideblock {

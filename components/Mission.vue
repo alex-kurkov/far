@@ -36,11 +36,13 @@ export default {
 
 <style scoped>
 .mission {
-  width: 100%;
-  background: none;
+  width: 100vw;
+  background: #fff;
   height: auto;
   display: flex;
+  justify-content: flex-end;
 }
+
 .mission__sideblock {
   width: 100px;
   min-height: 440px;
@@ -122,6 +124,7 @@ export default {
 }
 .mission__graphics-road {
   width: 50%;
+
 }
 .mission__graphics-logo {
   width: 180px;
@@ -129,6 +132,7 @@ export default {
   align-self: center;
   transform: translateX(-20px);
 }
+
 @media screen and (min-width: 768px) {
   .mission__title {
     font-size: 54px;
@@ -178,6 +182,15 @@ export default {
   .mission {
     width: 56%;
     min-height: 597px;
+    max-width: 717px;
+    justify-self: center;
+  }
+
+  .mission__container {
+    width: 716px;
+    display: flex;
+    background: #fff;
+    justify-content: flex-end;
   }
 
   .mission__sideblock {

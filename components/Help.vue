@@ -234,7 +234,9 @@ export default {
   .help {
     width: 44%;
     justify-self: flex-end;
-    order: 7;
+    /* order: 7; */
+    order: 2;
+    max-width: 564px;
   }
 
   .help__title {
@@ -265,9 +267,15 @@ export default {
     display: block;
     position: absolute;
     padding: 0;
-    width: 140px;
-    bottom: 231px;
+    width: 150px;
+    bottom: 246px;
     right: 56px;
+
+  }
+
+  .help__logo {
+    width: 150px;
+    height: 100px;
   }
 
   .help__ellipse_type_tel {
