@@ -159,8 +159,13 @@ export default {
 
 @media screen and (min-width: 500px) {
   .support__title {
-    word-wrap: unset;
+    /* word-wrap: unset; */
     width: 60%;
+    letter-spacing: -3px;
+  }
+
+  .support__span {
+    letter-spacing: -10px;
   }
 }
 
@@ -171,8 +176,9 @@ export default {
 
   .support__title {
     font-size: 90px;
-    width: 65%;
+    width: 58%;
     line-height: 0.8;
+    -webkit-text-stroke: 2px #000;
   }
 
   .support__span {
@@ -206,10 +212,11 @@ export default {
   .support {
     width: 56%;
     padding: 0;
+    max-width: 717px;
   }
 
-  .support .container:nth-child(7) {
-    order: 6;
+  .support .container__donations:nth-child(2) {
+    order: 1;
   }
 
   .support__sideblock {
@@ -223,7 +230,6 @@ export default {
     font-size: 63px;
     line-height: 0.8;
     margin: 8px 0 0 118px;
-    -webkit-text-stroke: 2px #000;
   }
 
   .support__span {

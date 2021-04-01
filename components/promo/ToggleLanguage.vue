@@ -27,10 +27,10 @@ export default {
 <style scoped>
 .toggle-switcher {
   position: absolute;
-  top: 70px;
-  left: 20px;
-  width: 40px;
-  height: 30px;
+  bottom: 14px;
+  left: 14px;
+  width: 41px;
+  height: 41px;
   background-color: #313131;
   border-radius: 50%;
   display: grid;
@@ -39,7 +39,36 @@ export default {
 
 .toggle-switcher-link {
   color: #ffffff;
-  font-family: Vollkorn, Arial, sans-serif;
-  font-size: 20px;
+  font-family: 'Vollkorn', Arial, sans-serif;
+  font-style: italic;
+  text-transform: lowercase;
+  text-decoration: none;
+  font-size: 27px;
+}
+
+@media screen and (min-width: 768px) {
+  .toggle-switcher {
+    bottom: 24px;
+    left: 24px;
+    width: 74px;
+    height: 74px;
+  }
+
+  .toggle-switcher-link {
+    font-size: 50px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .toggle-switcher {
+    bottom: 18px;
+    left: 18px;
+    width: 55px;
+    height: 55px;
+  }
+
+  .toggle-switcher-link {
+    font-size: 37px;
+  }
 }
 </style>

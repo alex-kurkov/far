@@ -35,7 +35,7 @@ export default {
   fill: #b23438;
 }
 
-@media screen and (min-width: 500px) and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .social {
     max-width: 325px;
     padding: 60px 0 80px 0;

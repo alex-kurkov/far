@@ -1,22 +1,22 @@
 <template>
   <div>
     <section :style="cssProps" class="header" />
-    <ToggleLanguage />
+    <!-- <ToggleLanguage />
     <NuxtLink :to="localePath('index')" class="playground_1">
       {{ $t('text.mainPageLink') }}
     </NuxtLink>
     <NuxtLink :to="localePath('about')" class="playground_2">
       {{ $t('text.aboutPageLink') }}
-    </NuxtLink>
+    </NuxtLink> -->
   </div>
 </template>
 
 <script>
-import ToggleLanguage from '@/components/ToggleLanguage'
+// import ToggleLanguage from '@/components/ToggleLanguage'
 import BackGroundTextRu from './header/header-text-ru.svg'
 export default {
   name: 'Header',
-  components: { ToggleLanguage },
+  // components: { ToggleLanguage },
   data() {
     return {
       cssProps: {
