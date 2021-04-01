@@ -45,14 +45,14 @@ export default {
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  font-family: 'Roboto Slab',sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   font-weight: 400;
   font-size: 11px;
   color: #999;
 }
 
 .footer__social-text {
-  font-family: 'Roboto Slab',sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   font-weight: 400;
 }
 
