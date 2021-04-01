@@ -1,7 +1,7 @@
 <template>
   <section class="about">
-    <p>ЗДЕСЬ БУДЕТ БУДУЩАЯ СТРАНИЦА О НАС</p>
-    <p>с блоками:</p>
+    <p>{{ $t('text.aboutPageTitle') }}</p>
+
     <ul>
       <li>Кто такой Андрей Рыльков</li>
       <li>Миссия</li>
