@@ -9,45 +9,88 @@
       group="breaking-news"
       closeOnClick="true" 
     />
-    
     <notifications 
-      classes="notifications-wrap notifications-info" 
-      group="app-informer" 
+      group="app-informer"
+      :duration="50000"
+      :width="500"
+      animation-name="v-fade-left"
       closeOnClick="true"
-      position="bottom right"
-      animation-type="css"
-      duration="10000"
+      position="'top right'"
       max="2"
     >
-      <template slot="body" slot-scope="{ item, close }">
-        <div class="">
-          <p class="notification-title">
-            {{ item.title }}
-          </p>
-          <button class="close" @click="close">
-            Закрыть
+      <template slot="body" slot-scope="props">
+          <div class="notifications-wrap notifications-news">
+          <div class="custom-template-icon">
+            <i class="icon ion-android-checkmark-circle"></i>
+          </div>
+          <div class="custom-template-content">
+            <div class="custom-template-title">
+              {{ props }}
+
+              <p>
+                Random number: wfwewrandooom
+              </p>
+            </div>
+            <div class="custom-template-text"
+                  v-html="ewddwe"></div>
+          </div>
+          <button class="custom-template-close"
+                @click="props.item.data.approve">
+            <i class="icon ion-android-close"></i>НАЖМИ МЕНЯ
           </button>
-          <button class="close" @click="item.func">
-            Кастомная кнопка
-          </button>
-          <div v-html="props.item.text"/>
-          <div v-html="props.item.action"/>
         </div>
       </template>
     </notifications>
+   
   </div>
 </template>
 <script>
 export default {
+   methods: {
+    console() {
+      console.log('clicked!')
+    },
+    show (group, type = '') {
+      const text = `
+        This is notification text!
+        <br>
+        Date: ${new Date()}
+      `
+      this.$notify({
+        group,
+        title: `Test ${type} notification #${this.id++}`,
+        text,
+        type,
+        data: {
+          randomNumber: Math.random()
+        }
+      })
+    },
+    clean (group) {
+      this.$notify({ group, clean: true })
+    }
+  },
   mounted() {
+    /* show('app-informer') */
     this.$notify({
       group: 'app-informer',
       title: 'Cookies',
-      text: 'Сайт использует куки-файлы - разве?',
-      action: 'Понятно',
-      fn() {console.log('я понял и иду на это!')}
-    }, () => {})
-    setTimeout(() => {
+      text: {s: 'Сайт использует куки-файлы - разве?', action: function() {console.log(this)}},
+      data: {
+        approve: () => {console.log('Понятно')},
+        approveText: 'Gjyznyj'
+        },
+    });
+    this.$notify({
+      group: 'app-informer',
+      title: 'Cookies',
+      text: {s: 'Сайт использует куки-файлы - разве?', action: function() {console.log(this)}},
+      data: {
+        approve: () => {console.log('Понятно')},
+        approveText: 'Gjyznyj'
+        },
+    })
+/*     setTimeout(() => {
       this.$notify({
         group: 'app-informer',
         title: 'Подтвердите действие на странице rylkov-fond.org.',
@@ -55,7 +98,7 @@ export default {
         action: 'Понятно',
         fn() {console.log('я понял и иду на это!')}
       })
-    }, 5000)
+    }, 5000) */
   }
 }
 </script>
@@ -82,9 +125,7 @@ export default {
   border-radius: 20px;
   padding: 20px;
   margin: 12px;
-  position: fixed;
-  bottom: 0;
-  right: 0;
+  position: absolute;
   transition: 0.3s;
   box-shadow: 0 0 4px #000;
   z-index: 20;
