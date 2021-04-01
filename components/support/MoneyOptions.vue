@@ -2,7 +2,13 @@
   <ul class="money-options">
     <li class="money-options__option">
       <label class="money-options__radio-label">
-        <input type="radio" name="money" class="money-options__radio" :value="values.big" v-model="choice" />
+        <input
+          type="radio"
+          name="money"
+          class="money-options__radio"
+          :value="values.big"
+          v-model="choice"
+        />
         <span class="money-options__option-btn">
           {{ values.big }}<span class="money-options__ruble">&#8381;</span>
         </span>
@@ -10,23 +16,47 @@
     </li>
     <li class="money-options__option">
       <label class="money-options__radio-label">
-        <input type="radio" name="money" class="money-options__radio" :value="values.average" v-model="choice" />
+        <input
+          type="radio"
+          name="money"
+          class="money-options__radio"
+          :value="values.average"
+          v-model="choice"
+        />
         <span class="money-options__option-btn">
-          {{ values.average }}<span class="money-options__ruble">&#8381;</span></span>
+          {{ values.average
+          }}<span class="money-options__ruble">&#8381;</span></span
+        >
       </label>
     </li>
     <li class="money-options__option">
       <label class="money-options__radio-label">
-        <input type="radio" name="money" class="money-options__radio" :value="values.small" v-model="choice" />
+        <input
+          type="radio"
+          name="money"
+          class="money-options__radio"
+          :value="values.small"
+          v-model="choice"
+        />
         <span class="money-options__option-btn">
           {{ values.small }}<span class="money-options__ruble">&#8381;</span>
         </span>
       </label>
     </li>
     <li class="money-options__sum-option">
-      <input class="money-options__sum" type="text" pattern="\d+" placeholder="Другая сумма" />
+      <input
+        class="money-options__sum"
+        type="text"
+        pattern="\d+"
+        placeholder="Другая сумма"
+      />
       <label class="money-options__agreement">
-        <input type="checkbox" class="money-options__checkbox" value="" v-model="choice" />
+        <input
+          type="checkbox"
+          class="money-options__checkbox"
+          value=""
+          v-model="choice"
+        />
         <span class="money-options__agreement-check"></span>
         <span class="money-options__agreement-text">
           Согласен<a class="money-options__agreement-link">с офертой</a>
@@ -49,8 +79,10 @@ export default {
       }),
     },
   },
-  data: {
-    choice: '',
+  data() {
+    return {
+      choice: '',
+    }
   },
 }
 </script>

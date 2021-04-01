@@ -27,8 +27,10 @@
 </template>
 
 <script>
+import Icon from '@/components/Icon'
 export default {
   name: 'Mission',
+  components: { Icon },
 }
 </script>
 

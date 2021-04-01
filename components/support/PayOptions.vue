@@ -2,19 +2,34 @@
   <ul class="pay-options">
     <li class="pay-options__option">
       <label class="pay-options__radio-label">
-        <input type="radio" name="payment" class="pay-options__radio" value="card" />
+        <input
+          type="radio"
+          name="payment"
+          class="pay-options__radio"
+          value="card"
+        />
         <span class="pay-options__option-btn">{{ options.first }}</span>
       </label>
     </li>
     <li class="pay-options__option">
       <label class="pay-options__radio-label">
-        <input type="radio" name="payment" class="pay-options__radio" value="umoney" />
+        <input
+          type="radio"
+          name="payment"
+          class="pay-options__radio"
+          value="umoney"
+        />
         <span class="pay-options__option-btn">{{ options.second }}</span>
       </label>
     </li>
     <li class="pay-options__option">
       <label class="pay-options__radio-label">
-        <input type="radio" name="payment" class="pay-options__radio" value="terminal" />
+        <input
+          type="radio"
+          name="payment"
+          class="pay-options__radio"
+          value="terminal"
+        />
         <span class="pay-options__option-btn">{{ options.third }}</span>
       </label>
     </li>

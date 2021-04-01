@@ -75,7 +75,7 @@ export default {
 }
 
 .promo__link {
-  font-family: 'Vollkorn';
+  font-family: 'Vollkorn', Arial,sans-serif;
   font-weight: 700;
   color: #b23438;
   text-decoration: none;
