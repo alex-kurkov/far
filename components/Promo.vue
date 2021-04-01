@@ -118,6 +118,8 @@ export default {
   .promo__eye {
     max-height: 375px;
     margin: 0;
+    max-width: 778px;
+    justify-self: center;
   }
 
   .promo__donation {

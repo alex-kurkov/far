@@ -36,7 +36,8 @@ export default {
 
 <style scoped>
 .mission {
-  width: 56%;
+  /* width: 56%; */
+  width: 100%;
   background: none;
   height: 440px;
   display: flex;
@@ -44,6 +45,7 @@ export default {
 .mission__sideblock {
   width: 100px;
   background: #d5d5d5;
+  display: none;
 }
 .mission__info-wrapper {
   display: block;
@@ -116,5 +118,16 @@ export default {
   .mission__about-link {
     padding-left: 12px;
   }
+}
+
+@media screen and (min-width: 1280px) {
+  .mission {
+    width: 56%;
+  }
+
+  .mission__sideblock {
+    display: block;
+  }
+
 }
 </style>

@@ -185,6 +185,7 @@ export default {
   .help__title {
     font-size: 90px;
     padding: 32px 294px 39px 53px;
+    letter-spacing: -3px;
   }
 
   .help__blade {
@@ -265,7 +266,7 @@ export default {
     position: absolute;
     padding: 0;
     width: 140px;
-    bottom: 292px;
+    bottom: 231px;
     right: 56px;
   }
 

@@ -166,12 +166,62 @@ export default {
 .swiper-container {
   z-index: 5;
 }
-@media screen and (max-width: 768px) {
-  .achievements {
-    overflow: hidden;
+@media screen and (min-width: 768px) {
+  .achievements__swiper-btn-next {
+    height: 46px;
   }
-  .achievements__carousel {
-    overflow: hidden;
+
+  .achievements__swiper-btn-prev {
+    height: 46px;
+  }
+
+  .swiper-pagination-bullet {
+    width: 17px;
+    height: 17px;
+    margin: 12px;
+  }
+
+  .achievements__swiper-pagination {
+    margin: 0 30px;
+  }
+
+  .achievements__swiper-controls {
+    padding: 0 0 52px 0;
+  }
+
+  .achievements__stamp-icon {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media screen and (min-width:1280px) {
+.achievements__swiper-btn-next {
+    height: 35px;
+  }
+
+  .achievements__swiper-btn-prev {
+    height: 35px;
+  }
+
+  .swiper-pagination-bullet {
+    width: 14px;
+    height: 14px;
+    margin: 9px;
+  }
+
+  .achievements__swiper-pagination {
+    margin: 0 29px;
+  }
+
+  .achievements__swiper-controls {
+    padding: 0 0 29px 0;
+  }
+
+  .achievements__stamp-icon {
+    width: 283px;
+    height: 283px;
+    left: -83px;
   }
 }
 </style>

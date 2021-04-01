@@ -56,12 +56,13 @@ export default {
   font-size: 104px;
   color: #fff;
   z-index: 6;
-  transform: translateX(-22px);
+  transform: translateX(-16px);
 }
 .card__title {
   color: #b23438;
   font-family: 'Vollkorn', 'Times New Roman', serif;
-  font-size: 28px;
+  /* font-size: 28px; */
+  font-size: 18px;
   font-weight: 700;
   line-height: 1.15;
   text-align: left;
@@ -81,10 +82,59 @@ export default {
   overflow: hidden;
   color: #313131;
   text-align: left;
+  line-height: 1;
 }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
+  .card {
+    height: 400px;
+  }
+
+  .card__stamp {
+    width: 535px;
+  }
+
   .card__stamp-text {
-    transform: translateX(-16px);
+    font-size: 278px;
+  }
+
+  .card__title {
+    font-size: 45px;
+    margin-bottom: 35px;
+    word-break: break-word;
+  }
+
+  .card__text {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .card {
+    height: 283px;
+  }
+
+  .card__stamp {
+    width: 182px;
+  }
+
+  .card__stamp-text {
+    transform: translateX(-22px);
+    font-size: 168px;
+  }
+
+  .card__title {
+    font-size: 29px;
+    margin-bottom: 10px;
+    word-break: break-word;
+  }
+
+  .card__text {
+    margin-top: 10px;
+    font-size: 21px;
+  }
+
+  .card__info {
+    padding: 0 95px 0 42px;
   }
 }
 </style>

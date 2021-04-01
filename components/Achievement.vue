@@ -6,7 +6,7 @@
       <nuxt-link to="#" class="achievement__gethelp-link"
         >Получить помощь &rsaquo;</nuxt-link
       >
-      <nuxt-link to="#">
+      <nuxt-link to="#" class="achievement__logo-link">
         <Icon name="logo" class="achievement__logo" />
       </nuxt-link>
     </div>
@@ -26,9 +26,9 @@ export default {
 
 <style>
 .achievement {
-  width: 44%;
+  width: 100%;
+  height: auto;
   background: #d5d5d5;
-  height: 440px;
 }
 .achievement__title {
   font-family: 'Vollkorn', serif;
@@ -37,7 +37,6 @@ export default {
   line-height: 0.8;
   padding: 16px;
   color: #d5d5d5;
-  /*   text-shadow: 0 0 4px #000; */
   -webkit-text-stroke: 1px #000;
   text-align: left;
 }
@@ -45,15 +44,17 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 8px 8px 8px 24px;
+  padding: 26px 8px 19px 16px;
+  flex-direction: column;
 }
 .achievement__logo-link {
-  display: none;
+  align-self: flex-end;
 }
 .achievement__logo {
   width: 180px;
   height: auto;
-  display: none;
+  display: block;
+  align-self: flex-end;
 }
 .achievement__gethelp-link {
   font-family: 'Vollkorn', serif;
@@ -65,16 +66,53 @@ export default {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
-@media screen and (max-width: 768px) {
-  .achievement {
-    width: 100%;
-    height: auto;
+@media screen and (min-width: 768px) {
+  .achievement__title {
+    padding: 57px 102px 40px 53px;
+    font-size: 90px;
+    letter-spacing: -3px;
+    -webkit-text-stroke: 2px #000;
   }
-  .achievement__logo {
-    display: block;
-  }
+
   .achievement__gethelp-wrapper {
-    padding: 8px;
+    padding: 27px 42px 49px 53px;
+    flex-direction: row;
   }
+
+  .achievement__gethelp-link {
+    font-size: 34px;
+  }
+
+  .achievement__logo {
+    width: 231px;
+    height: 178px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .achievement {
+    width: 44%;
+    min-height: 440px;
+  }
+  .achievement__title {
+    padding: 27px 116px 21px 34px;
+    font-size: 63px;
+    letter-spacing: -3px;
+    -webkit-text-stroke: 2px #000;
+  }
+
+  .achievement__gethelp-wrapper {
+    padding: 31px 0 38px;
+    justify-content: center;
+  }
+
+  .achievement__gethelp-link {
+    font-size: 22px;
+  }
+
+  .achievement__logo {
+    display: none;
+  }
+
 }
 </style>
