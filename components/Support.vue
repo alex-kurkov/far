@@ -15,14 +15,39 @@
         :options="{ first: 'Карта', second: 'ЮMoney', third: 'Терминал' }"
       />
       <MoneyOptions :values="{ big: 1000, average: 500, small: 200 }" />
-      <input class="support__input" type="text" required placeholder="Имя" />
       <input
         class="support__input"
+        :class="{ support__input_invalid: $v.formData.name.$invalid }"
+        type="text"
+        name="name"
+        required
+        placeholder="Имя"
+        v-model.trim="$v.formData.name.$model"
+      />
+      <div class="support__input-error">
+        <span v-if="!$v.formData.name.required">Введите имя</span>
+        <span v-if="!$v.formData.name.minLength"
+          >Минимальная длина {{ $v.formData.name.$params.minLength.min }}
+        </span>
+        <span v-if="!$v.formData.name.maxLength"
+          >Максимальная длина {{ $v.formData.name.$params.maxLength.max }}
+        </span>
+      </div>
+      <input
+        class="support__input"
+        :class="{ 'support__input_invalid': $v.formData.email.$invalid }"
         type="email"
+        name="email"
         required
         placeholder="Email"
         pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[a-z]{2,})\b"
       />
+      <div class="support__input-error">
+        <span v-if="!$v.formData.email.required">Введите почту</span>
+        <span v-if="!$v.formData.email.email"
+          >Введите электронную почту в правильном формате
+        </span>
+      </div>
       <button class="support__submit-btn" type="submit">
         Перейти к оплате
       </button>
@@ -38,6 +63,8 @@ import SmileIcon from './icons/smile'
 import PayOptions from './support/PayOptions'
 import MoneyOptions from './support/MoneyOptions'
 import Tumbler from './support/Tumbler'
+import { required, minLength, maxLength, email } from 'vuelidate/lib/validators'
+
 export default {
   name: 'Support',
   components: {
@@ -45,6 +72,36 @@ export default {
     PayOptions,
     MoneyOptions,
     Tumbler,
+  },
+  data() {
+    return {
+      formData: {
+        name: '',
+        email: '',
+      },
+    }
+  },
+  validations: {
+    formData: {
+      name: {
+        required,
+        minLength: minLength(2),
+        maxLength: maxLength(30),
+      },
+      email: {
+        required,
+        email,
+        // isUnique(value) {
+        //   if (value === '') return true
+        //   const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[a-z]{2,})\b/
+        //   return new Promise((resolve) => {
+        //     setTimeout(() => {
+        //       resolve(emailRegex.test(value))
+        //     }, 350 + Math.random() * 300)
+        //   })
+        // },
+      },
+    },
   },
 }
 </script>
@@ -113,9 +170,37 @@ export default {
   padding: 0 0 0 13px;
 }
 
+.support__input_invalid {
+  color: #727272;
+}
+
+.support__invalid-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid #727272;
+  color: #727272;
+  font-family: 'Vollkorn', sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 0.7;
+  margin: 0 0 18px 0;
+  padding: 0 0 0 13px;
+}
+
 .support__input:focus {
   outline: none;
   border-bottom: 1px solid #000;
+}
+
+.support__input-error {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.2;
+  color: #ee3465;
+  min-height: 12px;
+  margin: 0 0 5px 0;
 }
 
 .support__submit-btn {
