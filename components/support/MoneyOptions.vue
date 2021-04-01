@@ -95,6 +95,7 @@ export default {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  max-width: 283px;
 }
 
 .money-options__option {
@@ -225,15 +226,10 @@ export default {
   cursor: pointer;
 }
 
-@media screen and (min-width: 500px) {
-  .money-options__option:nth-of-type(3) {
-    margin: 0 0 0 17px;
-  }
-}
-
 @media screen and (min-width: 768px) {
   .money-options {
     margin: 26px 0;
+    max-width: 575px;
   }
 
   .money-options__option:first-of-type {
@@ -277,12 +273,6 @@ export default {
   .money-options__checkbox:checked + .money-options__agreement-check::before {
     content: '✓';
     font-size: 33px;
-  }
-}
-
-@media screen and (min-width: 982px) {
-  .money-options__option:nth-of-type(3) {
-    margin: 0 0 0 27px;
   }
 }
 

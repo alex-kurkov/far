@@ -103,11 +103,11 @@ export default {
 
   .achievement__gethelp-wrapper {
     padding: 31px 0 38px;
-    justify-content: center;
   }
 
   .achievement__gethelp-link {
     font-size: 22px;
+    margin: 0 0 0 136px;
   }
 
   .achievement__logo {

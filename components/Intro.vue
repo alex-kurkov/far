@@ -50,7 +50,7 @@ export default {
   display: none;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 768px) {
   .intro__text {
     font-size: 43px;
     line-height: 0.9;
@@ -65,7 +65,7 @@ export default {
   }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1280px) {
   .intro {
     display: flex;
     flex-direction: row;
@@ -88,23 +88,6 @@ export default {
   .intro__images {
     display: block;
     width: 44%;
-    min-height: 128px;
-    background: center/90px 82px url('./intro/diamond.svg') #fff;
-    background-repeat: space no-repeat;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .intro {
-    min-height: 128px;
-  }
-
-  .intro__text {
-    font-size: 36px;
-    line-height: 0.8;
-  }
-
-  .intro__images {
     min-height: 128px;
     background: center/110px 82px url('./intro/diamond.svg') #fff;
     background-repeat: space no-repeat;
