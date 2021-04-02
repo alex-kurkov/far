@@ -108,9 +108,6 @@ export default {
       ]
     },
   },
-  mounted() {
-    console.log('Current Swiper instance object', this.swiper)
-  },
 }
 </script>
 
@@ -195,8 +192,8 @@ export default {
   }
 }
 
-@media screen and (min-width:1280px) {
-.achievements__swiper-btn-next {
+@media screen and (min-width: 1280px) {
+  .achievements__swiper-btn-next {
     height: 35px;
   }
 

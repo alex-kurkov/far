@@ -4,102 +4,81 @@
     <Header />
     <Nuxt />
     <Footer />
-    <notifications 
-      classes="notifications-wrap notifications-news"
-      group="breaking-news"
-      closeOnClick="true" 
-    />
-    <notifications 
-      group="app-informer"
-      :duration="50000"
-      :width="500"
-      animation-name="v-fade-left"
-      closeOnClick="true"
-      position="'top right'"
-      max="2"
-    >
-      <template slot="body" slot-scope="props">
-          <div class="notifications-wrap notifications-news">
-          <div class="custom-template-icon">
-            <i class="icon ion-android-checkmark-circle"></i>
+    <notifications group="notification" position="right bottom" :max="2">
+      <template slot="body" slot-scope="{ item, close }">
+        <div
+          :class="`notification notification_type_${item.data.type}`"
+          @click="close"
+        >
+          <!--           <div class="icon">
+            <i class="icon-svg" @click="close"></i>
+          </div> -->
+          <div class="notification__content">
+            <h4 class="notification__title" v-html="item.title" />
+            <p class="notification__text" v-html="item.text" />
+            <div
+              v-if="item.data.action"
+              class="notification__btn"
+              v-html="item.data.actionBtnText"
+              @click.prevent="item.data.action"
+            />
           </div>
-          <div class="custom-template-content">
-            <div class="custom-template-title">
-              {{ props }}
-
-              <p>
-                Random number: wfwewrandooom
-              </p>
-            </div>
-            <div class="custom-template-text"
-                  v-html="ewddwe"></div>
-          </div>
-          <button class="custom-template-close"
-                @click="props.item.data.approve">
-            <i class="icon ion-android-close"></i>НАЖМИ МЕНЯ
-          </button>
         </div>
       </template>
     </notifications>
-   
   </div>
 </template>
 <script>
 export default {
-   methods: {
-    console() {
-      console.log('clicked!')
-    },
-    show (group, type = '') {
-      const text = `
-        This is notification text!
-        <br>
-        Date: ${new Date()}
-      `
-      this.$notify({
-        group,
-        title: `Test ${type} notification #${this.id++}`,
-        text,
-        type,
-        data: {
-          randomNumber: Math.random()
-        }
-      })
-    },
-    clean (group) {
+  methods: {
+    clean(group) {
       this.$notify({ group, clean: true })
-    }
+    },
   },
   mounted() {
-    /* show('app-informer') */
     this.$notify({
-      group: 'app-informer',
-      title: 'Cookies',
-      text: {s: 'Сайт использует куки-файлы - разве?', action: function() {console.log(this)}},
+      group: 'notification',
+      title: 'Cookies.',
+      text: 'Сайт использует куки-файлы',
+      closeOnClick: true,
+      duration: -1,
       data: {
-        approve: () => {console.log('Понятно')},
-        approveText: 'Gjyznyj'
+        type: 'info',
+        action: () => {
+          console.log('куки приняты, согласие записано в $store')
         },
-    });
-    this.$notify({
-      group: 'app-informer',
-      title: 'Cookies',
-      text: {s: 'Сайт использует куки-файлы - разве?', action: function() {console.log(this)}},
-      data: {
-        approve: () => {console.log('Понятно')},
-        approveText: 'Gjyznyj'
-        },
+        actionBtnText: 'Понятно',
+      },
     })
-/*     setTimeout(() => {
+    setTimeout(() => {
       this.$notify({
-        group: 'app-informer',
-        title: 'Подтвердите действие на странице rylkov-fond.org.',
-        text: 'Данные материалы изданы и (или) распространяются некоммерческой организацией, выполняющей функции иностранного агента.',
-        action: 'Понятно',
-        fn() {console.log('я понял и иду на это!')}
+        group: 'notification',
+        title: 'Подтвердите действие на странице',
+        text:
+          'Данные материалы изданы и(или) распространяются некоммерческой организацией, выполняющей функции иностранного агента',
+        duration: -1,
+        data: {
+          type: 'info',
+          action: () => {
+            console.log('loading....')
+          },
+          actionBtnText: 'Скачать материал',
+        },
       })
-    }, 5000) */
-  }
+    }, 30000)
+    setTimeout(() => {
+      this.$notify({
+        group: 'notification',
+        title: 'Срочная новость',
+        text: 'Я устал, я ухожу. Версия 2021 - реальность или миф?',
+        closeOnClick: true,
+        duration: 7000,
+        data: {
+          type: 'news',
+        },
+      })
+    }, 10000)
+  },
 }
 </script>
 
@@ -112,52 +91,65 @@ export default {
 }
 
 .body {
+  display: block;
   margin: 0 auto;
   /* max-width: 1280px; */
   width: 100%;
-  position: relative;
   font-family: Vollkorn, Arial, sans-serif;
 }
-
-.notifications-wrap {
-  width: 300px;
+.vue-notification-group {
+  position: fixed;
+  display: block;
+  box-sizing: border-box;
+  width: 320px;
+  z-index: 10000;
+}
+.notification {
+  width: 88%;
+  box-sizing: border-box;
   min-height: 128px;
   border-radius: 20px;
   padding: 20px;
-  margin: 12px;
-  position: absolute;
-  transition: 0.3s;
+  margin: 24px;
   box-shadow: 0 0 4px #000;
-  z-index: 20;
   cursor: pointer;
 }
-.notifications-wrap a {
-  margin-top: 8px;
-  display: block;
-  font-family: 'Vollkorn', sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: #ff0000;
-}
-.notifications-news {
+.notification_type_news {
   background: #000;
   color: #fff;
 }
-.notifications-info {
+.notification_type_info {
   background: #fff;
   color: #000;
 }
-.notification-title {
+
+.notification__content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-content: flex-start;
+  justify-items: flex-start;
+}
+.notification__title {
   font-family: 'Vollkorn', sans-serif;
   font-size: 24px;
   font-weight: 700;
 }
-.notification-content {
+.notification__text {
   color: #666666;
   font-family: Roboto, sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 19px;
   text-align: left;
+}
+.notification__btn {
+  cursor: pointer;
+  display: block;
+  font-family: 'Vollkorn', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ff0000;
+  text-decoration: underline;
 }
 </style>

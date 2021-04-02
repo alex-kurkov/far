@@ -2,13 +2,12 @@
   <section class="intro">
     <div class="intro__container">
       <h1 class="intro__text">
-      Фонд содействия защите здоровья и социальной справедливости имени Андрея
-      Рылькова
-    </h1>
-    <div class="intro__images"></div>
-    <Icon name="diamond" class="intro__image"></Icon>
+        Фонд содействия защите здоровья и социальной справедливости имени Андрея
+        Рылькова
+      </h1>
+      <div class="intro__images"></div>
+      <Icon name="diamond" class="intro__image"></Icon>
     </div>
-
   </section>
 </template>
 
