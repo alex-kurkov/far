@@ -113,7 +113,7 @@ export default {
 
 .body {
   margin: 0 auto;
-  max-width: 1280px;
+  /* max-width: 1280px; */
   width: 100%;
   position: relative;
   font-family: Vollkorn, Arial, sans-serif;

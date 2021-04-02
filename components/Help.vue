@@ -6,21 +6,32 @@
       защиты прав, консультации психолога, профилактические материалы и тд,
       свяжитесь с нами
     </p>
-    <icon name="blade" class="help__blade"></icon>
+    <Icon name="blade" class="help__blade"></Icon>
     <nuxt-link to="#" class="help__link">Подробнее &rsaquo;</nuxt-link>
-    <a href="tel:+7926-897-90-87" class="help__ellipse help__ellipse_type_tel">+7-(926)-897-90-87</a>
-    <a href="mailto:rylkov.foundation@gmail.com" target="_blank" rel="noreferrer noopener"
-      class="help__ellipse help__ellipse_type_email">rylkov.foundation@gmail.com</a>
+    <a href="tel:+7926-897-90-87" class="help__ellipse help__ellipse_type_tel"
+      >+7-(926)-897-90-87</a
+    >
+    <a
+      href="mailto:rylkov.foundation@gmail.com"
+      target="_blank"
+      rel="noreferrer noopener"
+      class="help__ellipse help__ellipse_type_email"
+      >rylkov.foundation@gmail.com</a
+    >
     <nuxt-link to="#" class="help__logo-link">
-        <Icon name="logo" class="help__logo" />
+      <Icon name="logo" class="help__logo" />
     </nuxt-link>
     <p class="help__side-text">TELEGRAM/WHATSAPPMAIL</p>
   </section>
 </template>
 
 <script>
+import Icon from '~/components/Icon'
 export default {
   name: 'Help',
+  components: {
+    Icon,
+  },
 }
 </script>
 
@@ -159,21 +170,22 @@ export default {
 .help__side-text {
   position: absolute;
   transform: rotate(-90deg);
-  bottom:290px;
+  bottom: 290px;
   right: -219px;
   font-family: 'Vollkorn', sans-serif;
   font-weight: 700;
   font-size: 34px;
   font-style: italic;
   line-height: 0.9;
-  color:transparent;
+  color: transparent;
   -webkit-text-stroke: 1px #b23438;
 }
 
 @media screen and (min-width: 768px) {
   .help__title {
     font-size: 90px;
-    padding: 32px 294px 39px 53px ;
+    padding: 32px 294px 39px 53px;
+    letter-spacing: -3px;
   }
 
   .help__blade {
@@ -222,7 +234,9 @@ export default {
   .help {
     width: 44%;
     justify-self: flex-end;
-    order: 7;
+    /* order: 7; */
+    order: 2;
+    max-width: 564px;
   }
 
   .help__title {
@@ -253,9 +267,15 @@ export default {
     display: block;
     position: absolute;
     padding: 0;
-    width: 140px;
-    bottom: 292px;
+    width: 150px;
+    bottom: 246px;
     right: 56px;
+
+  }
+
+  .help__logo {
+    width: 150px;
+    height: 100px;
   }
 
   .help__ellipse_type_tel {
@@ -266,6 +286,7 @@ export default {
   .help__ellipse_type_email {
     min-height: 101px;
     font-size: 25px;
+    margin: 4px 0 0 0;
   }
 
   .help__side-text {
@@ -274,8 +295,7 @@ export default {
     font-style: normal;
     bottom: 488px;
     right: -12px;
-    clip: rect(auto, 673px, auto, auto)
+    clip: rect(auto, 673px, auto, auto);
   }
 }
-
 </style>

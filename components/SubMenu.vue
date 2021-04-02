@@ -64,12 +64,13 @@ export default {
   text-decoration: none;
   color: #ffffff;
   font-family: PT, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 400;
   font-style: normal;
   letter-spacing: normal;
   line-height: 26px;
   transition: opacity 0.5s linear;
+  text-transform: none;
 }
 
 .navigation__sub-link:hover {
@@ -77,15 +78,15 @@ export default {
   cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 640px) {
   .navigation__sub-link {
     font-size: 22px;
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (min-width: 769px) {
   .navigation__sub-link {
-    font-size: 14px;
+    font-size: 18px;
   }
 }
 
