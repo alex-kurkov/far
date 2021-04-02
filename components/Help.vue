@@ -270,7 +270,6 @@ export default {
     width: 150px;
     bottom: 246px;
     right: 56px;
-
   }
 
   .help__logo {

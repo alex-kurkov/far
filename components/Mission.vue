@@ -124,7 +124,6 @@ export default {
 }
 .mission__graphics-road {
   width: 50%;
-
 }
 .mission__graphics-logo {
   width: 180px;

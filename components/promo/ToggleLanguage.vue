@@ -1,8 +1,8 @@
 <template>
   <div class="toggle-switcher">
     <NuxtLink
-      v-for="(locale, i) in showLocales"
-      :key="i"
+      v-for="locale in showLocales"
+      :key="locale.code"
       :to="switchLocalePath(locale.code)"
       class="toggle-switcher-link"
     >

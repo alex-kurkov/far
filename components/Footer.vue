@@ -1,24 +1,24 @@
 <template>
   <section class="footer">
-      <div class="footer__social">
-        <p class="footer__social-text">МЫ В СОЦСЕТЯХ</p>
-        <Social />
-        <Icon name="bond" class="footer__logo" />
-      </div>
-      <p class="footer__disclaimer">
-        Материалы изданы и (или) распространены некоммерческой организацией,
-        выполняющей, по мнению Минюста России, функции иностранного агента
-      </p>
-      <p class="footer__license">
-        За исключением специально оговоренных случаев, содержание сайта
-        залицензировано под
-        <a
-          class="footer__link"
-          href="https://creativecommons.org/licenses/by/3.0/"
-          >Creative Commons Attribution 3.0 License</a
-        >
-      </p>
-      <p class="footer__copyright">ФАР 2021</p>
+    <div class="footer__social">
+      <p class="footer__social-text">МЫ В СОЦСЕТЯХ</p>
+      <Social />
+      <Icon name="bond" class="footer__logo" />
+    </div>
+    <p class="footer__disclaimer">
+      Материалы изданы и (или) распространены некоммерческой организацией,
+      выполняющей, по мнению Минюста России, функции иностранного агента
+    </p>
+    <p class="footer__license">
+      За исключением специально оговоренных случаев, содержание сайта
+      залицензировано под
+      <a
+        class="footer__link"
+        href="https://creativecommons.org/licenses/by/3.0/"
+        >Creative Commons Attribution 3.0 License</a
+      >
+    </p>
+    <p class="footer__copyright">ФАР 2021</p>
   </section>
 </template>
 

@@ -46,7 +46,6 @@ export default {
   text-align: center;
   flex-wrap: wrap;
   overflow: hidden;
-
 }
 
 .container__info {
@@ -78,10 +77,10 @@ export default {
     width: 100%;
     justify-content: center;
     background: linear-gradient(to right, #000 50%, #d5d5d5 50%),
-    linear-gradient(to right, #000 50%, #fff 50%);
+      linear-gradient(to right, #000 50%, #fff 50%);
     background-repeat: no-repeat;
-  background-size: 100vw 615px;
-  background-position: bottom right, 0 0;
+    background-size: 100vw 615px;
+    background-position: bottom right, 0 0;
   }
 }
 </style>
