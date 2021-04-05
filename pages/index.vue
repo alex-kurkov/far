@@ -3,10 +3,14 @@
     <About />
     <Promo />
     <Intro />
-    <Mission />
-    <Achievement />
-    <Help />
-    <Support />
+    <section class="container__info">
+      <Mission />
+      <Achievement />
+    </section>
+    <section class="container__donations">
+      <Help />
+      <Support />
+    </section>
   </div>
 </template>
 
@@ -44,9 +48,39 @@ export default {
   overflow: hidden;
 }
 
+.container__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.container__donations {
+  display: flex;
+  flex-direction: column;
+}
+
 @media screen and (max-width: 768px) {
   .container {
     flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container__info {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    background: linear-gradient(to right, #d5d5d5 50%, #b23438 50%);
+  }
+
+  .container__donations {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    background: linear-gradient(to right, #000 50%, #d5d5d5 50%),
+      linear-gradient(to right, #000 50%, #fff 50%);
+    background-repeat: no-repeat;
+    background-size: 100vw 615px;
+    background-position: bottom right, 0 0;
   }
 }
 </style>

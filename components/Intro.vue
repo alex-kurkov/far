@@ -1,11 +1,13 @@
 <template>
   <section class="intro">
-    <h1 class="intro__text">
-      Фонд содействия защите здоровья и социальной справедливости имени Андрея
-      Рылькова
-    </h1>
-    <div class="intro__images"></div>
-    <Icon name="diamond" class="intro__image"></Icon>
+    <div class="intro__container">
+      <h1 class="intro__text">
+        Фонд содействия защите здоровья и социальной справедливости имени Андрея
+        Рылькова
+      </h1>
+      <div class="intro__images"></div>
+      <Icon name="diamond" class="intro__image"></Icon>
+    </div>
   </section>
 </template>
 
@@ -24,7 +26,15 @@ export default {
   width: 100%;
   min-height: 131px;
   background: #b23438;
+}
+
+.intro__container {
   position: relative;
+  margin: auto;
+  width: 100%;
+  background: transparent;
+  max-width: 1280px;
+  display: flex;
 }
 
 .intro__text {
@@ -50,7 +60,7 @@ export default {
   display: none;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 768px) {
   .intro__text {
     font-size: 43px;
     line-height: 0.9;
@@ -65,16 +75,16 @@ export default {
   }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1280px) {
   .intro {
     display: flex;
     flex-direction: row;
-    background: #fff;
     min-height: 128px;
   }
 
   .intro__text {
     width: 56%;
+    max-width: 717px;
     font-size: 36px;
     line-height: 0.8;
     background: #b23438;
@@ -88,23 +98,6 @@ export default {
   .intro__images {
     display: block;
     width: 44%;
-    min-height: 128px;
-    background: center/90px 82px url('./intro/diamond.svg') #fff;
-    background-repeat: space no-repeat;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .intro {
-    min-height: 128px;
-  }
-
-  .intro__text {
-    font-size: 36px;
-    line-height: 0.8;
-  }
-
-  .intro__images {
     min-height: 128px;
     background: center/110px 82px url('./intro/diamond.svg') #fff;
     background-repeat: space no-repeat;

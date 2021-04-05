@@ -34,6 +34,8 @@ export default {
 <style scoped>
 .footer {
   width: 100%;
+  max-width: 1280px;
+  margin: auto;
   min-height: 100px;
   grid-template-columns: auto auto auto;
   grid-template-rows: auto auto;
@@ -45,14 +47,14 @@ export default {
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  font-family: 'Roboto Slab',sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   font-weight: 400;
   font-size: 11px;
   color: #999;
 }
 
 .footer__social-text {
-  font-family: 'Roboto Slab',sans-serif;
+  font-family: 'Roboto Slab', sans-serif;
   font-weight: 400;
 }
 
@@ -93,7 +95,7 @@ export default {
   color: #999;
 }
 
-@media screen and (min-width: 500px) and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .footer {
     grid-template-columns: auto;
     grid-template-rows: repeat(4, auto);

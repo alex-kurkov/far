@@ -13,6 +13,7 @@
   "dependencies": {
     "core-js": "^3.8.3",
     "nuxt": "^2.14.12",
+    "nuxt-i18n": "^6.22.3",
     "swiper": "^5.4.5",
     "vue": "^2.6.12",
     "vue-awesome-swiper": "^4.1.1",

@@ -185,6 +185,7 @@ export default {
   .help__title {
     font-size: 90px;
     padding: 32px 294px 39px 53px;
+    letter-spacing: -3px;
   }
 
   .help__blade {
@@ -233,7 +234,9 @@ export default {
   .help {
     width: 44%;
     justify-self: flex-end;
-    order: 7;
+    /* order: 7; */
+    order: 2;
+    max-width: 564px;
   }
 
   .help__title {
@@ -264,9 +267,14 @@ export default {
     display: block;
     position: absolute;
     padding: 0;
-    width: 140px;
-    bottom: 292px;
+    width: 150px;
+    bottom: 246px;
     right: 56px;
+  }
+
+  .help__logo {
+    width: 150px;
+    height: 100px;
   }
 
   .help__ellipse_type_tel {
@@ -277,7 +285,7 @@ export default {
   .help__ellipse_type_email {
     min-height: 101px;
     font-size: 25px;
-    margin: 0;
+    margin: 4px 0 0 0;
   }
 
   .help__side-text {

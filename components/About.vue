@@ -1,9 +1,8 @@
 <template>
   <section class="about">
     <h1 class="about__text">
-      <span class="about__text_style">ФАР&nbsp;</span> &#8212; это
-      организация-сообщество, площадка для инициатив в сфере гуманизации
-      наркополитики
+      <span class="about__text_style">{{ $t('text.abbreviation') }}&nbsp;</span>
+      &#8212; {{ $t('text.homepageAbout') }}
     </h1>
   </section>
 </template>
@@ -17,6 +16,8 @@ export default {
 <style scoped>
 .about {
   width: 100%;
+  max-width: 1280px;
+  margin: auto;
   min-height: 90px;
   background: #ffffff;
 }
