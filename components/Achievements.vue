@@ -19,7 +19,7 @@
           :key="news.id"
           :virtualIndex="index"
         >
-          <Card :news="news" />
+          <Card :news="news" :index='index'/>
         </swiper-slide>
       </swiper>
     </div>

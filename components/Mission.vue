@@ -4,10 +4,10 @@
     <div class="mission__content">
       <div class="mission__info-wrapper">
         <h2 class="mission__title" v-html="$t('mission.title')"></h2>
-        <div v-html="$t('mission.text')"></div>
+        <p class="mission__text" v-html="$t('mission.text')"></p>
       </div>
       <nuxt-link class="mission__about-link" to="/about"
-        >Подробнее о нас &rsaquo;</nuxt-link
+        >{{ $t ('mission.link') }} &rsaquo;</nuxt-link
       >
       <div class="mission__graphics-wrapper">
         <div class="mission__graphics-road"><Icon name="road" /></div>
@@ -95,6 +95,7 @@ export default {
   display: inline;
   margin-top: 0;
 }
+
 .mission__about-link {
   font-family: 'Vollkorn', serif;
   color: #b23438;

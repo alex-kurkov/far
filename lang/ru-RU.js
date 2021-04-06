@@ -11,6 +11,7 @@ export default async function (context) {
         mission: {
           title: mission.data['ru_title'],
           text: mission.data['ru_text'],
+          link: mission.data['ru_link'],
         },
       }
     })
