@@ -260,7 +260,7 @@ export default {
   .help__link {
     font-size: 22px;
     line-height: 1.9;
-    margin: 0 0 76px 136px;
+    margin: 0 0 110px 136px;
   }
 
   .help__logo-link {

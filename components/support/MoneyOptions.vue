@@ -7,9 +7,15 @@
           name="money"
           class="money-options__radio"
           :value="values.big"
-          v-model="choice"
+          v-model.trim="$v.choice.$model"
         />
-        <span class="money-options__option-btn">
+        <span
+          class="money-options__option-btn"
+          :class="{
+            'money-options__option-btn_invalid':
+              $v.choice.$dirty && !$v.choice.required,
+          }"
+        >
           {{ values.big }}<span class="money-options__ruble">&#8381;</span>
         </span>
       </label>
@@ -21,9 +27,15 @@
           name="money"
           class="money-options__radio"
           :value="values.average"
-          v-model="choice"
+          v-model.trim="$v.choice.$model"
         />
-        <span class="money-options__option-btn">
+        <span
+          class="money-options__option-btn"
+          :class="{
+            'money-options__option-btn_invalid':
+              $v.choice.$dirty && !$v.choice.required,
+          }"
+        >
           {{ values.average
           }}<span class="money-options__ruble">&#8381;</span></span
         >
@@ -36,9 +48,15 @@
           name="money"
           class="money-options__radio"
           :value="values.small"
-          v-model="choice"
+          v-model.trim="$v.choice.$model"
         />
-        <span class="money-options__option-btn">
+        <span
+          class="money-options__option-btn"
+          :class="{
+            'money-options__option-btn_invalid':
+              $v.choice.$dirty && !$v.choice.required,
+          }"
+        >
           {{ values.small }}<span class="money-options__ruble">&#8381;</span>
         </span>
       </label>
@@ -46,27 +64,49 @@
     <li class="money-options__sum-option">
       <input
         class="money-options__sum"
+        :class="{
+          'money-options__sum_invalid': $v.choice.$dirty && !$v.choice.required,
+        }"
         type="text"
+        required
         pattern="\d+"
         placeholder="Другая сумма"
+        v-model.trim="$v.choice.$model"
       />
       <label class="money-options__agreement">
         <input
           type="checkbox"
           class="money-options__checkbox"
+          name="agree"
           value=""
-          v-model="choice"
+          required
+          v-model.trim="$v.agree.$model"
         />
-        <span class="money-options__agreement-check"></span>
+        <span
+          class="money-options__agreement-check"
+          :class="{
+            'money-options__agreement-check_invalid':
+              $v.agree.$dirty && !$v.agree.required,
+          }"
+        ></span>
         <span class="money-options__agreement-text">
           Согласен<a class="money-options__agreement-link">с офертой</a>
         </span>
       </label>
     </li>
+    <li>
+      <div class="money-options__input-error">
+        <span v-if="$v.choice.$dirty && !$v.choice.required"
+          >Введите сумму</span
+        >
+      </div>
+    </li>
   </ul>
 </template>
 
 <script>
+import { required } from 'vuelidate/lib/validators'
+
 export default {
   name: 'MoneyOptions',
   props: {
@@ -82,7 +122,17 @@ export default {
   data() {
     return {
       choice: '',
+      otherSum: '',
+      agree: '',
     }
+  },
+  validations: {
+    choice: {
+      required,
+    },
+    agree: {
+      required,
+    },
   },
 }
 </script>
@@ -122,6 +172,10 @@ export default {
   cursor: pointer;
 }
 
+.money-options__option-btn_invalid {
+  border: 1px solid #b23438;
+}
+
 .money-options__radio {
   display: none;
 }
@@ -142,12 +196,12 @@ export default {
   color: #fff;
   font-family: 'Druk Cyr', sans-serif;
   font-size: 84px;
-  text-shadow: -1px 0 #cbcbcb, 0 1px #cbcbcb, 1px 0 #cbcbcb, 0 -1px #cbcbcb;
+  text-shadow: -2px 0 #cbcbcb, 0 2px #cbcbcb, 2px 0 #cbcbcb, 0 -2px #cbcbcb;
   mix-blend-mode: multiply;
 }
 
 .money-options__radio:checked ~ span > span {
-  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+  text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
 }
 
 .money-options__sum-option {
@@ -155,6 +209,7 @@ export default {
   flex-direction: column;
   width: 133px;
   margin: 0 0 0 17px;
+  position: relative;
 }
 
 .money-options__sum {
@@ -171,7 +226,25 @@ export default {
 
 .money-options__sum:focus {
   outline: none;
-  border-bottom: 1px solid #000;
+}
+
+.money-options__sum_invalid {
+  color: #727272;
+  border-bottom: 1px solid #b23438;
+}
+
+.money-options__input-error {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 1.2;
+  color: #b23438;
+  margin: 5px 0 5px 0;
+  align-self: flex-start;
+  padding: 0 0 0 13px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .money-options__agreement {
@@ -194,6 +267,10 @@ export default {
   -webkit-transition: 0.4s;
   transition: 0.4s;
   border-radius: 4px;
+}
+
+.money-options__agreement-check_invalid {
+  border: 1px solid #b23438;
 }
 
 .money-options__checkbox {
@@ -259,6 +336,11 @@ export default {
     padding: 42px 0 12px;
   }
 
+  .money-options__input-error {
+    font-size: 16px;
+    margin: 10px 0 10px 0;
+  }
+
   .money-options__agreement {
     width: 30px;
     height: 30px;
@@ -315,6 +397,11 @@ export default {
     font-size: 24px;
     padding: 0 0 14px 0;
     max-width: 225px;
+  }
+
+  .money-options__input-error {
+    min-width: 450px;
+    padding: 0;
   }
 
   .money-options__agreement {

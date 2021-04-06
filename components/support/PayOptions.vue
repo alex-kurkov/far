@@ -4,11 +4,20 @@
       <label class="pay-options__radio-label">
         <input
           type="radio"
+          required
           name="payment"
           class="pay-options__radio"
-          value="card"
+          :value="options.first"
+          v-model.trim="$v.choice.$model"
         />
-        <span class="pay-options__option-btn">{{ options.first }}</span>
+        <span
+          class="pay-options__option-btn"
+          :class="{
+            'pay-options__option-btn_invalid':
+              $v.choice.$dirty && !$v.choice.required,
+          }"
+          >{{ options.first }}</span
+        >
       </label>
     </li>
     <li class="pay-options__option">
@@ -17,9 +26,17 @@
           type="radio"
           name="payment"
           class="pay-options__radio"
-          value="umoney"
+          :value="options.second"
+          v-model.trim="$v.choice.$model"
         />
-        <span class="pay-options__option-btn">{{ options.second }}</span>
+        <span
+          class="pay-options__option-btn"
+          :class="{
+            'pay-options__option-btn_invalid':
+              $v.choice.$dirty && !$v.choice.required,
+          }"
+          >{{ options.second }}</span
+        >
       </label>
     </li>
     <li class="pay-options__option">
@@ -28,15 +45,25 @@
           type="radio"
           name="payment"
           class="pay-options__radio"
-          value="terminal"
+          :value="options.third"
+          v-model.trim="$v.choice.$model"
         />
-        <span class="pay-options__option-btn">{{ options.third }}</span>
+        <span
+          class="pay-options__option-btn"
+          :class="{
+            'pay-options__option-btn_invalid':
+              $v.choice.$dirty && !$v.choice.required,
+          }"
+          >{{ options.third }}</span
+        >
       </label>
     </li>
   </ul>
 </template>
 
 <script>
+import { required } from 'vuelidate/lib/validators'
+
 export default {
   name: 'PayOptions',
   props: {
@@ -47,6 +74,16 @@ export default {
         second: 'Карта',
         third: 'Карта',
       }),
+    },
+  },
+  data() {
+    return {
+      choice: '',
+    }
+  },
+  validations: {
+    choice: {
+      required,
     },
   },
 }
@@ -98,6 +135,10 @@ export default {
 .pay-options__option-btn:hover {
   background-color: rgba(178, 52, 56, 0.2);
   cursor: pointer;
+}
+
+.pay-options__option-btn_invalid {
+  border: 1px solid #b23438;
 }
 
 .pay-options__radio:checked + .pay-options__option-btn {

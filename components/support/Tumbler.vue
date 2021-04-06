@@ -2,7 +2,7 @@
   <div class="tumbler">
     <label class="tumbler__label">
       <span class="tumbler__label-text">Регулярно</span>
-      <input type="checkbox" name="periodCheckbox" class="tumbler__checkbox" />
+      <input type="checkbox" name="periodCheckbox" value="" class="tumbler__checkbox" v-model.trim="$v.choice.$model"/>
       <span class="tumbler__slider"></span>
       <span class="tumbler__label-text">Однократно</span>
     </label>
@@ -10,8 +10,20 @@
 </template>
 
 <script>
+import { required } from 'vuelidate/lib/validators'
+
 export default {
   name: 'Tumbler',
+  data() {
+    return {
+      choice: false
+    }
+  },
+  validations: {
+    choice: {
+      required,
+    }
+  },
 }
 </script>
 
