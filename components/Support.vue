@@ -1,7 +1,7 @@
 <template>
   <section class="support">
     <div class="support__sideblock"></div>
-    <form class="support__container">
+    <form class="support__container" @submit.prevent="handleSubmit" novalidate>
       <h3 class="support__title">
         Поддержать <span class="support__span">ФАР</span>
       </h3>
@@ -10,14 +10,21 @@
         backgroundColor="#fff"
         mainColor="#000"
       />
-      <Tumbler />
+      <Tumbler ref="regularity" />
       <PayOptions
         :options="{ first: 'Карта', second: 'ЮMoney', third: 'Терминал' }"
+        ref="payOptions"
       />
-      <MoneyOptions :values="{ big: 1000, average: 500, small: 200 }" />
+      <MoneyOptions
+        :values="{ big: 1000, average: 500, small: 200 }"
+        ref="moneyOptions"
+      />
       <input
         class="support__input"
-        :class="{ support__input_invalid: $v.formData.name.$invalid }"
+        :class="{
+          support__input_invalid:
+            $v.formData.name.$dirty && $v.formData.name.$invalid,
+        }"
         type="text"
         name="name"
         required
@@ -25,8 +32,10 @@
         v-model.trim="$v.formData.name.$model"
       />
       <div class="support__input-error">
-        <span v-if="!$v.formData.name.required">Введите имя</span>
-        <span v-if="!$v.formData.name.minLength"
+        <span v-if="$v.formData.name.$dirty && !$v.formData.name.required"
+          >Введите имя</span
+        >
+        <span v-if="$v.formData.name.$dirty && !$v.formData.name.minLength"
           >Минимальная длина {{ $v.formData.name.$params.minLength.min }}
         </span>
         <span v-if="!$v.formData.name.maxLength"
@@ -35,16 +44,23 @@
       </div>
       <input
         class="support__input"
-        :class="{ 'support__input_invalid': $v.formData.email.$invalid }"
+        :class="{
+          support__input_invalid:
+            ($v.formData.email.$dirty && !$v.formData.email.required) ||
+            ($v.formData.email.$dirty && !$v.formData.email.email),
+        }"
         type="email"
         name="email"
         required
         placeholder="Email"
+        v-model.trim="$v.formData.email.$model"
         pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[a-z]{2,})\b"
       />
       <div class="support__input-error">
-        <span v-if="!$v.formData.email.required">Введите почту</span>
-        <span v-if="!$v.formData.email.email"
+        <span v-if="$v.formData.email.$dirty && !$v.formData.email.required"
+          >Введите почту</span
+        >
+        <span v-if="$v.formData.email.$dirty && !$v.formData.email.email"
           >Введите электронную почту в правильном формате
         </span>
       </div>
@@ -91,16 +107,25 @@ export default {
       email: {
         required,
         email,
-        // isUnique(value) {
-        //   if (value === '') return true
-        //   const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[a-z]{2,})\b/
-        //   return new Promise((resolve) => {
-        //     setTimeout(() => {
-        //       resolve(emailRegex.test(value))
-        //     }, 350 + Math.random() * 300)
-        //   })
-        // },
       },
+    },
+  },
+  methods: {
+    handleSubmit() {
+      if (this.$v.$invalid || this.$refs.moneyOptions.$v.$invalid || this.$refs.payOptions.$v.$invalid) {
+        console.log('форма не валидна')
+        this.$v.$touch()
+        this.$refs.moneyOptions.$v.$touch()
+        this.$refs.payOptions.$v.$touch()
+        return
+      }
+      console.log(
+        'submit data',
+        this.$refs.moneyOptions.$v.choice.$model,
+        this.$refs.payOptions.$v.choice.$model
+      )
+      console.log('согласие с офертой', this.$refs.moneyOptions.$v.agree.$model)
+      console.log('однократно', this.$refs.regularity.$v.choice.$model)
     },
   },
 }
@@ -166,41 +191,28 @@ export default {
   font-weight: 400;
   font-size: 19px;
   line-height: 0.7;
-  margin: 0 0 18px 0;
+  margin: 0;
   padding: 0 0 0 13px;
 }
 
 .support__input_invalid {
   color: #727272;
-}
-
-.support__invalid-input {
-  width: 100%;
-  border: none;
-  background: transparent;
-  border-bottom: 1px solid #727272;
-  color: #727272;
-  font-family: 'Vollkorn', sans-serif;
-  font-weight: 400;
-  font-size: 19px;
-  line-height: 0.7;
-  margin: 0 0 18px 0;
-  padding: 0 0 0 13px;
+  border-bottom: 1px solid #b23438;
 }
 
 .support__input:focus {
   outline: none;
-  border-bottom: 1px solid #000;
 }
 
 .support__input-error {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.2;
-  color: #ee3465;
-  min-height: 12px;
-  margin: 0 0 5px 0;
+  color: #b23438;
+  margin: 5px 0 5px 0;
+  align-self: flex-start;
+  padding: 0 0 0 13px;
 }
 
 .support__submit-btn {
@@ -222,6 +234,14 @@ export default {
 .support__submit-btn:hover {
   opacity: 0.7;
   cursor: pointer;
+}
+
+.support__submit-btn:focus {
+  outline: none;
+}
+
+.support__submit-btn:disabled {
+  opacity: 0.5;
 }
 
 .support__link {
@@ -277,7 +297,8 @@ export default {
 
   .support__input {
     font-size: 38px;
-    margin: 0 0 42px 0;
+    /* margin: 0 0 42px 0; */
+    margin: 0 0 10px 0;
     padding: 0 0 0 25px;
   }
 
@@ -286,6 +307,12 @@ export default {
     width: 67%;
     font-size: 32px;
     margin: 6px 0 28px;
+  }
+
+  .support__input-error {
+    font-size: 16px;
+    margin: 0 0 10px 0;
+    padding: 0 0 0 25px;
   }
 
   .support__link {
@@ -329,9 +356,15 @@ export default {
 
   .support__input {
     font-size: 29px;
-    margin: 0 0 20px 0;
+    margin: 0 0 12px 0;
     padding: 0 0 0 18px;
     max-width: 448px;
+  }
+
+  .support__input-error {
+    padding: 0 0 0 18px;
+    margin: 0 0 13px 92px;
+    font-size: 16px;
   }
 
   .support__submit-btn {
