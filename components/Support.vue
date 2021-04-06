@@ -112,7 +112,11 @@ export default {
   },
   methods: {
     handleSubmit() {
-      if (this.$v.$invalid || this.$refs.moneyOptions.$v.$invalid || this.$refs.payOptions.$v.$invalid) {
+      if (
+        this.$v.$invalid ||
+        this.$refs.moneyOptions.$v.$invalid ||
+        this.$refs.payOptions.$v.$invalid
+      ) {
         console.log('форма не валидна')
         this.$v.$touch()
         this.$refs.moneyOptions.$v.$touch()

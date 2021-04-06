@@ -22,7 +22,7 @@ export default {
   plugins: [
     '@/plugins/vue-notifications',
     '@/plugins/vue-awesome-swiper',
-    '@/plugins/vuelidate'
+    '@/plugins/vuelidate',
     /*     { src: '@/plugins/vue-awesome-swiper.js', mode: 'client' }, */
   ],
 

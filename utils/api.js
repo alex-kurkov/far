@@ -13,8 +13,16 @@ class Api {
     return axios.get(`${this._baseURL}/index-mission`)
   }
 
-  getData(token) {
-    return Promise.all([this.getIntro(), this.getMission()])
+  getAchievements() {
+    return axios.get(`${this._baseURL}/achievements`)
+  }
+
+  getData() {
+    return Promise.all([
+      this.getIntro(),
+      this.getMission(),
+      this.getAchievements(),
+    ])
   }
 }
 

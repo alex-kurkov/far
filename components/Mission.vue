@@ -7,7 +7,7 @@
         <p class="mission__text" v-html="$t('mission.text')"></p>
       </div>
       <nuxt-link class="mission__about-link" to="/about"
-        >{{ $t ('mission.link') }} &rsaquo;</nuxt-link
+        >{{ $t('mission.link') }} &rsaquo;</nuxt-link
       >
       <div class="mission__graphics-wrapper">
         <div class="mission__graphics-road"><Icon name="road" /></div>

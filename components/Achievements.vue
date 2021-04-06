@@ -15,11 +15,11 @@
         virtual
       >
         <swiper-slide
-          v-for="(news, index) in newsArray"
-          :key="news.id"
+          v-for="index in this.achievementsLength"
+          :key="index"
           :virtualIndex="index"
         >
-          <Card :news="news" :index='index'/>
+          <Card :index="index" />
         </swiper-slide>
       </swiper>
     </div>
@@ -27,11 +27,12 @@
 </template>
 
 <script>
-import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
-import 'swiper/css/swiper.css'
-import ArrowIcon from './achievments/Swiper-arrow'
 import Icon from '@/components/Icon'
+import axios from 'axios'
+import 'swiper/css/swiper.css'
+import { directive, Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import Card from './achievments/Card'
+import ArrowIcon from './achievments/Swiper-arrow'
 
 export default {
   components: {
@@ -44,6 +45,7 @@ export default {
   directives: {
     swiper: directive,
   },
+
   data() {
     return {
       swiperOptions: {
@@ -61,51 +63,20 @@ export default {
           nextEl: '.achievements__swiper-btn-next',
           prevEl: '.achievements__swiper-btn-prev',
         },
+
       },
+      achievementsLength: 1
     }
+  },
+  async fetch() {
+    const allAchievements = await fetch(
+      'https://rylkov.ga/achievements'
+    ).then(res => res.json());
+    this.achievementsLength = allAchievements.length
   },
   computed: {
     swiper() {
       return this.$refs.mySwiper.$swiper
-    },
-    newsArray() {
-      return [
-        {
-          title: 'HIV Testing',
-          text:
-            'men were provided with HIV-sets and were consulted on self-inquiry',
-          stamp: '1017',
-          id: 'scjweoicjwepockwe233',
-        },
-        {
-          title: 'Консультации по медицинским вопросам',
-          text:
-            'консультаций медицинских специалистов по постинъекционным осложнениям',
-          stamp: '256',
-          id: 'scjweoicjwepockwe23wefw',
-        },
-        {
-          title: 'Служба поддержки психического здоровья',
-          text:
-            'консультаций по вопросам зависимости и проблемного употребления веществ, психологическая поддержка ',
-          stamp: '706',
-          id: 'scjw123eoicjwepdssockwe23wefw',
-        },
-        {
-          title: 'Получили помощь',
-          text:
-            'уличной социальной службы ФАР: чистые шприцы, презервативы, тесты на ВИЧ, поддержку и направления',
-          stamp: '3779',
-          id: 'scjweoicjwwqf322ssockwe23wefw',
-        },
-        {
-          title: 'Юридические вопросы',
-          text:
-            'консультаций для людей, подвергшихся правовому преследованию в связи с наркотиками',
-          stamp: '640',
-          id: 'scjwe234redwpdssockwe23wefw',
-        },
-      ]
     },
   },
 }
