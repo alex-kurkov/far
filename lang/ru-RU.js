@@ -1,10 +1,21 @@
-export default {
-  text: {
-    mainPageLink: 'Главная',
-    homepageAbout:
-      'это организация-сообщество, площадка для инициатив в сфере гуманизации наркополитики',
-    abbreviation: 'ФАР',
-    aboutPageTitle: 'ЗДЕСЬ БУДЕТ БУДУЩАЯ СТРАНИЦА О НАС',
-    aboutPageLink: 'О НАС',
-  },
+import { api } from '@/utils/api'
+
+export default async function (context) {
+  let localeMessages = null
+  await api
+    .getData()
+    .then(([intro, mission]) => {
+      console.log(intro.data, mission.data)
+      localeMessages = {
+        intro: intro.data['ru_text'],
+        mission: {
+          title: mission.data['ru_title'],
+          text: mission.data['ru_text'],
+        },
+      }
+    })
+    .catch(() => {
+      localeMessages = {}
+    })
+  return localeMessages
 }

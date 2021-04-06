@@ -3,17 +3,8 @@
     <div class="mission__sideblock"></div>
     <div class="mission__content">
       <div class="mission__info-wrapper">
-        <h2 class="mission__title">Наша <br />миссия:</h2>
-        <p class="mission__text">
-          способствовать развитию наркополитики, основанной на гуманности,
-          терпимости, защите здоровья, достоинства и прав человека.
-        </p>
-        <p class="mission__text">
-          Работа ФАР строится на принципах горизонтального управления и развития
-          проектов на основе инициатив людей, употребляющих наркотики,
-          активистов и активисток, профессионалов и профессионалок в области
-          общественного здравоохранения и защиты прав человека.
-        </p>
+        <h2 class="mission__title" v-html="$t('mission.title')"></h2>
+        <div v-html="$t('mission.text')"></div>
       </div>
       <nuxt-link class="mission__about-link" to="/about"
         >Подробнее о нас &rsaquo;</nuxt-link
