@@ -1,17 +1,16 @@
-import en from '../lang/en-US.js'
-import ru from '../lang/ru-RU.js'
-
 export const I18N = {
   locales: [
     {
       code: 'en',
       iso: 'en-US',
       name: 'EN',
+      file: 'en-US.js',
     },
     {
       code: 'ru',
       iso: 'ru-RU',
       name: 'RU',
+      file: 'ru-RU.js',
     },
   ],
   defaultLocale: 'ru',
@@ -20,8 +19,10 @@ export const I18N = {
       en: '/about',
     },
   },
+  lazy: true,
+  vueI18nLoader: true,
+  langDir: './lang/',
   vueI18n: {
     fallbackLocale: 'ru',
-    messages: { en, ru },
   },
 }
