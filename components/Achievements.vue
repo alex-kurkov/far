@@ -72,7 +72,7 @@ export default {
     },
     numberOfCards() {
       return this.$store.getters.getNumberOfCards
-    }
+    },
   },
 }
 </script>

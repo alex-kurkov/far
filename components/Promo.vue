@@ -6,10 +6,10 @@
       </p>
       <p class="promo__donation">{{ this.secondSum }}</p>
       <p class="promo__donation">{{ this.thirdSum }}</p>
-      <nuxt-link :to='this.supportLink' class="promo__link"
+      <nuxt-link :to="this.supportLink" class="promo__link"
         >{{ $t('promo.support') }} &rsaquo;</nuxt-link
       >
-      <nuxt-link :to='this.helpLink' class="promo__link"
+      <nuxt-link :to="this.helpLink" class="promo__link"
         >{{ $t('promo.help') }} &rsaquo;</nuxt-link
       >
       <Icon name="eye" class="promo__eye"></Icon>
@@ -35,7 +35,7 @@ export default {
       supportLink: this.$store.state.content.promo.support_link,
       helpLink: this.$store.state.content.promo.help_link,
     }
-  }
+  },
 }
 </script>
 

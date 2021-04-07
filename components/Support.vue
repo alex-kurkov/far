@@ -3,7 +3,8 @@
     <div class="support__sideblock"></div>
     <form class="support__container" @submit.prevent="handleSubmit" novalidate>
       <h3 class="support__title">
-        {{$t('support.title')}} <span class="support__span">{{$t('support.subtitle')}}</span>
+        {{ $t('support.title') }}
+        <span class="support__span">{{ $t('support.subtitle') }}</span>
       </h3>
       <SmileIcon
         class="support__smile"
@@ -65,11 +66,11 @@
         </span>
       </div>
       <button class="support__submit-btn" type="submit">
-        {{$t('support.paymentBtn')}}
+        {{ $t('support.paymentBtn') }}
       </button>
-      <NuxtLink class="support__link" to="#"
-        >{{$t('support.privacy')}}</NuxtLink
-      >
+      <NuxtLink class="support__link" to="#">{{
+        $t('support.privacy')
+      }}</NuxtLink>
     </form>
   </section>
 </template>
