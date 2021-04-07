@@ -1,12 +1,14 @@
 <template>
   <div class="card">
     <div class="card__stamp">
-      <span class="card__stamp-text">{{ $t(`achievements[${index-1}].stamp`) }}</span>
+      <span class="card__stamp-text">{{
+        $t(`achievements[${index - 1}].stamp`)
+      }}</span>
     </div>
     <div class="card__info">
-      <h3 class="card__title">{{ $t(`achievements[${index-1}].title`) }}</h3>
+      <h3 class="card__title">{{ $t(`achievements[${index - 1}].title`) }}</h3>
       <div class="card__line"></div>
-      <p class="card__text">{{ $t(`achievements[${index-1}].text`) }}</p>
+      <p class="card__text">{{ $t(`achievements[${index - 1}].text`) }}</p>
     </div>
   </div>
 </template>
@@ -27,7 +29,7 @@ export default {
     },
     index: {
       type: Number,
-    }
+    },
   },
 }
 </script>

@@ -3,7 +3,7 @@
     <div class="support__sideblock"></div>
     <form class="support__container" @submit.prevent="handleSubmit" novalidate>
       <h3 class="support__title">
-        Поддержать <span class="support__span">ФАР</span>
+        {{$t('support.title')}} <span class="support__span">{{$t('support.subtitle')}}</span>
       </h3>
       <SmileIcon
         class="support__smile"
@@ -65,10 +65,10 @@
         </span>
       </div>
       <button class="support__submit-btn" type="submit">
-        Перейти к оплате
+        {{$t('support.paymentBtn')}}
       </button>
       <NuxtLink class="support__link" to="#"
-        >Политика конфеденциальности</NuxtLink
+        >{{$t('support.privacy')}}</NuxtLink
       >
     </form>
   </section>

@@ -6,8 +6,12 @@
       </p>
       <p class="promo__donation">200</p>
       <p class="promo__donation">500</p>
-      <nuxt-link to="#" class="promo__link">Поддержать &rsaquo;</nuxt-link>
-      <nuxt-link to="#" class="promo__link">Получить помощь &rsaquo;</nuxt-link>
+      <nuxt-link to="#" class="promo__link"
+        >{{ $t('promo.support') }} &rsaquo;</nuxt-link
+      >
+      <nuxt-link to="#" class="promo__link"
+        >{{ $t('promo.help') }} &rsaquo;</nuxt-link
+      >
       <Icon name="eye" class="promo__eye"></Icon>
       <ToggleLanguage />
     </div>

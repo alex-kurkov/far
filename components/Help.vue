@@ -1,13 +1,10 @@
 <template>
   <section class="help">
-    <h3 class="help__title">Получить помощь</h3>
+    <h3 class="help__title">{{$t('help.title')}}</h3>
     <p class="help__text">
-      Если вы употребляете наркотики и вам нужна помощь по вопросам здоровья,
-      защиты прав, консультации психолога, профилактические материалы и тд,
-      свяжитесь с нами
-    </p>
+      {{$t('help.text')}}    </p>
     <Icon name="blade" class="help__blade"></Icon>
-    <nuxt-link to="#" class="help__link">Подробнее &rsaquo;</nuxt-link>
+    <nuxt-link to="#" class="help__link">{{$t('help.link')}} &rsaquo;</nuxt-link>
     <a href="tel:+7926-897-90-87" class="help__ellipse help__ellipse_type_tel"
       >+7-(926)-897-90-87</a
     >

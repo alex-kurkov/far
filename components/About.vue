@@ -1,8 +1,8 @@
 <template>
   <section class="about">
     <h1 class="about__text">
-      <span class="about__text_style">{{ $t('text.abbreviation') }}&nbsp;</span>
-      &#8212; {{ $t('text.homepageAbout') }}
+      <span class="about__text_style">{{ $t('about.title') }}&nbsp;</span>
+      &#8212; {{ $t('about.text') }}
     </h1>
   </section>
 </template>

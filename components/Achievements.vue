@@ -63,15 +63,14 @@ export default {
           nextEl: '.achievements__swiper-btn-next',
           prevEl: '.achievements__swiper-btn-prev',
         },
-
       },
-      achievementsLength: 1
+      achievementsLength: 1,
     }
   },
   async fetch() {
     const allAchievements = await fetch(
       'https://rylkov.ga/achievements'
-    ).then(res => res.json());
+    ).then((res) => res.json())
     this.achievementsLength = allAchievements.length
   },
   computed: {
