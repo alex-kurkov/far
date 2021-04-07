@@ -1,21 +1,18 @@
+import { api } from '@/utils/api'
+
 export const state = () => ({
   content: {},
 })
 
-export const mutations = {
-  SET_CONTENT(state, data) {
-    state.content = data
+export const getters = {
+  getNumberOfCards(state) {
+    return state.content.achievements.length
   },
 }
 
-const ruContent = {
-  text: {
-    mainPageLink: 'Главная',
-    homepageAbout:
-      'это организация-сообщество, площадка для инициатив в сфере гуманизации наркополитики',
-    abbreviation: 'ФАР',
-    aboutPageTitle: 'ЗДЕСЬ БУДЕТ БУДУЩАЯ СТРАНИЦА О НАС',
-    aboutPageLink: 'О НАС',
+export const mutations = {
+  SET_CONTENT(state, data) {
+    state.content = data
   },
 }
 
@@ -25,6 +22,19 @@ export const actions = {
   },
 
   getContent({ commit }) {
-    return commit('SET_CONTENT', ruContent)
+    return api
+      .getData()
+      .then(([intro, mission, achievements, about, promo, help, support]) => {
+        const allData = {
+          intro: intro.data,
+          mission: mission.data,
+          achievements: achievements.data,
+          about: about.data,
+          promo: promo.data,
+          help: help.data,
+          support: support.data,
+        }
+        commit('SET_CONTENT', allData)
+      })
   },
 }

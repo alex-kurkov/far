@@ -2,14 +2,14 @@
   <section class="promo">
     <div class="promo__container">
       <p class="promo__donation">
-        1000<span class="promo__ruble">&#8381;</span>
+        {{ this.firstSum }}<span class="promo__ruble">&#8381;</span>
       </p>
-      <p class="promo__donation">200</p>
-      <p class="promo__donation">500</p>
-      <nuxt-link to="#" class="promo__link"
+      <p class="promo__donation">{{ this.secondSum }}</p>
+      <p class="promo__donation">{{ this.thirdSum }}</p>
+      <nuxt-link :to='this.supportLink' class="promo__link"
         >{{ $t('promo.support') }} &rsaquo;</nuxt-link
       >
-      <nuxt-link to="#" class="promo__link"
+      <nuxt-link :to='this.helpLink' class="promo__link"
         >{{ $t('promo.help') }} &rsaquo;</nuxt-link
       >
       <Icon name="eye" class="promo__eye"></Icon>
@@ -27,6 +27,15 @@ export default {
     Icon,
     ToggleLanguage,
   },
+  data() {
+    return {
+      firstSum: this.$store.state.content.promo.money[0].sum,
+      secondSum: this.$store.state.content.promo.money[1].sum,
+      thirdSum: this.$store.state.content.promo.money[2].sum,
+      supportLink: this.$store.state.content.promo.support_link,
+      helpLink: this.$store.state.content.promo.help_link,
+    }
+  }
 }
 </script>
 

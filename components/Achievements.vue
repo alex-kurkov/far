@@ -15,7 +15,7 @@
         virtual
       >
         <swiper-slide
-          v-for="index in this.achievementsLength"
+          v-for="index in numberOfCards"
           :key="index"
           :virtualIndex="index"
         >
@@ -28,7 +28,6 @@
 
 <script>
 import Icon from '@/components/Icon'
-import axios from 'axios'
 import 'swiper/css/swiper.css'
 import { directive, Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import Card from './achievments/Card'
@@ -67,16 +66,13 @@ export default {
       achievementsLength: 1,
     }
   },
-  async fetch() {
-    const allAchievements = await fetch(
-      'https://rylkov.ga/achievements'
-    ).then((res) => res.json())
-    this.achievementsLength = allAchievements.length
-  },
   computed: {
     swiper() {
       return this.$refs.mySwiper.$swiper
     },
+    numberOfCards() {
+      return this.$store.getters.getNumberOfCards
+    }
   },
 }
 </script>
