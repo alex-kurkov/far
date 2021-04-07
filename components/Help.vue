@@ -5,12 +5,12 @@
       {{ $t('help.text') }}
     </p>
     <Icon name="blade" class="help__blade"></Icon>
-    <nuxt-link to="#" class="help__link"
+    <nuxt-link :to="helpLink" class="help__link"
       >{{ $t('help.link') }} &rsaquo;</nuxt-link
     >
-    <a href="tel:+7926-897-90-87" class="help__ellipse help__ellipse_type_tel"
-      >+7-(926)-897-90-87</a
-    >
+    <a href="tel:+79268979087" class="help__ellipse help__ellipse_type_tel">{{
+      phone
+    }}</a>
     <a
       href="mailto:rylkov.foundation@gmail.com"
       target="_blank"
@@ -31,6 +31,12 @@ export default {
   name: 'Help',
   components: {
     Icon,
+  },
+  data() {
+    return {
+      phone: this.$store.state.content.help.phone,
+      helpLink: this.$store.state.content.help.link,
+    }
   },
 }
 </script>

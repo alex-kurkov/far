@@ -6,7 +6,7 @@
         <h2 class="mission__title" v-html="$t('mission.title')"></h2>
         <p class="mission__text" v-html="$t('mission.text')"></p>
       </div>
-      <nuxt-link class="mission__about-link" to="/about"
+      <nuxt-link class="mission__about-link" :to="aboutLink"
         >{{ $t('mission.link') }} &rsaquo;</nuxt-link
       >
       <div class="mission__graphics-wrapper">
@@ -22,6 +22,11 @@ import Icon from '@/components/Icon'
 export default {
   name: 'Mission',
   components: { Icon },
+  data() {
+    return {
+      aboutLink: this.$store.state.content.mission.link,
+    }
+  },
 }
 </script>
 

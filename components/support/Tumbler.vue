@@ -1,7 +1,7 @@
 <template>
   <div class="tumbler">
     <label class="tumbler__label">
-      <span class="tumbler__label-text">Регулярно</span>
+      <span class="tumbler__label-text">{{ $t('support.monthly') }}</span>
       <input
         type="checkbox"
         name="periodCheckbox"
@@ -10,7 +10,7 @@
         v-model.trim="$v.choice.$model"
       />
       <span class="tumbler__slider"></span>
-      <span class="tumbler__label-text">Однократно</span>
+      <span class="tumbler__label-text">{{ $t('support.oneTime') }}</span>
     </label>
   </div>
 </template>

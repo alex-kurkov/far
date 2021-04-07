@@ -24,17 +24,31 @@ export const actions = {
   getContent({ commit }) {
     return api
       .getData()
-      .then(([intro, mission, achievements, about, promo, help, support]) => {
-        const allData = {
-          intro: intro.data,
-          mission: mission.data,
-          achievements: achievements.data,
-          about: about.data,
-          promo: promo.data,
-          help: help.data,
-          support: support.data,
+      .then(
+        ([
+          intro,
+          mission,
+          achievements,
+          about,
+          promo,
+          help,
+          support,
+          achievementMain,
+          footer,
+        ]) => {
+          const allData = {
+            intro: intro.data,
+            mission: mission.data,
+            achievements: achievements.data,
+            about: about.data,
+            promo: promo.data,
+            help: help.data,
+            support: support.data,
+            achievementMain: achievementMain.data,
+            footer: footer.data,
+          }
+          commit('SET_CONTENT', allData)
         }
-        commit('SET_CONTENT', allData)
-      })
+      )
   },
 }

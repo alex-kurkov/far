@@ -13,11 +13,15 @@
       />
       <Tumbler ref="regularity" />
       <PayOptions
-        :options="{ first: 'Карта', second: 'ЮMoney', third: 'Терминал' }"
+        :options="{
+          first: $t('support.card'),
+          second: $t('support.umoney'),
+          third: $t('support.terminal'),
+        }"
         ref="payOptions"
       />
       <MoneyOptions
-        :values="{ big: 1000, average: 500, small: 200 }"
+        :values="{ big: firstSum, average: secondSum, small: thirdSum }"
         ref="moneyOptions"
       />
       <input
@@ -29,7 +33,7 @@
         type="text"
         name="name"
         required
-        placeholder="Имя"
+        v-bind:placeholder="$t('support.name')"
         v-model.trim="$v.formData.name.$model"
       />
       <div class="support__input-error">
@@ -96,8 +100,12 @@ export default {
         name: '',
         email: '',
       },
+      firstSum: this.$store.state.content.support.money[0].sum,
+      secondSum: this.$store.state.content.support.money[1].sum,
+      thirdSum: this.$store.state.content.support.money[2].sum,
     }
   },
+
   validations: {
     formData: {
       name: {

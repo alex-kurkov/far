@@ -70,7 +70,7 @@
         type="text"
         required
         pattern="\d+"
-        placeholder="Другая сумма"
+        v-bind:placeholder="$t('support.sumOption')"
         v-model.trim="$v.choice.$model"
       />
       <label class="money-options__agreement">
