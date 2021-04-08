@@ -301,6 +301,7 @@ export default {
 }
 
 .money-options__agreement-link {
+  color: #727272;
   text-decoration: none;
   border-bottom: 1px solid #727272;
   transition: opacity 0.5s linear;

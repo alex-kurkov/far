@@ -41,6 +41,10 @@ class Api {
     return axios.get(`${this._baseURL}/footer`)
   }
 
+  getMetas() {
+    return axios.get(`${this._baseURL}/metas`)
+  }
+
   getData() {
     return Promise.all([
       this.getIntro(),
@@ -52,10 +56,11 @@ class Api {
       this.getSupport(),
       this.getAchievementMain(),
       this.getFooter(),
+      this.getMetas(),
     ])
   }
 }
-
+export const baseUrl = 'https://rylkov.ga';
 export const api = new Api({
-  baseUrl: 'https://rylkov.ga',
+  baseUrl: baseUrl,
 })
