@@ -9,7 +9,7 @@
       <nuxt-link :to="this.supportLink" class="promo__link"
         >{{ $t('promo.support') }} &rsaquo;</nuxt-link
       >
-      <nuxt-link :to="this.helpLink" class="promo__link"
+      <nuxt-link :to="helpLink" class="promo__link"
         >{{ $t('promo.help') }} &rsaquo;</nuxt-link
       >
       <Icon name="eye" class="promo__eye"></Icon>

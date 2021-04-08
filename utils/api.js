@@ -33,6 +33,14 @@ class Api {
     return axios.get(`${this._baseURL}/index-support`)
   }
 
+  getAchievementMain() {
+    return axios.get(`${this._baseURL}/index-achievement-main`)
+  }
+
+  getFooter() {
+    return axios.get(`${this._baseURL}/footer`)
+  }
+
   getData() {
     return Promise.all([
       this.getIntro(),
@@ -42,6 +50,8 @@ class Api {
       this.getPromo(),
       this.getHelp(),
       this.getSupport(),
+      this.getAchievementMain(),
+      this.getFooter(),
     ])
   }
 }

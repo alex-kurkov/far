@@ -1,24 +1,26 @@
 <template>
   <section class="footer">
     <div class="footer__social">
-      <p class="footer__social-text">МЫ В СОЦСЕТЯХ</p>
+      <p class="footer__social-text">{{ $t('footer.title') }}</p>
       <Social />
       <Icon name="bond" class="footer__logo" />
     </div>
     <p class="footer__disclaimer">
-      Материалы изданы и (или) распространены некоммерческой организацией,
-      выполняющей, по мнению Минюста России, функции иностранного агента
+      {{ $t('footer.legal') }}
     </p>
-    <p class="footer__license">
-      За исключением специально оговоренных случаев, содержание сайта
-      залицензировано под
-      <a
-        class="footer__link"
-        href="https://creativecommons.org/licenses/by/3.0/"
-        >Creative Commons Attribution 3.0 License</a
-      >
+    <i18n tag="p" path="footer.license" class="footer__license">
+      <template v-slot:license>
+        <a
+          class="footer__link"
+          href="https://creativecommons.org/licenses/by/3.0/"
+        >
+          {{ license }}
+        </a>
+      </template>
+    </i18n>
+    <p class="footer__copyright">
+      {{ $t('footer.copyright') }} {{ this.$store.state.content.footer.year }}
     </p>
-    <p class="footer__copyright">ФАР 2021</p>
   </section>
 </template>
 
@@ -28,6 +30,11 @@ import Social from '~/components/Social'
 export default {
   name: 'Footer',
   components: { Icon, Social },
+  data() {
+    return {
+      license: this.$store.state.content.footer.license,
+    }
+  },
 }
 </script>
 

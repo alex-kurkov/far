@@ -1,10 +1,10 @@
 <template>
   <section class="achievement">
-    <h3 class="achievement__title">Итоги нашей работы в 2020</h3>
+    <h3 class="achievement__title">{{ $t('achievementMain.title') }}</h3>
     <Achievements />
     <div class="achievement__gethelp-wrapper">
-      <nuxt-link to="#" class="achievement__gethelp-link"
-        >Получить помощь &rsaquo;</nuxt-link
+      <nuxt-link :to="helpLink" class="achievement__gethelp-link"
+        >{{ $t('achievementMain.link') }} &rsaquo;</nuxt-link
       >
       <nuxt-link to="#" class="achievement__logo-link">
         <Icon name="logo" class="achievement__logo" />
@@ -20,6 +20,11 @@ export default {
   components: {
     Achievements,
     Icon,
+  },
+  data() {
+    return {
+      helpLink: this.$store.state.content.achievementMain.link,
+    }
   },
 }
 </script>
