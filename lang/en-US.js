@@ -15,6 +15,7 @@ export default async function (context) {
         support,
         achievementMain,
         footer,
+        metas,
       ]) => {
         const allAchievements = achievements.data.map((achievement) => {
           const text = achievement['en_text']
@@ -22,6 +23,18 @@ export default async function (context) {
           achievement['text'] = text
           achievement['title'] = title
           return achievement
+        })
+
+        const metatags = metas.data.map((meta) => {
+          const title = meta['en_title']
+          const description = meta['en_description']
+          const keywords = meta['en_keywords']
+          const image = meta['image']
+          meta['title'] = title
+          meta['description'] = description
+          meta['keywords'] = keywords
+          meta['image'] = image
+          return meta
         })
 
         localeMessages = {
@@ -70,6 +83,7 @@ export default async function (context) {
             license: footer.data['en_license'],
             copyright: footer.data['en_copyright'],
           },
+          metatags: metatags,
         }
       }
     )
