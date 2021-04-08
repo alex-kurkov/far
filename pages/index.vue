@@ -34,6 +34,28 @@ export default {
     Promo,
     About,
   },
+  data() {
+    return {
+      title: 'Домашняя страница'
+    }
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Home page description',
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: 'Home, page, keywords',
+        },
+      ],
+    }
+  },
 }
 </script>
 
