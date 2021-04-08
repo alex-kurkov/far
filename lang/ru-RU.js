@@ -58,6 +58,7 @@ export default async function (context) {
             oneTime: support.data['ru_one_time_payment'],
             monthly: support.data['ru_consecutive_payments'],
             name: support.data['ru_name'],
+            agree: support.data['ru_agree'],
           },
           achievementMain: {
             title: achievementMain.data['ru_title'],

@@ -8,15 +8,16 @@
     <p class="footer__disclaimer">
       {{ $t('footer.legal') }}
     </p>
-    <p class="footer__license">
-      За исключением специально оговоренных случаев, содержание сайта
-      залицензировано под
-      <a
-        class="footer__link"
-        href="https://creativecommons.org/licenses/by/3.0/"
-        >Creative Commons Attribution 3.0 License</a
-      >
-    </p>
+    <i18n tag="p" path="footer.license" class="footer__license">
+      <template v-slot:license>
+        <a
+          class="footer__link"
+          href="https://creativecommons.org/licenses/by/3.0/"
+        >
+          {{ license }}
+        </a>
+      </template>
+    </i18n>
     <p class="footer__copyright">
       {{ $t('footer.copyright') }} {{ this.$store.state.content.footer.year }}
     </p>
@@ -29,6 +30,11 @@ import Social from '~/components/Social'
 export default {
   name: 'Footer',
   components: { Icon, Social },
+  data() {
+    return {
+      license: this.$store.state.content.footer.license,
+    }
+  },
 }
 </script>
 

@@ -89,9 +89,17 @@
               $v.agree.$dirty && !$v.agree.required,
           }"
         ></span>
-        <span class="money-options__agreement-text">
-          Согласен<a class="money-options__agreement-link">с офертой</a>
-        </span>
+        <i18n
+          tag="span"
+          path="support.agree"
+          class="money-options__agreement-text"
+        >
+          <template v-slot:offer>
+            <a class="money-options__agreement-link" href="#">
+              {{ $t('support.offer') }}
+            </a>
+          </template>
+        </i18n>
       </label>
     </li>
     <li>
