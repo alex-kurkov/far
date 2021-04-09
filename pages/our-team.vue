@@ -1,10 +1,10 @@
 <template>
   <section class="our-team">
-    <OurTeamPromo/>
-    <Report/>
-    <Report/>
-    <Report/>
-    <Report/>
+    <OurTeamPromo />
+    <Report />
+    <Report />
+    <Report />
+    <Report />
   </section>
 </template>
 

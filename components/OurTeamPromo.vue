@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'OurTeamPromo'
+  name: 'OurTeamPromo',
 }
 </script>
 
