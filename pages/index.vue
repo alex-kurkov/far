@@ -23,7 +23,7 @@ import Mission from '@/components/Mission'
 import Promo from '@/components/Promo'
 import SubMenu from '@/components/SubMenu'
 import Support from '@/components/Support'
-import {baseUrl} from '@/utils/api'
+import { baseUrl } from '@/utils/api'
 export default {
   components: {
     Support,

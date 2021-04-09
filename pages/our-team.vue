@@ -1,18 +1,26 @@
 <template>
-  <section class="about">
-    <p>ЗДЕСЬ БУДЕТ БУДУЩАЯ СТРАНИЦА ПОМОЧЬ ФАР</p>
+  <section class="our-team">
+    <OurTeamPromo/>
+    <Report/>
+    <Report/>
+    <Report/>
+    <Report/>
   </section>
 </template>
 
 <script>
+import OurTeamPromo from '@/components/OurTeamPromo'
+import Report from '@/components/Report'
+import Reports from '@/pages/reports'
 import { baseUrl } from '@/utils/api'
 export default {
+  components: { Report, Reports, OurTeamPromo },
   data() {
     return {
-      title: this.$t('metatags[3].title'),
-      description: this.$t('metatags[3].description'),
-      keywords: this.$t('metatags[3].keywords'),
-      image: baseUrl + this.$t('metatags[3].image.url'),
+      title: this.$t('metatags[1].title'),
+      description: this.$t('metatags[1].description'),
+      keywords: this.$t('metatags[1].keywords'),
+      image: baseUrl + this.$t('metatags[1].image.url'),
     }
   },
   head() {

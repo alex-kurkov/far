@@ -60,7 +60,7 @@ class Api {
     ])
   }
 }
-export const baseUrl = 'https://rylkov.ga';
+export const baseUrl = 'https://rylkov.ga'
 export const api = new Api({
   baseUrl: baseUrl,
 })
