@@ -6,7 +6,7 @@
     :key="index" 
     >
       {{ word }}
-      <div class="underline" v-bind:style="{ 'background-color': lineColor, height: height + 'px', bottom: bottomOffcet + 'px' }" />
+      <div class="underline" v-bind:style="{ 'background-color': lineColor, height: height + 'px' }" />
     </span>
   </h2>
 </template>
@@ -29,7 +29,7 @@
       },
       bottomOffcet: {
         type: String,
-        default: '4',
+        default: '1.2rem',
       }
     },
     computed: {
@@ -52,7 +52,6 @@
 .word {
   display: inline;
   position: relative;
-  white-space: nowrap;
 }
 
 .underline {
@@ -60,8 +59,27 @@
   width: 100%;
   position: absolute;
   left: 0;
+  bottom: 15%;
 }
 .word:last-of-type .underline {
   width: 90%;
 }
+@media screen and (min-width: 768px) {
+  .underline {
+    content: '';
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 25%;
+  }
+}
+@media screen and (min-width: 1280px) {
+    .underline {
+      content: '';
+      width: 100%;
+      position: absolute;
+      left: 0;
+    }
+}
+
 </style>
