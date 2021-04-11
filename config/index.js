@@ -1,6 +1,3 @@
-// import en from '../lang/en'
-// import ru from '../lang/ru'
-
 export const I18N = {
   locales: [
     {
@@ -21,7 +18,6 @@ export const I18N = {
     },
   },
   vueI18nLoader: true,
-  langDir: './lang/',
   vueI18n: {
     fallbackLocale: 'ru',
   },

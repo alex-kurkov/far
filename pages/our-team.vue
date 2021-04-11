@@ -17,7 +17,7 @@ export default {
   components: { Report, Reports, OurTeamPromo },
   data() {
     return {
-      title: this.$t('metatags[1].title'),
+      title: this.$t('subMenuList'),
       description: this.$t('metatags[1].description'),
       keywords: this.$t('metatags[1].keywords'),
       image: baseUrl + this.$t('metatags[1].image.url'),

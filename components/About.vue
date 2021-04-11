@@ -1,7 +1,7 @@
 <template>
   <section class="about">
     <h1 class="about__text">
-      <span class="about__text_style">{{ $t('about.title') }}&nbsp;</span>
+      <span class="about__abbreviation">{{ $t('about.title') }}&nbsp;</span>
       &#8212; {{ $t('about.subtitle') }}
     </h1>
   </section>
@@ -19,7 +19,7 @@ export default {
   max-width: 1280px;
   margin: auto;
   min-height: 90px;
-  background: #ffffff;
+  background: #fff;
 }
 
 .about__text {
@@ -38,7 +38,7 @@ export default {
   position: relative;
 }
 
-.about__text_style {
+.about__abbreviation {
   font-weight: 700;
 }
 
