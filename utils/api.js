@@ -45,6 +45,10 @@ class Api {
     return axios.get(`${this._baseURL}/metas`)
   }
 
+  getAboutNew() {
+    return axios.get(`${this._baseURL}/about`)
+  }
+
   getData() {
     return Promise.all([
       this.getIntro(),
@@ -57,6 +61,7 @@ class Api {
       this.getAchievementMain(),
       this.getFooter(),
       this.getMetas(),
+      this.getAboutNew(),
     ])
   }
 }

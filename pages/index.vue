@@ -24,6 +24,8 @@ import Promo from '@/components/Promo'
 import SubMenu from '@/components/SubMenu'
 import Support from '@/components/Support'
 import { baseUrl } from '@/utils/api'
+import dictionary from '@/utils/dictionary'
+
 export default {
   components: {
     Support,
@@ -42,6 +44,15 @@ export default {
       keywords: this.$t('metatags[0].keywords'),
       image: baseUrl + this.$t('metatags[0].image.url'),
     }
+  },
+  created() {
+    this.$i18n.mergeLocaleMessage('ru', this.translate('ru'))
+    this.$i18n.mergeLocaleMessage('en', this.translate('en'))
+  },
+  computed: {
+    translate: (state) => (locale) => {
+      return dictionary(state.$store.state.content, locale)
+    },
   },
   head() {
     return {

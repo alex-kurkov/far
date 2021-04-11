@@ -2,7 +2,7 @@
   <section class="about">
     <h1 class="about__text">
       <span class="about__text_style">{{ $t('about.title') }}&nbsp;</span>
-      &#8212; {{ $t('about.text') }}
+      &#8212; {{ $t('about.subtitle') }}
     </h1>
   </section>
 </template>
