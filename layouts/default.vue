@@ -26,7 +26,7 @@ export default {
         actionBtnText: 'Понятно',
       },
     })
-    setTimeout(() => {
+    /* setTimeout(() => {
       this.$notify({
         group: 'notification',
         title: 'Подтвердите действие на странице',
@@ -53,7 +53,7 @@ export default {
           type: 'news',
         },
       })
-    }, 10000)
+    }, 10000) */
   },
 }
 </script>
