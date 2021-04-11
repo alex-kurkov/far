@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section
+    <header
       :style="$i18n.locale === 'ru' ? cssPropsRu : cssPropsEn"
       class="header"
     />

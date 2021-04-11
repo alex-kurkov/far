@@ -1,12 +1,17 @@
 import { api } from '@/utils/api'
+import dictionary from '@/utils/dictionary'
 
 export const state = () => ({
   content: {},
 })
 
 export const getters = {
-  getNumberOfCards(state) {
+  getNumberOfCards: (state) => {
     return state.content.achievements.length
+  },
+
+  getLocaleMessage: (state) => (locale) => {
+    return dictionary(state.content, locale)
   },
 }
 
@@ -21,7 +26,7 @@ export const actions = {
     await dispatch('getContent')
   },
 
-  getContent({ commit }) {
+  getContent: ({ commit }) => {
     return api
       .getData()
       .then(
@@ -33,7 +38,7 @@ export const actions = {
           promo,
           help,
           support,
-          achievementMain,
+          achievement,
           footer,
           meta,
         ]) => {
@@ -45,7 +50,7 @@ export const actions = {
             promo: promo.data,
             help: help.data,
             support: support.data,
-            achievementMain: achievementMain.data,
+            achievement: achievement.data,
             footer: footer.data,
             metatags: meta.data,
           }
