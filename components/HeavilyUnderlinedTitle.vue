@@ -1,51 +1,46 @@
 <template>
   <h2 class="">
-    <span 
-    class="word"
-    v-for="(word, index) in words" 
-    :key="index" 
-    >
+    <span class="word" v-for="(word, index) in words" :key="index">
       {{ word }}
-      <div class="underline" v-bind:style="{ 'background-color': lineColor, height: height + 'px' }" />
+      <div
+        class="underline"
+        v-bind:style="{ 'background-color': lineColor, height: height + 'px' }"
+      />
     </span>
   </h2>
 </template>
 
 <script>
-  export default {
-    name: 'HeavilyUnderlinedTitle',
-    props: {
-      title: {
-        type: String,
-        default: '',
-      },
-      lineColor: {
-        type: String,
-        default: '#b33438',
-      },
-      height: {
-        type: String,
-        default: '11',
-      },
-      bottomOffcet: {
-        type: String,
-        default: '1.2rem',
-      }
+export default {
+  name: 'HeavilyUnderlinedTitle',
+  props: {
+    title: {
+      type: String,
+      default: '',
     },
-    computed: {
-      words() {
-        return this
-          .title
-          .split(' ')
-          .reduce(
-            (acc, word, index, arr) => {
-              acc.push(word);
-              if (index !== arr.length - 1) acc.push(' ');
-              return acc;
-            }, [])
-      }
-    }
-  }
+    lineColor: {
+      type: String,
+      default: '#b33438',
+    },
+    height: {
+      type: String,
+      default: '11',
+    },
+    bottomOffcet: {
+      type: String,
+      default: '1.2rem',
+    },
+  },
+  computed: {
+    words() {
+      return this.title.split(' ').reduce((acc, word, index, arr) => {
+        acc.push(word)
+        if (index !== arr.length - 1) acc.push(' ')
+        return acc
+      }, [])
+    },
+  },
+}
 </script>
 
 <style scoped>
@@ -74,12 +69,11 @@
   }
 }
 @media screen and (min-width: 1280px) {
-    .underline {
-      content: '';
-      width: 100%;
-      position: absolute;
-      left: 0;
-    }
+  .underline {
+    content: '';
+    width: 100%;
+    position: absolute;
+    left: 0;
+  }
 }
-
 </style>

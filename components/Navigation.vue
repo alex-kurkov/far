@@ -118,6 +118,14 @@ export default {
       ],
     }
   },
+  created(){
+
+  },
+  computed: {
+    getMenu() {
+
+    }
+  },
   methods: {
     enter(el) {
       el.style.width = 'auto'

@@ -1,9 +1,15 @@
 <template>
   <article class="report">
     <div class="report__image-wrap">
-      <img :src="content.image || 'https://downloader.disk.yandex.ru/preview/27ca92d2fd1cd806d6459ec4b0cdc4d7ff6273de8965a85ba73e0d4264927fb5/607376f2/bztc3OY2E7ccJpH8w44j6pw3GSf-nrN_27eykmziCa7FEevojwg6Vv6ZqC7-yLUN8x-Q0RUrbZD4S6XAT3shfQ%3D%3D?uid=0&filename=%D0%A0%D1%8B%D0%BB%D1%8C%D0%BA%D0%BE%D0%B2.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=1920x880'" class="report__image" />
+      <img
+        :src="
+          content.image ||
+          'https://downloader.disk.yandex.ru/preview/27ca92d2fd1cd806d6459ec4b0cdc4d7ff6273de8965a85ba73e0d4264927fb5/607376f2/bztc3OY2E7ccJpH8w44j6pw3GSf-nrN_27eykmziCa7FEevojwg6Vv6ZqC7-yLUN8x-Q0RUrbZD4S6XAT3shfQ%3D%3D?uid=0&filename=%D0%A0%D1%8B%D0%BB%D1%8C%D0%BA%D0%BE%D0%B2.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=1920x880'
+        "
+        class="report__image"
+      />
     </div>
-    <div class="report__message-wrap" v-bind:class="themeBackground" >
+    <div class="report__message-wrap" v-bind:class="themeBackground">
       <h3 class="report__message-title" v-html="content.title" />
       <p class="report__message-date" v-html="content.date" />
       <div class="report__message-line" />
@@ -17,18 +23,18 @@ export default {
   name: 'Report',
   props: {
     content: {
-      type: Object, 
+      type: Object,
       default: () => ({}),
     },
   },
   computed: {
     themeBackground() {
-      const { theme } = this._props.content;
+      const { theme } = this._props.content
       return {
-        [`theme_${theme}`] : true
+        [`theme_${theme}`]: true,
       }
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -110,7 +116,7 @@ export default {
   background-color: #b33438;
 }
 .theme_white .report__message-text {
-  color: #493E3E;
+  color: #493e3e;
 }
 
 .theme_gray {
@@ -165,5 +171,4 @@ export default {
     min-height: 400px;
   }
 }
-
 </style>

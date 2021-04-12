@@ -2,14 +2,19 @@
   <section class="report-promo">
     <div class="report-promo__content">
       <div class="report-promo__title-wrap">
-        <HeavilyUnderlinedTitle 
-          class="report-promo__title" 
-          :title="'Финансовые и содержательные годовые отчеты'" 
+        <HeavilyUnderlinedTitle
+          class="report-promo__title"
+          :title="'Финансовые и содержательные годовые отчеты'"
           lineColor="#b33438"
-          height='11'
+          height="11"
         />
       </div>
-      <p class="report-promo__text" v-html="'В данном разделе представлена информация о реализующихся в настоящее время проектах Фонда'" />
+      <p
+        class="report-promo__text"
+        v-html="
+          'В данном разделе представлена информация о реализующихся в настоящее время проектах Фонда'
+        "
+      />
       <div class="report-promo__graphics">
         <Bolt class="report-promo__svg" mainColor="#000" boltColor="#fff" />
       </div>
@@ -18,7 +23,7 @@
 </template>
 
 <script>
-import Bolt from '@/components/icons/Bolt';
+import Bolt from '@/components/icons/Bolt'
 export default {
   components: { Bolt },
   name: 'ReportPromo',
@@ -27,7 +32,7 @@ export default {
 
 <style scoped>
 .report-promo {
-  background: linear-gradient(to right, #000 50%, #C8C8C8 0);
+  background: linear-gradient(to right, #000 50%, #c8c8c8 0);
 }
 .report-promo__content {
   padding: 24px 0;
@@ -38,9 +43,9 @@ export default {
   width: 100%;
   background-color: #fff;
   display: grid;
-  grid-template-areas: 
-            "title title"
-            "text graphics";
+  grid-template-areas:
+    'title title'
+    'text graphics';
   grid-template-columns: 1fr 1fr;
   gap: 0;
   overflow: hidden;
@@ -83,9 +88,9 @@ export default {
 }
 @media screen and (min-width: 420px) {
   .report-promo__content {
-    grid-template-areas: 
-      "title graphics"
-      "text graphics";
+    grid-template-areas:
+      'title graphics'
+      'text graphics';
     grid-template-columns: 2fr 1fr;
     overflow: hidden;
   }
@@ -95,9 +100,9 @@ export default {
 }
 @media screen and (min-width: 768px) {
   .report-promo__content {
-    grid-template-areas: 
-      "title graphics"
-      "text graphics";
+    grid-template-areas:
+      'title graphics'
+      'text graphics';
     grid-template-columns: 3fr 1fr;
     overflow: hidden;
     padding: 16px 0 16px 16px;
@@ -121,7 +126,7 @@ export default {
   .report-promo__content {
     overflow: visible;
     padding: 24px 0 24px 24px;
-}
+  }
   .report-promo__svg {
     transform: translateX(20px);
   }
