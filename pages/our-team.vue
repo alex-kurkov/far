@@ -18,9 +18,9 @@ export default {
   data() {
     return {
       title: this.$t('subMenuList'),
-      description: this.$t('metatags[1].description'),
-      keywords: this.$t('metatags[1].keywords'),
-      image: baseUrl + this.$t('metatags[1].image.url'),
+      description: this.$t('metaTags[1].description'),
+      keywords: this.$t('metaTags[1].keywords'),
+      image: baseUrl + this.$t('metaTags[1].image.url'),
     }
   },
   head() {

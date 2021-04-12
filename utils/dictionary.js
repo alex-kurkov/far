@@ -14,7 +14,7 @@ export default function (storeContent, locale) {
 
   let allMetaTags = []
   //  это надо будет переписать со стороны strapi и потом здесь
-  storeContent.metatags.forEach((meta) => {
+  storeContent.metaTags.forEach((meta) => {
     const title = meta[`${locale}_title`]
     const description = meta[`${locale}_description`]
     const keywords = meta[`${locale}_keywords`]
@@ -74,6 +74,6 @@ export default function (storeContent, locale) {
       license: storeContent.footer.footerLicenseText[`${locale}`],
       copyright: storeContent.footer.footerCopyright[`${locale}`],
     },
-    metatags: allMetaTags,
+    metaTags: allMetaTags,
   }
 }

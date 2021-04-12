@@ -52,7 +52,7 @@ export const actions = {
             support: support.data,
             achievement: achievement.data,
             footer: footer.data,
-            metatags: meta.data,
+            metaTags: meta.data,
           }
           commit('SET_CONTENT', allData)
         }
