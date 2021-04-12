@@ -11,13 +11,15 @@
           v-for="(element, index) in elements"
           class="navigation__menu-item"
           @click="element.open = !element.open"
-          :key="element.title + index"
+          :key="element.title"
         >
           <div
             :class="[
-              index === elements.length - 1
-                ? 'navigation__main-menu-item navigation__main-menu-item_style'
-                : 'navigation__main-menu-item',
+              'navigation__main-menu-item',
+              {
+                'navigation__main-menu-item_style':
+                  index === elements.length - 1,
+              },
             ]"
           >
             <NuxtLink :to="element.to" class="navigation__link">
@@ -28,9 +30,8 @@
                 name="arrow-right"
                 class="navigation__arrow-right"
                 :class="[
-                  element.open
-                    ? 'navigation__arrow navigation__arrow_open'
-                    : 'navigation__arrow',
+                  'navigation__arrow',
+                  { navigation__arrow_open: element.open },
                 ]"
             /></span>
           </div>
@@ -116,6 +117,10 @@ export default {
         { to: '/?single', title: 'КОНТАКТЫ' },
       ],
     }
+  },
+  created() {},
+  computed: {
+    getMenu() {},
   },
   methods: {
     enter(el) {

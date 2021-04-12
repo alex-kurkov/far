@@ -9,7 +9,7 @@
       <li
         v-for="(element, index) in subMenuList"
         class="navigation__sub-menu-item"
-        :key="element.title + index"
+        :key="element.title"
       >
         <NuxtLink :to="element.to" class="navigation__sub-link">{{
           element.title

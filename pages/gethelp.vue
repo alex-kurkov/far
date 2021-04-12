@@ -9,10 +9,10 @@ import { baseUrl } from '@/utils/api'
 export default {
   data() {
     return {
-      title: this.$t('metatags[3].title'),
-      description: this.$t('metatags[3].description'),
-      keywords: this.$t('metatags[3].keywords'),
-      image: baseUrl + this.$t('metatags[3].image.url'),
+      title: this.$t('metaTags[3].title'),
+      description: this.$t('metaTags[3].description'),
+      keywords: this.$t('metaTags[3].keywords'),
+      image: baseUrl + this.$t('metaTags[3].image.url'),
     }
   },
   head() {

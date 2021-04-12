@@ -33,8 +33,8 @@ class Api {
     return axios.get(`${this._baseURL}/index-support`)
   }
 
-  getAchievementMain() {
-    return axios.get(`${this._baseURL}/index-achievement-main`)
+  getAchievement() {
+    return axios.get(`${this._baseURL}/index-achievement`)
   }
 
   getFooter() {
@@ -54,7 +54,7 @@ class Api {
       this.getPromo(),
       this.getHelp(),
       this.getSupport(),
-      this.getAchievementMain(),
+      this.getAchievement(),
       this.getFooter(),
       this.getMetas(),
     ])

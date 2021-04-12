@@ -24,6 +24,7 @@ import Promo from '@/components/Promo'
 import SubMenu from '@/components/SubMenu'
 import Support from '@/components/Support'
 import { baseUrl } from '@/utils/api'
+
 export default {
   components: {
     Support,
@@ -37,70 +38,82 @@ export default {
   },
   data() {
     return {
-      title: this.$t('metatags[0].title'),
-      description: this.$t('metatags[0].description'),
-      keywords: this.$t('metatags[0].keywords'),
-      image: baseUrl + this.$t('metatags[0].image.url'),
+      // перенес в тело head() и перестали сыпаться такие warnings:
+      // [vue-i18n] Cannot translate the value of keypath 'metaTags[0].image.url'.
+      // title: this.$t('metaTags[0].title'),
+      // description: this.$t('metaTags[0].description'),
+      // keywords: this.$t('metaTags[0].keywords'),
+      // image: baseUrl + this.$t('metaTags[0].image.url'),
     }
+  },
+  created() {
+    this.$i18n.mergeLocaleMessage(
+      'ru',
+      this.$store.getters.getLocaleMessage('ru')
+    )
+    this.$i18n.mergeLocaleMessage(
+      'en',
+      this.$store.getters.getLocaleMessage('en')
+    )
   },
   head() {
     return {
-      title: this.title,
+      title: this.$t('metaTags[0].title'),
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.description,
+          content: this.$t('metaTags[0].description'),
         },
         {
           hid: 'keywords',
           name: 'keywords',
-          content: this.keywords,
+          content: this.$t('metaTags[0].keywords'),
         },
         {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: this.title,
+          content: this.$t('metaTags[0].title'),
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: this.description,
+          content: this.$t('metaTags[0].description'),
         },
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: this.image,
+          content: baseUrl + this.$t('metaTags[0].image.url'),
         },
         {
           hid: 'twitter:image:alt',
           name: 'twitter:image:alt',
-          content: this.title,
+          content: this.$t('metaTags[0].title'),
         },
         {
           hid: 'og:title',
           property: 'og:title',
-          content: this.title,
+          content: this.$t('metaTags[0].title'),
         },
         {
           hid: 'og:description',
           property: 'og:description',
-          content: this.description,
+          content: this.$t('metaTags[0].description'),
         },
         {
           hid: 'og:image',
           property: 'og:image',
-          content: this.image,
+          content: baseUrl + this.$t('metaTags[0].image.url'),
         },
         {
           hid: 'og:image:secure_url',
           property: 'og:image:secure_url',
-          content: this.image,
+          content: baseUrl + this.$t('metaTags[0].image.url'),
         },
         {
           hid: 'og:image:alt',
           property: 'og:image:alt',
-          content: this.title,
+          content: this.$t('metaTags[0].title'),
         },
       ],
     }

@@ -13,10 +13,10 @@ export default {
   components: { AllReports, ReportsPromo },
   data() {
     return {
-      title: this.$t('metatags[1].title'),
-      description: this.$t('metatags[1].description'),
-      keywords: this.$t('metatags[1].keywords'),
-      image: baseUrl + this.$t('metatags[1].image.url'),
+      title: this.$t('metaTags[1].title'),
+      description: this.$t('metaTags[1].description'),
+      keywords: this.$t('metaTags[1].keywords'),
+      image: baseUrl + this.$t('metaTags[1].image.url'),
     }
   },
   head() {
