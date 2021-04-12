@@ -118,13 +118,9 @@ export default {
       ],
     }
   },
-  created(){
-
-  },
+  created() {},
   computed: {
-    getMenu() {
-
-    }
+    getMenu() {},
   },
   methods: {
     enter(el) {
