@@ -1,10 +1,13 @@
 <template>
   <section class="our-team">
     <OurTeamPromo />
-    <Report />
-    <Report />
-    <Report />
-    <Report />
+    <TeamMember
+      v-for="(item, index) in members"
+      v-bind:key="index"
+      :name="item.name"
+      :info="item.info"
+      :image="item.image"
+    />
   </section>
 </template>
 
@@ -12,17 +15,20 @@
 import OurTeamPromo from '@/components/OurTeamPromo'
 import Report from '@/components/Report'
 import Reports from '@/pages/reports'
+import TeamMember from '@/components/ourTeam/TeamMember'
 import { baseUrl } from '@/utils/api'
 export default {
-  components: { Report, Reports, OurTeamPromo },
+  components: { Report, Reports, OurTeamPromo, TeamMember },
   data() {
     return {
-      title: this.$t('subMenuList'),
+      title: this.$t('metaTags[1].title'),
       description: this.$t('metaTags[1].description'),
       keywords: this.$t('metaTags[1].keywords'),
       image: baseUrl + this.$t('metaTags[1].image.url'),
+      members: this.$t('teamMembers'),
     }
   },
+
   head() {
     return {
       title: this.title,
@@ -89,11 +95,10 @@ export default {
 </script>
 
 <style scoped>
-.about {
+.our-team {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 80vh;
 }
 </style>

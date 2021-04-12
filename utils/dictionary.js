@@ -1,3 +1,5 @@
+import { baseUrl } from "./api"
+
 export default function (storeContent, locale) {
   let allAchievements = []
   storeContent.achievements.forEach((achievement) => {
@@ -26,6 +28,17 @@ export default function (storeContent, locale) {
       image,
     }
     allMetaTags.push(metaTagUnit)
+  })
+
+  let allTeamMembers = []
+  storeContent.teamMembers.forEach((member) => {
+    const name = member.memberName[0][`${locale}`]
+    const info = member.memberInfo[0][`${locale}`]
+    const image = member.image
+    const teamMember = {
+      name, info, image: baseUrl + image.url
+    }
+    allTeamMembers.push(teamMember)
   })
 
   return {
@@ -75,5 +88,6 @@ export default function (storeContent, locale) {
       copyright: storeContent.footer.footerCopyright[`${locale}`],
     },
     metaTags: allMetaTags,
+    teamMembers: allTeamMembers,
   }
 }
