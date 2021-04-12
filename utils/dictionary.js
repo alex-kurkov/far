@@ -28,6 +28,13 @@ export default function (storeContent, locale) {
     allMetaTags.push(metaTagUnit)
   })
 
+  let localeMenu
+  if (locale === 'ru') {
+    localeMenu = storeContent.menuru
+  } else {
+    localeMenu = storeContent.menuen
+  }
+
   return {
     about: {
       title: storeContent.about.aboutTitle[`${locale}`],
@@ -75,5 +82,6 @@ export default function (storeContent, locale) {
       copyright: storeContent.footer.footerCopyright[`${locale}`],
     },
     metaTags: allMetaTags,
+    menu: localeMenu,
   }
 }

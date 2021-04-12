@@ -2,6 +2,7 @@
   <div class="body">
     <Hamburger />
     <Header />
+    <p>{{this.$i18n.locale}}</p>
     <Nuxt />
     <Footer />
     <Notifications />
@@ -54,6 +55,19 @@ export default {
         },
       })
     }, 10000) */
+  },
+  created() {
+    this.$i18n.mergeLocaleMessage(
+      'ru',
+      this.$store.getters.getLocaleMessage('ru')
+    )
+    this.$i18n.mergeLocaleMessage(
+      'en',
+      this.$store.getters.getLocaleMessage('en')
+    )
+
+    console.log(this.$t('metaTags'))
+
   },
 }
 </script>

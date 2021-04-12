@@ -8,7 +8,7 @@
     <nav v-show="isMenuOpen" class="navigation">
       <ul class="navigation__menu">
         <li
-          v-for="(element, index) in elements"
+          v-for="(element, index) in this.$t('menu')"
           class="navigation__menu-item"
           @click="element.open = !element.open"
           :key="element.title"
@@ -55,68 +55,9 @@ export default {
   props: ['isMenuOpen'],
   data() {
     return {
-      elements: this.$store.state.content.menu
-      // elements: [
-      //   {
-      //     to: '#',
-      //     title: 'О НАС',
-      //     open: false,
-      //     subMenuList: [
-      //       {
-      //         to: '/?parent11-child1',
-      //         title: 'кто такой Андрей Рыльков',
-      //       },
-      //       {
-      //         to: '/?parent11-child1',
-      //         title: 'миссия и стратегии',
-      //       },
-      //       {
-      //         to: '/?parent11-child1',
-      //         title: 'команда ФАР',
-      //       },
-      //       {
-      //         to: '/?parent11-child1',
-      //         title: 'проекты и отчёты',
-      //       },
-      //       {
-      //         to: '/?parent11-child1',
-      //         title: 'годовые отчёты',
-      //       },
-      //       {
-      //         to: '/?parent11-child1',
-      //         title: 'учредительные документы',
-      //       },
-      //     ],
-      //   },
-      //   {
-      //     to: '/?single2',
-      //     title: 'ПОДДЕРЖАТЬ ФАР',
-      //     open: false,
-      //     subMenuList: [
-      //       {
-      //         to: '/?parent3-child3',
-      //         title: 'сделать пожертвование',
-      //       },
-      //       {
-      //         to: '/?parent3-child4',
-      //         title: 'волонтёрство в ФАР',
-      //       },
-      //       {
-      //         to: '/?parent3-child4',
-      //         title: 'стажировка в ФАР',
-      //       },
-      //       {
-      //         to: '/?parent3-child4',
-      //         title: 'партнёрство с ФАР',
-      //       },
-      //     ],
-      //   },
-      //   {
-      //     to: '/?single',
-      //     title: 'ПОЛУЧИТЬ ПОМОЩЬ',
-      //   },
-      //   { to: '/?single', title: 'КОНТАКТЫ' },
-      // ],
+      elements: this.$t('menu')
+      // elements: this.$i18n.locale==='en' ? this.$store.state.content.menuEn : this.$store.state.content.menuRu,
+      // currentLanguage: this.$i18n.locale
     }
   },
   created() {},

@@ -42,6 +42,7 @@ export default {
   },
   methods: {
     handleMenuClick() {
+      console.log (this.$t ('menu'))
       this.isMenuOpen = !this.isMenuOpen
       const hamburgerIconElement = document.querySelector('.hamburger-icon')
       hamburgerIconElement.classList.toggle('hamburger-icon_state_opened')

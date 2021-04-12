@@ -53,7 +53,7 @@ export const actions = {
             achievement: achievement.data,
             footer: footer.data,
             metaTags: meta.data,
-            menu: [
+            menuru: [
               {
                 to: '#',
                 title: 'О НАС',
@@ -112,7 +112,68 @@ export const actions = {
                 to: '/?single',
                 title: 'ПОЛУЧИТЬ ПОМОЩЬ',
               },
-              { to: '/?single', title: 'КОНТАКТЫ' },
+              { to: '/contacts', title: 'КОНТАКТЫ' },
+            ],
+            menuen: [
+              {
+                to: '#',
+                title: 'About',
+                open: false,
+                subMenuList: [
+                  {
+                    to: '/?parent11-child1',
+                    title: 'who is Андрей Рыльков',
+                  },
+                  {
+                    to: '/?parent11-child1',
+                    title: 'mission & strategy',
+                  },
+                  {
+                    to: '/?parent11-child1',
+                    title: 'our team',
+                  },
+                  {
+                    to: '/?parent11-child1',
+                    title: 'projects & reports',
+                  },
+                  {
+                    to: '/?parent11-child1',
+                    title: 'end of the year reports',
+                  },
+                  {
+                    to: '/?parent11-child1',
+                    title: 'legal information',
+                  },
+                ],
+              },
+              {
+                to: '/?single2',
+                title: 'Support FAR',
+                open: false,
+                subMenuList: [
+                  {
+                    to: '/?parent3-child3',
+                    title: 'donate',
+                  },
+                  {
+                    to: '/?parent3-child4',
+                    title: 'be a volunteer',
+                  },
+                  {
+                    to: '/?parent3-child4',
+                    title: 'coop program',
+                  },
+                  {
+                    to: '/?parent3-child4',
+                    title: 'be a partner',
+                  },
+                ],
+              },
+              {
+                to: '/?single',
+                title: 'get help',
+              },
+              { to: '/contacts', title: 'contacts' },
             ],
           }
           commit('SET_CONTENT', allData)

@@ -46,15 +46,8 @@ export default {
       // image: baseUrl + this.$t('metaTags[0].image.url'),
     }
   },
-  created() {
-    this.$i18n.mergeLocaleMessage(
-      'ru',
-      this.$store.getters.getLocaleMessage('ru')
-    )
-    this.$i18n.mergeLocaleMessage(
-      'en',
-      this.$store.getters.getLocaleMessage('en')
-    )
+  mounted() {
+    console.log(this.$t('metaTags'))
   },
   head() {
     return {

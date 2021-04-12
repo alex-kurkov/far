@@ -12,9 +12,13 @@ export const I18N = {
     },
   ],
   defaultLocale: 'ru',
+  strategy: 'prefix_except_default',
   routes: {
     about: {
       en: '/about',
+    },
+    contacts: {
+      en: '/contacts',
     },
   },
   vueI18nLoader: true,
