@@ -6,34 +6,33 @@
     @leave="leave"
   >
     <nav v-show="isMenuOpen" class="navigation">
-      <p>{{this.$i18n.locale}}</p>
       <ul class="navigation__menu">
         <li
           v-for="(element, index) in this.$t('menu')"
           class="navigation__menu-item"
           @click="element.open = !element.open"
-          :key="element.title[$i18n.locale]"
+          :key="element.menuTitle[$i18n.locale]"
         >
           <div
             :class="[
               'navigation__main-menu-item',
               {
-                'navigation__main-menu-item_style': index === 4 - 1,
-                // index === elements.length - 1,
+                'navigation__main-menu-item_style':
+                  index === elements.length - 1,
               },
             ]"
           >
             <NuxtLink
-              v-if="!element.subMenuList"
-              :to="localePath(`${element.to}`)"
+              v-if="!element.sections[0]"
+              :to="localePath(`${element.path}`)"
               class="navigation__link"
             >
-              {{ element.title[$i18n.locale] }}
+              {{ element.menuTitle[$i18n.locale] }}
             </NuxtLink>
-            <div v-if="element.subMenuList" class="navigation__link">
-              {{ element.title[$i18n.locale]}}
+            <div v-if="!!element.sections[0]" class="navigation__link">
+              {{ element.menuTitle[$i18n.locale]}}
             </div>
-            <span v-show="element.subMenuList"
+            <span v-show="!!element.sections[0]"
               ><icon
                 name="arrow-right"
                 class="navigation__arrow-right"
@@ -44,8 +43,8 @@
             /></span>
           </div>
           <SubMenu
-            v-if="element.subMenuList"
-            :subMenuList="element.subMenuList"
+            v-if="!!element.sections[0]"
+            :subMenuList="element.sections"
             :isOpen="element.open"
           />
         </li>
@@ -63,10 +62,7 @@ export default {
   props: ['isMenuOpen'],
   data() {
     return {
-      currentLanguage: this.$i18n.locale
-      // elements: this.$t('menu'),
-      // elements: this.$i18n.locale==='en' ? this.$store.state.content.menuEn : this.$store.state.content.menuRu,
-      // currentLanguage: this.$i18n.locale
+      elements: this.$store.state.content.menu,
     }
   },
   created() {},

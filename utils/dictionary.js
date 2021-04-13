@@ -28,12 +28,12 @@ export default function (storeContent, locale) {
     allMetaTags.push(metaTagUnit)
   })
 
-  let localeMenu
-  if (locale === 'ru') {
-    localeMenu = storeContent.menuRU
-  } else {
-    localeMenu = storeContent.menuEN
-  }
+  // let localeMenu
+  // if (locale === 'ru') {
+  //   localeMenu = storeContent.menuRU
+  // } else {
+  //   localeMenu = storeContent.menuEN
+  // }
 
   // console.log(`locale`, locale, localeMenu)
 
@@ -84,6 +84,6 @@ export default function (storeContent, locale) {
       copyright: storeContent.footer.footerCopyright[`${locale}`],
     },
     metaTags: allMetaTags,
-    menu: localeMenu,
+    menu: storeContent.menu,
   }
 }

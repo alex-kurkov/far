@@ -9,12 +9,12 @@
       <li
         v-for="(element, index) in subMenuList"
         class="navigation__sub-menu-item"
-        :key="element.title[$i18n.locale]"
+        :key="element.menuTitle[$i18n.locale]"
       >
         <NuxtLink
-          :to="localePath(`${element.to}`)"
+          :to="localePath(`${element.path}`)"
           class="navigation__sub-link"
-          >{{ element.title[$i18n.locale] }}</NuxtLink
+          >{{ element.menuTitle[0][$i18n.locale]}}</NuxtLink
         >
       </li>
     </ul>
@@ -27,6 +27,7 @@ export default {
   props: ['isOpen', 'subMenuList'],
   methods: {
     enter(el) {
+      console.log(this.subMenuList)
       el.style.height = 'auto'
       const height = getComputedStyle(el).height
       el.style.height = 0

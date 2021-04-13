@@ -44,117 +44,65 @@ export const actions = {
           achievement,
           footer,
           meta,
+          pages,
         ]) => {
-          const menu1 = [
+          console.log(pages.data[1].sections)
+
+          const menu = [
             {
-              to: 'index',
-              title: {
+              path: 'index',
+              menuTitle: {
                 ru: 'О НАС',
                 en: 'About',
               },
               open: false,
-              subMenuList: [
+              sections: [
                 {
-                  to: 'andrey',
-                  title: {
+                  path: 'andrey',
+                  menuTitle: {
                     ru: 'кто такой Андрей Рыльков',
                     en: 'who is Andrey',
                   },
                 },
                 {
-                  to: '/mission',
-                  title: {
+                  path: '/mission',
+                  menuTitle: {
                     ru: 'миссия и стратегии',
                     en: 'mission and strategy',
                   },
                 },
                 {
-                  to: '/team',
-                  title: { ru: 'команда ФАР', en: 'our team FAR' },
+                  path: '/team',
+                  menuTitle: { ru: 'команда ФАР', en: 'our team FAR' },
                 },
               ],
             },
             {
-              to: '/support',
-              title: { ru: 'ПОДДЕРЖАТЬ ФАР', en: 'Support FAR' },
+              path: '/support',
+              menuTitle: { ru: 'ПОДДЕРЖАТЬ ФАР', en: 'Support FAR' },
               open: false,
-              subMenuList: [
+              sections: [
                 {
-                  to: 'donate',
-                  title: { ru: 'сделать пожертвование', en: 'donate' },
+                  path: 'donate',
+                  menuTitle: { ru: 'сделать пожертвование', en: 'donate' },
                 },
                 {
-                  to: 'volunteer',
-                  title: { ru: 'волонтёрство в ФАР', en: 'volunteer' },
+                  path: 'volunteer',
+                  menuTitle: { ru: 'волонтёрство в ФАР', en: 'volunteer' },
                 },
               ],
             },
             {
-              to: 'help',
-              title: { ru: 'ПОЛУЧИТЬ ПОМОЩЬ', en: 'GET HELP' },
+              path: 'help',
+              menuTitle: { ru: 'ПОЛУЧИТЬ ПОМОЩЬ', en: 'GET HELP' },
+              sections: [],
             },
-            { to: 'contacts', title: { ru: 'КОНТАКТЫ', en: 'Contacts' } },
+            {
+              path: 'contacts',
+              menuTitle: { ru: 'КОНТАКТЫ', en: 'Contacts' },
+              sections: [],
+            },
           ]
-
-          const menu2 = [
-            {
-              to: 'index',
-              title: {
-                ru: 'О НАС',
-                en: 'About',
-              },
-              open: false,
-              subMenuList: [
-                {
-                  to: 'andrey',
-                  title: {
-                    ru: 'кто такой Андрей Рыльков',
-                    en: 'who is Andrey',
-                  },
-                },
-                {
-                  to: '/mission',
-                  title: {
-                    ru: 'миссия и стратегии',
-                    en: 'mission and strategy',
-                  },
-                },
-                {
-                  to: '/team',
-                  title: { ru: 'команда ФАР', en: 'our team FAR' },
-                },
-              ],
-            },
-            {
-              to: '/support',
-              title: { ru: 'ПОДДЕРЖАТЬ ФАР', en: 'Support FAR' },
-              open: false,
-              subMenuList: [
-                {
-                  to: 'donate',
-                  title: { ru: 'сделать пожертвование', en: 'donate' },
-                },
-                {
-                  to: 'volunteer',
-                  title: { ru: 'волонтёрство в ФАР', en: 'volunteer' },
-                },
-              ],
-            },
-            {
-              to: 'help',
-              title: { ru: 'ПОЛУЧИТЬ ПОМОЩЬ', en: 'GET HELP' },
-            },
-            { to: 'contacts', title: { ru: 'КОНТАКТЫ', en: 'Contacts' } },
-          ]
-
-          console.log(
-            '+++++++++++>>>>>>>>> final menu en',
-            menuBuilderEn(menu1)
-          )
-          console.log(
-            '+++++++++++>>>>>>>>> final menu ru',
-            menuBuilderRu(menu1)
-          )
 
           const allData = {
             intro: intro.data,
@@ -167,138 +115,7 @@ export const actions = {
             achievement: achievement.data,
             footer: footer.data,
             metaTags: meta.data,
-
-            // menuEN: menuBuilderEn(menu1),
-            // menuRU: menuBuilderRu(menu1),
-
-            menuEN: menuBuilder(menu1, 'en'),
-            menuRU: menuBuilder(menu2, 'ru'),
-
-            // menuEN: menuBuilderEn(menu2),
-            // menuRU: menuBuilderRu(menu1),
-            // menuRU2: [
-            //   {
-            //     to: 'index',
-            //     menuTitle: 'О НАС',
-            //     open: false,
-            //     subMenuList: [
-            //       {
-            //         to: 'andrey-rylkov',
-            //         menuTitle: 'кто такой Андрей Рыльков',
-            //       },
-            //       {
-            //         to: '/?parent11-child1',
-            //         menuTitle: 'миссия и стратегии',
-            //       },
-            //       {
-            //         to: '/?parent11-child1',
-            //         menuTitle: 'команда ФАР',
-            //       },
-            //       {
-            //         to: '/?parent11-child1',
-            //         menuTitle: 'проекты и отчёты',
-            //       },
-            //       {
-            //         to: '/?parent11-child1',
-            //         menuTitle: 'годовые отчёты',
-            //       },
-            //       {
-            //         to: '/?parent11-child1',
-            //         menuTitle: 'учредительные документы',
-            //       },
-            //     ],
-            //   },
-            //   {
-            //     to: '/?single2',
-            //     menuTitle: 'ПОДДЕРЖАТЬ ФАР',
-            //     open: false,
-            //     subMenuList: [
-            //       {
-            //         to: '/?parent3-child3',
-            //         menuTitle: 'сделать пожертвование',
-            //       },
-            //       {
-            //         to: '/?parent3-child4',
-            //         menuTitle: 'волонтёрство в ФАР',
-            //       },
-            //       {
-            //         to: '/?parent3-child4',
-            //         menuTitle: 'стажировка в ФАР',
-            //       },
-            //       {
-            //         to: '/?parent3-child4',
-            //         menuTitle: 'партнёрство с ФАР',
-            //       },
-            //     ],
-            //   },
-            //   {
-            //     to: '/?single',
-            //     menuTitle: 'ПОЛУЧИТЬ ПОМОЩЬ',
-            //   },
-            //   { to: 'contacts', menuTitle: 'КОНТАКТЫ' },
-            // ],
-
-            // menuEN2: [
-            //   {
-            //     to: 'index',
-            //     menuTitle: 'About',
-            //     open: false,
-            //     subMenuList: [
-            //       {
-            //         to: 'andrey-rylkov',
-            //         menuTitle: 'who is Андрей Рыльков',
-            //       },
-            //       {
-            //         to: '/?parent11-child1',
-            //         menuTitle: 'mission & strategy',
-            //       },
-            //       {
-            //         to: '/?parent11-child1',
-            //         menuTitle: 'our team',
-            //       },
-            //       {
-            //         to: '/?parent11-child1',
-            //         menuTitle: 'projects & reports',
-            //       },
-            //       {
-            //         to: '/?parent11-child1',
-            //         menuTitle: 'end of the year reports',
-            //       },
-            //       {
-            //         to: '/?parent11-child1',
-            //         menuTitle: 'legal information',
-            //       },
-            //     ],
-            //   },
-            //   {
-            //     to: '/?single2',
-            //     menuTitle: 'Support FAR',
-            //     open: false,
-            //     subMenuList: [
-            //       {
-            //         to: '/?parent3-child3',
-            //         menuTitle: 'donate',
-            //       },
-            //       {
-            //         to: '/?parent3-child4',
-            //         menuTitle: 'be a volunteer',
-            //       },
-            //       {
-            //         to: '/?parent3-child4',
-            //         menuTitle: 'coop program',
-            //       },
-            //       {
-            //         to: '/?parent3-child4',
-            //         menuTitle: 'be a partner',
-            //       },
-            //     ],
-            //   },
-            //   {
-            //     to: '/?single',
-            //     menuTitle: 'get help',
-            //   },
-            //   { to: 'contacts', menuTitle: 'contacts' },
-            // ],
+            menu: pages.data,
           }
           commit('SET_CONTENT', allData)
         }
