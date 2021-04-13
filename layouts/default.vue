@@ -2,7 +2,6 @@
   <div class="body">
     <Hamburger />
     <Header />
-    <p>{{this.$i18n.locale}}</p>
     <Nuxt />
     <Footer />
     <Notifications />
@@ -66,8 +65,7 @@ export default {
       this.$store.getters.getLocaleMessage('en')
     )
 
-    console.log(this.$t('metaTags'))
-
+    // console.log('menu+++>>>', this.$t('menu'))
   },
 }
 </script>

@@ -30,10 +30,12 @@ export default function (storeContent, locale) {
 
   let localeMenu
   if (locale === 'ru') {
-    localeMenu = storeContent.menuru
+    localeMenu = storeContent.menuRU
   } else {
-    localeMenu = storeContent.menuen
+    localeMenu = storeContent.menuEN
   }
+
+  // console.log(`locale`, locale, localeMenu)
 
   return {
     about: {

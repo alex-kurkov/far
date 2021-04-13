@@ -47,7 +47,7 @@ export default {
     }
   },
   mounted() {
-    console.log(this.$t('metaTags'))
+    // console.log(this.$t('metaTags'))
   },
   head() {
     return {

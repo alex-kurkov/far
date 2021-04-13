@@ -9,11 +9,13 @@
       <li
         v-for="(element, index) in subMenuList"
         class="navigation__sub-menu-item"
-        :key="element.title"
+        :key="element.menuTitle"
       >
-        <NuxtLink :to="element.to" class="navigation__sub-link">{{
-          element.title
-        }}</NuxtLink>
+        <NuxtLink
+          :to="localePath(`${element.to}`)"
+          class="navigation__sub-link"
+          >{{ element.menuTitle }}</NuxtLink
+        >
       </li>
     </ul>
   </transition>
@@ -37,7 +39,6 @@ export default {
       el.style.height = 'auto'
     },
     leave(el) {
-      console.log(el.classList)
       el.style.height = getComputedStyle(el).height
       getComputedStyle(el)
       setTimeout(() => {

@@ -11,20 +11,27 @@
           v-for="(element, index) in this.$t('menu')"
           class="navigation__menu-item"
           @click="element.open = !element.open"
-          :key="element.title"
+          :key="element.menuTitle"
         >
           <div
             :class="[
               'navigation__main-menu-item',
               {
-                'navigation__main-menu-item_style':
-                  index === elements.length - 1,
+                'navigation__main-menu-item_style': index === 4 - 1,
+                // index === elements.length - 1,
               },
             ]"
           >
-            <NuxtLink :to="element.to" class="navigation__link">
-              {{ element.title }}
+            <NuxtLink
+              v-if="!element.subMenuList"
+              :to="localePath(`${element.to}`)"
+              class="navigation__link"
+            >
+              {{ element.menuTitle }}
             </NuxtLink>
+            <div v-if="element.subMenuList" class="navigation__link">
+              {{ element.menuTitle }}
+            </div>
             <span v-show="element.subMenuList"
               ><icon
                 name="arrow-right"
@@ -55,7 +62,7 @@ export default {
   props: ['isMenuOpen'],
   data() {
     return {
-      elements: this.$t('menu')
+      // elements: this.$t('menu'),
       // elements: this.$i18n.locale==='en' ? this.$store.state.content.menuEn : this.$store.state.content.menuRu,
       // currentLanguage: this.$i18n.locale
     }
