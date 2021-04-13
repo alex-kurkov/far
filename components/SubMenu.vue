@@ -9,12 +9,12 @@
       <li
         v-for="(element, index) in subMenuList"
         class="navigation__sub-menu-item"
-        :key="element.menuTitle"
+        :key="element.title[$i18n.locale]"
       >
         <NuxtLink
           :to="localePath(`${element.to}`)"
           class="navigation__sub-link"
-          >{{ element.menuTitle }}</NuxtLink
+          >{{ element.title[$i18n.locale] }}</NuxtLink
         >
       </li>
     </ul>

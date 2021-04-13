@@ -6,12 +6,13 @@
     @leave="leave"
   >
     <nav v-show="isMenuOpen" class="navigation">
+      <p>{{this.$i18n.locale}}</p>
       <ul class="navigation__menu">
         <li
           v-for="(element, index) in this.$t('menu')"
           class="navigation__menu-item"
           @click="element.open = !element.open"
-          :key="element.menuTitle"
+          :key="element.title[$i18n.locale]"
         >
           <div
             :class="[
@@ -27,10 +28,10 @@
               :to="localePath(`${element.to}`)"
               class="navigation__link"
             >
-              {{ element.menuTitle }}
+              {{ element.title[$i18n.locale] }}
             </NuxtLink>
             <div v-if="element.subMenuList" class="navigation__link">
-              {{ element.menuTitle }}
+              {{ element.title[$i18n.locale]}}
             </div>
             <span v-show="element.subMenuList"
               ><icon
@@ -62,6 +63,7 @@ export default {
   props: ['isMenuOpen'],
   data() {
     return {
+      currentLanguage: this.$i18n.locale
       // elements: this.$t('menu'),
       // elements: this.$i18n.locale==='en' ? this.$store.state.content.menuEn : this.$store.state.content.menuRu,
       // currentLanguage: this.$i18n.locale
@@ -69,7 +71,9 @@ export default {
   },
   created() {},
   computed: {
-    getMenu() {},
+    getMenu() {
+      console.log('test')
+    },
   },
   methods: {
     enter(el) {

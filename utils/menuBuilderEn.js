@@ -6,7 +6,6 @@ export default function menuBuilderEn(menuEn) {
         if (menuItemEn.hasOwnProperty(key)) {
           if (key === 'title') {
             if (menuItemEn[key].en) {
-              // console.log(menuItem[key].en)
               menuItemEn['menuTitle'] = menuItemEn[key].en
             }
           }
@@ -17,8 +16,6 @@ export default function menuBuilderEn(menuEn) {
       }
       newMenuEn.push(menuItemEn)
     })
-
-    // console.log('newMenuEn', newMenuEn)
     return newMenuEn
   }
 
