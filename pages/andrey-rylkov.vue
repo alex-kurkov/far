@@ -1,15 +1,9 @@
 <template>
   <section class="about">
-    <p>{{ $t('text.aboutPageTitle') }}</p>
-
-    <ul>
-      <li>Кто такой Андрей Рыльков</li>
-      <li>Миссия</li>
-      <li>Команда</li>
-      <li>Проекты и отчеты</li>
-      <li>Годовые отчеты</li>
-      <li>Учредительные документы</li>
-    </ul>
+    <p>Кто такой Андрей Рыльков</p>
+    <p>Текущий язык - {{ this.$i18n.locale }}</p>
+    <span>{{ $t('about.title') }}&nbsp;</span>
+    &#8212; {{ $t('about.subtitle') }}
   </section>
 </template>
 

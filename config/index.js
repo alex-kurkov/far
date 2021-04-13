@@ -12,11 +12,6 @@ export const I18N = {
     },
   ],
   defaultLocale: 'ru',
-  routes: {
-    about: {
-      en: '/about',
-    },
-  },
   vueI18nLoader: true,
   vueI18n: {
     fallbackLocale: 'ru',

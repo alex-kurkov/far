@@ -8,10 +8,10 @@
     <nav v-show="isMenuOpen" class="navigation">
       <ul class="navigation__menu">
         <li
-          v-for="(element, index) in elements"
+          v-for="(element, index) in this.$t('menu')"
           class="navigation__menu-item"
           @click="element.open = !element.open"
-          :key="element.title"
+          :key="element.menuTitle[$i18n.locale]"
         >
           <div
             :class="[
@@ -22,10 +22,17 @@
               },
             ]"
           >
-            <NuxtLink :to="element.to" class="navigation__link">
-              {{ element.title }}
+            <NuxtLink
+              v-if="!element.sections[0]"
+              :to="localePath(`${element.path}`)"
+              class="navigation__link"
+            >
+              {{ element.menuTitle[$i18n.locale] }}
             </NuxtLink>
-            <span v-show="element.subMenuList"
+            <div v-if="!!element.sections[0]" class="navigation__link">
+              {{ element.menuTitle[$i18n.locale] }}
+            </div>
+            <span v-show="!!element.sections[0]"
               ><icon
                 name="arrow-right"
                 class="navigation__arrow-right"
@@ -36,8 +43,8 @@
             /></span>
           </div>
           <SubMenu
-            v-if="element.subMenuList"
-            :subMenuList="element.subMenuList"
+            v-if="!!element.sections[0]"
+            :subMenuList="element.sections"
             :isOpen="element.open"
           />
         </li>
@@ -55,67 +62,7 @@ export default {
   props: ['isMenuOpen'],
   data() {
     return {
-      elements: [
-        {
-          to: '#',
-          title: 'О НАС',
-          open: false,
-          subMenuList: [
-            {
-              to: '/?parent11-child1',
-              title: 'кто такой Андрей Рыльков',
-            },
-            {
-              to: '/?parent11-child1',
-              title: 'миссия и стратегии',
-            },
-            {
-              to: '/?parent11-child1',
-              title: 'команда ФАР',
-            },
-            {
-              to: '/?parent11-child1',
-              title: 'проекты и отчёты',
-            },
-            {
-              to: '/?parent11-child1',
-              title: 'годовые отчёты',
-            },
-            {
-              to: '/?parent11-child1',
-              title: 'учредительные документы',
-            },
-          ],
-        },
-        {
-          to: '/?single2',
-          title: 'ПОДДЕРЖАТЬ ФАР',
-          open: false,
-          subMenuList: [
-            {
-              to: '/?parent3-child3',
-              title: 'сделать пожертвование',
-            },
-            {
-              to: '/?parent3-child4',
-              title: 'волонтёрство в ФАР',
-            },
-            {
-              to: '/?parent3-child4',
-              title: 'стажировка в ФАР',
-            },
-            {
-              to: '/?parent3-child4',
-              title: 'партнёрство с ФАР',
-            },
-          ],
-        },
-        {
-          to: '/?single',
-          title: 'ПОЛУЧИТЬ ПОМОЩЬ',
-        },
-        { to: '/?single', title: 'КОНТАКТЫ' },
-      ],
+      elements: this.$store.state.content.menu,
     }
   },
   created() {},

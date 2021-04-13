@@ -1,6 +1,9 @@
 <template>
   <section class="about">
     <p>ЗДЕСЬ БУДЕТ БУДУЩАЯ СТРАНИЦА КОНТАКТЫ</p>
+    <p>Текущий язык - {{ this.$i18n.locale }}</p>
+    <span>{{ $t('about.title') }}&nbsp;</span>
+    &#8212; {{ $t('about.subtitle') }}
   </section>
 </template>
 

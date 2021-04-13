@@ -41,6 +41,7 @@ export const actions = {
           achievement,
           footer,
           meta,
+          pages,
         ]) => {
           const allData = {
             intro: intro.data,
@@ -53,6 +54,7 @@ export const actions = {
             achievement: achievement.data,
             footer: footer.data,
             metaTags: meta.data,
+            menu: pages.data,
           }
           commit('SET_CONTENT', allData)
         }
