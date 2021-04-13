@@ -89,5 +89,9 @@ export default function (storeContent, locale) {
     },
     metaTags: allMetaTags,
     teamMembers: allTeamMembers,
+    ourTeamPromo: {
+      title: storeContent.ourTeamPromo.title[`${locale}`],
+      image: baseUrl + storeContent.ourTeamPromo.image.url,
+    }
   }
 }

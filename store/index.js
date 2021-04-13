@@ -42,6 +42,7 @@ export const actions = {
           footer,
           meta,
           teamMembers,
+          ourTeamPromo,
         ]) => {
           const allData = {
             intro: intro.data,
@@ -55,6 +56,7 @@ export const actions = {
             footer: footer.data,
             metaTags: meta.data,
             teamMembers: teamMembers.data,
+            ourTeamPromo: ourTeamPromo.data,
           }
           commit('SET_CONTENT', allData)
         }

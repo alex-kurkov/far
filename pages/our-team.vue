@@ -1,13 +1,15 @@
 <template>
   <section class="our-team">
-    <OurTeamPromo />
-    <TeamMember
-      v-for="(item, index) in members"
-      v-bind:key="index"
-      :name="item.name"
-      :info="item.info"
-      :image="item.image"
-    />
+    <OurTeamPromo :title="promoTitle" :image="promoImage" />
+    <ul class="our-team__members">
+      <TeamMember
+        v-for="(item, index) in members"
+        v-bind:key="index"
+        :name="item.name"
+        :info="item.info"
+        :image="item.image"
+      />
+    </ul>
   </section>
 </template>
 
@@ -26,6 +28,8 @@ export default {
       keywords: this.$t('metaTags[1].keywords'),
       image: baseUrl + this.$t('metaTags[1].image.url'),
       members: this.$t('teamMembers'),
+      promoTitle: this.$t('ourTeamPromo.title'),
+      promoImage: baseUrl + this.$store.state.content.ourTeamPromo.image.url,
     }
   },
 
@@ -100,5 +104,16 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.our-team__members {
+  list-style: none;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to right, #727272 50%, #b23438 50%);
 }
 </style>

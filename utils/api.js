@@ -49,6 +49,10 @@ class Api {
     return axios.get(`${this._baseURL}/team-members`)
   }
 
+  getOurTeamPromo() {
+    return axios.get(`${this._baseURL}/our-team-promo`)
+  }
+
   getData() {
     return Promise.all([
       this.getIntro(),
@@ -62,6 +66,7 @@ class Api {
       this.getFooter(),
       this.getMetas(),
       this.getTeamMembers(),
+      this.getOurTeamPromo(),
     ])
   }
 }
