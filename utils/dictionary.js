@@ -34,9 +34,6 @@ export default function (storeContent, locale) {
   // } else {
   //   localeMenu = storeContent.menuEN
   // }
-
-  // console.log(`locale`, locale, localeMenu)
-
   return {
     about: {
       title: storeContent.about.aboutTitle[`${locale}`],

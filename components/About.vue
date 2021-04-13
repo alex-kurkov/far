@@ -1,6 +1,5 @@
 <template>
   <section class="about">
-    <p>{{ this.$i18n.locale }}</p>
     <h1 class="about__text">
       <span class="about__abbreviation">{{ $t('about.title') }}&nbsp;</span>
       &#8212; {{ $t('about.subtitle') }}

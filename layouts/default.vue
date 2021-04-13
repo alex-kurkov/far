@@ -64,8 +64,6 @@ export default {
       'en',
       this.$store.getters.getLocaleMessage('en')
     )
-
-    // console.log('menu+++>>>', this.$t('menu'))
   },
 }
 </script>

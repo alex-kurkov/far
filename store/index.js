@@ -1,8 +1,5 @@
 import { api } from '@/utils/api'
 import dictionary from '@/utils/dictionary'
-import menuBuilderRu from '@/utils/menuBuilderRu'
-import menuBuilderEn from '@/utils/menuBuilderEn'
-import menuBuilder from '@/utils/menuBuilder'
 
 export const state = () => ({
   content: {},
@@ -46,64 +43,6 @@ export const actions = {
           meta,
           pages,
         ]) => {
-          console.log(pages.data[1].sections)
-
-          const menu = [
-            {
-              path: 'index',
-              menuTitle: {
-                ru: 'О НАС',
-                en: 'About',
-              },
-              open: false,
-              sections: [
-                {
-                  path: 'andrey',
-                  menuTitle: {
-                    ru: 'кто такой Андрей Рыльков',
-                    en: 'who is Andrey',
-                  },
-                },
-                {
-                  path: '/mission',
-                  menuTitle: {
-                    ru: 'миссия и стратегии',
-                    en: 'mission and strategy',
-                  },
-                },
-                {
-                  path: '/team',
-                  menuTitle: { ru: 'команда ФАР', en: 'our team FAR' },
-                },
-              ],
-            },
-            {
-              path: '/support',
-              menuTitle: { ru: 'ПОДДЕРЖАТЬ ФАР', en: 'Support FAR' },
-              open: false,
-              sections: [
-                {
-                  path: 'donate',
-                  menuTitle: { ru: 'сделать пожертвование', en: 'donate' },
-                },
-                {
-                  path: 'volunteer',
-                  menuTitle: { ru: 'волонтёрство в ФАР', en: 'volunteer' },
-                },
-              ],
-            },
-            {
-              path: 'help',
-              menuTitle: { ru: 'ПОЛУЧИТЬ ПОМОЩЬ', en: 'GET HELP' },
-              sections: [],
-            },
-            {
-              path: 'contacts',
-              menuTitle: { ru: 'КОНТАКТЫ', en: 'Contacts' },
-              sections: [],
-            },
-          ]
-
           const allData = {
             intro: intro.data,
             mission: mission.data,

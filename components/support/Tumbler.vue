@@ -30,11 +30,6 @@ export default {
       required,
     },
   },
-  // methods: {
-  //   setupDictionary() {
-  //     console.log()
-  //   }
-  // },
 }
 </script>
 

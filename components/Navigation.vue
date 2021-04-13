@@ -30,7 +30,7 @@
               {{ element.menuTitle[$i18n.locale] }}
             </NuxtLink>
             <div v-if="!!element.sections[0]" class="navigation__link">
-              {{ element.menuTitle[$i18n.locale]}}
+              {{ element.menuTitle[$i18n.locale] }}
             </div>
             <span v-show="!!element.sections[0]"
               ><icon
@@ -67,9 +67,7 @@ export default {
   },
   created() {},
   computed: {
-    getMenu() {
-      console.log('test')
-    },
+    getMenu() {},
   },
   methods: {
     enter(el) {

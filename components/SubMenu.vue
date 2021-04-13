@@ -14,7 +14,7 @@
         <NuxtLink
           :to="localePath(`${element.path}`)"
           class="navigation__sub-link"
-          >{{ element.menuTitle[0][$i18n.locale]}}</NuxtLink
+          >{{ element.menuTitle[0][$i18n.locale] }}</NuxtLink
         >
       </li>
     </ul>
@@ -27,7 +27,6 @@ export default {
   props: ['isOpen', 'subMenuList'],
   methods: {
     enter(el) {
-      console.log(this.subMenuList)
       el.style.height = 'auto'
       const height = getComputedStyle(el).height
       el.style.height = 0
