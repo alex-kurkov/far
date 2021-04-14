@@ -80,7 +80,7 @@ export default {
 }
 
 .our-team-promo__logo {
-  width: 80px;
+  width: 83px;
   height: auto;
 }
 
@@ -99,6 +99,11 @@ export default {
   .our-team-promo__blade {
     width: 269px;
     height: auto;
+  }
+
+  .our-team-promo__logo-link {
+    bottom: -98px;
+    right: 21px;
   }
 }
 

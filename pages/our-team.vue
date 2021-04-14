@@ -114,6 +114,11 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(to right, #727272 50%, #b23438 50%);
+}
+
+@media screen and (min-width:1280px) {
+  .our-team__members {
+    background: linear-gradient(to right, #727272 50%, #b23438 50%);
+  }
 }
 </style>
