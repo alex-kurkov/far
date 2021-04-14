@@ -31,6 +31,7 @@ export default {
 <style scoped>
 .our-team-promo {
   width: 100%;
+  max-width: 1098px;
   min-height: auto;
   background-color: #fff;
   position: relative;
@@ -87,13 +88,14 @@ export default {
 @media screen and (min-width: 768px) {
   .our-team-promo {
     flex-direction: row;
+    justify-content: space-between;
     min-height: 256px;
-    margin: 8px 0 21px;
+    padding: 8px 0 21px;
   }
 
   .our-team-promo__title {
-    padding: 0 0 0 31px;
-    align-self: center;
+    padding: 45px 0 0 31px;
+    font-weight: 700;
   }
 
   .our-team-promo__blade {
@@ -108,7 +110,30 @@ export default {
 }
 
 @media screen and (min-width: 1280px) {
+  .our-team-promo {
+    min-height: 453px;
+  }
 
+  .our-team-promo__blade {
+    width: 393px;
+  }
+
+  .our-team-promo__title {
+    padding: 33px 0 0 38px;
+    font-size: 150px;
+    max-width: 700px;
+  }
+
+  .our-team-promo__logo-link {
+    width: 100px;
+    bottom: -87px;
+    right: -49px;
+  }
+
+  .our-team-promo__logo {
+    width: 100px;
+    height: 84px;
+  }
 }
 
 </style>

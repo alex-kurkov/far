@@ -39,9 +39,6 @@ export default {
 </script>
 
 <style scoped>
-* {
-  outline: 1px solid red;
-}
 .member {
   display: flex;
   flex-direction: column;
@@ -53,8 +50,7 @@ export default {
 }
 
 .member__image {
-  width: 100%;
-  max-width: 320px;
+  width: 320px;
   height: 326px;
   object-fit: cover;
   margin-bottom: 128px;
@@ -125,17 +121,13 @@ export default {
     flex-direction: row;
     justify-content: center;
     width: 100%;
-    max-width: 1280px;
+    max-width: 1098px;
     padding-bottom: 18px;
   }
 
   .member:nth-of-type(2n + 2) {
     flex-direction: row-reverse;
   }
-
-  /* .member:nth-of-type(2n + 2) .member__info {
-    margin: 0 12px 0 0;
-  } */
 
   .member__image {
     width: 256px;
@@ -166,5 +158,32 @@ export default {
 }
 
 @media screen and (min-width: 1280px) {
+  .member {
+    justify-content: space-between;
+    padding-bottom: 24px;
+  }
+
+  .member__image {
+    width: 370px;
+    height: 360px;
+  }
+
+  .member__info {
+    max-width: 719px;
+    margin: 0 14px;
+    min-height: 360px;
+    padding: 31px 50px 31px 31px;
+  }
+
+  .member__name {
+    font-size: 45px;
+    margin-bottom: 25px;
+    width: 70%;
+  }
+
+  .member__text {
+    font-size: 22px;
+    line-height: 1.3;
+  }
 }
 </style>
