@@ -35,7 +35,8 @@ export default {
     words() {
       return this.title.split(' ').reduce((acc, word, index, arr) => {
         acc.push(word)
-        if (index !== arr.length - 1) acc.push(' ')
+        // if (index !== arr.length - 1)
+        acc.push(' ')
         return acc
       }, [])
     },

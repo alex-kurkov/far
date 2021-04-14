@@ -277,7 +277,6 @@ export default {
 
 @media screen and (min-width: 500px) {
   .support__title {
-    /* word-wrap: unset; */
     width: 60%;
     letter-spacing: -3px;
   }

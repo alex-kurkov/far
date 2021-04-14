@@ -1,15 +1,19 @@
 <template>
-  <section class="about">
+  <div>
+    <AndreyPromo />
     <p>Кто такой Андрей Рыльков</p>
     <p>Текущий язык - {{ this.$i18n.locale }}</p>
     <span>{{ $t('about.title') }}&nbsp;</span>
     &#8212; {{ $t('about.subtitle') }}
-  </section>
+  </div>
 </template>
 
 <script>
+import AndreyPromo from '@/components/andrey/AndreyPromo'
+import Promo from '@/components/andrey/AndreyPromo'
 import { baseUrl } from '@/utils/api'
 export default {
+  components: { AndreyPromo },
   data() {
     return {
       title: this.$t('metaTags[1].title'),

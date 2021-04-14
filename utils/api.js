@@ -49,6 +49,14 @@ class Api {
     return axios.get(`${this._baseURL}/pages`)
   }
 
+  getTeamMembers() {
+    return axios.get(`${this._baseURL}/team-members`)
+  }
+
+  getOurTeamPromo() {
+    return axios.get(`${this._baseURL}/our-team-promo`)
+  }
+
   getData() {
     return Promise.all([
       this.getIntro(),
@@ -62,9 +70,12 @@ class Api {
       this.getFooter(),
       this.getMetas(),
       this.getPages(),
+      this.getTeamMembers(),
+      this.getOurTeamPromo(),
     ])
   }
 }
+
 export const baseUrl = 'https://rylkov.ga'
 export const api = new Api({
   baseUrl: baseUrl,
