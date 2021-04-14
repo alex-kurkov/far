@@ -1,3 +1,5 @@
+import { baseUrl } from './api'
+
 export default function (storeContent, locale) {
   let allAchievements = []
   storeContent.achievements.forEach((achievement) => {
@@ -28,12 +30,19 @@ export default function (storeContent, locale) {
     allMetaTags.push(metaTagUnit)
   })
 
-  // let localeMenu
-  // if (locale === 'ru') {
-  //   localeMenu = storeContent.menuRU
-  // } else {
-  //   localeMenu = storeContent.menuEN
-  // }
+  let allTeamMembers = []
+  storeContent.teamMembers.forEach((member) => {
+    const name = member.memberName[0][`${locale}`]
+    const info = member.memberInfo[0][`${locale}`]
+    const image = member.image
+    const teamMember = {
+      name,
+      info,
+      image: baseUrl + image.url,
+    }
+    allTeamMembers.push(teamMember)
+  })
+
   return {
     about: {
       title: storeContent.about.aboutTitle[`${locale}`],
@@ -82,5 +91,10 @@ export default function (storeContent, locale) {
     },
     metaTags: allMetaTags,
     menu: storeContent.menu,
+    teamMembers: allTeamMembers,
+    ourTeamPromo: {
+      title: storeContent.ourTeamPromo.title[`${locale}`],
+      image: baseUrl + storeContent.ourTeamPromo.image.url,
+    },
   }
 }

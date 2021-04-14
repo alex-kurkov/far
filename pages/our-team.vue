@@ -1,10 +1,15 @@
 <template>
   <section class="our-team">
-    <OurTeamPromo />
-    <Report />
-    <Report />
-    <Report />
-    <Report />
+    <OurTeamPromo :title="promoTitle" :image="promoImage" />
+    <ul class="our-team__members">
+      <TeamMember
+        v-for="(item, index) in members"
+        v-bind:key="index"
+        :name="item.name"
+        :info="item.info"
+        :image="item.image"
+      />
+    </ul>
   </section>
 </template>
 
@@ -12,17 +17,22 @@
 import OurTeamPromo from '@/components/OurTeamPromo'
 import Report from '@/components/Report'
 import Reports from '@/pages/reports'
+import TeamMember from '@/components/ourTeam/TeamMember'
 import { baseUrl } from '@/utils/api'
 export default {
-  components: { Report, Reports, OurTeamPromo },
+  components: { Report, Reports, OurTeamPromo, TeamMember },
   data() {
     return {
-      title: this.$t('subMenuList'),
-      description: this.$t('metaTags[1].description'),
-      keywords: this.$t('metaTags[1].keywords'),
-      image: baseUrl + this.$t('metaTags[1].image.url'),
+      title: this.$t('metaTags[5].title'),
+      description: this.$t('metaTags[5].description'),
+      keywords: this.$t('metaTags[5].keywords'),
+      image: baseUrl + this.$t('metaTags[5].image.url'),
+      members: this.$t('teamMembers'),
+      promoTitle: this.$t('ourTeamPromo.title'),
+      promoImage: baseUrl + this.$store.state.content.ourTeamPromo.image.url,
     }
   },
+
   head() {
     return {
       title: this.title,
@@ -89,11 +99,29 @@ export default {
 </script>
 
 <style scoped>
-.about {
+.our-team {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 80vh;
+}
+
+.our-team__members {
+  list-style: none;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (min-width: 1280px) {
+  .our-team {
+    background: linear-gradient(to right, #000 50%, #fff 50%);
+  }
+  .our-team__members {
+    background: linear-gradient(to right, #727272 50%, #b23438 50%);
+  }
 }
 </style>

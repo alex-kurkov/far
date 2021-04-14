@@ -46,7 +46,6 @@ export default {
       // image: baseUrl + this.$t('metaTags[0].image.url'),
     }
   },
-  mounted() {},
   head() {
     return {
       title: this.$t('metaTags[0].title'),

@@ -42,6 +42,8 @@ export const actions = {
           footer,
           meta,
           pages,
+          teamMembers,
+          ourTeamPromo,
         ]) => {
           const menu = pages.data
           menu.sort((a, b) => {
@@ -64,6 +66,8 @@ export const actions = {
             footer: footer.data,
             metaTags: meta.data,
             menu,
+            teamMembers: teamMembers.data,
+            ourTeamPromo: ourTeamPromo.data,
           }
           commit('SET_CONTENT', allData)
         }

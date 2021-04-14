@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AndreyPromo/>
+    <AndreyPromo />
     <p>Кто такой Андрей Рыльков</p>
     <p>Текущий язык - {{ this.$i18n.locale }}</p>
     <span>{{ $t('about.title') }}&nbsp;</span>
@@ -13,7 +13,7 @@ import AndreyPromo from '@/components/andrey/AndreyPromo'
 import Promo from '@/components/andrey/AndreyPromo'
 import { baseUrl } from '@/utils/api'
 export default {
-  components: { AndreyPromo},
+  components: { AndreyPromo },
   data() {
     return {
       title: this.$t('metaTags[1].title'),
