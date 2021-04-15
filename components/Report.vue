@@ -1,10 +1,7 @@
 <template>
   <article class="report">
     <div class="report__image-wrap">
-      <img
-        v-bind:src="content.image || defaultImage"
-        class="report__image"
-      />
+      <img v-bind:src="content.image || defaultImage" class="report__image" />
     </div>
     <div class="report__message-wrap" v-bind:class="themeBackground">
       <h3 class="report__message-title" v-html="content.title" />
@@ -20,7 +17,7 @@ export default {
   name: 'Report',
   data() {
     return {
-      defaultImage: '/images/defReports.png'
+      defaultImage: '/images/defReports.png',
     }
   },
   props: {
@@ -31,7 +28,7 @@ export default {
   },
   computed: {
     themeBackground() {
-      console.log(this);
+      console.log(this)
       const { theme } = this._props.content
       return {
         [`theme_${theme}`]: true,
