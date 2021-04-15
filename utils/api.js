@@ -18,7 +18,7 @@ class Api {
   }
 
   getAbout() {
-    return axios.get(`${this._baseURL}/index-about`)
+    return axios.get(`${this._baseURL}/about`)
   }
 
   getPromo() {
