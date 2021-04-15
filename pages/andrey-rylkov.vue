@@ -1,27 +1,28 @@
 <template>
-  <div>
-    <AndreyPromo />
-    <p>Кто такой Андрей Рыльков</p>
-    <p>Текущий язык - {{ this.$i18n.locale }}</p>
-    <span>{{ $t('about.title') }}&nbsp;</span>
-    &#8212; {{ $t('about.subtitle') }}
-  </div>
+  <section class="andrey-rylkov">
+    <AndreyPromo :imageAndrey="imageAndrey" />
+  </section>
 </template>
 
 <script>
 import AndreyPromo from '@/components/andrey/AndreyPromo'
-import Promo from '@/components/andrey/AndreyPromo'
 import { baseUrl } from '@/utils/api'
 export default {
   components: { AndreyPromo },
   data() {
     return {
-      title: this.$t('metaTags[1].title'),
-      description: this.$t('metaTags[1].description'),
-      keywords: this.$t('metaTags[1].keywords'),
-      image: baseUrl + this.$t('metaTags[1].image.url'),
+      title: this.$t('metaTags[5].title'),
+      description: this.$t('metaTags[5].description'),
+      keywords: this.$t('metaTags[5].keywords'),
+      imageAndrey:
+        baseUrl + this.$store.state.content.andreyRylkov.andrey[0].url,
+      imageWhoIsSmall:
+        baseUrl + this.$store.state.content.andreyRylkov.whois320[0].url,
+      imageWhoIsLarge:
+        baseUrl + this.$store.state.content.andreyRylkov.whois1280[0].url,
     }
   },
+
   head() {
     return {
       title: this.title,
@@ -88,11 +89,29 @@ export default {
 </script>
 
 <style scoped>
-.about {
+.andrey-rylkov {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 80vh;
+}
+
+.our-team__members {
+  list-style: none;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (min-width: 1280px) {
+  .andrey-rylkov {
+    background: linear-gradient(to right, #000 50%, #b23438 50%);
+  }
+  .our-team__members {
+    background: linear-gradient(to right, #727272 50%, #b23438 50%);
+  }
 }
 </style>

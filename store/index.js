@@ -44,15 +44,16 @@ export const actions = {
           pages,
           teamMembers,
           ourTeamPromo,
+          andreyRylkov,
         ]) => {
-          const menu = pages.data
-          menu.sort((a, b) => {
-            if (a['sections'].length > 0 || b['sections'].length > 0) {
-              a['sections'].sort((a, b) => (a['order'] > b['order'] ? 1 : -1))
-              b['sections'].sort((a, b) => (a['order'] > b['order'] ? 1 : -1))
-            }
-            return a['order'] > b['order'] ? 1 : -1
-          })
+          // const menu = pages.data
+          // menu.sort((a, b) => {
+          //   if (a['sections'].length > 0 || b['sections'].length > 0) {
+          //     a['sections'].sort((a, b) => (a['order'] > b['order'] ? 1 : -1))
+          //     b['sections'].sort((a, b) => (a['order'] > b['order'] ? 1 : -1))
+          //   }
+          //   return a['order'] > b['order'] ? 1 : -1
+          // })
 
           const allData = {
             intro: intro.data,
@@ -65,9 +66,10 @@ export const actions = {
             achievement: achievement.data,
             footer: footer.data,
             metaTags: meta.data,
-            menu,
+            menu: pages.data,
             teamMembers: teamMembers.data,
             ourTeamPromo: ourTeamPromo.data,
+            andreyRylkov: andreyRylkov.data,
           }
           commit('SET_CONTENT', allData)
         }
