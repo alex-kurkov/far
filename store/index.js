@@ -44,6 +44,7 @@ export const actions = {
           pages,
           teamMembers,
           ourTeamPromo,
+          andreyRylkov,
         ]) => {
           const menu = pages.data
           menu.sort((a, b) => {
@@ -52,6 +53,11 @@ export const actions = {
               b['sections'].sort((a, b) => (a['order'] > b['order'] ? 1 : -1))
             }
             return a['order'] > b['order'] ? 1 : -1
+          })
+
+          const newPages = {}
+          pages.data.forEach((page) => {
+            newPages[page.name] = page
           })
 
           const allData = {
@@ -66,8 +72,10 @@ export const actions = {
             footer: footer.data,
             metaTags: meta.data,
             menu,
+            pages: newPages,
             teamMembers: teamMembers.data,
             ourTeamPromo: ourTeamPromo.data,
+            andreyRylkov: andreyRylkov.data,
           }
           commit('SET_CONTENT', allData)
         }

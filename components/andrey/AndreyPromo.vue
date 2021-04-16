@@ -1,45 +1,170 @@
 <template>
-  <section class="promo">
-    <!--    width="286px" height="367px" 1.28-->
-    <img :src="img1" class="promo__whois" alt="#" />
-    <!--    <div class='promo__andrey'/>-->
+  <section class="andrey-rylkov-promo">
+    <div
+      class="andrey-rylkov-promo__whois"
+      :style="{ backgroundImage: `url(${imageWhoIsL})` }"
+    />
+    <img
+      class="andrey-rylkov-promo__andrey"
+      :src="imageAndrey"
+      :alt="imageAndreyAlt"
+    />
   </section>
 </template>
 
 <script>
+import Icon from '../../components/Icon'
 export default {
   name: 'AndreyPromo',
-  components: {},
+  components: {
+    Icon,
+  },
+  props: {
+    imageWhoIsS: {
+      type: String,
+      default: '',
+    },
+    imageWhoIsM: {
+      type: String,
+      default: '',
+    },
+    imageWhoIsL: {
+      type: String,
+      default: '',
+    },
+    imageAndrey: {
+      type: String,
+      default: '',
+    },
+    imageAndreyAlt: {
+      type: String,
+      default: '',
+    },
+  },
   data() {
-    return {
-      img1: require('~/components/andrey/Bitmap.svg'),
-    }
+    return {}
+  },
+  mounted() {
+    console.log(this.imageAndreyAlt)
   },
 }
 </script>
 
 <style scoped>
-.promo {
+.andrey-rylkov-promo {
   width: 100%;
+  max-width: 1098px;
+  min-height: auto;
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to right, #000 50%, #b23438 50%);
 }
 
-.promo__whois {
-  width: 400px;
+.andrey-rylkov-promo__whois {
+  min-height: 197px;
+  box-sizing: border-box;
+  margin: 0;
+  background-color: #b23438;
+  background-repeat: no-repeat;
+  background-position: bottom 20px right 75px;
+}
+
+.andrey-rylkov-promo__whois_visibility_1280 {
+  display: none;
+}
+
+.andrey-rylkov-promo__andrey {
+  color: white;
+  min-width: calc(100vw - 65 * (100vw - 768px) / 224);
   height: auto;
-  //height: 734px;
-  background-color: #b23438;
 }
 
-.promo__andrey {
-  width: 500px;
-  height: 400px;
-  background-color: #b23438;
-  background-image: url('andrey.png');
+.andrey-rylkov-promo__logo-link {
+  display: flex;
+  justify-content: flex-end;
+  width: 80px;
+  height: 60px;
+  position: absolute;
+  bottom: -15px;
+  right: 0;
+  transition: opacity 0.5s linear;
+  z-index: 10;
 }
 
-.promo__whois_add {
-  width: 500px;
-  height: 400px;
-  background-color: #b23438;
+.andrey-rylkov-promo__logo-link:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.andrey-rylkov-promo__logo-link:focus {
+  outline: none;
+}
+
+.andrey-rylkov-promo__logo {
+  width: 83px;
+  height: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .andrey-rylkov-promo {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1280px;
+    height: auto;
+  }
+
+  .andrey-rylkov-promo__whois {
+    background-color: #b23438;
+    width: 40%;
+    height: auto;
+    background-position: top 0 right 0;
+  }
+
+  .andrey-rylkov-promo__whois_visibility_320 {
+    display: none;
+  }
+
+  .andrey-rylkov-promo__whois_visibility_1280 {
+    display: block;
+  }
+
+  .andrey-rylkov-promo__andrey {
+    min-width: unset;
+    width: 60%;
+    height: auto;
+  }
+
+  .andrey-rylkov-promo__logo-link {
+    bottom: -98px;
+    right: 21px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .andrey-rylkov-promo {
+    width: 1103px;
+    min-height: 524px;
+  }
+
+  .andrey-rylkov-promo__andrey {
+    width: 653px;
+  }
+
+  .andrey-rylkov-promo__whois {
+    width: 100%;
+  }
+
+  .andrey-rylkov-promo__logo-link {
+    width: 100px;
+    bottom: -87px;
+    right: -49px;
+  }
+
+  .andrey-rylkov-promo__logo {
+    width: 100px;
+    height: 84px;
+  }
 }
 </style>
