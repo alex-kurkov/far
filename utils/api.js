@@ -18,7 +18,7 @@ class Api {
   }
 
   getAbout() {
-    return axios.get(`${this._baseURL}/index-about`)
+    return axios.get(`${this._baseURL}/about`)
   }
 
   getPromo() {
@@ -57,6 +57,10 @@ class Api {
     return axios.get(`${this._baseURL}/our-team-promo`)
   }
 
+  getAndreyRylkov() {
+    return axios.get(`${this._baseURL}/andrey-rylkov`)
+  }
+
   getData() {
     return Promise.all([
       this.getIntro(),
@@ -72,6 +76,7 @@ class Api {
       this.getPages(),
       this.getTeamMembers(),
       this.getOurTeamPromo(),
+      this.getAndreyRylkov(),
     ])
   }
 }

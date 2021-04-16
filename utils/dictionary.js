@@ -45,8 +45,10 @@ export default function (storeContent, locale) {
 
   return {
     about: {
-      title: storeContent.about.aboutTitle[`${locale}`],
-      subtitle: storeContent.about.aboutSubTitle[`${locale}`],
+      title: storeContent.about.title[`${locale}`],
+      subtitle: storeContent.about.subtitle[`${locale}`],
+      article: storeContent.about.article[0][`${locale}`],
+      image: baseUrl + storeContent.about.image.url,
     },
     promo: {
       support: storeContent.promo.promoSupport[`${locale}`],
@@ -94,7 +96,7 @@ export default function (storeContent, locale) {
     teamMembers: allTeamMembers,
     ourTeamPromo: {
       title: storeContent.ourTeamPromo.title[`${locale}`],
-      image: baseUrl + storeContent.ourTeamPromo.image.url,
+      image: storeContent.ourTeamPromo.image.url,
     },
   }
 }
