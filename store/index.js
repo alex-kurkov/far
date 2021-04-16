@@ -46,14 +46,19 @@ export const actions = {
           ourTeamPromo,
           andreyRylkov,
         ]) => {
-          // const menu = pages.data
-          // menu.sort((a, b) => {
-          //   if (a['sections'].length > 0 || b['sections'].length > 0) {
-          //     a['sections'].sort((a, b) => (a['order'] > b['order'] ? 1 : -1))
-          //     b['sections'].sort((a, b) => (a['order'] > b['order'] ? 1 : -1))
-          //   }
-          //   return a['order'] > b['order'] ? 1 : -1
-          // })
+          const menu = pages.data
+          menu.sort((a, b) => {
+            if (a['sections'].length > 0 || b['sections'].length > 0) {
+              a['sections'].sort((a, b) => (a['order'] > b['order'] ? 1 : -1))
+              b['sections'].sort((a, b) => (a['order'] > b['order'] ? 1 : -1))
+            }
+            return a['order'] > b['order'] ? 1 : -1
+          })
+
+          const newPages = {}
+          pages.data.forEach((page) => {
+            newPages[page.name] = page
+          })
 
           const allData = {
             intro: intro.data,
@@ -66,7 +71,8 @@ export const actions = {
             achievement: achievement.data,
             footer: footer.data,
             metaTags: meta.data,
-            menu: pages.data,
+            menu,
+            pages: newPages,
             teamMembers: teamMembers.data,
             ourTeamPromo: ourTeamPromo.data,
             andreyRylkov: andreyRylkov.data,

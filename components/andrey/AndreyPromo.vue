@@ -1,39 +1,51 @@
 <template>
   <section class="andrey-rylkov-promo">
     <div
-      class="andrey-rylkov-promo__whois andrey-rylkov-promo__whois_visibility_320"
-      :style="{ backgroundImage: `url(${imageWhoIsSmall})` }"
-    />
-    <div
-      class="andrey-rylkov-promo__whois andrey-rylkov-promo__whois_visibility_1280"
-      :style="{ backgroundImage: `url(${imageWhoIsLarge})`}"
+      class="andrey-rylkov-promo__whois"
+      :style="{ backgroundImage: `url(${imageWhoIsL})` }"
     />
     <img
       class="andrey-rylkov-promo__andrey"
       :src="imageAndrey"
-      :alt="imageWhoIsSmall"
+      :alt="imageAndreyAlt"
     />
   </section>
 </template>
 
 <script>
 import Icon from '../../components/Icon'
-import { baseUrl } from '@/utils/api'
 export default {
-  name: 'OurTeamPromo',
+  name: 'AndreyPromo',
   components: {
     Icon,
   },
-
+  props: {
+    imageWhoIsS: {
+      type: String,
+      default: '',
+    },
+    imageWhoIsM: {
+      type: String,
+      default: '',
+    },
+    imageWhoIsL: {
+      type: String,
+      default: '',
+    },
+    imageAndrey: {
+      type: String,
+      default: '',
+    },
+    imageAndreyAlt: {
+      type: String,
+      default: '',
+    },
+  },
   data() {
-    return {
-      imageWhoIsSmall:
-        baseUrl + this.$store.state.content.andreyRylkov.whois320[0].url,
-      imageWhoIsLarge:
-        baseUrl + this.$store.state.content.andreyRylkov.whois1280[0].url,
-      imageAndrey:
-        baseUrl + this.$store.state.content.andreyRylkov.andrey[0].url,
-    }
+    return {}
+  },
+  mounted() {
+    console.log(this.imageAndreyAlt)
   },
 }
 </script>
@@ -47,6 +59,7 @@ export default {
   position: relative;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(to right, #000 50%, #b23438 50%);
 }
 
 .andrey-rylkov-promo__whois {
@@ -54,7 +67,6 @@ export default {
   box-sizing: border-box;
   margin: 0;
   background-color: #b23438;
-  background-image: url('Bitmap3.svg');
   background-repeat: no-repeat;
   background-position: bottom 20px right 75px;
 }
@@ -100,7 +112,7 @@ export default {
     flex-direction: row;
     justify-content: space-between;
     max-width: 1280px;
-  height: auto;
+    height: auto;
   }
 
   .andrey-rylkov-promo__whois {
@@ -109,7 +121,6 @@ export default {
     height: auto;
     background-position: top 0 right 0;
   }
-
 
   .andrey-rylkov-promo__whois_visibility_320 {
     display: none;
