@@ -61,6 +61,10 @@ class Api {
     return axios.get(`${this._baseURL}/andrey-rylkov`)
   }
 
+  getMenu() {
+    return axios.get(`${this._baseURL}/menus`)
+  }
+
   getData() {
     return Promise.all([
       this.getIntro(),
@@ -77,6 +81,7 @@ class Api {
       this.getTeamMembers(),
       this.getOurTeamPromo(),
       this.getAndreyRylkov(),
+      this.getMenu(),
     ])
   }
 }

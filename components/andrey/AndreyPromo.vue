@@ -2,7 +2,7 @@
   <section class="andrey-rylkov-promo">
     <div
       class="andrey-rylkov-promo__whois"
-      :style="{ backgroundImage: `url(${imageWhoIsL})` }"
+      :style="{ backgroundImage: `url(${currentBackgroundImage})` }"
     />
     <img
       class="andrey-rylkov-promo__andrey"
@@ -42,11 +42,29 @@ export default {
     },
   },
   data() {
-    return {}
+    return {
+      currentBackgroundImage: this.imageWhoIsS,
+    }
+  },
+  methods: {
+    handleWindowResize() {
+      if (window.innerWidth >= 1140) {
+        this.currentBackgroundImage = this.imageWhoIsL
+      } else if (window.innerWidth < 1140 && window.innerWidth >= 750) {
+        this.currentBackgroundImage = this.imageWhoIsM
+      } else if (window.innerWidth < 750) {
+        this.currentBackgroundImage = this.imageWhoIsS
+      }
+    },
   },
   mounted() {
-    console.log(this.imageAndreyAlt)
+    window.addEventListener('resize', this.handleWindowResize)
+    this.handleWindowResize()
   },
+  destroyed() {
+    window.removeEventListener('resize', this.handleWindowResize)
+  },
+  computed: {},
 }
 </script>
 
@@ -107,7 +125,7 @@ export default {
   height: auto;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 640px) {
   .andrey-rylkov-promo {
     flex-direction: row;
     justify-content: space-between;
