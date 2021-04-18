@@ -4,11 +4,6 @@
       <span class="about__abbreviation">{{ $t('about.title') }}&nbsp;</span>
       &#8212; {{ $t('about.subtitle') }}
     </h1>
-    <p>
-      {{
-        this.$store.state.content.pages.index.subTitles[0][this.$i18n.locale]
-      }}
-    </p>
   </section>
 </template>
 

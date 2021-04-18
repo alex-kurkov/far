@@ -65,6 +65,10 @@ class Api {
     return axios.get(`${this._baseURL}/menus`)
   }
 
+  getCustomPages() {
+    return axios.get(`${this._baseURL}/custom-pages`)
+  }
+
   getData() {
     return Promise.all([
       this.getIntro(),
@@ -82,6 +86,7 @@ class Api {
       this.getOurTeamPromo(),
       this.getAndreyRylkov(),
       this.getMenu(),
+      this.getCustomPages(),
     ])
   }
 }

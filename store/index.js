@@ -46,6 +46,7 @@ export const actions = {
           ourTeamPromo,
           andreyRylkov,
           menu,
+          customPages,
         ]) => {
           const sortedMenu = menu.data
           sortedMenu.sort((a, b) => {
@@ -59,6 +60,11 @@ export const actions = {
           const newPages = {}
           pages.data.forEach((page) => {
             newPages[page.name] = page
+          })
+
+          const allCustomPages = {}
+          customPages.data.forEach((page) => {
+            allCustomPages[page.path] = page
           })
 
           const allData = {
@@ -77,6 +83,7 @@ export const actions = {
             teamMembers: teamMembers.data,
             ourTeamPromo: ourTeamPromo.data,
             andreyRylkov: andreyRylkov.data,
+            customPages: allCustomPages,
           }
           commit('SET_CONTENT', allData)
         }
