@@ -13,12 +13,15 @@ export const getters = {
   getLocaleMessage: (state) => (locale) => {
     return dictionary(state.content, locale)
   },
+  getCookiesAcceptanceStatus: (state) => {
+    return state.cookies.accepted;
+  }
 }
 
 export const mutations = {
   SET_CONTENT(state, data) {
-    state.content = data
-  },
+    state.content = data;
+  }
 }
 
 export const actions = {
@@ -57,7 +60,6 @@ export const actions = {
             }
             return a['order'] > b['order'] ? 1 : -1
           })
-
           const newPages = {}
           pages.data.forEach((page) => {
             newPages[page.name] = page

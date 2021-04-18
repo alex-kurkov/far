@@ -1,19 +1,6 @@
 import { baseUrl } from './api'
 
 export default function (storeContent, locale) {
-  let allAchievements = []
-  storeContent.achievements.forEach((achievement) => {
-    const title = achievement.cardTitle[0][`${locale}`]
-    const text = achievement.cardText[0][`${locale}`]
-    const stamp = achievement.stamp
-    const card = {
-      title,
-      text,
-      stamp,
-    }
-    allAchievements.push(card)
-  })
-
   let allMetaTags = []
   //  это надо будет переписать со стороны strapi и потом здесь
   storeContent.metaTags.forEach((meta) => {
@@ -59,7 +46,15 @@ export default function (storeContent, locale) {
       title: storeContent.achievement.cardsTitle[`${locale}`],
       link: storeContent.achievement.cardsLink[`${locale}`],
     },
-    achievements: allAchievements,
+    achievements: [
+      ...storeContent.achievements.map(({ title, text, stamp }) => {
+        return { 
+          title: title[`${locale}`],
+          text: text[`${locale}`],
+          stamp
+        }
+      })
+    ],
     mission: {
       title: storeContent.mission.missionTitle[`${locale}`],
       text: storeContent.mission.missionText[`${locale}`],

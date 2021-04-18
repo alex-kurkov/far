@@ -24,40 +24,12 @@ export default {
           type: 'info',
           action: () => {
             localStorage.setItem('cookiesAccepted', true);
-            console.log('куки приняты, согласие записано s localStorage');
+            console.log('куки приняты, согласие записано в localStorage');
           },
           actionBtnText: 'Понятно',
         },
       })
     }
-    /* setTimeout(() => {
-      this.$notify({
-        group: 'notification',
-        title: 'Подтвердите действие на странице',
-        text:
-          'Данные материалы изданы и(или) распространяются некоммерческой организацией, выполняющей функции иностранного агента',
-        duration: -1,
-        data: {
-          type: 'info',
-          action: () => {
-            console.log('loading....')
-          },
-          actionBtnText: 'Скачать материал',
-        },
-      })
-    }, 30000)
-    setTimeout(() => {
-      this.$notify({
-        group: 'notification',
-        title: 'Срочная новость',
-        text: 'Я устал, я ухожу. Версия 2021 - реальность или миф?',
-        closeOnClick: true,
-        duration: 7000,
-        data: {
-          type: 'news',
-        },
-      })
-    }, 10000) */
   },
   created() {
     this.$i18n.mergeLocaleMessage(

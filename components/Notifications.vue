@@ -5,9 +5,6 @@
         :class="`notification notification_type_${item.data.type}`"
         @click="close"
       >
-        <!--           <div class="icon">
-            <i class="icon-svg" @click="close"></i>
-          </div> -->
         <div class="notification__content">
           <h4 class="notification__title" v-html="item.title" />
           <p class="notification__text" v-html="item.text" />
