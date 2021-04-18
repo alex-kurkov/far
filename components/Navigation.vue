@@ -24,7 +24,12 @@
           >
             <NuxtLink
               v-if="!element['sub_menus'][0]"
-              :to="localePath(`${element.path}`)"
+              :to="
+                localePath({
+                  name: `${element.path}`,
+                  params: { id: `${element.pageId}` },
+                })
+              "
               class="navigation__link"
             >
               {{ element.mainMenuTitle[$i18n.locale] }}

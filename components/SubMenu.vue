@@ -12,9 +12,14 @@
         :key="element.subMenuTitle[$i18n.locale]"
       >
         <NuxtLink
-          :to="localePath({name:`${element.path}`, params: {id: `${element.pageId}`}})"
+          :to="
+            localePath({
+              name: `${element.path}`,
+              params: { id: `${element.pageId}` },
+            })
+          "
           class="navigation__sub-link"
-          >{{ element.subMenuTitle[$i18n.locale]}}</NuxtLink
+          >{{ element.subMenuTitle[$i18n.locale] }}</NuxtLink
         >
       </li>
     </ul>

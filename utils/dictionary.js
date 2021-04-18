@@ -35,10 +35,10 @@ export default function (storeContent, locale) {
     },
     achievements: [
       ...storeContent.achievements.map(({ title, text, stamp }) => ({
-          title: title[`${locale}`],
-          text: text[`${locale}`],
-          stamp
-        }))
+        title: title[`${locale}`],
+        text: text[`${locale}`],
+        stamp,
+      })),
     ],
     mission: {
       title: storeContent.mission.missionTitle[`${locale}`],
@@ -78,7 +78,7 @@ export default function (storeContent, locale) {
         name: name[`${locale}`],
         info: info[`${locale}`],
         image: baseUrl + image.url,
-      }))
+      })),
     ],
     ourTeamPromo: {
       title: storeContent.ourTeamPromo.title[`${locale}`],
