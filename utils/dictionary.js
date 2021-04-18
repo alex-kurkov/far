@@ -19,8 +19,8 @@ export default function (storeContent, locale) {
 
   let allTeamMembers = []
   storeContent.teamMembers.forEach((member) => {
-    const name = member.memberName[0][`${locale}`]
-    const info = member.memberInfo[0][`${locale}`]
+    const name = member.name[`${locale}`];
+    const info = member.info[`${locale}`];
     const image = member.image
     const teamMember = {
       name,
@@ -47,13 +47,11 @@ export default function (storeContent, locale) {
       link: storeContent.achievement.cardsLink[`${locale}`],
     },
     achievements: [
-      ...storeContent.achievements.map(({ title, text, stamp }) => {
-        return { 
+      ...storeContent.achievements.map(({ title, text, stamp }) => ({
           title: title[`${locale}`],
           text: text[`${locale}`],
           stamp
-        }
-      })
+        }))
     ],
     mission: {
       title: storeContent.mission.missionTitle[`${locale}`],
