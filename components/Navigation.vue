@@ -11,7 +11,7 @@
           v-for="(element, index) in this.$t('menu')"
           class="navigation__menu-item"
           @click="element.open = !element.open"
-          :key="element.menuTitle[$i18n.locale]"
+          :key="element.mainMenuTitle[$i18n.locale]"
         >
           <div
             :class="[
@@ -23,16 +23,16 @@
             ]"
           >
             <NuxtLink
-              v-if="!element.sections[0]"
+              v-if="!element['sub_menus'][0]"
               :to="localePath(`${element.path}`)"
               class="navigation__link"
             >
-              {{ element.menuTitle[$i18n.locale] }}
+              {{ element.mainMenuTitle[$i18n.locale] }}
             </NuxtLink>
-            <div v-if="!!element.sections[0]" class="navigation__link">
-              {{ element.menuTitle[$i18n.locale] }}
+            <div v-if="!!element['sub_menus'][0]" class="navigation__link">
+              {{ element.mainMenuTitle[$i18n.locale] }}
             </div>
-            <span v-show="!!element.sections[0]"
+            <span v-show="!!element['sub_menus'][0]"
               ><icon
                 name="arrow-right"
                 class="navigation__arrow-right"
@@ -43,8 +43,8 @@
             /></span>
           </div>
           <SubMenu
-            v-if="!!element.sections[0]"
-            :subMenuList="element.sections"
+            v-if="!!element['sub_menus'][0]"
+            :subMenuList="element['sub_menus']"
             :isOpen="element.open"
           />
         </li>
