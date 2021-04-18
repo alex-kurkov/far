@@ -13,8 +13,8 @@ export const getters = {
   getLocaleMessage: (state) => (locale) => {
     return dictionary(state.content, locale)
   },
-  getCookiesAcceptanceStatus: (state) => {
-    return state.cookies.accepted;
+  getReports: (state) => {
+    return state.content.reports;
   }
 }
 
@@ -51,6 +51,7 @@ export const actions = {
           menu,
           customPages,
           header,
+          reports
         ]) => {
           const sortedMenu = menu.data
           sortedMenu.sort((a, b) => {
@@ -69,7 +70,6 @@ export const actions = {
           customPages.data.forEach((page) => {
             allCustomPages[page.path] = page
           })
-
           const allData = {
             intro: intro.data,
             mission: mission.data,
@@ -87,7 +87,8 @@ export const actions = {
             ourTeamPromo: ourTeamPromo.data,
             andreyRylkov: andreyRylkov.data,
             customPages: allCustomPages,
-            header: header.data
+            header: header.data,
+            reports: reports.data,
           }
           commit('SET_CONTENT', allData)
         }

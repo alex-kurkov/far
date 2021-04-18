@@ -1,18 +1,19 @@
 <template>
   <article class="report">
     <div class="report__image-wrap">
-      <img v-bind:src="content.image || defaultImage" class="report__image" />
+      <img v-bind:src="image || defaultImage" class="report__image" />
     </div>
-    <div class="report__message-wrap" v-bind:class="themeBackground">
-      <h3 class="report__message-title" v-html="content.title" />
-      <p class="report__message-date" v-html="content.date" />
+    <div class="report__message-wrap" :class="`theme_${content.theme}`">
+      <h3 class="report__message-title" v-html="content.title[`${$i18n.locale}`]" />
+      <p class="report__message-date" v-html="date" />
       <div class="report__message-line" />
-      <p class="report__message-text" v-html="content.text" />
+      <p class="report__message-text" v-html="content.text[`${$i18n.locale}`]" />
     </div>
   </article>
 </template>
 
 <script>
+import { baseUrl } from '@/utils/api'
 export default {
   name: 'Report',
   data() {
@@ -27,13 +28,20 @@ export default {
     },
   },
   computed: {
-    themeBackground() {
-      const { theme } = this._props.content
-      return {
-        [`theme_${theme}`]: true,
-      }
+    image() {
+      return baseUrl + this.content.image.url
     },
-  },
+    date() {
+      const months = {
+        en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+        ru: ['Января' , 'Февраля' , 'Марта' , 'Апреля' , 'Мая' , 'Июня' , 'Июля' , 'Августа' , 'Сентября' , 'Октября' , 'Ноября' , 'Декабря']
+      }
+      const [ year, month, day ] = this.content.date.split('-');
+      const calculatedDay = day.replace(/^0/, '');
+      const calculatedMonth = months[this.$i18n.locale][Number(month)];
+      return `${calculatedDay} ${calculatedMonth} ${year}`
+    }
+  }
 }
 </script>
 
