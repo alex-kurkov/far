@@ -98,5 +98,6 @@ export default function (storeContent, locale) {
       title: storeContent.ourTeamPromo.title[`${locale}`],
       image: storeContent.ourTeamPromo.image.url,
     },
+    header: storeContent.header.marqueeText[`${locale}`]
   }
 }

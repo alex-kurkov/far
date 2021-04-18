@@ -1,37 +1,68 @@
 <template>
   <div>
-    <header
-      :style="$i18n.locale === 'ru' ? cssPropsRu : cssPropsEn"
-      class="header"
-    />
+    <header class="header" @mouseleave="toggleScroll" @mouseenter="toggleScroll" >
+      <span :class="`header__marquee header__marquee_animated_${animated}`"> 
+        {{ this.$t('header') }}
+      </span>
+    </header>
   </div>
 </template>
 
 <script>
-import BackGroundTextEn from './header/far_en.svg'
-import BackGroundTextRu from './header/far_rus.svg'
 export default {
   name: 'Header',
   data() {
     return {
-      cssPropsRu: {
-        backgroundImage: `url(${BackGroundTextRu})`,
-      },
-      cssPropsEn: {
-        backgroundImage: `url(${BackGroundTextEn})`,
-      },
+      animated: true,
     }
+  },
+  methods: {
+    toggleScroll() {
+      this.animated = !this.animated;
+    },
   },
 }
 </script>
 
 <style scoped>
-.header {
-  width: 100%;
-  height: 41px;
-  background: #b13438 repeat-x -194px 7px / 594px 60px;
+@keyframes scroll {
+    from {
+        transform: translate(0, 40%);
+    }
+    to {
+        transform: translate(-100%, 40%)
+    }
 }
 
+.header {
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+  white-space: nowrap;
+  display: block;
+  background: #b13438;
+}
+.header__marquee {
+  font-family: 'Vollkorn', Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  display: inline-block;
+  color: #b13438;
+  text-transform: uppercase;
+  padding-left: 100%;
+  font-size: 36px;
+  -webkit-text-stroke: .5px #fff;
+  text-align: left;
+  letter-spacing: 3px;
+  word-spacing: 10px;
+}
+.header__marquee_animated_true {
+  animation: scroll 15s ease-in-out infinite;
+}
+.header__marquee_animated_false {
+  animation: none;
+  transform: translate(-50%, 40%);
+}
 @media screen and (min-width: 640px) {
   .header {
     width: 100%;
@@ -44,6 +75,9 @@ export default {
       width: 100%;
       height: 53px;
       background: #b13438 repeat-x -286px 5px / 800px 81px;
+    }
+    .header__marquee {
+      font-size: 48px;
     }
   }
 }

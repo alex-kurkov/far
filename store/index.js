@@ -54,6 +54,7 @@ export const actions = {
           andreyRylkov,
           menu,
           customPages,
+          header,
         ]) => {
           const sortedMenu = menu.data
           sortedMenu.sort((a, b) => {
@@ -91,6 +92,7 @@ export const actions = {
             ourTeamPromo: ourTeamPromo.data,
             andreyRylkov: andreyRylkov.data,
             customPages: allCustomPages,
+            header: header.data
           }
           commit('SET_CONTENT', allData)
         }
