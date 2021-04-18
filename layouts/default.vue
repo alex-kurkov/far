@@ -12,20 +12,24 @@ import Notifications from '../components/Notifications.vue'
 export default {
   components: { Notifications },
   mounted() {
-    this.$notify({
-      group: 'notification',
-      title: 'Cookies.',
-      text: 'Сайт использует куки-файлы',
-      closeOnClick: true,
-      duration: -1,
-      data: {
-        type: 'info',
-        action: () => {
-          console.log('куки приняты, согласие записано в $store')
+    const cookiesAccepted = localStorage.getItem('cookiesAccepted')
+    if (!cookiesAccepted) {
+      this.$notify({
+        group: 'notification',
+        title: 'Cookies.',
+        text: 'Сайт использует куки-файлы',
+        closeOnClick: true,
+        duration: -1,
+        data: {
+          type: 'info',
+          action: () => {
+            localStorage.setItem('cookiesAccepted', true);
+            console.log('куки приняты, согласие записано s localStorage');
+          },
+          actionBtnText: 'Понятно',
         },
-        actionBtnText: 'Понятно',
-      },
-    })
+      })
+    }
     /* setTimeout(() => {
       this.$notify({
         group: 'notification',

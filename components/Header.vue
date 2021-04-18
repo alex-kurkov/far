@@ -55,13 +55,13 @@ export default {
   text-align: left;
   letter-spacing: 3px;
   word-spacing: 10px;
-}
-.header__marquee_animated_true {
   animation: scroll 15s ease-in-out infinite;
 }
+.header__marquee_animated_true {
+  animation-play-state: running;
+}
 .header__marquee_animated_false {
-  animation: none;
-  transform: translate(-50%, 40%);
+  animation-play-state: paused;
 }
 @media screen and (min-width: 640px) {
   .header {
