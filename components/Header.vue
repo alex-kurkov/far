@@ -55,7 +55,7 @@ export default {
   text-align: left;
   letter-spacing: 3px;
   word-spacing: 10px;
-  animation: scroll 15s ease-in-out infinite;
+  animation: scroll 20s linear infinite;
 }
 .header__marquee_animated_true {
   animation-play-state: running;
