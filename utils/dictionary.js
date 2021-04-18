@@ -17,19 +17,6 @@ export default function (storeContent, locale) {
     allMetaTags.push(metaTagUnit)
   })
 
-  let allTeamMembers = []
-  storeContent.teamMembers.forEach((member) => {
-    const name = member.name[`${locale}`];
-    const info = member.info[`${locale}`];
-    const image = member.image
-    const teamMember = {
-      name,
-      info,
-      image: baseUrl + image.url,
-    }
-    allTeamMembers.push(teamMember)
-  })
-
   return {
     about: {
       title: storeContent.about.title[`${locale}`],
@@ -86,7 +73,13 @@ export default function (storeContent, locale) {
     },
     metaTags: allMetaTags,
     menu: storeContent.menu,
-    teamMembers: allTeamMembers,
+    teamMembers: [
+      ...storeContent.teamMembers.map(({ name, info, image }) => ({
+        name: name[`${locale}`],
+        info: info[`${locale}`],
+        image: baseUrl + image.url,
+      }))
+    ],
     ourTeamPromo: {
       title: storeContent.ourTeamPromo.title[`${locale}`],
       image: storeContent.ourTeamPromo.image.url,
