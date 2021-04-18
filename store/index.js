@@ -3,6 +3,7 @@ import dictionary from '@/utils/dictionary'
 
 export const state = () => ({
   content: {},
+  cookies: {}
 })
 
 export const getters = {
@@ -13,12 +14,18 @@ export const getters = {
   getLocaleMessage: (state) => (locale) => {
     return dictionary(state.content, locale)
   },
+  getCookiesAcceptanceStatus: (state) => {
+    return state.cookies.accepted;
+  }
 }
 
 export const mutations = {
   SET_CONTENT(state, data) {
     state.content = data
   },
+  SET_COOKIES_ACCEPTANCE(state, bool) {
+    state.cookies.accepted = bool;
+  } 
 }
 
 export const actions = {
@@ -47,6 +54,7 @@ export const actions = {
           andreyRylkov,
           menu,
           customPages,
+          header,
         ]) => {
           const sortedMenu = menu.data
           sortedMenu.sort((a, b) => {
@@ -84,6 +92,7 @@ export const actions = {
             ourTeamPromo: ourTeamPromo.data,
             andreyRylkov: andreyRylkov.data,
             customPages: allCustomPages,
+            header: header.data
           }
           commit('SET_CONTENT', allData)
         }

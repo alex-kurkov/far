@@ -68,6 +68,9 @@ class Api {
   getCustomPages() {
     return axios.get(`${this._baseURL}/custom-pages`)
   }
+  getHeader() {
+    return axios.get(`${this._baseURL}/header`)
+  }
 
   getData() {
     return Promise.all([
@@ -87,6 +90,7 @@ class Api {
       this.getAndreyRylkov(),
       this.getMenu(),
       this.getCustomPages(),
+      this.getHeader(),
     ])
   }
 }

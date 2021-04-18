@@ -28,7 +28,6 @@ export default {
   },
   computed: {
     themeBackground() {
-      console.log(this)
       const { theme } = this._props.content
       return {
         [`theme_${theme}`]: true,
