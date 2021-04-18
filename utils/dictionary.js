@@ -85,12 +85,5 @@ export default function (storeContent, locale) {
       image: storeContent.ourTeamPromo.image.url,
     },
     header: storeContent.header.marqueeText[`${locale}`],
-    reports: [
-      ...storeContent.reports.map(({ 
-        slug, theme, date, title, text
-      }) => ({
-        slug, theme, date, title: title[`${locale}`], text: text[`${locale}`]
-      }))
-    ]
   }
 }

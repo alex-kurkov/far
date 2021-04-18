@@ -19,27 +19,6 @@ export default {
     reports() {
       return this.$store.getters.getReports;
     }
-      /* [
-        {
-          image: '/images/reports-image-2.png',
-          title: 'ОТЧЕТ О РАБОТЕ ПРОЕКТА "СНИЖЕНИЕ ВРЕДА - МОСКВА" В 2018 ГОДУ',
-          date: 'Январь, 16th, 2020',
-          text: 'Проект реализовывался ФАР при поддержке AIDSFonds',
-          theme: 'red',
-        },
-        {
-          image: '/images/reports-image-1.png',
-          date: 'Январь, 16th, 2020',
-          text: 'Проект реализовывался ФАР при поддержке AIDSFonds',
-          theme: 'white',
-        },
-        {
-          title: 'ОТЧЕТ О РАБОТЕ ПРОЕКТА "СНИЖЕНИЕ ВРЕДА - МОСКВА" В 2018 ГОДУ',
-          date: 'Январь, 16th, 2020',
-          text: 'Проект реализовывался ФАР при поддержке AIDSFonds',
-          theme: 'gray',
-        },
-      ], */
   },
 }
 </script>
