@@ -18,7 +18,7 @@ class Api {
   }
 
   getAbout() {
-    return axios.get(`${this._baseURL}/index-about`)
+    return axios.get(`${this._baseURL}/about`)
   }
 
   getPromo() {
@@ -45,6 +45,30 @@ class Api {
     return axios.get(`${this._baseURL}/metas`)
   }
 
+  getPages() {
+    return axios.get(`${this._baseURL}/pages`)
+  }
+
+  getTeamMembers() {
+    return axios.get(`${this._baseURL}/team-members`)
+  }
+
+  getOurTeamPromo() {
+    return axios.get(`${this._baseURL}/our-team-promo`)
+  }
+
+  getAndreyRylkov() {
+    return axios.get(`${this._baseURL}/andrey-rylkov`)
+  }
+
+  getMenu() {
+    return axios.get(`${this._baseURL}/menus`)
+  }
+
+  getCustomPages() {
+    return axios.get(`${this._baseURL}/custom-pages`)
+  }
+
   getData() {
     return Promise.all([
       this.getIntro(),
@@ -57,9 +81,16 @@ class Api {
       this.getAchievement(),
       this.getFooter(),
       this.getMetas(),
+      this.getPages(),
+      this.getTeamMembers(),
+      this.getOurTeamPromo(),
+      this.getAndreyRylkov(),
+      this.getMenu(),
+      this.getCustomPages(),
     ])
   }
 }
+
 export const baseUrl = 'https://rylkov.ga'
 export const api = new Api({
   baseUrl: baseUrl,

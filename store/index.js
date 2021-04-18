@@ -48,7 +48,32 @@ export const actions = {
           achievement,
           footer,
           meta,
+          pages,
+          teamMembers,
+          ourTeamPromo,
+          andreyRylkov,
+          menu,
+          customPages,
         ]) => {
+          const sortedMenu = menu.data
+          sortedMenu.sort((a, b) => {
+            if (a['sub_menus'].length > 0 || b['sub_menus'].length > 0) {
+              a['sub_menus'].sort((a, b) => (a['order'] > b['order'] ? 1 : -1))
+              b['sub_menus'].sort((a, b) => (a['order'] > b['order'] ? 1 : -1))
+            }
+            return a['order'] > b['order'] ? 1 : -1
+          })
+
+          const newPages = {}
+          pages.data.forEach((page) => {
+            newPages[page.name] = page
+          })
+
+          const allCustomPages = {}
+          customPages.data.forEach((page) => {
+            allCustomPages[page.path] = page
+          })
+
           const allData = {
             intro: intro.data,
             mission: mission.data,
@@ -60,6 +85,12 @@ export const actions = {
             achievement: achievement.data,
             footer: footer.data,
             metaTags: meta.data,
+            menu: sortedMenu,
+            pages: newPages,
+            teamMembers: teamMembers.data,
+            ourTeamPromo: ourTeamPromo.data,
+            andreyRylkov: andreyRylkov.data,
+            customPages: allCustomPages,
           }
           commit('SET_CONTENT', allData)
         }
