@@ -19,8 +19,8 @@ export default function (storeContent, locale) {
 
   let allTeamMembers = []
   storeContent.teamMembers.forEach((member) => {
-    const name = member.memberName[0][`${locale}`]
-    const info = member.memberInfo[0][`${locale}`]
+    const name = member.name[`${locale}`];
+    const info = member.info[`${locale}`];
     const image = member.image
     const teamMember = {
       name,
