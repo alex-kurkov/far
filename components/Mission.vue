@@ -11,17 +11,17 @@
       >
       <div class="mission__graphics-wrapper">
         <div class="mission__graphics-road"><Icon name="road" /></div>
-        <div class="mission__graphics-logo"><Icon name="logo" /></div>
+        <div class="mission__graphics-logo"><FarLogo /></div>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import Icon from '@/components/Icon'
+import FarLogo from '@/components/icons/FarLogo'
 export default {
   name: 'Mission',
-  components: { Icon },
+  components: { FarLogo },
   data() {
     return {
       aboutLink: this.$store.state.content.mission.link,
