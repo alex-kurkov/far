@@ -71,6 +71,9 @@ class Api {
   getHeader() {
     return axios.get(`${this._baseURL}/header`)
   }
+  getReports() {
+    return axios.get(`${this._baseURL}/reports`)
+  }
 
   getData() {
     return Promise.all([
@@ -91,6 +94,7 @@ class Api {
       this.getMenu(),
       this.getCustomPages(),
       this.getHeader(),
+      this.getReports(),
     ])
   }
 }

@@ -3,7 +3,7 @@
     <div class="all-reports__content">
       <Report
         v-for="(content, index) in reports"
-        :key="index"
+        :key="content.slug + index"
         :content="content"
       />
     </div>
@@ -15,9 +15,11 @@ import Report from '@/components/Report'
 export default {
   name: 'AllReports',
   components: { Report },
-  data() {
-    return {
-      reports: [
+  computed: {
+    reports() {
+      return this.$store.getters.getReports;
+    }
+      /* [
         {
           image: '/images/reports-image-2.png',
           title: 'ОТЧЕТ О РАБОТЕ ПРОЕКТА "СНИЖЕНИЕ ВРЕДА - МОСКВА" В 2018 ГОДУ',
@@ -37,8 +39,7 @@ export default {
           text: 'Проект реализовывался ФАР при поддержке AIDSFonds',
           theme: 'gray',
         },
-      ],
-    }
+      ], */
   },
 }
 </script>
