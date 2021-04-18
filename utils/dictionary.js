@@ -47,13 +47,11 @@ export default function (storeContent, locale) {
       link: storeContent.achievement.cardsLink[`${locale}`],
     },
     achievements: [
-      ...storeContent.achievements.map(({ title, text, stamp }) => {
-        return { 
+      ...storeContent.achievements.map(({ title, text, stamp }) => ({
           title: title[`${locale}`],
           text: text[`${locale}`],
           stamp
-        }
-      })
+        }))
     ],
     mission: {
       title: storeContent.mission.missionTitle[`${locale}`],
