@@ -17,8 +17,8 @@ export default {
   components: { Report },
   computed: {
     reports() {
-      return this.$store.getters.getReports;
-    }
+      return this.$store.getters.getReports
+    },
   },
 }
 </script>

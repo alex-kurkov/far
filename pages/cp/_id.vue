@@ -10,7 +10,7 @@
         <li
           v-for="(element, index) in getCustomPageSections(currentPage)"
           class="custom-page__section"
-          :key="index + [$i18n.locale]"
+          :key="element.customPageSectionTitle[$i18n.locale]"
         >
           <div :class="['custom-page__section-item']">
             {{ element.customPageSectionTitle[$i18n.locale] }}
@@ -34,7 +34,7 @@ export default {
         // возможно здесь надо написать getter
         return this.$store.state.content.customPages[id]
       } else {
-        this.$router.push('/')
+        return this.$store.state.content.customPages['404']
       }
     },
   },
@@ -48,7 +48,7 @@ export default {
     },
 
     getCustomPageTitle(currentPage) {
-      if (currentPage) {
+      if (currentPage.customPageTitle) {
         return currentPage.customPageTitle[this.$i18n.locale]
       } else {
         return ''
@@ -56,7 +56,7 @@ export default {
     },
 
     getCustomPageSubTitle(currentPage, index) {
-      if (currentPage) {
+      if (currentPage.customPageSubtitle[index]) {
         return currentPage.customPageSubtitle[index][this.$i18n.locale]
       } else {
         return ''
@@ -64,7 +64,7 @@ export default {
     },
 
     getCustomPageText(currentPage, index) {
-      if (currentPage) {
+      if (currentPage.customPageText[index]) {
         return currentPage.customPageText[index][this.$i18n.locale]
       } else {
         return ''
@@ -79,10 +79,6 @@ export default {
       }
     },
   },
-  beforeCreate () {
-    console.log("ROUTER", this.$router)
-    console.log("ROUTE", this.$route)
-  }
 }
 </script>
 

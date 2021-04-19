@@ -14,14 +14,14 @@ export const getters = {
     return dictionary(state.content, locale)
   },
   getReports: (state) => {
-    return state.content.reports;
-  }
+    return state.content.reports
+  },
 }
 
 export const mutations = {
   SET_CONTENT(state, data) {
-    state.content = data;
-  }
+    state.content = data
+  },
 }
 
 export const actions = {
@@ -51,7 +51,7 @@ export const actions = {
           menu,
           customPages,
           header,
-          reports
+          reports,
         ]) => {
           const sortedMenu = menu.data
           sortedMenu.sort((a, b) => {

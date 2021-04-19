@@ -1,7 +1,11 @@
 <template>
   <div>
-    <header class="header" @mouseleave="toggleScroll" @mouseenter="toggleScroll" >
-      <span :class="`header__marquee header__marquee_animated_${animated}`"> 
+    <header
+      class="header"
+      @mouseleave="toggleScroll"
+      @mouseenter="toggleScroll"
+    >
+      <span :class="`header__marquee header__marquee_animated_${animated}`">
         {{ this.$t('header') }}
       </span>
     </header>
@@ -18,7 +22,7 @@ export default {
   },
   methods: {
     toggleScroll() {
-      this.animated = !this.animated;
+      this.animated = !this.animated
     },
   },
 }
@@ -26,12 +30,12 @@ export default {
 
 <style scoped>
 @keyframes scroll {
-    from {
-        transform: translate(0, 40%);
-    }
-    to {
-        transform: translate(-100%, 40%)
-    }
+  from {
+    transform: translate(0, 40%);
+  }
+  to {
+    transform: translate(-100%, 40%);
+  }
 }
 
 .header {
@@ -51,7 +55,7 @@ export default {
   text-transform: uppercase;
   padding-left: 100%;
   font-size: 36px;
-  -webkit-text-stroke: .5px #fff;
+  -webkit-text-stroke: 0.5px #fff;
   text-align: left;
   letter-spacing: 3px;
   word-spacing: 10px;

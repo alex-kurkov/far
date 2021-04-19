@@ -23,8 +23,8 @@ export default {
         data: {
           type: 'info',
           action: () => {
-            localStorage.setItem('cookiesAccepted', true);
-            console.log('куки приняты, согласие записано в localStorage');
+            localStorage.setItem('cookiesAccepted', true)
+            console.log('куки приняты, согласие записано в localStorage')
           },
           actionBtnText: 'Понятно',
         },

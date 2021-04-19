@@ -4,10 +4,16 @@
       <img v-bind:src="image || defaultImage" class="report__image" />
     </div>
     <div class="report__message-wrap" :class="`theme_${content.theme}`">
-      <h3 class="report__message-title" v-html="content.title[`${$i18n.locale}`]" />
+      <h3
+        class="report__message-title"
+        v-html="content.title[`${$i18n.locale}`]"
+      />
       <p class="report__message-date" v-html="date" />
       <div class="report__message-line" />
-      <p class="report__message-text" v-html="content.text[`${$i18n.locale}`]" />
+      <p
+        class="report__message-text"
+        v-html="content.text[`${$i18n.locale}`]"
+      />
     </div>
   </article>
 </template>
@@ -33,15 +39,41 @@ export default {
     },
     date() {
       const months = {
-        en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-        ru: ['Января' , 'Февраля' , 'Марта' , 'Апреля' , 'Мая' , 'Июня' , 'Июля' , 'Августа' , 'Сентября' , 'Октября' , 'Ноября' , 'Декабря']
+        en: [
+          'January',
+          'February',
+          'March',
+          'April',
+          'May',
+          'June',
+          'July',
+          'August',
+          'September',
+          'October',
+          'November',
+          'December',
+        ],
+        ru: [
+          'Января',
+          'Февраля',
+          'Марта',
+          'Апреля',
+          'Мая',
+          'Июня',
+          'Июля',
+          'Августа',
+          'Сентября',
+          'Октября',
+          'Ноября',
+          'Декабря',
+        ],
       }
-      const [ year, month, day ] = this.content.date.split('-');
-      const calculatedDay = day.replace(/^0/, '');
-      const calculatedMonth = months[this.$i18n.locale][Number(month)];
+      const [year, month, day] = this.content.date.split('-')
+      const calculatedDay = day.replace(/^0/, '')
+      const calculatedMonth = months[this.$i18n.locale][Number(month)]
       return `${calculatedDay} ${calculatedMonth} ${year}`
-    }
-  }
+    },
+  },
 }
 </script>
 
