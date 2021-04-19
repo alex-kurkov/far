@@ -9,7 +9,7 @@
     </section>
     <section class="container__donations">
       <Help />
-      <Support />
+      <Support :isOnSupportPage="false" />
     </section>
   </div>
 </template>

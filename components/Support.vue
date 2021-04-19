@@ -2,10 +2,11 @@
   <section class="support">
     <div class="support__sideblock"></div>
     <form class="support__container" @submit.prevent="handleSubmit" novalidate>
-      <h3 class="support__title">
+      <h3 class="support__title" v-if="!isOnSupportPage">
         {{ $t('support.title') }}
         <span class="support__span">{{ $t('support.subtitle') }}</span>
       </h3>
+      <h3 class="support__title support__title_type_on-sup-page" v-else>{{$t('support.titleOnPage')}}</h3>
       <SmileIcon
         class="support__smile"
         backgroundColor="#fff"
@@ -105,7 +106,12 @@ export default {
       thirdSum: this.$store.state.content.support.money[2].sum,
     }
   },
-
+  props: {
+    isOnSupportPage: {
+      type: Boolean,
+      default: false,
+    }
+  },
   validations: {
     formData: {
       name: {
@@ -171,7 +177,7 @@ export default {
   padding: 0;
   font-family: 'Vollkorn', sans-serif;
   font-weight: 900;
-  font-size: 41px;
+  font-size: 40px;
   line-height: 1;
   text-align: left;
   color: transparent;
@@ -179,6 +185,15 @@ export default {
   width: 54%;
   word-wrap: break-word;
   align-self: flex-start;
+}
+
+.support__title_type_on-sup-page {
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 0.7;
+  color: #b23438;
+  -webkit-text-stroke: unset;
+  letter-spacing: -3px;
 }
 
 .support__smile {

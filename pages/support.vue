@@ -1,37 +1,68 @@
 <template>
-  <section>
-    <Support />
-    <article>{{ introText }}</article>
-    <h3>{{ subtitleBF }}</h3>
-    <article>{{ bfText }}</article>
-    <h3>{{ subtitleYa }}</h3>
-    <article>{{ yaText }}</article>
-    <Requisites/>
-    <h3>{{ subtitleGl }}</h3>
-    <article>{{ glText }}</article>
+  <section class="support-page">
+    <Support :isOnSupportPage="true" />
+    <article class="support-page__text support-page__text_type_intro">
+      {{ introText }}
+    </article>
+    <h3 class="support-page__subtitle support-page__subtitle_type_cf">
+      {{ subtitleCF }}
+    </h3>
+    <article class="support-page__text support-page__text_type_cf">
+      <img :src="qrCode" class="support-page__qr-code" :alt="qrCodeAlt" />
+      {{ cfText }}
+    </article>
+    <h3 class="support-page__subtitle support-page__subtitle_type_ya">
+      {{ subtitleYa }}
+    </h3>
+    <article class="support-page__text support-page__text_type_cf">
+      {{ yaText }}
+    </article>
+    <Requisites />
+    <h3 class="support-page__subtitle support-page__subtitle_type_gl"
+      :style="{background: `50% 40%/25px 41px url(${flame}) #000 no-repeat`}">
+      {{ subtitleGl }}
+    </h3>
+    <article class="support-page__text support-page__text_type_gl">
+      {{ glText }}
+    </article>
+    <div class="support-page__smile-container">
+      <SmileIcon class="support-page__smile"
+        backgroundColor="#000"
+        mainColor="#fff"/>
+    </div>
+
   </section>
 </template>
 
 <script>
 import { baseUrl } from '@/utils/api'
 import Requisites from '@/components/Requisites'
+import SmileIcon from '@/components/icons/smile'
 export default {
   components: {
-    Requisites,
+    Requisites, SmileIcon
   },
   data() {
     return {
-      title: this.$store.state.content.pages.support.metaTags["metaTitle"][this.$i18n.locale],
-      description: this.$store.state.content.pages.support.metaTags["metaDescription"][this.$i18n.locale],
-      keywords: this.$store.state.content.pages.support.metaTags["metaKeyWords"][this.$i18n.locale],
-      image: baseUrl + this.$store.state.content.pages.support.metaTags["metaImage"].url,
+      title: this.$store.state.content.pages.support.metaTags['metaTitle'][
+        this.$i18n.locale
+      ],
+      description: this.$store.state.content.pages.support.metaTags[
+        'metaDescription'
+      ][this.$i18n.locale],
+      keywords: this.$store.state.content.pages.support.metaTags[
+        'metaKeyWords'
+      ][this.$i18n.locale],
+      image:
+        baseUrl +
+        this.$store.state.content.pages.support.metaTags['metaImage'].url,
       introText: this.$store.state.content.pages.support.pageTexts[0][
         this.$i18n.locale
       ],
-      subtitleBF: this.$store.state.content.pages.support.subTitles[0][
+      subtitleCF: this.$store.state.content.pages.support.subTitles[0][
         this.$i18n.locale
       ],
-      bfText: this.$store.state.content.pages.support.pageTexts[1][
+      cfText: this.$store.state.content.pages.support.pageTexts[1][
         this.$i18n.locale
       ],
       subtitleYa: this.$store.state.content.pages.support.subTitles[1][
@@ -46,6 +77,13 @@ export default {
       glText: this.$store.state.content.pages.support.pageTexts[3][
         this.$i18n.locale
       ],
+      qrCode:
+        baseUrl +
+        this.$store.state.content.pages.support.images[0]['image'][0].url,
+      qrCodeAlt: this.$store.state.content.pages.support.images[0]['imageAlt'][
+        this.$i18n.locale
+      ],
+      flame: baseUrl + this.$store.state.content.pages.support.images[1]['image'][0].url,
     }
   },
   head() {
@@ -114,11 +152,87 @@ export default {
 </script>
 
 <style scoped>
-.about {
+.support-page {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 80vh;
+  overflow: hidden;
+}
+
+.support-page__text {
+  font-family: 'Vollkorn', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  padding: 19px;
+  margin: 0;
+  background: #000;
+}
+
+.support-page__text_type_intro {
+  color: #b23438;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.support-page__text_type_cf {
+  background: #fff;
+  color: #000;
+  padding: 19px 9px 19px 19px;
+}
+
+.support-page__text_type_gl {
+  color: #fff;
+}
+
+.support-page__subtitle {
+  color: #b23438;
+  margin: 0;
+  padding: 19px 0 0 0;
+  font-family: 'Vollkorn', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.support-page__subtitle_type_cf {
+
+}
+
+.support-page__subtitle_type_ya {
+  padding: 5px 0 0 0;
+}
+
+.support-page__subtitle_type_gl {
+  background: #000;
+  width: 100%;
+  padding-top: 40px;
+  text-align: center;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.support-page__qr-code {
+  float: right;
+  width: 44%;
+  height: auto;
+  border: 20px solid #b23438;
+  margin: 0 0 12px 12px;
+}
+
+.support-page__smile-container {
+  background: #000;
+  position: relative;
+  width: 100%;
+  min-height: 354px;
+}
+
+.support-page__smile {
+  width: 354px;
+  position: absolute;
+  top: 0;
+  right:-50px;
 }
 </style>

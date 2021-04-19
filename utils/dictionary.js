@@ -46,8 +46,9 @@ export default function (storeContent, locale) {
       link: storeContent.mission.missionLink[`${locale}`],
     },
     support: {
-      title: storeContent.support.supportTitle[`${locale}`],
+      title: storeContent.support.supportTitle[0][`${locale}`],
       subtitle: storeContent.support.supportSubTitle[`${locale}`],
+      titleOnPage: storeContent.support.supportTitle[1][`${locale}`],
       paymentBtn: storeContent.support.supportPaymentBtn[`${locale}`],
       privacy: storeContent.support.supportPrivacy[`${locale}`],
       offer: storeContent.support.supportOffer[`${locale}`],
