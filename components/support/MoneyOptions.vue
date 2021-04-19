@@ -172,6 +172,7 @@ export default {
   font-family: 'Tomorrow Wind', sans-serif;
   font-size: 108px;
   line-height: 0.8;
+  text-align: center;
   border-radius: 20px;
 }
 

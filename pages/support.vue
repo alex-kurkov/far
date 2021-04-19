@@ -1,25 +1,51 @@
 <template>
-  <section class="about">
-    <p>ЗДЕСЬ БУДЕТ БУДУЩАЯ СТРАНИЦА ПОДДЕРЖАТЬ</p>
-    <p>с блоками:</p>
-    <ul>
-      <li>Сделать пожертвование</li>
-      <li>Волонтерство</li>
-      <li>Стажировка</li>
-      <li>Партнерство</li>
-    </ul>
+  <section>
+    <Support />
+    <article>{{ introText }}</article>
+    <h3>{{ subtitleBF }}</h3>
+    <article>{{ bfText }}</article>
+    <h3>{{ subtitleYa }}</h3>
+    <article>{{ yaText }}</article>
+    <Requisites/>
+    <h3>{{ subtitleGl }}</h3>
+    <article>{{ glText }}</article>
   </section>
 </template>
 
 <script>
 import { baseUrl } from '@/utils/api'
+import Requisites from '@/components/Requisites'
 export default {
+  components: {
+    Requisites,
+  },
   data() {
     return {
-      title: this.$t('metaTags[4].title'),
-      description: this.$t('metaTags[4].description'),
-      keywords: this.$t('metaTags[4].keywords'),
-      image: baseUrl + this.$t('metaTags[4].image.url'),
+      title: this.$store.state.content.pages.support.metaTags["metaTitle"][this.$i18n.locale],
+      description: this.$store.state.content.pages.support.metaTags["metaDescription"][this.$i18n.locale],
+      keywords: this.$store.state.content.pages.support.metaTags["metaKeyWords"][this.$i18n.locale],
+      image: baseUrl + this.$store.state.content.pages.support.metaTags["metaImage"].url,
+      introText: this.$store.state.content.pages.support.pageTexts[0][
+        this.$i18n.locale
+      ],
+      subtitleBF: this.$store.state.content.pages.support.subTitles[0][
+        this.$i18n.locale
+      ],
+      bfText: this.$store.state.content.pages.support.pageTexts[1][
+        this.$i18n.locale
+      ],
+      subtitleYa: this.$store.state.content.pages.support.subTitles[1][
+        this.$i18n.locale
+      ],
+      yaText: this.$store.state.content.pages.support.pageTexts[2][
+        this.$i18n.locale
+      ],
+      subtitleGl: this.$store.state.content.pages.support.subTitles[2][
+        this.$i18n.locale
+      ],
+      glText: this.$store.state.content.pages.support.pageTexts[3][
+        this.$i18n.locale
+      ],
     }
   },
   head() {
