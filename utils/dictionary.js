@@ -2,7 +2,7 @@ import { baseUrl } from './api'
 
 export default function (storeContent, locale) {
   let allMetaTags = []
-  //  это надо будет переписать со стороны strapi и потом здесь
+  //  это надо будет удалить когда все метатеги перенесем в page
   storeContent.metaTags.forEach((meta) => {
     const title = meta[`${locale}_title`]
     const description = meta[`${locale}_description`]
