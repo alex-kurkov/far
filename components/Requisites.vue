@@ -189,4 +189,41 @@ export default {
     column-gap: 35px;
   }
 }
+
+@media screen and (min-width: 1280px) {
+  .requisites {
+    flex-direction: row;
+    margin-top: 5px;
+  }
+
+  .requisites__title {
+    writing-mode: vertical-lr;
+    font-size: 61px;
+    margin-left: 101px;
+  }
+
+  .requisites__span {
+    font-size: 13px;
+  }
+
+  .requisites__company {
+    font-size: 13px;
+    margin: 0 0 18px 0;
+  }
+
+  .requisites__content {
+    padding: 12px;
+    margin-right: 8px;
+  }
+
+  .requisites__subtitle {
+    margin: 0 0 18px 0;
+    font-size: 22px;
+  }
+
+  .requisites__list {
+    row-gap: 30px;
+    column-gap: 18px;
+  }
+}
 </style>

@@ -1,21 +1,17 @@
 <template>
   <section class="support">
-    <div class="support__sideblock"></div>
+    <div class="support__sideblock" v-if="!isOnSupportPage"></div>
     <form class="support__container" @submit.prevent="handleSubmit" novalidate>
       <h3 class="support__title" v-if="!isOnSupportPage">
         {{ $t('support.title') }}
         <span class="support__span">{{ $t('support.subtitle') }}</span>
       </h3>
-      <h3 class="support__title support__title_type_on-sup-page" v-else>{{$t('support.titleOnPage')}}</h3>
+      <h3 class="support__title support__title_type_on-sup-page" v-else>
+        {{ $t('support.titleOnPage') }}
+      </h3>
       <SmileIcon
-        v-if="!isOnSupportPage"
         class="support__smile"
-        backgroundColor="#fff"
-        mainColor="#000"
-      />
-      <SmileIcon
-        v-else
-        class="support__smile support__smile_type_on-sup-page"
+        :class="{ 'support__smile_type_on-sup-page': isOnSupportPage }"
         backgroundColor="#fff"
         mainColor="#000"
       />
@@ -77,8 +73,12 @@
           >Введите электронную почту в правильном формате
         </span>
       </div>
-      <button class="support__submit-btn" type="submit">
-        {{ $t('support.paymentBtn') }}
+      <button
+        class="support__submit-btn"
+        :class="{ 'support__submit-btn_on-sup-page': isOnSupportPage }"
+        type="submit"
+      >
+        {{ !isOnSupportPage ? $t('support.paymentBtn') : $t('support.paymentBtnOnSupPage')}}
       </button>
       <NuxtLink class="support__link" to="#">{{
         $t('support.privacy')
@@ -117,7 +117,7 @@ export default {
     isOnSupportPage: {
       type: Boolean,
       default: false,
-    }
+    },
   },
   validations: {
     formData: {
@@ -389,6 +389,17 @@ export default {
     margin: 8px 0 0 118px;
   }
 
+  .support__title_type_on-sup-page {
+    font-size: 109px;
+    line-height: 0.7;
+    top: -70px;
+    left: -450px;
+    margin: 27px 0 0 0;
+    position: absolute;
+    width: 115%;
+    word-break: break-all;
+  }
+
   .support__span {
     font-size: 63px;
   }
@@ -397,6 +408,11 @@ export default {
     width: 223px;
     right: 518px;
     top: -74px;
+  }
+
+  .support__smile_type_on-sup-page {
+    right: -116px;
+    top: -125px;
   }
 
   .support__input {
@@ -418,6 +434,19 @@ export default {
     font-size: 32px;
     margin: 0;
     order: 9;
+  }
+
+  .support__submit-btn_on-sup-page {
+    border-radius: 20px;
+    width: 222px;
+    min-height: 52px;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 50px;
+    left: -231px;
   }
 
   .support__link {

@@ -56,4 +56,14 @@ export default {
     margin-bottom: 13px;
   }
  }
+
+ @media screen and (min-width:1280px) {
+   .requisite__text {
+     font-size: 12px;
+   }
+
+   .requisite__text:nth-of-type(1) {
+    margin-bottom: 3px;
+  }
+ }
 </style>
