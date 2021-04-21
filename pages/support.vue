@@ -19,7 +19,7 @@
     </article>
     <Requisites />
     <h3 class="support-page__subtitle support-page__subtitle_type_gl"
-      :style="{background: `50% 40%/25px 41px url(${flame}) #000 no-repeat`}">
+      :style="{background: `50% 40%/8vw 13vw url(${flame}) #000 no-repeat`}">
       {{ subtitleGl }}
     </h3>
     <article class="support-page__text support-page__text_type_gl">
@@ -234,5 +234,40 @@ export default {
   position: absolute;
   top: 0;
   right:-50px;
+}
+
+@media screen and (min-width:768px) {
+  .support-page__subtitle {
+    font-size: 54px;
+    padding: 52px 0 0 0;
+  }
+
+  .support-page__subtitle_type_ya {
+    padding: 0;
+  }
+
+  .support-page__subtitle_type_gl {
+    padding: 140px 0 0 0;
+  }
+
+  .support-page__text {
+    padding: 52px;
+    font-size: 33px;
+  }
+
+  .support-page__text_type_intro {
+    font-size: 36px;
+  }
+
+  .support-page__smile-container {
+    min-height: 674px;
+  }
+  .support-page__smile {
+    width: 674px;
+  }
+
+  .support-page__qr-code {
+    border: 37px solid #b23438;
+  }
 }
 </style>

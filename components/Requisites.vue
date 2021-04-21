@@ -160,4 +160,33 @@ export default {
   row-gap: 20px;
   align-items: flex-start;
 }
+
+@media screen and (min-width: 768px) {
+  .requisites__title {
+    font-size: 113px;
+  }
+
+  .requisites__span {
+    font-size: 25px;
+  }
+
+  .requisites__company {
+    font-size: 25px;
+    margin: 0 0 36px 0;
+  }
+
+  .requisites__content {
+    padding: 23px;
+  }
+
+  .requisites__subtitle {
+    margin: 0 0 43px 0;
+    font-size: 42px;
+  }
+
+  .requisites__list {
+    row-gap: 57px;
+    column-gap: 35px;
+  }
+}
 </style>

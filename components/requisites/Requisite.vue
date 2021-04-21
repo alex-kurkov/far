@@ -43,9 +43,17 @@ export default {
     text-transform: none;
   }
 
-  /* .requisite:nth-of-type(0) {
-    grid-row: 1;
-    grid-column: 1;
-  } */
+  .requisite__text:nth-of-type(1) {
+    margin-bottom: 5px;
+  }
 
+ @media screen and (min-width: 768px) {
+   .requisite__text {
+     font-size: 22px;
+   }
+
+   .requisite__text:nth-of-type(1) {
+    margin-bottom: 13px;
+  }
+ }
 </style>

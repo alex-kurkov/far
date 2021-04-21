@@ -8,7 +8,14 @@
       </h3>
       <h3 class="support__title support__title_type_on-sup-page" v-else>{{$t('support.titleOnPage')}}</h3>
       <SmileIcon
+        v-if="!isOnSupportPage"
         class="support__smile"
+        backgroundColor="#fff"
+        mainColor="#000"
+      />
+      <SmileIcon
+        v-else
+        class="support__smile support__smile_type_on-sup-page"
         backgroundColor="#fff"
         mainColor="#000"
       />
@@ -313,6 +320,12 @@ export default {
     -webkit-text-stroke: 2px #000;
   }
 
+  .support__title_type_on-sup-page {
+    -webkit-text-stroke: unset;
+    margin-top: 44px;
+    width: 92%;
+  }
+
   .support__span {
     font-size: 90px;
   }
@@ -320,6 +333,11 @@ export default {
   .support__smile {
     top: -64px;
     width: 260px;
+  }
+
+  .support__smile_type_on-sup-page {
+    right: -92px;
+    top: -115px;
   }
 
   .support__input {
