@@ -342,7 +342,6 @@ export default {
 
   .support__input {
     font-size: 38px;
-    /* margin: 0 0 42px 0; */
     margin: 0 0 10px 0;
     padding: 0 0 0 25px;
   }

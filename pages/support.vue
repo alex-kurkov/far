@@ -4,7 +4,9 @@
       <Support :isOnSupportPage="true" class="support-page__support" />
       <article class="support-page__text support-page__text_type_intro">
         {{ introText }}
-        <span class="support-page__arrows">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span>
+        <span class="support-page__arrows"
+          >&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span
+        >
       </article>
     </div>
 
@@ -173,7 +175,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* flex-direction: column; */
   flex-wrap: wrap;
   overflow: hidden;
 }
@@ -308,10 +309,6 @@ export default {
 }
 
 @media screen and (min-width: 1280px) {
-  * {
-    outline: 1px solid red;
-  }
-
   .support-page__container {
     display: flex;
     flex-direction: row;
@@ -333,7 +330,6 @@ export default {
 
   .support-page__text_type_intro {
     order: 1;
-    /* width: 46%; */
     width: 508px;
     min-height: 655px;
     background: #cbcbcb;
@@ -359,14 +355,12 @@ export default {
 
   .support-page__support {
     order: 2;
-    /* width: 54%; */
     width: 591px;
     min-height: 655px;
     padding-top: 83px;
   }
 
   .support-page__info {
-    /* width: 46%; */
     width: 508px;
     order: 3;
     min-height: 896px;
@@ -383,7 +377,7 @@ export default {
 
   .support-page__subtitle_type_gl {
     text-align: left;
-    background: 71% 40%/52px 79px #000 no-repeat
+    background: 71% 40%/52px 79px #000 no-repeat;
   }
 
   .support-page__qr-code {
@@ -395,7 +389,6 @@ export default {
   }
 
   .support-page__smile-container {
-    /* width: 54%; */
     width: 591px;
     order: 4;
     min-height: 896px;

@@ -7,10 +7,9 @@
         >{{ companyName }}
       </p>
       <p class="requisites__company">
-        <span class="requisites__span">Сокращенно: </span
-        >{{ shortCompanyName }}
+        <span class="requisites__span">Сокращенно: </span>{{ shortCompanyName }}
       </p>
-      <h4 class="requisites__subtitle">{{subtitleReq}}</h4>
+      <h4 class="requisites__subtitle">{{ subtitleReq }}</h4>
       <ul class="requisites__list">
         <Requisite
           v-for="(item, index) in this.values"
@@ -53,12 +52,17 @@ export default {
   computed: {
     values() {
       const requisites = []
-      this.$store.state.content.requisites.requisites.forEach((requisite) => {
-        requisites.push({
-          name: requisite[this.$i18n.locale],
-          value: requisite['value'],
+      if (
+        this.$store.state.content.requisites.requisites &&
+        this.$store.state.content.requisites.requisites.length > 0
+      ) {
+        this.$store.state.content.requisites.requisites.forEach((requisite) => {
+          requisites.push({
+            name: requisite[this.$i18n.locale],
+            value: requisite['value'],
+          })
         })
-      })
+      }
       requisites.push({
         name: '',
         value: this.$store.state.content.requisites.subtitle[5][
@@ -135,7 +139,7 @@ export default {
   font-size: 11px;
   line-height: 1.1;
   color: #666;
-  text-transform:none;
+  text-transform: none;
 }
 
 .requisites__subtitle {
