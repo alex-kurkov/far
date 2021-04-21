@@ -1,15 +1,35 @@
 <template>
   <section class="requisites">
-    <h3>{{title}}</h3>
-    <div>
-
+    <h3 class="requisites__title">{{ title }}</h3>
+    <div class="requisites__content">
+      <p class="requisites__company">
+        <span class="requisites__span">Название организации: </span
+        >{{ companyName }}
+      </p>
+      <p class="requisites__company">
+        <span class="requisites__span">Сокращенно: </span
+        >{{ shortCompanyName }}
+      </p>
+      <h4 class="requisites__subtitle">{{subtitleReq}}</h4>
+      <ul class="requisites__list">
+        <Requisite
+          v-for="(item, index) in this.values"
+          v-bind:key="index"
+          :name="item.name"
+          :value="item.value"
+        />
+      </ul>
     </div>
   </section>
 </template>
 
 <script>
+import Requisite from '@/components/requisites/Requisite'
 export default {
   name: 'Requisites',
+  components: {
+    Requisite,
+  },
   data() {
     return {
       title: this.$store.state.content.requisites.title[this.$i18n.locale],
@@ -28,56 +48,116 @@ export default {
       subtitleReq: this.$store.state.content.requisites.subtitle[2][
         this.$i18n.locale
       ],
-      subtitleBank: this.$store.state.content.requisites.subtitle[3][
-        this.$i18n.locale
-      ],
-      subtitlePay: this.$store.state.content.requisites.subtitle[4][
-        this.$i18n.locale
-      ],
-      tin: {
-        name: this.$store.state.content.requisites.requisites[0][
-          this.$i18n.locale
-        ],
-        value: this.$store.state.content.requisites.requisites[0]['value'],
-      },
-      iec: {
-        name: this.$store.state.content.requisites.requisites[1][
-          this.$i18n.locale
-        ],
-        value: this.$store.state.content.requisites.requisites[1]['value'],
-      },
-      psrn: {
-        name: this.$store.state.content.requisites.requisites[2][
-          this.$i18n.locale
-        ],
-        value: this.$store.state.content.requisites.requisites[2]['value'],
-      },
-      corAcc: {
-        name: this.$store.state.content.requisites.requisites[3][
-          this.$i18n.locale
-        ],
-        value: this.$store.state.content.requisites.requisites[3]['value'],
-      },
-      curAcc: {
-        name: this.$store.state.content.requisites.requisites[4][
-          this.$i18n.locale
-        ],
-        value: this.$store.state.content.requisites.requisites[4]['value'],
-      },
-      bic: {
-        name: this.$store.state.content.requisites.requisites[5][
-          this.$i18n.locale
-        ],
-        value: this.$store.state.content.requisites.requisites[5]['value'],
-      },
-      bank: this.$store.state.content.requisites.bank[this.$i18n.locale],
-      paymentDetails: this.$store.state.content.requisites.paymentDetails[
-        this.$i18n.locale
-      ],
     }
+  },
+  computed: {
+    values() {
+      const requisites = []
+      this.$store.state.content.requisites.requisites.forEach((requisite) => {
+        requisites.push({
+          name: requisite[this.$i18n.locale],
+          value: requisite['value'],
+        })
+      })
+      requisites.push({
+        name: '',
+        value: this.$store.state.content.requisites.subtitle[5][
+          this.$i18n.locale
+        ],
+      })
+      requisites.push({
+        name: this.$store.state.content.requisites.subtitle[3][
+          this.$i18n.locale
+        ],
+        value: this.$store.state.content.requisites.bankDetails.name,
+      })
+      requisites.push({
+        name: this.$store.state.content.requisites.bankDetails[
+          this.$i18n.locale
+        ],
+        value: this.$store.state.content.requisites.bankDetails.bic,
+      })
+      requisites.push({
+        name: this.$store.state.content.requisites.subtitle[4][
+          this.$i18n.locale
+        ],
+        value: this.$store.state.content.requisites.paymentDetails[
+          this.$i18n.locale
+        ],
+      })
+      return requisites
+    },
   },
 }
 </script>
 
 <style scoped>
+.requisites {
+  background: #b23438;
+  width: 100%;
+  padding: 11px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.requisites__title {
+  font-family: 'Vollkorn', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.requisites__content {
+  background: #c8c8c8;
+  border-radius: 20px;
+  padding: 12px;
+  width: 88%;
+}
+
+.requisites__company {
+  font-family: 'Vollkorn', Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #b23438;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+.requisites__span {
+  font-family: 'Vollkorn', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 1.1;
+  color: #666;
+  text-transform:none;
+}
+
+.requisites__subtitle {
+  font-family: 'Vollkorn', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  font-style: italic;
+  line-height: 1.3;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
+.requisites__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 0.36fr 1fr;
+  grid-template-rows: repeat(5, min-content);
+  grid-auto-flow: column;
+  column-gap: 13px;
+  row-gap: 20px;
+  align-items: flex-start;
+}
 </style>
