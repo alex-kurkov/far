@@ -2,7 +2,7 @@ import { baseUrl } from './api'
 
 export default function (storeContent, locale) {
   let allMetaTags = []
-  //  это надо будет переписать со стороны strapi и потом здесь
+  //  это надо будет удалить когда все метатеги перенесем в page
   storeContent.metaTags.forEach((meta) => {
     const title = meta[`${locale}_title`]
     const description = meta[`${locale}_description`]
@@ -46,9 +46,11 @@ export default function (storeContent, locale) {
       link: storeContent.mission.missionLink[`${locale}`],
     },
     support: {
-      title: storeContent.support.supportTitle[`${locale}`],
+      title: storeContent.support.supportTitle[0][`${locale}`],
       subtitle: storeContent.support.supportSubTitle[`${locale}`],
-      paymentBtn: storeContent.support.supportPaymentBtn[`${locale}`],
+      titleOnPage: storeContent.support.supportTitle[1][`${locale}`],
+      paymentBtn: storeContent.support.supportPaymentBtn[0][`${locale}`],
+      paymentBtnOnSupPage: storeContent.support.supportPaymentBtn[1][`${locale}`],
       privacy: storeContent.support.supportPrivacy[`${locale}`],
       offer: storeContent.support.supportOffer[`${locale}`],
       sumOption: storeContent.support.supportSumOption[`${locale}`],

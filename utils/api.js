@@ -75,6 +75,10 @@ class Api {
     return axios.get(`${this._baseURL}/reports`)
   }
 
+  getRequisites() {
+    return axios.get(`${this._baseURL}/requisites`)
+  }
+
   getData() {
     return Promise.all([
       this.getIntro(),
@@ -95,6 +99,7 @@ class Api {
       this.getCustomPages(),
       this.getHeader(),
       this.getReports(),
+      this.getRequisites(),
     ])
   }
 }

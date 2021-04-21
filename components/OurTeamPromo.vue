@@ -2,9 +2,9 @@
   <section class="our-team-promo">
     <h1 class="our-team-promo__title">{{ title }}</h1>
     <img class="our-team-promo__blade" :src="image" :alt="title" />
-    <nuxt-link to="#" class="our-team-promo__logo-link">
+    <!-- <nuxt-link to="#" class="our-team-promo__logo-link">
       <Icon name="logo" class="our-team-promo__logo" />
-    </nuxt-link>
+    </nuxt-link> -->
   </section>
 </template>
 

@@ -52,6 +52,7 @@ export const actions = {
           customPages,
           header,
           reports,
+          requisites,
         ]) => {
           const sortedMenu = menu.data
           sortedMenu.sort((a, b) => {
@@ -89,6 +90,7 @@ export const actions = {
             customPages: allCustomPages,
             header: header.data,
             reports: reports.data,
+            requisites: requisites.data,
           }
           commit('SET_CONTENT', allData)
         }

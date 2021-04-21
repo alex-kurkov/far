@@ -1,13 +1,17 @@
 <template>
   <section class="support">
-    <div class="support__sideblock"></div>
+    <div class="support__sideblock" v-if="!isOnSupportPage"></div>
     <form class="support__container" @submit.prevent="handleSubmit" novalidate>
-      <h3 class="support__title">
+      <h3 class="support__title" v-if="!isOnSupportPage">
         {{ $t('support.title') }}
         <span class="support__span">{{ $t('support.subtitle') }}</span>
       </h3>
+      <h3 class="support__title support__title_type_on-sup-page" v-else>
+        {{ $t('support.titleOnPage') }}
+      </h3>
       <SmileIcon
         class="support__smile"
+        :class="{ 'support__smile_type_on-sup-page': isOnSupportPage }"
         backgroundColor="#fff"
         mainColor="#000"
       />
@@ -69,8 +73,12 @@
           >Введите электронную почту в правильном формате
         </span>
       </div>
-      <button class="support__submit-btn" type="submit">
-        {{ $t('support.paymentBtn') }}
+      <button
+        class="support__submit-btn"
+        :class="{ 'support__submit-btn_on-sup-page': isOnSupportPage }"
+        type="submit"
+      >
+        {{ !isOnSupportPage ? $t('support.paymentBtn') : $t('support.paymentBtnOnSupPage')}}
       </button>
       <NuxtLink class="support__link" to="#">{{
         $t('support.privacy')
@@ -105,7 +113,12 @@ export default {
       thirdSum: this.$store.state.content.support.money[2].sum,
     }
   },
-
+  props: {
+    isOnSupportPage: {
+      type: Boolean,
+      default: false,
+    },
+  },
   validations: {
     formData: {
       name: {
@@ -171,7 +184,7 @@ export default {
   padding: 0;
   font-family: 'Vollkorn', sans-serif;
   font-weight: 900;
-  font-size: 41px;
+  font-size: 40px;
   line-height: 1;
   text-align: left;
   color: transparent;
@@ -179,6 +192,15 @@ export default {
   width: 54%;
   word-wrap: break-word;
   align-self: flex-start;
+}
+
+.support__title_type_on-sup-page {
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 0.7;
+  color: #b23438;
+  -webkit-text-stroke: unset;
+  letter-spacing: -3px;
 }
 
 .support__smile {
@@ -298,6 +320,12 @@ export default {
     -webkit-text-stroke: 2px #000;
   }
 
+  .support__title_type_on-sup-page {
+    -webkit-text-stroke: unset;
+    margin-top: 44px;
+    width: 92%;
+  }
+
   .support__span {
     font-size: 90px;
   }
@@ -307,9 +335,13 @@ export default {
     width: 260px;
   }
 
+  .support__smile_type_on-sup-page {
+    right: -92px;
+    top: -115px;
+  }
+
   .support__input {
     font-size: 38px;
-    /* margin: 0 0 42px 0; */
     margin: 0 0 10px 0;
     padding: 0 0 0 25px;
   }
@@ -356,6 +388,17 @@ export default {
     margin: 8px 0 0 118px;
   }
 
+  .support__title_type_on-sup-page {
+    font-size: 109px;
+    line-height: 0.7;
+    top: -70px;
+    left: -450px;
+    margin: 27px 0 0 0;
+    position: absolute;
+    width: 115%;
+    word-break: break-all;
+  }
+
   .support__span {
     font-size: 63px;
   }
@@ -364,6 +407,11 @@ export default {
     width: 223px;
     right: 518px;
     top: -74px;
+  }
+
+  .support__smile_type_on-sup-page {
+    right: -116px;
+    top: -125px;
   }
 
   .support__input {
@@ -385,6 +433,19 @@ export default {
     font-size: 32px;
     margin: 0;
     order: 9;
+  }
+
+  .support__submit-btn_on-sup-page {
+    border-radius: 20px;
+    width: 222px;
+    min-height: 52px;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 50px;
+    left: -231px;
   }
 
   .support__link {

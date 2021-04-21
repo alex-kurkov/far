@@ -36,7 +36,7 @@ export default {
 <style scoped>
 .tumbler {
   width: 237px;
-  margin: 52px 0 29px;
+  margin: 29px 0;
 }
 
 .tumbler__label {
