@@ -35,6 +35,11 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [['nuxt-i18n', I18N]],
 
+  //Server middleware https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-servermiddleware/#custom-api-endpoint
+  serverMiddleware: [
+    { path: "/server-middleware/get-redirect", handler: "~/server-middleware/get-redirect.js" },
+ ],
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 }
