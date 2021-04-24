@@ -78,7 +78,11 @@
         :class="{ 'support__submit-btn_on-sup-page': isOnSupportPage }"
         type="submit"
       >
-        {{ !isOnSupportPage ? $t('support.paymentBtn') : $t('support.paymentBtnOnSupPage')}}
+        {{
+          !isOnSupportPage
+            ? $t('support.paymentBtn')
+            : $t('support.paymentBtnOnSupPage')
+        }}
       </button>
       <NuxtLink class="support__link" to="#">{{
         $t('support.privacy')
@@ -93,7 +97,7 @@ import PayOptions from './support/PayOptions'
 import MoneyOptions from './support/MoneyOptions'
 import Tumbler from './support/Tumbler'
 import { required, minLength, maxLength, email } from 'vuelidate/lib/validators'
-
+const axios = require('axios').default
 export default {
   name: 'Support',
   components: {
@@ -152,6 +156,19 @@ export default {
       )
       console.log('согласие с офертой', this.$refs.moneyOptions.$v.agree.$model)
       console.log('однократно', this.$refs.regularity.$v.choice.$model)
+
+      this.callRedirect(this.$refs.moneyOptions.$v.choice.$model)
+        .then((res) => {
+          console.log(res)
+          window.location.href = `${res.data.confirmation.confirmation_url}`
+        })
+        .catch((err) => console.log(err))
+    },
+
+    callRedirect(value) {
+      return axios.get(
+        `/server-middleware/get-redirect?value=${value}&currency=RUB`
+      )
     },
   },
 }
