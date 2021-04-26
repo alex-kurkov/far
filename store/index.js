@@ -13,6 +13,7 @@ export const getters = {
   getLocaleMessage: (state) => (locale) => {
     return dictionary(state.content, locale)
   },
+
   getReports: (state) => {
     return state.content.reports
   },
@@ -71,6 +72,9 @@ export const actions = {
           customPages.data.forEach((page) => {
             allCustomPages[page.path] = page
           })
+
+          console.log(andreyRylkov)
+
           const allData = {
             intro: intro.data,
             mission: mission.data,

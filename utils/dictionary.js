@@ -17,6 +17,8 @@ export default function (storeContent, locale) {
     allMetaTags.push(metaTagUnit)
   })
 
+  // console.log(storeContent)
+
   return {
     about: {
       title: storeContent.about.title[`${locale}`],
@@ -50,7 +52,8 @@ export default function (storeContent, locale) {
       subtitle: storeContent.support.supportSubTitle[`${locale}`],
       titleOnPage: storeContent.support.supportTitle[1][`${locale}`],
       paymentBtn: storeContent.support.supportPaymentBtn[0][`${locale}`],
-      paymentBtnOnSupPage: storeContent.support.supportPaymentBtn[1][`${locale}`],
+      paymentBtnOnSupPage:
+        storeContent.support.supportPaymentBtn[1][`${locale}`],
       privacy: storeContent.support.supportPrivacy[`${locale}`],
       offer: storeContent.support.supportOffer[`${locale}`],
       sumOption: storeContent.support.supportSumOption[`${locale}`],

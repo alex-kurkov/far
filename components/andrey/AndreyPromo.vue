@@ -40,30 +40,31 @@ export default {
       type: String,
       default: '',
     },
-  },
-  data() {
-    return {
-      currentBackgroundImage: this.imageWhoIsS,
+    currentBackgroundImage: {
+      type: String,
     }
   },
-  methods: {
-    handleWindowResize() {
-      if (window.innerWidth >= 1140) {
-        this.currentBackgroundImage = this.imageWhoIsL
-      } else if (window.innerWidth < 1140 && window.innerWidth >= 750) {
-        this.currentBackgroundImage = this.imageWhoIsM
-      } else if (window.innerWidth < 750) {
-        this.currentBackgroundImage = this.imageWhoIsS
-      }
-    },
+  data() {
+    return {}
   },
-  mounted() {
-    window.addEventListener('resize', this.handleWindowResize)
-    this.handleWindowResize()
-  },
-  destroyed() {
-    window.removeEventListener('resize', this.handleWindowResize)
-  },
+  // methods: {
+  //   handleWindowResize() {
+  //     if (window.innerWidth >= 1140) {
+  //       this.currentBackgroundImage = this.imageWhoIsL
+  //     } else if (window.innerWidth < 1140 && window.innerWidth >= 750) {
+  //       this.currentBackgroundImage = this.imageWhoIsM
+  //     } else if (window.innerWidth < 750) {
+  //       this.currentBackgroundImage = this.imageWhoIsS
+  //     }
+  //   },
+  // },
+  // mounted() {
+  //   window.addEventListener('resize', this.handleWindowResize)
+  //   this.handleWindowResize()
+  // },
+  // destroyed() {
+  //   window.removeEventListener('resize', this.handleWindowResize)
+  // },
   computed: {},
 }
 </script>
