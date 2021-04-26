@@ -2,7 +2,7 @@ import { baseUrl } from './api'
 
 export default function (storeContent, locale) {
   let allMetaTags = []
-  //  это надо будет удалить когда все метатеги перенесем в page
+  // это надо будет удалить когда все метатеги перенесем в page
   storeContent.metaTags.forEach((meta) => {
     const title = meta[`${locale}_title`]
     const description = meta[`${locale}_description`]
@@ -17,7 +17,45 @@ export default function (storeContent, locale) {
     allMetaTags.push(metaTagUnit)
   })
 
-  // console.log(storeContent)
+  const allPages = {}
+  for (let key in storeContent.pages) {
+    if (storeContent.pages.hasOwnProperty(key)) {
+      const localePage = JSON.parse(JSON.stringify(storeContent.pages[key]))
+
+      if (localePage['mainTitle']) {
+        localePage['mainTitleLocale'] = localePage['mainTitle'][`${locale}`]
+      }
+
+      if (localePage['subTitles'].length > 0) {
+        localePage['subTitlesLocale'] = localePage['subTitles'].map(
+          (subTitle) => subTitle[`${locale}`]
+        )
+      }
+      if (localePage['pageTexts'].length > 0) {
+        localePage['pageTextsLocale'] = localePage['pageTexts'].map(
+          (subTitle) => subTitle[`${locale}`]
+        )
+      }
+
+      if (localePage.images.length > 0) {
+        localePage['imageAltsLocale'] = localePage.images.map(
+          (image) => image['imageAlt'] && image['imageAlt'][`${locale}`]
+        )
+      }
+
+      const metaTagsLocale = {}
+      for (let key in localePage.metaTags) {
+        if (localePage.metaTags.hasOwnProperty(key)) {
+          if (key !== 'metaImage') {
+            metaTagsLocale[key] = localePage.metaTags[key][`${locale}`]
+          }
+        }
+      }
+
+      localePage['metaTagsLocale'] = metaTagsLocale
+      allPages[key] = localePage
+    }
+  }
 
   return {
     about: {
@@ -90,5 +128,6 @@ export default function (storeContent, locale) {
       image: storeContent.ourTeamPromo.image.url,
     },
     header: storeContent.header.marqueeText[`${locale}`],
+    pages: allPages,
   }
 }

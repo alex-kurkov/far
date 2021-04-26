@@ -63,6 +63,7 @@ export const actions = {
             }
             return a['order'] > b['order'] ? 1 : -1
           })
+
           const newPages = {}
           pages.data.forEach((page) => {
             newPages[page.name] = page
@@ -73,7 +74,7 @@ export const actions = {
             allCustomPages[page.path] = page
           })
 
-          console.log(andreyRylkov)
+          // console.log(newPages)
 
           const allData = {
             intro: intro.data,

@@ -6,47 +6,46 @@
       :imageWhoIsL="imageWhoIsL"
       :imageAndrey="imageAndrey"
       :imageAndreyAlt="imageAndreyAlt"
-      :currentBackgroundImage='currentBackgroundImage'
+      :currentBackgroundImage="currentBackgroundImage"
     />
-    <div class="andrey-rylkov__content" :style="{ marginLeft: `${contentMargin}px`, marginRight:`${contentMargin}px`  }">
-
-<!--      <i18n tag="h2" path="footer.license" class="footer__license">-->
-<!--        <template v-slot:license>-->
-<!--          <a-->
-<!--            class="footer__link"-->
-<!--            href="https://creativecommons.org/licenses/by/3.0/"-->
-<!--          >-->
-<!--            {{ license }}-->
-<!--          </a>-->
-<!--        </template>-->
-<!--      </i18n>-->
-
-
-
-
-
-      <h2 class="andrey-rylkov__subtitle andrey-rylkov__subtitle_size">{{ firstSubTitle }}</h2>
-      <h2 class="andrey-rylkov__subtitle andrey-rylkov__subtitle_color_red">
-        {{ secondSubTitle }}
+    <div
+      class="andrey-rylkov__content"
+      :style="{
+        marginLeft: `${contentMargin}px`,
+        marginRight: `${contentMargin}px`,
+      }"
+    >
+      <h2 class="andrey-rylkov__subtitle andrey-rylkov__subtitle_size">
+        {{ $t('pages.andrey.subTitlesLocale[0]') }}
+        <a
+          :href="url"
+          class="andrey-rylkov__subtitle andrey-rylkov__subtitle_color_red"
+        >
+          {{ $t('pages.andrey.subTitlesLocale[1]') }}</a
+        >
       </h2>
-      <p class="andrey-rylkov__text">{{ firstPageText }}</p>
-      <h1 class="andrey-rylkov__title">{{ pageTitle }}</h1>
-      <h1 class="andrey-rylkov__title">{{ mainSubTitle }}</h1>
+      <p class="andrey-rylkov__text">
+        {{ $t('pages.andrey.pageTextsLocale[0]') }}
+      </p>
+      <h1 class="andrey-rylkov__title">
+        {{ $t('pages.andrey.mainTitleLocale') }}
+      </h1>
+      <h1 class="andrey-rylkov__title">
+        {{ $t('pages.andrey.subTitlesLocale[2]') }}
+      </h1>
       <div>
         <iframe
-          :width='videoWidth'
-          :height='videoHeight'
+          :width="videoWidth"
+          :height="videoHeight"
           :src="videoLink"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         >
         </iframe>
       </div>
-      <p class="andrey-rylkov__text">{{ secondPageText }}</p>
-      <!--    <h2>Meta Tags</h2>-->
-      <!--    <h3>Meta Title: {{ metaTitle }}</h3>-->
-      <!--    <h3>Meta Description: {{ metaDescription }}</h3>-->
-      <!--    <h3>Meta KeyWords: {{ metaKeyWords }}</h3>-->
+      <p class="andrey-rylkov__text">
+        {{ $t('pages.andrey.pageTextsLocale[1]') }}
+      </p>
       <ToggleLanguage />
     </div>
   </section>
@@ -63,11 +62,14 @@ export default {
       videoWidth: this.videoWidth,
       videoHeight: this.videoHeight,
       contentMargin: this.contentMargin,
-
       currentBackgroundImage: this.imageWhoIsS,
-      title: this.$t('metaTags[5].title'),
-      description: this.$t('metaTags[5].description'),
-      keywords: this.$t('metaTags[5].keywords'),
+      title: this.$t('pages.andrey.metaTagsLocale.metaTitle'),
+      description: this.$t('pages.andrey.metaTagsLocale.metaDescription'),
+      keywords: this.$t('pages.andrey.metaTagsLocale.metaKeyWords'),
+      image: this.$store.state.content.pages.andrey.metaTags['metaImage']
+        ? baseUrl +
+          this.$store.state.content.pages.andrey.metaTags['metaImage'].url
+        : null,
       imageWhoIsS:
         baseUrl + this.$store.state.content.pages.andrey.images[0].image[0].url,
       imageWhoIsM:
@@ -76,34 +78,39 @@ export default {
         baseUrl + this.$store.state.content.pages.andrey.images[2].image[0].url,
       imageAndrey:
         baseUrl + this.$store.state.content.pages.andrey.images[3].image[0].url,
-      imageAndreyAlt: this.$store.state.content.pages.andrey.images[3].imageAlt[
-        this.$i18n.locale
-      ],
-      pageTitle: this.$store.state.content.pages.andrey.mainTitle[
-        this.$i18n.locale
-      ],
-      firstSubTitle: this.$store.state.content.pages.andrey.subTitles[0][
-        this.$i18n.locale
-      ],
-      secondSubTitle: this.$store.state.content.pages.andrey.subTitles[1][
-        this.$i18n.locale
-      ],
-      mainSubTitle: this.$store.state.content.pages.andrey.subTitles[2][
-        this.$i18n.locale
-      ],
-      firstPageText: this.$store.state.content.pages.andrey.pageTexts[0][
-        this.$i18n.locale
-      ],
-      secondPageText: this.$store.state.content.pages.andrey.pageTexts[1][
-        this.$i18n.locale
-      ],
-      metaTitle: this.$store.state.content.pages.andrey.metaTags.metaTitle[
-        this.$i18n.locale
-      ],
-      metaDescription: this.$store.state.content.pages.andrey.metaTags
-        .metaDescription[this.$i18n.locale],
-      metaKeyWords: this.$store.state.content.pages.andrey.metaTags
-        .metaKeyWords[this.$i18n.locale],
+      imageAndreyAlt: this.$t('pages.andrey.imageAltsLocale[3]'),
+      url: this.$t('pages.andrey.subTitlesLocale[3]'),
+      // imageAndreyAlt: this.$store.state.content.pages.andrey.images[3].imageAlt[
+      //   this.$i18n.locale
+      // ],
+      // pageTitle: this.$store.state.content.pages.andrey.mainTitle[
+      //   this.$i18n.locale
+      // ],
+      // firstSubTitle: this.$store.state.content.pages.andrey.subTitles[0][
+      //   this.$i18n.locale
+      // ],
+      // secondSubTitle: this.$store.state.content.pages.andrey.subTitles[1][
+      //   this.$i18n.locale
+      // ],
+      // thirdSubTitle: this.$store.state.content.pages.andrey.subTitles[2][
+      //   this.$i18n.locale
+      // ],
+      // fourthSubTitle: this.$store.state.content.pages.andrey.subTitles[3][
+      //   this.$i18n.locale
+      //   ],
+      // firstPageText: this.$store.state.content.pages.andrey.pageTexts[0][
+      //   this.$i18n.locale
+      // ],
+      // secondPageText: this.$store.state.content.pages.andrey.pageTexts[1][
+      //   this.$i18n.locale
+      // ],
+      // metaTitle: this.$store.state.content.pages.andrey.metaTags.metaTitle[
+      //   this.$i18n.locale
+      // ],
+      // metaDescription: this.$store.state.content.pages.andrey.metaTags
+      //   .metaDescription[this.$i18n.locale],
+      // metaKeyWords: this.$store.state.content.pages.andrey.metaTags
+      //   .metaKeyWords[this.$i18n.locale],
       videoLink: this.$store.state.content.pages.andrey.videoLinks[0].videoLink,
     }
   },

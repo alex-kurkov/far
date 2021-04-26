@@ -42,7 +42,7 @@ export default {
     },
     currentBackgroundImage: {
       type: String,
-    }
+    },
   },
   data() {
     return {}
