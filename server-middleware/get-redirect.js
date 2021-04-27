@@ -1,38 +1,42 @@
-const bodyParser = require('body-parser')
 const app = require('express')()
+const express = require('express')
 const fetch = require('node-fetch')
 const btoa = require('btoa')
 var uniqid = require('uniqid')
 
-app.use(bodyParser.json())
+//bodyParser deprecated
+app.use(express.json())
 app.get('/', (req, res) => {
-  const { value, return_url, currency } = req.query
+  const { value, currency, return_url, type_of_payment } = req.query
+  const apiKey = process.env.API_KEY || 'test_q3ocDQkmqXxtSB7RCU3hIS-YzSA5ujYtikUVqz9IVZo'
+  const shopId = process.env.SHOP_ID || '802484'
 
   fetch('https://api.yookassa.ru/v3/payments', {
     method: 'POST',
     headers: {
-      // btoa("<shopId>:<API-ключ>")
-      Authorization:
-        'Basic ODAyNDg0OnRlc3RfcTNvY0RRa21xWHh0U0I3UkNVM2hJUy1ZelNBNXVqWXRpa1VWcXo5SVZabw==',
-      'Content-Type': 'application/json',
+      Authorization: `Basic ${btoa(`${shopId}:${apiKey}`)}`,
+      "Content-Type": "application/json",
       //рандомное число
       'Idempotence-Key': uniqid(),
     },
     body: JSON.stringify({
-      amount: { value, currency },
-      confirmation: {
-        type: 'redirect',
-        return_url: 'http://localhost:3100/',
+      "amount": { value, currency },
+      "confirmation": {
+        "type": "redirect",
+        "return_url": return_url
       },
-      capture: true,
-      description: 'Test',
-    }),
+      "capture": true,
+      "description": "Test",
+      "payment_method_data": {
+        type: type_of_payment,
+      },
+    })
   })
     .then((response) => {
-      console.log(response)
       return response.json()
     })
     .then((response) => {
+      console.log(response)
       res.send(response)
     })
 })

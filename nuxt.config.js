@@ -37,10 +37,7 @@ export default {
 
   //Server middleware https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-servermiddleware/#custom-api-endpoint
   serverMiddleware: [
-    {
-      path: '/server-middleware/get-redirect',
-      handler: '~/server-middleware/get-redirect.js',
-    },
+    { path: "/server-middleware/get-redirect", handler: "~/server-middleware/get-redirect.js" },
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
