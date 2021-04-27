@@ -177,6 +177,9 @@ export default {
       )
         .then((res) => {
           console.log(res)
+          if(this.$refs.payOptions.$v.choice.$model === 'cash') {
+            console.log('Оплата наличными не работает в тестовом режиме')
+          }
           window.location.href = `${res.data.confirmation.confirmation_url}`
         })
         .catch((err) => console.log(err))
