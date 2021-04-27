@@ -17,3 +17,6 @@ export const I18N = {
     fallbackLocale: 'ru',
   },
 }
+
+export const returnUrl = 'http://localhost:3000/'
+

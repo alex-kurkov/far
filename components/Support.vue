@@ -18,9 +18,15 @@
       <Tumbler ref="regularity" />
       <PayOptions
         :options="{
-          first: $t('support.card'),
-          second: $t('support.umoney'),
-          third: $t('support.terminal'),
+          first: { value: $t('support.card'), type: typeCard },
+          second: {
+            value: $t('support.umoney'),
+            type: typeUmoney,
+          },
+          third: {
+            value: $t('support.terminal'),
+            type: typeTerminal,
+          },
         }"
         ref="payOptions"
       />
@@ -97,7 +103,9 @@ import PayOptions from './support/PayOptions'
 import MoneyOptions from './support/MoneyOptions'
 import Tumbler from './support/Tumbler'
 import { required, minLength, maxLength, email } from 'vuelidate/lib/validators'
+import { returnUrl } from '@/config/index'
 const axios = require('axios').default
+
 export default {
   name: 'Support',
   components: {
@@ -115,6 +123,9 @@ export default {
       firstSum: this.$store.state.content.support.money[0].sum,
       secondSum: this.$store.state.content.support.money[1].sum,
       thirdSum: this.$store.state.content.support.money[2].sum,
+      typeCard: this.$store.state.content.support.supportCard.type,
+      typeUmoney: this.$store.state.content.support.supportUMoney.type,
+      typeTerminal: this.$store.state.content.support.supportTerminal.type,
     }
   },
   props: {
@@ -152,12 +163,18 @@ export default {
       console.log(
         'submit data',
         this.$refs.moneyOptions.$v.choice.$model,
-        this.$refs.payOptions.$v.choice.$model
+        this.$refs.payOptions.$v.choice.$model,
+        this.formData.email,
+        this.formData.name
       )
       console.log('согласие с офертой', this.$refs.moneyOptions.$v.agree.$model)
       console.log('однократно', this.$refs.regularity.$v.choice.$model)
 
-      this.callRedirect(this.$refs.moneyOptions.$v.choice.$model)
+      this.callRedirect(
+        this.$refs.moneyOptions.$v.choice.$model,
+        returnUrl,
+        this.$refs.payOptions.$v.choice.$model
+      )
         .then((res) => {
           console.log(res)
           window.location.href = `${res.data.confirmation.confirmation_url}`
@@ -165,9 +182,9 @@ export default {
         .catch((err) => console.log(err))
     },
 
-    callRedirect(value) {
+    callRedirect(value, returnUrl, typeOfPayment) {
       return axios.get(
-        `/server-middleware/get-redirect?value=${value}&currency=RUB`
+        `/server-middleware/get-redirect?value=${value}&currency=RUB&return_url=${returnUrl}&type_of_payment=${typeOfPayment}`
       )
     },
   },

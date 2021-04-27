@@ -7,7 +7,7 @@
           required
           name="payment"
           class="pay-options__radio"
-          :value="options.first"
+          :value="options.first.type"
           v-model.trim="$v.choice.$model"
         />
         <span
@@ -16,7 +16,7 @@
             'pay-options__option-btn_invalid':
               $v.choice.$dirty && !$v.choice.required,
           }"
-          >{{ options.first }}</span
+          >{{ options.first.value }}</span
         >
       </label>
     </li>
@@ -26,7 +26,7 @@
           type="radio"
           name="payment"
           class="pay-options__radio"
-          :value="options.second"
+          :value="options.second.type"
           v-model.trim="$v.choice.$model"
         />
         <span
@@ -35,7 +35,7 @@
             'pay-options__option-btn_invalid':
               $v.choice.$dirty && !$v.choice.required,
           }"
-          >{{ options.second }}</span
+          >{{ options.second.value }}</span
         >
       </label>
     </li>
@@ -45,7 +45,7 @@
           type="radio"
           name="payment"
           class="pay-options__radio"
-          :value="options.third"
+          :value="options.third.type"
           v-model.trim="$v.choice.$model"
         />
         <span
@@ -54,7 +54,7 @@
             'pay-options__option-btn_invalid':
               $v.choice.$dirty && !$v.choice.required,
           }"
-          >{{ options.third }}</span
+          >{{ options.third.value }}</span
         >
       </label>
     </li>
@@ -70,9 +70,9 @@ export default {
     options: {
       type: Object,
       default: () => ({
-        first: 'Карта',
-        second: 'Карта',
-        third: 'Карта',
+        first: ()=>({}),
+        second: ()=>({}),
+        third: ()=>({}),
       }),
     },
   },
