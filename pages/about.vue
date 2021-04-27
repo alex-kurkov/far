@@ -21,13 +21,24 @@ export default {
   },
   data() {
     return {
-      title: this.$t('metaTags[1].title'),
-      description: this.$t('metaTags[1].description'),
-      keywords: this.$t('metaTags[1].keywords'),
-      image: baseUrl + this.$t('metaTags[1].image.url'),
-      pageTitle: this.$t('about.title'),
-      promoImage: { background: `center/cover url(${this.$t('about.image')})` },
-      article: this.$t('about.article'),
+      title: this.$t('pages.mission.metaTagsLocale.metaTitle'),
+      description: this.$t('pages.mission.metaTagsLocale.metaDescription'),
+      keywords: this.$t('pages.mission.metaTagsLocale.metaKeyWords'),
+      image: this.$store.state.content.pages.mission.metaTags['metaImage']
+        ? baseUrl +
+          this.$store.state.content.pages.mission.metaTags['metaImage'].url
+        : null,
+      // pageTitle: this.$t('about.title'),
+      pageTitle: this.$t('pages.mission.mainTitleLocale'),
+      // promoImage: { background: `center/cover url(${this.$t('about.image')})` },
+      promoImage: {
+        background: `center/cover url(${
+          baseUrl +
+          this.$store.state.content.pages.mission.images[0].image[0].url
+        })`,
+      },
+      // article: this.$t('about.article'),
+      article: this.$t('pages.mission.pageTextsLocale[0]'),
     }
   },
   head() {
