@@ -13,6 +13,7 @@ export const getters = {
   getLocaleMessage: (state) => (locale) => {
     return dictionary(state.content, locale)
   },
+
   getReports: (state) => {
     return state.content.reports
   },
@@ -62,6 +63,7 @@ export const actions = {
             }
             return a['order'] > b['order'] ? 1 : -1
           })
+
           const newPages = {}
           pages.data.forEach((page) => {
             newPages[page.name] = page
@@ -71,6 +73,9 @@ export const actions = {
           customPages.data.forEach((page) => {
             allCustomPages[page.path] = page
           })
+
+          // console.log(newPages)
+
           const allData = {
             intro: intro.data,
             mission: mission.data,

@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
       Authorization: `Basic ${btoa(`${shopId}:${apiKey}`)}`,
       "Content-Type": "application/json",
       //рандомное число
-      "Idempotence-Key": uniqid()
+      'Idempotence-Key': uniqid(),
     },
     body: JSON.stringify({
       "amount": { value, currency },
