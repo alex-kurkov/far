@@ -46,7 +46,7 @@ export default {
   font-size: 27px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 640px) {
   .toggle-switcher {
     width: 64px;
     height: 64px;
@@ -57,7 +57,7 @@ export default {
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 769px) {
   .toggle-switcher {
     width: 53px;
     height: 53px;
