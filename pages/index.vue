@@ -11,6 +11,7 @@
       <Help />
       <Support :isOnSupportPage="false" />
     </section>
+    <ToggleLanguage/>
   </div>
 </template>
 
@@ -23,6 +24,7 @@ import Mission from '@/components/Mission'
 import Promo from '@/components/Promo'
 import SubMenu from '@/components/SubMenu'
 import Support from '@/components/Support'
+import ToggleLanguage from '@/components/promo/ToggleLanguage'
 import { baseUrl } from '@/utils/api'
 
 export default {
@@ -35,6 +37,7 @@ export default {
     Intro,
     Promo,
     About,
+    ToggleLanguage
   },
   data() {
     return {

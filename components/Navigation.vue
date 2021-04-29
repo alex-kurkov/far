@@ -100,7 +100,7 @@ export default {
 
 <style scoped>
 .navigation {
-  position: absolute;
+  position: fixed;
   top: 5px;
   right: 5px;
   background-color: black;
@@ -120,6 +120,10 @@ export default {
   justify-content: space-between;
   align-items: center;
   min-height: 38px;
+}
+
+.navigation__menu-item:last-of-type .navigation__main-menu-item {
+  border:none;
 }
 
 .navigation__main-menu-item_style {

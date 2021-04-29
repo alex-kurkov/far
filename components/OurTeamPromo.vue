@@ -1,6 +1,11 @@
 <template>
   <section class="our-team-promo">
-    <h1 class="our-team-promo__title">{{ title }}</h1>
+    <h1
+      class="our-team-promo__title"
+      :style="{ backgroundImage: `url(${backgroundSvg})` }"
+    >
+      {{ title }}
+    </h1>
     <img class="our-team-promo__blade" :src="image" :alt="title" />
     <!-- <nuxt-link to="#" class="our-team-promo__logo-link">
       <Icon name="logo" class="our-team-promo__logo" />
@@ -21,6 +26,10 @@ export default {
       default: '',
     },
     image: {
+      type: String,
+      default: '',
+    },
+    backgroundSvg: {
       type: String,
       default: '',
     },
@@ -51,6 +60,7 @@ export default {
   box-sizing: border-box;
   margin: 0;
   letter-spacing: -3px;
+  background: 0 50%/304px 41px repeat space;
 }
 
 .our-team-promo__blade {
@@ -59,80 +69,49 @@ export default {
   height: auto;
 }
 
-.our-team-promo__logo-link {
-  display: flex;
-  justify-content: flex-end;
-  width: 80px;
-  height: 60px;
-  position: absolute;
-  bottom: -15px;
-  right: 0;
-  transition: opacity 0.5s linear;
-  z-index: 10;
-}
-
-.our-team-promo__logo-link:hover {
-  opacity: 0.7;
-  cursor: pointer;
-}
-
-.our-team-promo__logo-link:focus {
-  outline: none;
-}
-
-.our-team-promo__logo {
-  width: 83px;
-  height: auto;
-}
-
 @media screen and (min-width: 768px) {
   .our-team-promo {
-    flex-direction: row;
-    justify-content: space-between;
-    min-height: 256px;
+    /* flex-direction: row;
+    justify-content: space-between; */
+    /* min-height: 256px; */
+    /* min-height: 893px; */
     padding: 8px 0 21px;
   }
 
   .our-team-promo__title {
     padding: 45px 0 0 31px;
     font-weight: 700;
+    font-size: 215px;
+    background: 0 50%/575px 78px repeat space;
   }
 
   .our-team-promo__blade {
-    width: 269px;
-    height: auto;
+    /* width: 269px; */
+    /* height: auto; */
+    height: 367px;
+    object-fit: cover;
+    object-position: 0 0;
   }
 
-  .our-team-promo__logo-link {
-    bottom: -98px;
-    right: 21px;
-  }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
   .our-team-promo {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px 0 21px;
     min-height: 453px;
   }
 
   .our-team-promo__blade {
     width: 393px;
+    align-self: center;
   }
 
   .our-team-promo__title {
     padding: 33px 0 0 38px;
     font-size: 150px;
     max-width: 700px;
-  }
-
-  .our-team-promo__logo-link {
-    width: 100px;
-    bottom: -87px;
-    right: -49px;
-  }
-
-  .our-team-promo__logo {
-    width: 100px;
-    height: 84px;
   }
 }
 </style>

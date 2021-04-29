@@ -4,12 +4,19 @@
     <p>Текущий язык - {{ this.$i18n.locale }}</p>
     <span>{{ $t('about.title') }}&nbsp;</span>
     &#8212; {{ $t('about.subtitle') }}
+    <SupportButton/>
+    <ToggleLanguage/>
   </section>
 </template>
 
 <script>
 import { baseUrl } from '@/utils/api'
+import SupportButton from '@/components/SupportButton'
+import ToggleLanguage from '@/components/promo/ToggleLanguage'
 export default {
+  components: {
+    SupportButton, ToggleLanguage,
+  },
   data() {
     return {
       title: this.$t('metaTags[2].title'),

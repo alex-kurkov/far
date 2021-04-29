@@ -47,6 +47,7 @@
         {{ $t('pages.andrey.pageTextsLocale[1]') }}
       </p>
       <ToggleLanguage />
+      <SupportButton />
     </div>
   </section>
 </template>
@@ -54,9 +55,10 @@
 <script>
 import AndreyPromo from '@/components/andrey/AndreyPromo'
 import ToggleLanguage from '@/components/promo/ToggleLanguage'
+import SupportButton from '@/components/SupportButton'
 import { baseUrl } from '@/utils/api'
 export default {
-  components: { ToggleLanguage, AndreyPromo },
+  components: { ToggleLanguage, AndreyPromo, SupportButton },
   data() {
     return {
       videoWidth: this.videoWidth,
