@@ -95,6 +95,8 @@ export default {
   background-color: #000000;
   /* added */
   position: fixed;
+  top: 5px;
+  right: 5px;
   border: none;
   outline: none;
   cursor: pointer;
@@ -135,6 +137,9 @@ export default {
   width: 24px;
   height: 42px;
   z-index: 3;
+  position: absolute;
+  top: 200px;
+  right: 5px;
 }
 
 @media screen and (min-width: 640px) {
@@ -161,6 +166,7 @@ export default {
   .hamburger__drop {
     width: 36px;
     height: 62px;
+    top: 290px;
   }
 }
 
@@ -174,6 +180,8 @@ export default {
   .hamburger-icon {
     width: 48px;
     height: 42px;
+    top: 10px;
+    right: 10px;
   }
 
   .hamburger-icon::after {
@@ -184,6 +192,14 @@ export default {
     height: 48px;
     width: 159px;
   }
+
+  .hamburger__drop {
+    top: 257px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+
 }
 
 .hamburger-icon_path_line {
