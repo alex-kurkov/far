@@ -9,15 +9,19 @@
       />
     </div>
     <article class="about__article" v-html="article"></article>
+    <SupportButton/>
+    <ToggleLanguage/>
   </section>
 </template>
 
 <script>
 import { baseUrl } from '@/utils/api'
+import SupportButton from '@/components/SupportButton'
+import ToggleLanguage from '@/components/promo/ToggleLanguage'
 import HeavilyUnderlinedTitle from '../components/HeavilyUnderlinedTitle'
 export default {
   components: {
-    HeavilyUnderlinedTitle,
+    HeavilyUnderlinedTitle, SupportButton, ToggleLanguage,
   },
   data() {
     return {
@@ -146,7 +150,7 @@ export default {
 
 @media screen and (min-width: 768px) {
   .about__title {
-    padding: 100px 0 0 42px;
+    padding: 100px 0 0 54px;
     font-style: normal;
     font-weight: 500;
     font-size: 173px;
@@ -157,8 +161,8 @@ export default {
   }
 
   .about__article {
-    padding: 43px;
-    font-size: 15px;
+    padding: 54px;
+    font-size: 33px;
   }
 }
 

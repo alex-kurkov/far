@@ -1,6 +1,6 @@
 <template>
   <section class="our-team">
-    <OurTeamPromo :title="promoTitle" :image="promoImage" />
+    <OurTeamPromo :title="promoTitle" :image="promoImage" :backgroundSvg="backgroundSvg"/>
     <ul class="our-team__members">
       <TeamMember
         v-for="(item, index) in members"
@@ -10,6 +10,8 @@
         :image="item.image"
       />
     </ul>
+    <SupportButton/>
+    <ToggleLanguage/>
   </section>
 </template>
 
@@ -18,18 +20,21 @@ import OurTeamPromo from '@/components/OurTeamPromo'
 import Report from '@/components/Report'
 import Reports from '@/pages/reports'
 import TeamMember from '@/components/ourTeam/TeamMember'
+import SupportButton from '@/components/SupportButton'
+import ToggleLanguage from '@/components/promo/ToggleLanguage'
 import { baseUrl } from '@/utils/api'
 export default {
-  components: { Report, Reports, OurTeamPromo, TeamMember },
+  components: { Report, Reports, OurTeamPromo, TeamMember, SupportButton, ToggleLanguage },
   data() {
     return {
-      title: this.$t('metaTags[5].title'),
-      description: this.$t('metaTags[5].description'),
-      keywords: this.$t('metaTags[5].keywords'),
-      image: baseUrl + this.$t('metaTags[5].image.url'),
+      title: this.$t('pages.team.metaTagsLocale.metaTitle'),
+      description: this.$t('pages.team.metaTagsLocale.metaDescription'),
+      keywords: this.$t('pages.team.metaTagsLocale.metaKeyWords'),
+      image: baseUrl + this.$store.state.content.pages.team.metaTags['metaImage'].url,
       members: this.$t('teamMembers'),
-      promoTitle: this.$t('ourTeamPromo.title'),
-      promoImage: baseUrl + this.$store.state.content.ourTeamPromo.image.url,
+      promoTitle: this.$t('pages.team.mainTitleLocale'),
+      promoImage: baseUrl + this.$store.state.content.pages.team.images[1].image[0].url,
+      backgroundSvg: baseUrl + this.$store.state.content.pages.team.images[0].image[0].url,
     }
   },
 

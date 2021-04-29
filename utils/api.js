@@ -53,10 +53,6 @@ class Api {
     return axios.get(`${this._baseURL}/team-members`)
   }
 
-  getOurTeamPromo() {
-    return axios.get(`${this._baseURL}/our-team-promo`)
-  }
-
   getAndreyRylkov() {
     return axios.get(`${this._baseURL}/andrey-rylkov`)
   }
@@ -93,7 +89,6 @@ class Api {
       this.getMetas(),
       this.getPages(),
       this.getTeamMembers(),
-      this.getOurTeamPromo(),
       this.getAndreyRylkov(),
       this.getMenu(),
       this.getCustomPages(),

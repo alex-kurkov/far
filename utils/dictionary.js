@@ -126,10 +126,6 @@ export default function (storeContent, locale) {
         image: baseUrl + image.url,
       })),
     ],
-    ourTeamPromo: {
-      title: storeContent.ourTeamPromo.title[`${locale}`],
-      image: storeContent.ourTeamPromo.image.url,
-    },
     header: storeContent.header.marqueeText[`${locale}`],
     pages: allPages,
   }

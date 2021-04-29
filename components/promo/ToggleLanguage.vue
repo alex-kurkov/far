@@ -27,8 +27,8 @@ export default {
 <style scoped>
 .toggle-switcher {
   position: absolute;
-  bottom: 14px;
-  left: 14px;
+  top: 0;
+  left: 0;
   width: 41px;
   height: 41px;
   background-color: #313131;
@@ -48,10 +48,8 @@ export default {
 
 @media screen and (min-width: 768px) {
   .toggle-switcher {
-    bottom: 24px;
-    left: 24px;
-    width: 74px;
-    height: 74px;
+    width: 64px;
+    height: 64px;
   }
 
   .toggle-switcher-link {
@@ -61,10 +59,8 @@ export default {
 
 @media screen and (min-width: 1280px) {
   .toggle-switcher {
-    bottom: 18px;
-    left: 18px;
-    width: 55px;
-    height: 55px;
+    width: 53px;
+    height: 53px;
   }
 
   .toggle-switcher-link {

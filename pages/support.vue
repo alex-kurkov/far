@@ -47,6 +47,7 @@
         />
       </div>
     </div>
+    <ToggleLanguage/>
   </section>
 </template>
 
@@ -54,10 +55,12 @@
 import { baseUrl } from '@/utils/api'
 import Requisites from '@/components/Requisites'
 import SmileIcon from '@/components/icons/smile'
+import ToggleLanguage from '../components/promo/ToggleLanguage.vue'
 export default {
   components: {
     Requisites,
     SmileIcon,
+    ToggleLanguage,
   },
   data() {
     return {

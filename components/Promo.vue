@@ -13,19 +13,16 @@
         >{{ $t('promo.help') }} &rsaquo;</nuxt-link
       >
       <Icon name="eye" class="promo__eye"></Icon>
-      <ToggleLanguage />
     </div>
   </section>
 </template>
 
 <script>
 import Icon from '~/components/Icon'
-import ToggleLanguage from './promo/ToggleLanguage'
 export default {
   name: 'Promo',
   components: {
     Icon,
-    ToggleLanguage,
   },
   data() {
     return {

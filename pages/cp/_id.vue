@@ -8,7 +8,7 @@
       <p class="custom-page__text">{{ getCustomPageText(currentPage, 0) }}</p>
       <ul class="custom-page__sections">
         <li
-          v-for="(element, index) in getCustomPageSections(currentPage)"
+          v-for="(element) in getCustomPageSections(currentPage)"
           class="custom-page__section"
           :key="element.customPageSectionTitle[$i18n.locale]"
         >
@@ -18,15 +18,16 @@
         </li>
       </ul>
     </div>
-
+    <SupportButton/>
     <ToggleLanguage />
   </section>
 </template>
 
 <script>
 import ToggleLanguage from '@/components/promo/ToggleLanguage'
+import SupportButton from '@/components/SupportButton'
 export default {
-  components: { ToggleLanguage },
+  components: { ToggleLanguage, SupportButton },
   computed: {
     currentPage() {
       const { id } = this.$route.params
