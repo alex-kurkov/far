@@ -19,4 +19,3 @@ export const I18N = {
 }
 
 export const returnUrl = 'http://localhost:3000/'
-
