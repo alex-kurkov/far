@@ -202,6 +202,7 @@ export default {
 
   .requisites__title {
     writing-mode: vertical-lr;
+    transform: rotate(-180deg);
     font-size: 61px;
     margin-left: 101px;
   }

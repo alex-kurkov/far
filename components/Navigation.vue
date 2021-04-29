@@ -122,6 +122,10 @@ export default {
   min-height: 38px;
 }
 
+.navigation__menu-item:last-of-type .navigation__main-menu-item {
+  border:none;
+}
+
 .navigation__main-menu-item_style {
   border-bottom: unset;
 }

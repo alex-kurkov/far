@@ -12,9 +12,9 @@ import AllReports from '@/components/AllReports'
 import ReportsPromo from '@/components/ReportsPromo'
 import SupportButton from '@/components/SupportButton'
 import { baseUrl } from '@/utils/api'
-import ToggleLanguage from '../components/promo/ToggleLanguage.vue'
+import ToggleLanguage from '../components/promo/ToggleLanguage'
 export default {
-  components: { AllReports, ReportsPromo, SupportButton, ToggleLanguage },
+  components: { AllReports, ReportsPromo, SupportButton, ToggleLanguage, },
   data() {
     return {
       title: this.$t('metaTags[1].title'),

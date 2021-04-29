@@ -3,17 +3,21 @@
     <NuxtLink to="/support" class="sup-button__link">
       <span class="sup-button__text">Поддержать</span>
       <img class="sup-button__heart" :src="image" />
+      <img class="sup-button__logo" :src="logo"/>
     </NuxtLink>
   </div>
 </template>
 
 <script>
 import { baseUrl } from '@/utils/api'
+import FarLogo from './icons/FarLogo'
 export default {
+  components: { FarLogo },
   name: 'SupportButton',
   data() {
     return {
-      image: baseUrl + this.$store.state.content.support.buttonImage.url,
+      image: baseUrl + this.$store.state.content.support.buttonImage[0].url,
+      logo: baseUrl + this.$store.state.content.support.buttonImage[1].url,
     }
   },
 }
@@ -22,7 +26,7 @@ export default {
 <style scoped>
 .sup-button {
   position: fixed;
-  top: 60%;
+  top: 55%;
   right: 0;
 }
 
@@ -71,6 +75,10 @@ export default {
   font-size: 34px;
 }
 
+.sup-button__logo {
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
   .sup-button__link {
     min-width: 54px;
@@ -85,6 +93,28 @@ export default {
     width: 54px;
     height: 49px;
     bottom: -35px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .sup-button__link {
+    width: 120px;
+    height: 78px;
+    background: none;
+  }
+
+  .sup-button__logo {
+    display: block;
+    width: 120px;
+    height: 78px;
+  }
+
+  .sup-button__heart {
+    display: none;
+  }
+
+  .sup-button__text {
+    display: none;
   }
 }
 </style>

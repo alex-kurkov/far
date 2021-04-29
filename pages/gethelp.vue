@@ -7,9 +7,9 @@
 
 <script>
 import { baseUrl } from '@/utils/api'
-import ToggleLanguage from '../components/promo/ToggleLanguage.vue'
+import ToggleLanguage from '../components/promo/ToggleLanguage'
 export default {
-  components: { ToggleLanguage },
+  components: { ToggleLanguage, },
   data() {
     return {
       title: this.$t('metaTags[3].title'),
