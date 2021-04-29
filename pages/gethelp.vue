@@ -1,12 +1,15 @@
 <template>
   <section class="about">
     <p>ЗДЕСЬ БУДЕТ БУДУЩАЯ СТРАНИЦА ПОМОЧЬ ФАР</p>
+    <ToggleLanguage/>
   </section>
 </template>
 
 <script>
 import { baseUrl } from '@/utils/api'
+import ToggleLanguage from '../components/promo/ToggleLanguage'
 export default {
+  components: { ToggleLanguage, },
   data() {
     return {
       title: this.$t('metaTags[3].title'),

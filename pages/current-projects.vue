@@ -5,15 +5,19 @@
     <Report />
     <Report />
     <Report />
+    <SupportButton/>
+    <ToggleLanguage/>
   </section>
 </template>
 
 <script>
 import CurrentProjectsPromo from '@/components/CurrentProjectsPromo'
+import SupportButton from '@/components/SupportButton'
+import ToggleLanguage from '@/components/promo/ToggleLanguage'
 import Report from '@/components/Report'
 import { baseUrl } from '@/utils/api'
 export default {
-  components: { Report, CurrentProjectsPromo },
+  components: { Report, CurrentProjectsPromo, SupportButton, ToggleLanguage },
   data() {
     return {
       title: this.$t('metaTags[1].title'),

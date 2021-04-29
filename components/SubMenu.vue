@@ -7,7 +7,7 @@
   >
     <ul v-show="isOpen" class="navigation__sub-menu">
       <li
-        v-for="(element, index) in subMenuList"
+        v-for="(element) in subMenuList"
         class="navigation__sub-menu-item"
         :key="element.subMenuTitle[$i18n.locale]"
       >
