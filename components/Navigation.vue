@@ -100,7 +100,7 @@ export default {
 
 <style scoped>
 .navigation {
-  position: absolute;
+  position: fixed;
   top: 5px;
   right: 5px;
   background-color: black;
