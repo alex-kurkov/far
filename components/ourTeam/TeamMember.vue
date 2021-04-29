@@ -45,16 +45,14 @@ export default {
   align-items: center;
   justify-content: flex-start;
   background: #fff;
-  /* max-width: 320px; */
+  max-width: 768px;
   width: 100%;
   position: relative;
 }
 
 .member__image {
-  /* width: 320px; */
   width: 100%;
   height: auto;
-  /* height: 326px; */
   object-fit: cover;
   margin-bottom: 128px;
 }
@@ -63,7 +61,6 @@ export default {
   display: flex;
   flex-direction: column;
   width: 92%;
-  /* max-width: 294px; */
   padding: 20px;
   box-sizing: border-box;
   border: 4px solid #b23438;
@@ -102,6 +99,10 @@ export default {
   color: #fff;
 }
 
+.member:nth-of-type(4n + 2) .member__name .underline{
+  --backgroundColor: #b23438;
+}
+
 .member:nth-of-type(4n + 2) .member__text {
   color: #fff;
 }
@@ -120,45 +121,6 @@ export default {
 }
 
 @media screen and (min-width: 768px) {
-  /* .member {
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    max-width: 1098px;
-    padding-bottom: 18px;
-  }
-
-  .member:nth-of-type(2n + 2) {
-    flex-direction: row-reverse;
-  }
-
-  .member__image {
-    width: 256px;
-    height: 251px;
-    margin: 0;
-  }
-
-  .member__info {
-    position: static;
-    transform: none;
-    max-width: 492px;
-    min-height: 243px;
-    margin: 0 12px;
-    padding: 16px 40px 16px 16px;
-  }
-
-  .member__name {
-    text-align: left;
-    width: 80%;
-    margin: 0 0 23px 0;
-    font-size: 32px;
-  }
-
-  .member__text {
-    font-size: 33px;
-    text-align: left;
-  } */
-
   .member__image {
     margin-bottom: 386px;
   }
