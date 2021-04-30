@@ -3,8 +3,8 @@
     <OurTeamPromo :title="promoTitle" :image="promoImage" :backgroundSvg="backgroundSvg"/>
     <ul class="our-team__members">
       <TeamMember
-        v-for="(item, index) in members"
-        v-bind:key="index"
+        v-for="(item) in members"
+        v-bind:key="item.name"
         :name="item.name"
         :info="item.info"
         :image="item.image"
