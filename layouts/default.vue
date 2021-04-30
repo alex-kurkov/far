@@ -4,13 +4,13 @@
     <Header />
     <Nuxt />
     <Footer />
-    <Notifications />
+    <Notification />
   </div>
 </template>
 <script>
-import Notifications from '../components/Notifications.vue'
+import Notification from '../components/Notification.vue'
 export default {
-  components: { Notifications },
+  components: { Notification },
   mounted() {
     const cookiesAccepted = localStorage.getItem('cookiesAccepted')
     if (!cookiesAccepted) {
