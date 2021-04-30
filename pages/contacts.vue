@@ -9,6 +9,7 @@
         :emailLabel="formEmailLabel"
         :btnText="buttonText"
         :btnMoreText="buttonMoreText"
+        :sentText="sentText"
       />
       <ContactIntro
         :text="introText"
@@ -58,6 +59,7 @@ export default {
       formEmailLabel: this.$t('pages.contacts.subTitlesLocale[3]'),
       buttonText: this.$t('pages.contacts.subTitlesLocale[4]'),
       buttonMoreText: this.$t('pages.contacts.subTitlesLocale[7]'),
+      sentText: this.$t('pages.contacts.subTitlesLocale[8]'),
       mainTel: this.$t('pages.contacts.subTitlesLocale[5]'),
       mainEmail: this.$t('pages.contacts.subTitlesLocale[6]'),
       telLink: 'tel:' + this.$t('pages.contacts.subTitlesLocale[5]'),
