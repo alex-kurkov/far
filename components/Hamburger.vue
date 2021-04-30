@@ -170,6 +170,13 @@ export default {
   }
 }
 
+@media screen and (min-width: 640px) {
+  .hamburger-icon {
+    top: 10px;
+    right: 10px
+  }
+}
+
 @media screen and (min-width: 769px) {
   .hamburger__menu {
     top: 10px;
@@ -180,8 +187,6 @@ export default {
   .hamburger-icon {
     width: 48px;
     height: 42px;
-    top: 10px;
-    right: 10px;
   }
 
   .hamburger-icon::after {

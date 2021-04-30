@@ -29,8 +29,8 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  width: 41px;
-  height: 41px;
+  width: 40px;
+  height: 40px;
   background-color: #313131;
   border-radius: 50%;
   display: grid;

@@ -19,6 +19,16 @@
     url('~assets/fonts/Vollkornitalic.woff') format('woff');
 }
 
+/* Vollkorn Medium */
+@font-face {
+  font-family: 'Vollkorn';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('~assets/fonts/Vollkorn-Medium.woff2') format('woff2'),
+    url('~assets/fonts/Vollkorn-Medium.woff') format('woff');
+}
+
 /* bold*/
 @font-face {
   font-family: 'Vollkorn';

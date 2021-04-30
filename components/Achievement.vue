@@ -6,7 +6,7 @@
       <nuxt-link :to="helpLink" class="achievement__gethelp-link"
         >{{ $t('achievement.link') }} &rsaquo;</nuxt-link
       >
-      <nuxt-link to="#" class="achievement__logo-link">
+      <nuxt-link to="/support" class="achievement__logo-link">
         <Icon name="logo" class="achievement__logo" />
       </nuxt-link>
     </div>

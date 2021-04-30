@@ -71,10 +71,6 @@ export default {
 
 @media screen and (min-width: 768px) {
   .our-team-promo {
-    /* flex-direction: row;
-    justify-content: space-between; */
-    /* min-height: 256px; */
-    /* min-height: 893px; */
     padding: 8px 0 21px;
   }
 
@@ -86,8 +82,6 @@ export default {
   }
 
   .our-team-promo__blade {
-    /* width: 269px; */
-    /* height: auto; */
     height: 367px;
     object-fit: cover;
     object-position: 0 0;
@@ -112,6 +106,7 @@ export default {
     padding: 33px 0 0 38px;
     font-size: 150px;
     max-width: 700px;
+    width: 62%;
   }
 }
 </style>

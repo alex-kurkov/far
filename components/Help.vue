@@ -8,17 +8,17 @@
     <nuxt-link :to="helpLink" class="help__link"
       >{{ $t('help.link') }} &rsaquo;</nuxt-link
     >
-    <a href="tel:+79268979087" class="help__ellipse help__ellipse_type_tel">{{
-      phone
+    <a :href="telLink" class="help__ellipse help__ellipse_type_tel">{{
+      mainTel
     }}</a>
     <a
-      href="mailto:rylkov.foundation@gmail.com"
+      :href="emailLink"
       target="_blank"
       rel="noreferrer noopener"
       class="help__ellipse help__ellipse_type_email"
-      >rylkov.foundation@gmail.com</a
+      >{{mainEmail}}</a
     >
-    <nuxt-link to="#" class="help__logo-link">
+    <nuxt-link to="/support" class="help__logo-link">
       <Icon name="logo" class="help__logo" />
     </nuxt-link>
     <p class="help__side-text">TELEGRAM/WHATSAPPMAIL</p>
@@ -34,8 +34,12 @@ export default {
   },
   data() {
     return {
-      phone: this.$store.state.content.help.phone,
+      // phone: this.$store.state.content.help.phone,
       helpLink: this.$store.state.content.help.link,
+      mainTel: this.$t('pages.contacts.subTitlesLocale[5]'),
+      mainEmail: this.$t('pages.contacts.subTitlesLocale[6]'),
+      telLink: 'tel:' + this.$t('pages.contacts.subTitlesLocale[5]'),
+      emailLink: 'mailto:' + this.$t('pages.contacts.subTitlesLocale[6]'),
     }
   },
 }
@@ -108,7 +112,7 @@ export default {
 }
 
 .help__ellipse {
-  font-family: 'Vollkorn', sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: 700;
   width: 100%;
   border-radius: 50%;
