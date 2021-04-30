@@ -120,9 +120,12 @@ export default function (storeContent, locale) {
     metaTags: allMetaTags,
     menu: storeContent.menu,
     teamMembers: [
-      ...storeContent.teamMembers.map(({ name, info, image }) => ({
+      ...storeContent.teamMembers.map(({ name, info, image, position, tel, isOnContactsPage }) => ({
         name: name[`${locale}`],
         info: info[`${locale}`],
+        position: isOnContactsPage ? position[`${locale}`] : '',
+        tel,
+        isOnContactsPage,
         image: baseUrl + image.url,
       })),
     ],
