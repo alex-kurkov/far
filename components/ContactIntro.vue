@@ -1,5 +1,6 @@
 <template>
   <div class="contact-intro">
+    <img :src="image" class="contact-intro__image"/>
     <p class="contact-intro__text">{{ text }}</p>
     <a
       :href="telLink"
@@ -40,6 +41,10 @@ export default {
       type: String,
       default: '',
     },
+    image: {
+      type: String,
+      default: '',
+    }
   },
 }
 </script>
@@ -50,6 +55,16 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+}
+
+.contact-intro__image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 274px;
+  height: auto;
+  display: none;
 }
 
 .contact-intro__text {
@@ -85,5 +100,50 @@ export default {
     font-weight: 700;
     color: #fff;
     background: #b23438;
+}
+
+@media screen and (min-width:768px) {
+  .contact-intro__text {
+    padding: 52px 52px 14px;
+    font-size: 36px;
+  }
+
+  .contact-intro__contact {
+    height: 131px;
+    font-size: 95px;
+  }
+
+  .contact-intro__contact:last-of-type {
+    font-size: 32px;
+  }
+}
+
+@media screen and (min-width:1280px) {
+  .contact-intro {
+    order: 1;
+    width: 616px;
+  }
+
+  .contact-intro__image {
+    display: block;
+  }
+
+  .contact-intro__text {
+    padding: 20px 25px 65px 280px;
+    font-size: 17px;
+    line-height: 1.4;
+  }
+
+  .contact-intro__contact {
+    font-size: 75px;
+    width: 517px;
+    height: 105px;
+    margin-top: 63px;
+  }
+
+  .contact-intro__contact:last-of-type {
+    font-size: 25px;
+    margin: 0;
+  }
 }
 </style>

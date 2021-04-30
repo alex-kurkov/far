@@ -29,10 +29,10 @@ export default {
     },
   },
   computed: {
-      telLink() {
-          return 'tel:' + this.tel;
-      }
-  }
+    telLink() {
+      return 'tel:' + this.tel
+    },
+  },
 }
 </script>
 
@@ -56,7 +56,7 @@ export default {
   font-weight: 800;
   font-size: 22px;
   line-height: 1;
-  width: 45%;
+  width: 170px;
   text-align: center;
   transform: translate(0, -73%);
   position: relative;
@@ -79,7 +79,7 @@ export default {
   font-weight: 500;
   font-size: 15px;
   line-height: 1;
-  width: 50%;
+  width: 170px;
   text-align: center;
   transform: translate(0, -180%);
   z-index: 1;
@@ -92,6 +92,7 @@ export default {
   color: #fff;
   background: #b23438;
   border-radius: 50%;
+  z-index: 1;
   width: 143px;
   height: 30px;
   display: flex;
@@ -106,5 +107,74 @@ export default {
 
 .contact:nth-of-type(3n + 3) .contact__tel {
   background: #000;
+}
+
+@media screen and (min-width: 768px) {
+  .contact {
+    width: 40%;
+  }
+
+  .contact:first-of-type {
+    width: 100%;
+  }
+
+  .contact__image {
+    width: 257px;
+  }
+
+  .contact__name {
+    font-size: 44px;
+    width: 280px;
+    border-bottom: 3px solid #838383;
+  }
+
+  .contact__name::before {
+    box-shadow: 2px -20px 24px 85px rgba(255, 255, 255, 0.8);
+  }
+
+  .contact__position {
+    font-size: 30px;
+    width: 300px;
+  }
+
+  .contact__tel {
+    width: 280px;
+    height: 60px;
+    font-size: 32px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .contact {
+    width: 210px;
+  }
+
+  .contact:first-of-type {
+    width: 210px;
+  }
+
+  .contact__image {
+    width: 180px;
+    height: 170px;
+  }
+
+  .contact__name {
+    font-size: 30px;
+    width: 100%;
+  }
+
+  .contact__name::before {
+    box-shadow: 2px -20px 34px 45px rgba(255, 255, 255, 0.8);
+  }
+
+  .contact__position {
+    font-size: 21px;
+  }
+
+  .contact__tel {
+    font-size: 22px;
+    width: 100%;
+    height: 42px;
+  }
 }
 </style>

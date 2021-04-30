@@ -5,9 +5,11 @@
     novalidate
     @submit.prevent="handleSubmit"
   >
+    <p v-if="isSent" class="contact-form__sent">Отправлено!</p>
     <label
       class="contact-form__label contact-form__label_type_theme"
       for="theme"
+      v-if="!isSent"
       >{{ themeLabel }}</label
     >
     <input
@@ -16,13 +18,14 @@
         'contact-form__input_invalid':
           $v.formData.theme.$dirty && $v.formData.theme.$invalid,
       }"
+      v-if="!isSent"
       name="theme"
       id="theme"
       type="text"
       required
       v-model.trim="$v.formData.theme.$model"
     />
-    <div class="contact-form__input-error">
+    <div class="contact-form__input-error" v-if="!isSent">
       <span v-if="$v.formData.theme.$dirty && !$v.formData.theme.required"
         >Введите тему</span
       >
@@ -39,11 +42,12 @@
         'contact-form__input_invalid':
           $v.formData.letter.$dirty && $v.formData.letter.$invalid,
       }"
+      v-if="!isSent"
       :placeholder="letterPlaceholder"
       v-model.trim="$v.formData.letter.$model"
       required
     />
-    <div class="contact-form__input-error">
+    <div class="contact-form__input-error" v-if="!isSent">
       <span v-if="$v.formData.letter.$dirty && !$v.formData.letter.required"
         >Введите письмо</span
       >
@@ -51,20 +55,23 @@
         >Минимальная длина {{ $v.formData.name.$params.minLength.min }}
       </span>
     </div>
-    <label class="contact-form__label" for="name">{{ nameLabel }}</label>
+    <label class="contact-form__label" for="name" v-if="!isSent">{{
+      nameLabel
+    }}</label>
     <input
       class="contact-form__input contact-form__input_type_name"
       :class="{
         'contact-form__input_invalid':
           $v.formData.name.$dirty && $v.formData.name.$invalid,
       }"
+      v-if="!isSent"
       name="name"
       id="name"
       required
       type="text"
       v-model.trim="$v.formData.name.$model"
     />
-    <div class="contact-form__input-error">
+    <div class="contact-form__input-error" v-if="!isSent">
       <span v-if="$v.formData.name.$dirty && !$v.formData.name.required"
         >Введите имя</span
       >
@@ -75,13 +82,16 @@
         >Максимальная длина {{ $v.formData.name.$params.maxLength.max }}
       </span>
     </div>
-    <label class="contact-form__label" for="email">{{ emailLabel }}</label>
+    <label class="contact-form__label" for="email" v-if="!isSent">{{
+      emailLabel
+    }}</label>
     <input
       class="contact-form__input contact-form__input_type_email"
       :class="{
         'contact-form__input_invalid':
           $v.formData.email.$dirty && $v.formData.email.$invalid,
       }"
+      v-if="!isSent"
       name="email"
       id="email"
       type="email"
@@ -89,7 +99,7 @@
       v-model.trim="$v.formData.email.$model"
       pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[a-z]{2,})\b"
     />
-    <div class="contact-form__input-error">
+    <div class="contact-form__input-error" v-if="!isSent">
       <span v-if="$v.formData.email.$dirty && !$v.formData.email.required"
         >Введите почту</span
       >
@@ -105,7 +115,7 @@
       type="submit"
       :disabled="$v.$invalid"
     >
-      {{ btnText }}
+      {{ buttonText }}
     </button>
   </form>
 </template>
@@ -131,6 +141,10 @@ export default {
       type: String,
       default: '',
     },
+    btnMoreText: {
+      type: String,
+      default: '',
+    },
     letterPlaceholder: {
       type: String,
       default: '',
@@ -144,7 +158,13 @@ export default {
         name: '',
         email: '',
       },
+      isSent: false,
     }
+  },
+  computed: {
+    buttonText() {
+      return !this.isSent ? this.btnText : this.btnMoreText
+    },
   },
   validations: {
     formData: {
@@ -170,13 +190,22 @@ export default {
   },
   methods: {
     handleSubmit() {
-      console.log(
-        'submit-data',
-        this.formData.theme,
-        this.formData.name,
-        this.formData.email,
-        this.formData.letter
-      )
+      if (!this.isSent) {
+        console.log(
+          'submit-data',
+          this.formData.theme,
+          this.formData.name,
+          this.formData.email,
+          this.formData.letter
+        )
+        this.isSent = true
+      } else {
+        this.isSent = false
+        this.formData.theme = ''
+        this.formData.name = ''
+        this.formData.email = ''
+        this.formData.letter = ''
+      }
     },
   },
 }
@@ -187,11 +216,23 @@ export default {
   background: #cbcbcb;
   display: grid;
   width: 100%;
-  grid-template-columns: 0.4fr 1fr;
-  grid-gap: 3px;
+  grid-template-columns: 0.3fr 1fr;
+  grid-template-rows: repeat(9, min-content);
+  grid-gap: 9px;
   align-items: flex-end;
   padding: 0 18px 12px;
   position: relative;
+}
+
+.contact-form__sent {
+  grid-column: 1/3;
+  grid-row: 1/14;
+  align-self: center;
+  justify-self: center;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
+  font-weight: 800;
+  font-size: 31px;
+  color: #7d7d7d;
 }
 
 .contact-form__input {
@@ -227,6 +268,10 @@ export default {
   font-weight: 500;
   font-size: 16px;
   padding: 10px;
+  z-index: 2;
+  max-width: 93vw;
+  min-width: 280px;
+  min-height: 50px;
 }
 
 .contact-form__input_type_letter::placeholder {
@@ -243,6 +288,7 @@ export default {
   align-self: flex-start;
   padding: 0 0 0 16px;
   grid-column: 1/3;
+  align-self: center;
 }
 
 .contact-form__label {
@@ -260,7 +306,7 @@ export default {
 }
 
 .contact-form__arrows {
-  font-size: 24px;
+  font-size: 22px;
   color: #fff;
   position: absolute;
   bottom: 10px;
@@ -276,7 +322,7 @@ export default {
   font-family: 'Roboto', Arial, sans-serif;
   font-weight: 400;
   font-size: 13px;
-  width: 109px;
+  padding: 0 20px;
   height: 28px;
   justify-self: flex-end;
   text-transform: uppercase;
@@ -291,5 +337,102 @@ export default {
 
 .contact-form__submit-btn:disabled {
   opacity: 0.4;
+  cursor: default;
+}
+
+@media screen and (min-width: 768px) {
+  .contact-form {
+    grid-gap: 10px;
+    padding: 0 52px 40px;
+  }
+
+  .contact-form__sent {
+    font-size: 61px;
+  }
+
+  .contact-form__input {
+    font-size: 17px;
+    padding: 15px;
+  }
+
+  .contact-form__input_type_letter {
+    font-size: 37px;
+    min-height: 215px;
+    padding: 25px 31px;
+  }
+
+  .contact-form__input-error {
+    font-size: 15px;
+    padding: 0 0 0 36px;
+  }
+
+  .contact-form__label {
+    font-size: 31px;
+    padding: 0 0 0 36px;
+  }
+
+  .contact-form__label_type_theme {
+    font-size: 46px;
+  }
+
+  .contact-form__submit-btn {
+    padding: 0 30px;
+    height: 65px;
+    font-size: 31px;
+  }
+
+  .contact-form__arrows {
+    font-size: 41px;
+    bottom: 43px;
+    left: 88px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .contact-form {
+    width: 664px;
+    padding: 0 151px 33px 20px;
+    grid-template-columns: 0.25fr 1fr;
+    order: 2;
+    grid-gap: 10px;
+    background: linear-gradient(to right, #cbcbcb 580px, #fff 580px);
+  }
+
+  .contact-form__input {
+    font-size: 22px;
+    padding: 10px;
+  }
+
+  .contact-form__input_type_letter {
+    width: 466px;
+    justify-self: flex-end;
+    max-width: 500px;
+  }
+
+  .contact-form__input-error {
+    padding: 0 0 0 28px;
+    font-size: 14px;
+  }
+
+  .contact-form__label {
+    font-size: 22px;
+    padding: 0 0 0 28px;
+  }
+
+  .contact-form__label_type_theme {
+    padding: 0;
+    font-size: 31px;
+  }
+
+  .contact-form__arrows {
+    bottom: 34px;
+    left: 48px;
+    font-size: 38px;
+  }
+  .contact-form__submit-btn {
+    height: 51px;
+    font-size: 24px;
+    border-radius: 20px;
+  }
 }
 </style>
