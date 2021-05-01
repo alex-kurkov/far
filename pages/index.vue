@@ -11,7 +11,7 @@
       <Help />
       <Support :isOnSupportPage="false" />
     </section>
-    <ToggleLanguage/>
+    <ToggleLanguage />
   </div>
 </template>
 
@@ -37,17 +37,11 @@ export default {
     Intro,
     Promo,
     About,
-    ToggleLanguage
+    ToggleLanguage,
   },
+  name: 'index',
   data() {
-    return {
-      // перенес в тело head() и перестали сыпаться такие warnings:
-      // [vue-i18n] Cannot translate the value of keypath 'metaTags[0].image.url'.
-      // title: this.$t('metaTags[0].title'),
-      // description: this.$t('metaTags[0].description'),
-      // keywords: this.$t('metaTags[0].keywords'),
-      // image: baseUrl + this.$t('metaTags[0].image.url'),
-    }
+    return {}
   },
   head() {
     return {

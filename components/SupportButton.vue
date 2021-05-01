@@ -3,7 +3,7 @@
     <NuxtLink to="/support" class="sup-button__link">
       <span class="sup-button__text">Поддержать</span>
       <img class="sup-button__heart" :src="image" />
-      <img class="sup-button__logo" :src="logo"/>
+      <img class="sup-button__logo" :src="logo" />
     </NuxtLink>
   </div>
 </template>

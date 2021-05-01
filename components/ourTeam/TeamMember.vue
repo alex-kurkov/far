@@ -99,7 +99,7 @@ export default {
   color: #fff;
 }
 
-.member:nth-of-type(4n + 2) .member__name .underline{
+.member:nth-of-type(4n + 2) .member__name .underline {
   --backgroundColor: #b23438;
 }
 

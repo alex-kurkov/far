@@ -86,7 +86,6 @@ export default {
     object-fit: cover;
     object-position: 0 0;
   }
-
 }
 
 @media screen and (min-width: 1024px) {

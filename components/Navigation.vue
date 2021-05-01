@@ -10,7 +10,7 @@
         <li
           v-for="(element, index) in this.$t('menu')"
           class="navigation__menu-item"
-          @click="element.open = !element.open"
+          @click="handleMainMenuClick(element)"
           :key="element.mainMenuTitle[$i18n.locale]"
         >
           <div
@@ -51,6 +51,7 @@
             v-if="!!element['sub_menus'][0]"
             :subMenuList="element['sub_menus']"
             :isOpen="element.open"
+            :handleMenuClick="handleMenuClick"
           />
         </li>
       </ul>
@@ -64,7 +65,7 @@ import Icon from '@/components/Icon'
 export default {
   name: 'Navigation',
   components: { SubMenu, Icon },
-  props: ['isMenuOpen'],
+  props: ['isMenuOpen', 'handleMenuClick'],
   data() {
     return {
       elements: this.$store.state.content.menu,
@@ -75,6 +76,18 @@ export default {
     getMenu() {},
   },
   methods: {
+    handleMainMenuClick(element) {
+      element.open = !element.open
+      if (!element['sub_menus'][0]) {
+        this.handleMenuClick()
+        const elements = this.$t('menu')
+        for (let key in elements) {
+          if (elements.hasOwnProperty(key)) {
+            elements[key].open = false
+          }
+        }
+      }
+    },
     enter(el) {
       el.style.width = 'auto'
       const width = getComputedStyle(el).width
@@ -123,7 +136,7 @@ export default {
 }
 
 .navigation__menu-item:last-of-type .navigation__main-menu-item {
-  border:none;
+  border: none;
 }
 
 .navigation__main-menu-item_style {

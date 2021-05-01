@@ -8,7 +8,7 @@
       <p class="custom-page__text">{{ getCustomPageText(currentPage, 0) }}</p>
       <ul class="custom-page__sections">
         <li
-          v-for="(element) in getCustomPageSections(currentPage)"
+          v-for="element in getCustomPageSections(currentPage)"
           class="custom-page__section"
           :key="element.customPageSectionTitle[$i18n.locale]"
         >
@@ -18,7 +18,7 @@
         </li>
       </ul>
     </div>
-    <SupportButton/>
+    <SupportButton />
     <ToggleLanguage />
   </section>
 </template>

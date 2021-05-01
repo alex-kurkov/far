@@ -16,7 +16,7 @@
       target="_blank"
       rel="noreferrer noopener"
       class="help__ellipse help__ellipse_type_email"
-      >{{mainEmail}}</a
+      >{{ mainEmail }}</a
     >
     <nuxt-link to="/support" class="help__logo-link">
       <Icon name="logo" class="help__logo" />

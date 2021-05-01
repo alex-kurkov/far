@@ -47,7 +47,7 @@
         />
       </div>
     </div>
-    <ToggleLanguage/>
+    <ToggleLanguage />
   </section>
 </template>
 
