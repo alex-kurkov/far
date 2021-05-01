@@ -62,12 +62,12 @@ export default {
       hamburgerIconElement.setAttribute('aria-expanded', `${isOpen}`)
     },
     handleScroll() {
-      if (!this.isMenuOpen) {
+/*       if (!this.isMenuOpen) {
         this.displayObj = { '--display': 'none' }
       }
       if (window.scrollY < 200) {
         this.displayObj = { '--display': 'grid' }
-      }
+      } */
     },
   },
 }
@@ -106,7 +106,6 @@ export default {
   transition: opacity 0.5s linear;
   width: 38px;
   height: 35px;
-  --display: grid;
 }
 
 .hamburger-icon:hover {
