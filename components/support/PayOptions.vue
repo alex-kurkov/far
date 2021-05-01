@@ -70,9 +70,9 @@ export default {
     options: {
       type: Object,
       default: () => ({
-        first: ()=>({}),
-        second: ()=>({}),
-        third: ()=>({}),
+        first: () => ({}),
+        second: () => ({}),
+        third: () => ({}),
       }),
     },
   },

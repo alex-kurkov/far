@@ -58,21 +58,6 @@ export default function (storeContent, locale) {
   }
 
   return {
-    about: {
-      title: storeContent.about.title[`${locale}`],
-      subtitle: storeContent.about.subtitle[`${locale}`],
-      article: storeContent.about.article[0][`${locale}`],
-      image: baseUrl + storeContent.about.image.url,
-    },
-    promo: {
-      support: storeContent.promo.promoSupport[`${locale}`],
-      help: storeContent.promo.promoHelp[`${locale}`],
-    },
-    intro: storeContent.intro.introText[`${locale}`],
-    achievement: {
-      title: storeContent.achievement.cardsTitle[`${locale}`],
-      link: storeContent.achievement.cardsLink[`${locale}`],
-    },
     achievements: [
       ...storeContent.achievements.map(({ title, text, stamp }) => ({
         title: title[`${locale}`],
@@ -80,11 +65,6 @@ export default function (storeContent, locale) {
         stamp,
       })),
     ],
-    mission: {
-      title: storeContent.mission.missionTitle[`${locale}`],
-      text: storeContent.mission.missionText[`${locale}`],
-      link: storeContent.mission.missionLink[`${locale}`],
-    },
     support: {
       title: storeContent.support.supportTitle[0][`${locale}`],
       subtitle: storeContent.support.supportSubTitle[`${locale}`],
@@ -120,14 +100,16 @@ export default function (storeContent, locale) {
     metaTags: allMetaTags,
     menu: storeContent.menu,
     teamMembers: [
-      ...storeContent.teamMembers.map(({ name, info, image, position, tel, isOnContactsPage }) => ({
-        name: name[`${locale}`],
-        info: info[`${locale}`],
-        position: isOnContactsPage ? position[`${locale}`] : '',
-        tel,
-        isOnContactsPage,
-        image: baseUrl + image.url,
-      })),
+      ...storeContent.teamMembers.map(
+        ({ name, info, image, position, tel, isOnContactsPage }) => ({
+          name: name[`${locale}`],
+          info: info[`${locale}`],
+          position: isOnContactsPage ? position[`${locale}`] : '',
+          tel,
+          isOnContactsPage,
+          image: baseUrl + image.url,
+        })
+      ),
     ],
     header: storeContent.header.marqueeText[`${locale}`],
     pages: allPages,

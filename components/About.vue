@@ -1,8 +1,10 @@
 <template>
   <section class="about">
     <h1 class="about__text">
-      <span class="about__abbreviation">{{ $t('about.title') }}&nbsp;</span>
-      &#8212; {{ $t('about.subtitle') }}
+      <span class="about__abbreviation"
+        >{{ $t('pages.index.mainTitleLocale') }}&nbsp;</span
+      >
+      &#8212; {{ $t('pages.index.subTitlesLocale[0]') }}
     </h1>
   </section>
 </template>

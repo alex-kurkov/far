@@ -2,7 +2,7 @@
   <section class="intro">
     <div class="intro__container">
       <h1 class="intro__text">
-        {{ $t('intro') }}
+        {{ $t('pages.index.subTitlesLocale[6]') }}
       </h1>
       <div class="intro__images"></div>
       <Icon name="diamond" class="intro__image"></Icon>

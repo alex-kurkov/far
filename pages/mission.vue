@@ -9,8 +9,8 @@
       />
     </div>
     <article class="about__article" v-html="article"></article>
-    <SupportButton/>
-    <ToggleLanguage/>
+    <SupportButton />
+    <ToggleLanguage />
   </section>
 </template>
 
@@ -21,7 +21,9 @@ import ToggleLanguage from '@/components/promo/ToggleLanguage'
 import HeavilyUnderlinedTitle from '../components/HeavilyUnderlinedTitle'
 export default {
   components: {
-    HeavilyUnderlinedTitle, SupportButton, ToggleLanguage,
+    HeavilyUnderlinedTitle,
+    SupportButton,
+    ToggleLanguage,
   },
   data() {
     return {

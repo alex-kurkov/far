@@ -5,8 +5,8 @@
     <Report />
     <Report />
     <Report />
-    <SupportButton/>
-    <ToggleLanguage/>
+    <SupportButton />
+    <ToggleLanguage />
   </section>
 </template>
 

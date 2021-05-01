@@ -7,9 +7,10 @@
   >
     <ul v-show="isOpen" class="navigation__sub-menu">
       <li
-        v-for="(element) in subMenuList"
+        v-for="element in subMenuList"
         class="navigation__sub-menu-item"
         :key="element.subMenuTitle[$i18n.locale]"
+        @click="menuClick"
       >
         <NuxtLink
           :to="
@@ -29,8 +30,11 @@
 <script>
 export default {
   name: 'SubMenu',
-  props: ['isOpen', 'subMenuList'],
+  props: ['isOpen', 'subMenuList', 'handleMenuClick'],
   methods: {
+    menuClick() {
+      this.handleMenuClick()
+    },
     enter(el) {
       el.style.height = 'auto'
       const height = getComputedStyle(el).height
