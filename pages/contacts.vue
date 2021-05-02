@@ -49,9 +49,12 @@ export default {
       title: this.$t('pages.contacts.metaTagsLocale.metaTitle'),
       description: this.$t('pages.contacts.metaTagsLocale.metaDescription'),
       keywords: this.$t('pages.contacts.metaTagsLocale.metaKeyWords'),
-      imageMeta:
-        baseUrl +
-        this.$store.state.content.pages.contacts.metaTags['metaImage'].url,
+      imageMeta: this.$store.state.content.pages.contacts.metaTags
+        ? this.$store.state.content.pages.contacts.metaTags['metaImage']
+          ? baseUrl +
+            this.$store.state.content.pages.contacts.metaTags['metaImage'].url
+          : null
+        : null,
       mainTitle: this.$t('pages.contacts.mainTitleLocale'),
       formThemeLabel: this.$t('pages.contacts.subTitlesLocale[0]'),
       letterPlaceholder: this.$t('pages.contacts.subTitlesLocale[1]'),

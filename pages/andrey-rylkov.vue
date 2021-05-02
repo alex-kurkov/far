@@ -61,17 +61,19 @@ export default {
   components: { ToggleLanguage, AndreyPromo, SupportButton },
   data() {
     return {
+      title: this.$t('pages.andrey.metaTagsLocale.metaTitle'),
+      description: this.$t('pages.andrey.metaTagsLocale.metaDescription'),
+      keywords: this.$t('pages.andrey.metaTagsLocale.metaKeyWords'),
+      imageMeta: this.$store.state.content.pages.andrey.metaTags
+        ? this.$store.state.content.pages.andrey.metaTags['metaImage']
+          ? baseUrl +
+            this.$store.state.content.pages.andrey.metaTags['metaImage'].url
+          : null
+        : null,
       videoWidth: this.videoWidth,
       videoHeight: this.videoHeight,
       contentMargin: this.contentMargin,
       currentBackgroundImage: this.imageWhoIsS,
-      title: this.$t('pages.andrey.metaTagsLocale.metaTitle'),
-      description: this.$t('pages.andrey.metaTagsLocale.metaDescription'),
-      keywords: this.$t('pages.andrey.metaTagsLocale.metaKeyWords'),
-      image: this.$store.state.content.pages.andrey.metaTags['metaImage']
-        ? baseUrl +
-          this.$store.state.content.pages.andrey.metaTags['metaImage'].url
-        : null,
       imageWhoIsS:
         baseUrl + this.$store.state.content.pages.andrey.images[0].image[0].url,
       imageWhoIsM:
@@ -82,37 +84,6 @@ export default {
         baseUrl + this.$store.state.content.pages.andrey.images[3].image[0].url,
       imageAndreyAlt: this.$t('pages.andrey.imageAltsLocale[3]'),
       url: this.$t('pages.andrey.subTitlesLocale[3]'),
-      // imageAndreyAlt: this.$store.state.content.pages.andrey.images[3].imageAlt[
-      //   this.$i18n.locale
-      // ],
-      // pageTitle: this.$store.state.content.pages.andrey.mainTitle[
-      //   this.$i18n.locale
-      // ],
-      // firstSubTitle: this.$store.state.content.pages.andrey.subTitles[0][
-      //   this.$i18n.locale
-      // ],
-      // secondSubTitle: this.$store.state.content.pages.andrey.subTitles[1][
-      //   this.$i18n.locale
-      // ],
-      // thirdSubTitle: this.$store.state.content.pages.andrey.subTitles[2][
-      //   this.$i18n.locale
-      // ],
-      // fourthSubTitle: this.$store.state.content.pages.andrey.subTitles[3][
-      //   this.$i18n.locale
-      //   ],
-      // firstPageText: this.$store.state.content.pages.andrey.pageTexts[0][
-      //   this.$i18n.locale
-      // ],
-      // secondPageText: this.$store.state.content.pages.andrey.pageTexts[1][
-      //   this.$i18n.locale
-      // ],
-      // metaTitle: this.$store.state.content.pages.andrey.metaTags.metaTitle[
-      //   this.$i18n.locale
-      // ],
-      // metaDescription: this.$store.state.content.pages.andrey.metaTags
-      //   .metaDescription[this.$i18n.locale],
-      // metaKeyWords: this.$store.state.content.pages.andrey.metaTags
-      //   .metaKeyWords[this.$i18n.locale],
       videoLink: this.$store.state.content.pages.andrey.videoLinks[0].videoLink,
     }
   },
@@ -164,7 +135,7 @@ export default {
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: this.image,
+          content: this.imageMeta,
         },
         {
           hid: 'twitter:image:alt',
@@ -184,12 +155,12 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: this.image,
+          content: this.imageMeta,
         },
         {
           hid: 'og:image:secure_url',
           property: 'og:image:secure_url',
-          content: this.image,
+          content: this.imageMeta,
         },
         {
           hid: 'og:image:alt',

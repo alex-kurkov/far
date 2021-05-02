@@ -2,6 +2,7 @@
   <section class="support-page">
     <div class="support-page__container">
       <Support :isOnSupportPage="true" class="support-page__support" />
+      ````````````````
       <article class="support-page__text support-page__text_type_intro">
         {{ introText }}
         <span class="support-page__arrows"
@@ -64,18 +65,15 @@ export default {
   },
   data() {
     return {
-      title: this.$store.state.content.pages.support.metaTags['metaTitle'][
-        this.$i18n.locale
-      ],
-      description: this.$store.state.content.pages.support.metaTags[
-        'metaDescription'
-      ][this.$i18n.locale],
-      keywords: this.$store.state.content.pages.support.metaTags[
-        'metaKeyWords'
-      ][this.$i18n.locale],
-      image:
-        baseUrl +
-        this.$store.state.content.pages.support.metaTags['metaImage'].url,
+      title: this.$t('pages.mission.metaTagsLocale.metaTitle'),
+      description: this.$t('pages.mission.metaTagsLocale.metaDescription'),
+      keywords: this.$t('pages.mission.metaTagsLocale.metaKeyWords'),
+      imageMeta: this.$store.state.content.pages.mission.metaTags
+        ? this.$store.state.content.pages.mission.metaTags['metaImage']
+          ? baseUrl +
+            this.$store.state.content.pages.mission.metaTags['metaImage'].url
+          : null
+        : null,
       introText: this.$store.state.content.pages.support.pageTexts[0][
         this.$i18n.locale
       ],
@@ -135,7 +133,7 @@ export default {
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: this.image,
+          content: this.imageMeta,
         },
         {
           hid: 'twitter:image:alt',
@@ -155,12 +153,12 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: this.image,
+          content: this.imageMeta,
         },
         {
           hid: 'og:image:secure_url',
           property: 'og:image:secure_url',
-          content: this.image,
+          content: this.imageMeta,
         },
         {
           hid: 'og:image:alt',

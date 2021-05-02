@@ -30,11 +30,12 @@ export default {
       title: this.$t('pages.mission.metaTagsLocale.metaTitle'),
       description: this.$t('pages.mission.metaTagsLocale.metaDescription'),
       keywords: this.$t('pages.mission.metaTagsLocale.metaKeyWords'),
-      image: this.$store.state.content.pages.mission.metaTags['metaImage']
-        ? baseUrl +
-          this.$store.state.content.pages.mission.metaTags['metaImage'].url
+      imageMeta: this.$store.state.content.pages.mission.metaTags
+        ? this.$store.state.content.pages.mission.metaTags['metaImage']
+          ? baseUrl +
+            this.$store.state.content.pages.mission.metaTags['metaImage'].url
+          : null
         : null,
-      // pageTitle: this.$t('about.title'),
       pageTitle: this.$t('pages.mission.mainTitleLocale'),
       // promoImage: { background: `center/cover url(${this.$t('about.image')})` },
       promoImage: {
@@ -74,7 +75,7 @@ export default {
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: this.image,
+          content: this.imageMeta,
         },
         {
           hid: 'twitter:image:alt',
@@ -94,12 +95,12 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: this.image,
+          content: this.imageMeta,
         },
         {
           hid: 'og:image:secure_url',
           property: 'og:image:secure_url',
-          content: this.image,
+          content: this.imageMeta,
         },
         {
           hid: 'og:image:alt',

@@ -12,10 +12,10 @@ export default {
   components: { ToggleLanguage },
   data() {
     return {
-      title: this.$t('metaTags[3].title'),
-      description: this.$t('metaTags[3].description'),
-      keywords: this.$t('metaTags[3].keywords'),
-      image: baseUrl + this.$t('metaTags[3].image.url'),
+      title: '',
+      description: '',
+      keywords: '',
+      image: '',
     }
   },
   head() {

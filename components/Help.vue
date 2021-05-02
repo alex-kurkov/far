@@ -1,27 +1,28 @@
 <template>
   <section class="help">
-    <h3 class="help__title">{{ $t('help.title') }}</h3>
+    <h3 class="help__title">{{ $t('pages.index.subTitlesLocale[16]') }}</h3>
     <p class="help__text">
-      {{ $t('help.text') }}
+      {{ $t('pages.index.pageTextsLocale[1]') }}
     </p>
     <Icon name="blade" class="help__blade"></Icon>
     <nuxt-link :to="helpLink" class="help__link"
-      >{{ $t('help.link') }} &rsaquo;</nuxt-link
+      >{{ this.$t('pages.index.subTitlesLocale[19]') }} &rsaquo;</nuxt-link
     >
     <a :href="telLink" class="help__ellipse help__ellipse_type_tel">{{
-      mainTel
+      this.$t('pages.index.subTitlesLocale[18]')
     }}</a>
     <a
       :href="emailLink"
       target="_blank"
       rel="noreferrer noopener"
       class="help__ellipse help__ellipse_type_email"
-      >{{ mainEmail }}</a
+      >{{ $t('pages.index.subTitlesLocale[17]') }}</a
     >
     <nuxt-link to="/support" class="help__logo-link">
       <Icon name="logo" class="help__logo" />
     </nuxt-link>
     <p class="help__side-text">TELEGRAM/WHATSAPPMAIL</p>
+    <!--    <p class="help__side-text">{{ $t ('pages.index.subTitlesLocale[15]') }}</p>-->
   </section>
 </template>
 
@@ -34,12 +35,9 @@ export default {
   },
   data() {
     return {
-      // phone: this.$store.state.content.help.phone,
-      helpLink: this.$store.state.content.help.link,
-      mainTel: this.$t('pages.contacts.subTitlesLocale[5]'),
-      mainEmail: this.$t('pages.contacts.subTitlesLocale[6]'),
-      telLink: 'tel:' + this.$t('pages.contacts.subTitlesLocale[5]'),
-      emailLink: 'mailto:' + this.$t('pages.contacts.subTitlesLocale[6]'),
+      helpLink: this.$t('pages.index.subTitlesLocale[20]'),
+      telLink: 'tel:' + this.$t('pages.index.subTitlesLocale[18]'),
+      emailLink: 'mailto:' + this.$t('pages.index.subTitlesLocale[17]'),
     }
   },
 }

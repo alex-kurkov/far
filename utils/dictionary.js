@@ -1,21 +1,21 @@
 import { baseUrl } from './api'
 
 export default function (storeContent, locale) {
-  let allMetaTags = []
-  // это надо будет удалить когда все метатеги перенесем в page
-  storeContent.metaTags.forEach((meta) => {
-    const title = meta[`${locale}_title`]
-    const description = meta[`${locale}_description`]
-    const keywords = meta[`${locale}_keywords`]
-    const image = meta['image']
-    const metaTagUnit = {
-      title,
-      description,
-      keywords,
-      image,
-    }
-    allMetaTags.push(metaTagUnit)
-  })
+  // let allMetaTags = []
+  // // это надо будет удалить когда все метатеги перенесем в page
+  // storeContent.metaTags.forEach((meta) => {
+  //   const title = meta[`${locale}_title`]
+  //   const description = meta[`${locale}_description`]
+  //   const keywords = meta[`${locale}_keywords`]
+  //   const image = meta['image']
+  //   const metaTagUnit = {
+  //     title,
+  //     description,
+  //     keywords,
+  //     image,
+  //   }
+  //   allMetaTags.push(metaTagUnit)
+  // })
 
   const allPages = {}
   for (let key in storeContent.pages) {
@@ -86,18 +86,13 @@ export default function (storeContent, locale) {
       name: storeContent.support.supportName[`${locale}`],
       agree: storeContent.support.supportAgree[`${locale}`],
     },
-    help: {
-      title: storeContent.help.helpTitle[`${locale}`],
-      text: storeContent.help.helpText[`${locale}`],
-      link: storeContent.help.helpLink[`${locale}`],
-    },
     footer: {
       title: storeContent.footer.footerTitle[`${locale}`],
       legal: storeContent.footer.footerLegal[`${locale}`],
       license: storeContent.footer.footerLicenseText[`${locale}`],
       copyright: storeContent.footer.footerCopyright[`${locale}`],
     },
-    metaTags: allMetaTags,
+    // metaTags: allMetaTags,
     menu: storeContent.menu,
     teamMembers: [
       ...storeContent.teamMembers.map(

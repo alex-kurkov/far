@@ -34,11 +34,9 @@ export const actions = {
     return api.getData().then(
       ([
         achievements,
-        help,
         support,
-        // achievement,
         footer,
-        meta,
+        // meta,
         pages,
         teamMembers,
         menu,
@@ -68,10 +66,9 @@ export const actions = {
 
         const allData = {
           achievements: achievements.data,
-          help: help.data,
           support: support.data,
           footer: footer.data,
-          metaTags: meta.data,
+          // metaTags: meta.data,
           menu: sortedMenu,
           pages: newPages,
           teamMembers: teamMembers.data,
