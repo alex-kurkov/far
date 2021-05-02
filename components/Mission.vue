@@ -3,11 +3,17 @@
     <div class="mission__sideblock"></div>
     <div class="mission__content">
       <div class="mission__info-wrapper">
-        <h2 class="mission__title" v-html="$t('mission.title')"></h2>
-        <p class="mission__text" v-html="$t('mission.text')"></p>
+        <h2
+          class="mission__title"
+          v-html="$t('pages.index.subTitlesLocale[9]')"
+        ></h2>
+        <p
+          class="mission__text"
+          v-html="$t('pages.index.pageTextsLocale[0]')"
+        ></p>
       </div>
       <nuxt-link class="mission__about-link" :to="aboutLink"
-        >{{ $t('mission.link') }} &rsaquo;</nuxt-link
+        >{{ $t('pages.index.subTitlesLocale[10]') }} &rsaquo;</nuxt-link
       >
       <div class="mission__graphics-wrapper">
         <div class="mission__graphics-road"><Icon name="road" /></div>
@@ -18,13 +24,14 @@
 </template>
 
 <script>
+import Icon from '@/components/Icon'
 import FarLogo from '@/components/icons/FarLogo'
 export default {
   name: 'Mission',
-  components: { FarLogo },
+  components: { Icon, FarLogo },
   data() {
     return {
-      aboutLink: this.$store.state.content.mission.link,
+      aboutLink: this.$t('pages.index.subTitlesLocale[11]'),
     }
   },
 }

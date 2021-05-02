@@ -4,25 +4,8 @@ class Api {
   constructor(initialSettings) {
     this._baseURL = initialSettings['baseUrl']
   }
-
-  getIntro() {
-    return axios.get(`${this._baseURL}/index-intro`)
-  }
-
-  getMission() {
-    return axios.get(`${this._baseURL}/index-mission`)
-  }
-
   getAchievements() {
     return axios.get(`${this._baseURL}/achievements`)
-  }
-
-  getAbout() {
-    return axios.get(`${this._baseURL}/about`)
-  }
-
-  getPromo() {
-    return axios.get(`${this._baseURL}/index-promo`)
   }
 
   getHelp() {
@@ -31,10 +14,6 @@ class Api {
 
   getSupport() {
     return axios.get(`${this._baseURL}/index-support`)
-  }
-
-  getAchievement() {
-    return axios.get(`${this._baseURL}/index-achievement`)
   }
 
   getFooter() {
@@ -52,11 +31,6 @@ class Api {
   getTeamMembers() {
     return axios.get(`${this._baseURL}/team-members`)
   }
-
-  getAndreyRylkov() {
-    return axios.get(`${this._baseURL}/andrey-rylkov`)
-  }
-
   getMenu() {
     return axios.get(`${this._baseURL}/menus`)
   }
@@ -77,19 +51,14 @@ class Api {
 
   getData() {
     return Promise.all([
-      this.getIntro(),
-      this.getMission(),
       this.getAchievements(),
-      this.getAbout(),
-      this.getPromo(),
       this.getHelp(),
       this.getSupport(),
-      this.getAchievement(),
+      // this.getAchievement(),
       this.getFooter(),
       this.getMetas(),
       this.getPages(),
       this.getTeamMembers(),
-      this.getAndreyRylkov(),
       this.getMenu(),
       this.getCustomPages(),
       this.getHeader(),

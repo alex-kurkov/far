@@ -1,10 +1,12 @@
 <template>
   <section class="achievement">
-    <h3 class="achievement__title">{{ $t('achievement.title') }}</h3>
+    <h3 class="achievement__title">
+      {{ $t('pages.index.subTitlesLocale[12]') }}
+    </h3>
     <Achievements />
     <div class="achievement__gethelp-wrapper">
       <nuxt-link :to="helpLink" class="achievement__gethelp-link"
-        >{{ $t('achievement.link') }} &rsaquo;</nuxt-link
+        >{{ $t('pages.index.subTitlesLocale[13]') }} &rsaquo;</nuxt-link
       >
       <nuxt-link to="/support" class="achievement__logo-link">
         <Icon name="logo" class="achievement__logo" />
@@ -23,7 +25,7 @@ export default {
   },
   data() {
     return {
-      helpLink: this.$store.state.content.achievement.link,
+      helpLink: this.$t('pages.index.subTitlesLocale[14]'),
     }
   },
 }

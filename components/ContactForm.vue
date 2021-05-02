@@ -5,7 +5,7 @@
     novalidate
     @submit.prevent="handleSubmit"
   >
-    <p v-if="isSent" class="contact-form__sent">{{sentText}}</p>
+    <p v-if="isSent" class="contact-form__sent">{{ sentText }}</p>
     <label
       class="contact-form__label contact-form__label_type_theme"
       for="theme"
@@ -152,7 +152,7 @@ export default {
     sentText: {
       type: String,
       default: '',
-    }
+    },
   },
   data() {
     return {

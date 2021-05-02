@@ -1,6 +1,6 @@
 <template>
   <div class="contact-intro">
-    <img :src="image" class="contact-intro__image"/>
+    <img :src="image" class="contact-intro__image" />
     <p class="contact-intro__text">{{ text }}</p>
     <a
       :href="telLink"
@@ -44,7 +44,7 @@ export default {
     image: {
       type: String,
       default: '',
-    }
+    },
   },
 }
 </script>
@@ -95,14 +95,14 @@ export default {
 }
 
 .contact-intro__contact:last-of-type {
-    font-family: 'Vollkorn', Arial, Helvetica, serif;
-    font-size: 15px;
-    font-weight: 700;
-    color: #fff;
-    background: #b23438;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  background: #b23438;
 }
 
-@media screen and (min-width:768px) {
+@media screen and (min-width: 768px) {
   .contact-intro__text {
     padding: 52px 52px 14px;
     font-size: 36px;
@@ -118,7 +118,7 @@ export default {
   }
 }
 
-@media screen and (min-width:1280px) {
+@media screen and (min-width: 1280px) {
   .contact-intro {
     order: 1;
     width: 616px;

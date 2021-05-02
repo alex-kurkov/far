@@ -26,7 +26,7 @@
       <icon name="drop" class="hamburger__drop"></icon>
     </div>
     <FallingDrop :isMenuOpen="isMenuOpen" />
-    <Navigation :isMenuOpen="isMenuOpen" />
+    <Navigation :isMenuOpen="isMenuOpen" :handleMenuClick="handleMenuClick" />
   </div>
 </template>
 
@@ -173,7 +173,7 @@ export default {
 @media screen and (min-width: 640px) {
   .hamburger-icon {
     top: 10px;
-    right: 10px
+    right: 10px;
   }
 }
 
@@ -204,7 +204,6 @@ export default {
 }
 
 @media screen and (min-width: 769px) {
-
 }
 
 .hamburger-icon_path_line {

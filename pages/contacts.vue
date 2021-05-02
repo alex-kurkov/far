@@ -49,7 +49,7 @@ export default {
       title: this.$t('pages.contacts.metaTagsLocale.metaTitle'),
       description: this.$t('pages.contacts.metaTagsLocale.metaDescription'),
       keywords: this.$t('pages.contacts.metaTagsLocale.metaKeyWords'),
-      image:
+      imageMeta:
         baseUrl +
         this.$store.state.content.pages.contacts.metaTags['metaImage'].url,
       mainTitle: this.$t('pages.contacts.mainTitleLocale'),
@@ -98,7 +98,7 @@ export default {
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: this.image,
+          content: this.imageMeta,
         },
         {
           hid: 'twitter:image:alt',
@@ -118,12 +118,12 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: this.image,
+          content: this.imageMeta,
         },
         {
           hid: 'og:image:secure_url',
           property: 'og:image:secure_url',
-          content: this.image,
+          content: this.imageMeta,
         },
         {
           hid: 'og:image:alt',

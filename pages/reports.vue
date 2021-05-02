@@ -2,8 +2,8 @@
   <div>
     <ReportsPromo />
     <AllReports />
-    <SupportButton/>
-    <ToggleLanguage/>
+    <SupportButton />
+    <ToggleLanguage />
   </div>
 </template>
 
@@ -14,7 +14,7 @@ import SupportButton from '@/components/SupportButton'
 import { baseUrl } from '@/utils/api'
 import ToggleLanguage from '../components/promo/ToggleLanguage'
 export default {
-  components: { AllReports, ReportsPromo, SupportButton, ToggleLanguage, },
+  components: { AllReports, ReportsPromo, SupportButton, ToggleLanguage },
   data() {
     return {
       title: this.$t('metaTags[1].title'),
