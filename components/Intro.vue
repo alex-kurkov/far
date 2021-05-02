@@ -24,7 +24,7 @@ export default {
 .intro {
   width: 100%;
   min-height: 131px;
-  background: #b23438;
+  background: var(--main-red);
 }
 
 .intro__container {
@@ -86,7 +86,7 @@ export default {
     max-width: 717px;
     font-size: 36px;
     line-height: 0.8;
-    background: #b23438;
+    background: var(--main-red);
     padding: 25px 55px;
   }
 

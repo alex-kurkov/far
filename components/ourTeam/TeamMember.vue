@@ -63,7 +63,7 @@ export default {
   width: 92%;
   padding: 20px;
   box-sizing: border-box;
-  border: 4px solid #b23438;
+  border: 4px solid var(--main-red);
   border-radius: 49px;
   background: #fff;
   position: absolute;
@@ -73,7 +73,7 @@ export default {
 }
 
 .member__name {
-  color: #b23438;
+  color: var(--main-red);
   font-family: 'Vollkorn', Arial, Helvetica, sans-serif;
   font-weight: 700;
   line-height: 0.8;
@@ -100,7 +100,7 @@ export default {
 }
 
 .member:nth-of-type(4n + 2) .member__name .underline {
-  --backgroundColor: #b23438;
+  --backgroundColor: var(--main-red);
 }
 
 .member:nth-of-type(4n + 2) .member__text {
@@ -108,7 +108,7 @@ export default {
 }
 
 .member:nth-of-type(8n + 4) .member__info {
-  background: #b23438;
+  background: var(--main-red);
   border-color: #000;
 }
 

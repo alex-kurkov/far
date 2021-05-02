@@ -182,7 +182,7 @@ export default {
 }
 
 .money-options__option-btn_invalid {
-  border: 1px solid #b23438;
+  border: 1px solid var(--main-red);
 }
 
 .money-options__radio {
@@ -239,7 +239,7 @@ export default {
 
 .money-options__sum_invalid {
   color: #727272;
-  border-bottom: 1px solid #b23438;
+  border-bottom: 1px solid var(--main-red);
 }
 
 .money-options__input-error {
@@ -247,7 +247,7 @@ export default {
   font-weight: 400;
   font-size: 11px;
   line-height: 1.2;
-  color: #b23438;
+  color: var(--main-red);
   margin: 5px 0 5px 0;
   align-self: flex-start;
   padding: 0 0 0 13px;
@@ -279,7 +279,7 @@ export default {
 }
 
 .money-options__agreement-check_invalid {
-  border: 1px solid #b23438;
+  border: 1px solid var(--main-red);
 }
 
 .money-options__checkbox {

@@ -32,7 +32,7 @@ export default {
 .social__logo {
   width: 25px;
   height: auto;
-  fill: #b23438;
+  fill: var(--main-red);
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {

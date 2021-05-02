@@ -191,7 +191,7 @@ export default {
 }
 
 .support-page__text_type_intro {
-  color: #b23438;
+  color: var(--main-red);
   font-style: italic;
   font-size: 18px;
   line-height: 1;
@@ -221,7 +221,7 @@ export default {
 }
 
 .support-page__subtitle {
-  color: #b23438;
+  color: var(--main-red);
   margin: 0;
   padding: 19px 0 0 0;
   font-family: 'Vollkorn', Arial, Helvetica, sans-serif;
@@ -252,7 +252,7 @@ export default {
   float: right;
   width: 44%;
   height: auto;
-  border: 20px solid #b23438;
+  border: 20px solid var(--main-red);
   margin: 0 0 12px 12px;
 }
 
@@ -305,7 +305,7 @@ export default {
   }
 
   .support-page__qr-code {
-    border: 37px solid #b23438;
+    border: 37px solid var(--main-red);
   }
 }
 
@@ -320,7 +320,7 @@ export default {
 
   .support-page__container:nth-of-type(2) {
     overflow: hidden;
-    background: #b23438;
+    background: var(--main-red);
   }
 
   .support-page__text {
@@ -383,7 +383,7 @@ export default {
 
   .support-page__qr-code {
     width: 242px;
-    border: 22px solid #b23438;
+    border: 22px solid var(--main-red);
     position: absolute;
     z-index: 5;
     right: -23px;

@@ -58,5 +58,9 @@ export default {
   /* max-width: 1280px; */
   width: 100%;
   font-family: Vollkorn, Arial, sans-serif;
+
 }
+
+
+
 </style>

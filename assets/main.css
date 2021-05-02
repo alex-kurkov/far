@@ -98,3 +98,10 @@
   src: url('~assets/fonts/RobotoSlab-Regular.woff2') format('woff2'),
     url('~assets/fonts/RobotoSlab-Regular.woff') format('woff');
 }
+
+
+:root {
+  --main-red: #b23438;
+  --main-black:#313131;
+  --main-grey:#d5d5d5
+}

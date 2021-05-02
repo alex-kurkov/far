@@ -37,7 +37,7 @@ export default {
 <style scoped>
 .promo {
   width: 100%;
-  background: linear-gradient(to bottom, #b23438 51px, #cbcbcb 51px);
+  background: linear-gradient(to bottom, var(--main-red) 51px, #cbcbcb 51px);
   /* color: white;
   text-align: left;
   display: grid;
@@ -110,9 +110,9 @@ export default {
 .promo__link {
   font-family: 'Vollkorn', Arial, sans-serif;
   font-weight: 700;
-  color: #b23438;
+  color: var(--main-red);
   text-decoration: none;
-  border-bottom: 1px solid #b23438;
+  border-bottom: 1px solid var(--main-red);
   transition: opacity 0.5s linear;
 }
 
@@ -147,7 +147,7 @@ export default {
 @media screen and (min-width: 768px) {
   .promo {
     column-gap: 25px;
-    background: linear-gradient(to bottom, #b23438 78px, #cbcbcb 78px);
+    background: linear-gradient(to bottom, var(--main-red) 78px, #cbcbcb 78px);
   }
 
   .promo__eye {
@@ -187,7 +187,7 @@ export default {
     padding: 0;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to bottom, #b23438 96px, #cbcbcb 96px);
+    background: linear-gradient(to bottom, var(--main-red) 96px, #cbcbcb 96px);
     grid-template-rows: repeat(4, 0.25fr) 1fr;
     grid-template-columns:
       0.8fr minmax(min-content, max-content)

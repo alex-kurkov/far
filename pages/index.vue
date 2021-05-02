@@ -153,14 +153,14 @@ export default {
     flex-direction: row;
     width: 100%;
     justify-content: center;
-    background: linear-gradient(to right, #d5d5d5 50%, #b23438 50%);
+    background: linear-gradient(to right, var(--main-grey) 50%, var(--main-red) 50%);
   }
 
   .container__donations {
     flex-direction: row;
     width: 100%;
     justify-content: center;
-    background: linear-gradient(to right, #000 50%, #d5d5d5 50%),
+    background: linear-gradient(to right, #000 50%, var(--main-grey) 50%),
       linear-gradient(to right, #000 50%, #fff 50%);
     background-repeat: no-repeat;
     background-size: 100vw 615px;

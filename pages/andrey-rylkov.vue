@@ -67,7 +67,7 @@ export default {
       imageMeta: this.$store.state.content.pages.andrey.metaTags
         ? this.$store.state.content.pages.andrey.metaTags['metaImage']
           ? baseUrl +
-            this.$store.state.content.pages.andrey.metaTags['metaImage'].url
+            this.$store.state.content.pages.andrey .metaTags['metaImage'].url
           : null
         : null,
       videoWidth: this.videoWidth,
@@ -184,7 +184,7 @@ export default {
 .andrey-rylkov__title {
   font-size: 15px;
   line-height: 14px;
-  color: #b23438;
+  color: var(--main-red);
   font-weight: 600;
   font-style: italic;
   font-family: 'Vollkorn', Arial, sans-serif;
@@ -202,7 +202,7 @@ export default {
 }
 
 .andrey-rylkov__subtitle_color_red {
-  color: #b23438;
+  color: var(--main-red);
 }
 
 .andrey-rylkov__subtitle_size {
@@ -232,7 +232,7 @@ export default {
 
 @media screen and (min-width: 1280px) {
   .our-team__members {
-    background: linear-gradient(to right, #727272 50%, #b23438 50%);
+    background: linear-gradient(to right, #727272 50%, var(--main-red) 50%);
   }
 }
 </style>

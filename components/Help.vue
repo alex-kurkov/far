@@ -55,7 +55,7 @@ export default {
 }
 
 .help__title {
-  background: #b23438;
+  background: var(--main-red);
   min-height: 92px;
   width: 100%;
   font-family: 'Vollkorn', sans-serif;
@@ -66,7 +66,7 @@ export default {
   padding: 16px;
   text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
   mix-blend-mode: multiply;
-  color: #b23438;
+  color: var(--main-red);
   text-align: left;
 }
 
@@ -75,7 +75,7 @@ export default {
   font-weight: 400;
   line-height: 1.1;
   text-align: left;
-  color: #313131;
+  color: var(--main-black);
   padding: 28px 78px 28px 16px;
 }
 
@@ -90,13 +90,13 @@ export default {
 .help__link {
   padding: 0;
   margin: 0 0 39px 16px;
-  color: #b23438;
+  color: var(--main-red);
   font-family: 'Vollkorn', sans-serif;
   font-weight: 800;
   font-size: 17px;
   line-height: 1.5;
   text-decoration: none;
-  border-bottom: 1px solid #b23438;
+  border-bottom: 1px solid var(--main-red);
   transition: opacity 0.5s linear;
 }
 
@@ -186,7 +186,7 @@ export default {
   font-style: italic;
   line-height: 0.9;
   color: transparent;
-  -webkit-text-stroke: 1px #b23438;
+  -webkit-text-stroke: 1px var(--main-red);
 }
 
 @media screen and (min-width: 768px) {

@@ -4,7 +4,7 @@
       <HeavilyUnderlinedTitle
         class="about__title"
         :style="promoImage"
-        lineColor="#b23438"
+        lineColor="var(--main-red)"
         :title="pageTitle"
       />
     </div>
@@ -171,7 +171,7 @@ export default {
 
 @media screen and (min-width: 1280px) {
   .about {
-    background: linear-gradient(to right, #b23438 50%, #cbcbcb 50%);
+    background: linear-gradient(to right, var(--main-red) 50%, #cbcbcb 50%);
   }
 
   .about__title-container {

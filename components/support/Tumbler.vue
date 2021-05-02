@@ -68,7 +68,7 @@ export default {
   width: 31px;
   left: 0;
   bottom: 0;
-  background-color: #b23438;
+  background-color: var(--main-red);
   border-radius: 50%;
 }
 
@@ -91,8 +91,8 @@ export default {
   font-weight: 400;
   font-size: 13px;
   line-height: 1.4;
-  color: #b23438;
-  border-bottom: 1px solid #b23438;
+  color: var(--main-red);
+  border-bottom: 1px solid var(--main-red);
 }
 
 .tumbler__label-text:last-of-type {

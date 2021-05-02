@@ -152,7 +152,7 @@
           fill: #000;
         }
         .fil7 {
-          fill: #b13438;
+          fill: var(--main-red);
         }
         .fil5 {
           fill: #b23539;

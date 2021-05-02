@@ -27,7 +27,7 @@ export default {
 .about__text {
   width: 263px;
   min-height: 104px;
-  color: #313131;
+  color: var(--main-black);
   font-family: Vollkorn, Arial, sans-serif;
   font-style: italic;
   font-size: 25px;

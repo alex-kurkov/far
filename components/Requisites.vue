@@ -97,7 +97,7 @@ export default {
 
 <style scoped>
 .requisites {
-  background: #b23438;
+  background: var(--main-red);
   width: 100%;
   padding: 11px 0;
   display: flex;
@@ -128,7 +128,7 @@ export default {
   font-size: 11px;
   line-height: 1.1;
   text-transform: uppercase;
-  color: #b23438;
+  color: var(--main-red);
   padding: 0;
   margin: 0 0 15px 0;
 }

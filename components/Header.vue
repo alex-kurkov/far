@@ -44,14 +44,14 @@ export default {
   overflow: hidden;
   white-space: nowrap;
   display: block;
-  background: #b13438;
+  background: var(--main-red);
 }
 .header__marquee {
   font-family: 'Vollkorn', Arial, sans-serif;
   font-size: 24px;
   font-weight: 600;
   display: inline-block;
-  color: #b13438;
+  color: var(--main-red);
   text-transform: uppercase;
   padding-left: 100%;
   font-size: 36px;
@@ -71,14 +71,14 @@ export default {
   .header {
     width: 100%;
     height: 64px;
-    background: #b13438 repeat-x -286px 20px / 800px 76px;
+    background: var(--main-red) repeat-x -286px 20px / 800px 76px;
   }
 
   @media screen and (min-width: 769px) {
     .header {
       width: 100%;
       height: 53px;
-      background: #b13438 repeat-x -286px 5px / 800px 81px;
+      background: var(--main-red) repeat-x -286px 5px / 800px 81px;
     }
     .header__marquee {
       font-size: 48px;

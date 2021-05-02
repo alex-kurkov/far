@@ -99,7 +99,7 @@ export default {
   font-size: 15px;
   font-weight: 700;
   color: #fff;
-  background: #b23438;
+  background: var(--main-red);
 }
 
 @media screen and (min-width: 768px) {

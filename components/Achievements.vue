@@ -109,7 +109,7 @@ export default {
   margin: 6px;
 }
 .swiper-pagination-bullet-active {
-  background-color: #f00;
+  background-color: var(--main-red);
 }
 .achievements__carousel {
   position: relative;

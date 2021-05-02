@@ -39,11 +39,11 @@ export default {
     },
     mainColor: {
       type: String,
-      default: '#B13438',
+      default: 'var(--main-red)',
     },
     farTitleColor: {
       type: String,
-      default: '#B13438',
+      default: 'var(--main-red)',
     },
   },
 }
