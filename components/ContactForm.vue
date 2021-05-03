@@ -256,8 +256,8 @@ export default {
 }
 
 .contact-form__input_invalid {
-  color: #b23438;
-  border: 1px solid #b23438;
+  color: var(--main-red);
+  border: 1px solid var(--main-red);
 }
 
 .contact-form__input_type_theme {
@@ -287,7 +287,7 @@ export default {
   font-weight: 400;
   font-size: 11px;
   line-height: 1.2;
-  color: #b23438;
+  color: var(--main-red);
   margin: 0;
   align-self: flex-start;
   padding: 0 0 0 16px;
@@ -305,7 +305,7 @@ export default {
 
 .contact-form__label_type_theme {
   text-transform: uppercase;
-  color: #b23438;
+  color: var(--main-red);
   font-size: 20px;
 }
 
@@ -321,7 +321,7 @@ export default {
   border: none;
   box-shadow: none;
   border-radius: 12px;
-  background: #b23438;
+  background: var(--main-red);
   color: #fff;
   font-family: 'Roboto', Arial, sans-serif;
   font-weight: 400;

@@ -49,9 +49,12 @@ export default {
       title: this.$t('pages.contacts.metaTagsLocale.metaTitle'),
       description: this.$t('pages.contacts.metaTagsLocale.metaDescription'),
       keywords: this.$t('pages.contacts.metaTagsLocale.metaKeyWords'),
-      imageMeta:
-        baseUrl +
-        this.$store.state.content.pages.contacts.metaTags['metaImage'].url,
+      imageMeta: this.$store.state.content.pages.contacts.metaTags
+        ? this.$store.state.content.pages.contacts.metaTags['metaImage']
+          ? baseUrl +
+            this.$store.state.content.pages.contacts.metaTags['metaImage'].url
+          : null
+        : null,
       mainTitle: this.$t('pages.contacts.mainTitleLocale'),
       formThemeLabel: this.$t('pages.contacts.subTitlesLocale[0]'),
       letterPlaceholder: this.$t('pages.contacts.subTitlesLocale[1]'),
@@ -172,7 +175,7 @@ export default {
   color: #fff;
   width: 100%;
   background: #cbcbcb;
-  text-decoration: underline #b23438 11px;
+  text-decoration: underline var(--main-red) 11px;
 }
 
 .contacts__article {
@@ -191,7 +194,7 @@ export default {
   .contacts__title {
     font-size: 219px;
     padding: 48px 162px 54px 52px;
-    text-decoration: underline #b23438 40px;
+    text-decoration: underline var(--main-red) 40px;
   }
 
   .contacts__article {
@@ -210,7 +213,7 @@ export default {
   }
 
   .contacts__container:nth-of-type(2) {
-    background: linear-gradient(to right, #cbcbcb 50%, #b23438 50%);
+    background: linear-gradient(to right, #cbcbcb 50%, var(--main-red) 50%);
     flex-direction: column;
   }
   .contacts__title {

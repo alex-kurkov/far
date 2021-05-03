@@ -49,7 +49,7 @@ export default {
 .mission__sideblock {
   width: 100px;
   min-height: 440px;
-  background: #d5d5d5;
+  background: var(--main-grey);
   display: none;
 }
 .mission__info-wrapper {
@@ -74,7 +74,7 @@ export default {
   display: inline;
   white-space: pre-wrap;
   text-transform: uppercase;
-  /* text-decoration: underline solid 6px #b23438; */
+  /* text-decoration: underline solid 6px var(--main-red); */
 }
 
 .mission__title::before {
@@ -110,7 +110,7 @@ export default {
 
 .mission__about-link {
   font-family: 'Vollkorn', serif;
-  color: #b23438;
+  color: var(--main-red);
   font-size: 16px;
   font-weight: 600;
   line-height: 1.5;

@@ -55,7 +55,7 @@ export default {
   width: calc(100% - 150px);
   padding: 12px;
   overflow: hidden;
-  background: linear-gradient(to right, transparent 10%, #d5d5d5 10%);
+  background: linear-gradient(to right, transparent 10%, var(--main-grey) 10%);
 }
 .card__stamp-text {
   text-align: center;
@@ -66,7 +66,7 @@ export default {
   transform: translateX(-16px);
 }
 .card__title {
-  color: #b23438;
+  color: var(--main-red);
   font-family: 'Vollkorn', 'Times New Roman', serif;
   /* font-size: 28px; */
   font-size: 18px;
@@ -87,7 +87,7 @@ export default {
   font-size: 14px;
   font-weight: 400;
   overflow: hidden;
-  color: #313131;
+  color: var(--main-black);
   text-align: left;
   line-height: 1;
 }

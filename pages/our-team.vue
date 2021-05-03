@@ -41,9 +41,12 @@ export default {
       title: this.$t('pages.team.metaTagsLocale.metaTitle'),
       description: this.$t('pages.team.metaTagsLocale.metaDescription'),
       keywords: this.$t('pages.team.metaTagsLocale.metaKeyWords'),
-      image:
-        baseUrl +
-        this.$store.state.content.pages.team.metaTags['metaImage'].url,
+      imageMeta: this.$store.state.content.pages.mission.metaTags
+        ? this.$store.state.content.pages.mission.metaTags['metaImage']
+          ? baseUrl +
+            this.$store.state.content.pages.mission.metaTags['metaImage'].url
+          : null
+        : null,
       members: this.$t('teamMembers'),
       promoTitle: this.$t('pages.team.mainTitleLocale'),
       promoImage:
@@ -80,7 +83,7 @@ export default {
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: this.image,
+          content: this.imageMeta,
         },
         {
           hid: 'twitter:image:alt',
@@ -100,12 +103,12 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: this.image,
+          content: this.imageMeta,
         },
         {
           hid: 'og:image:secure_url',
           property: 'og:image:secure_url',
-          content: this.image,
+          content: this.imageMeta,
         },
         {
           hid: 'og:image:alt',
@@ -141,7 +144,7 @@ export default {
     background: linear-gradient(to right, #000 50%, #fff 50%);
   }
   .our-team__members {
-    background: linear-gradient(to right, #727272 50%, #b23438 50%);
+    background: linear-gradient(to right, #727272 50%, var(--main-red) 50%);
   }
 }
 </style>

@@ -20,7 +20,7 @@ export default {
     },
     lineColor: {
       type: String,
-      default: '#b23438',
+      default: 'var(--main-red)',
     },
     height: {
       type: String,

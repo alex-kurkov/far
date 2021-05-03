@@ -17,10 +17,10 @@ export default {
   components: { AllReports, ReportsPromo, SupportButton, ToggleLanguage },
   data() {
     return {
-      title: this.$t('metaTags[1].title'),
-      description: this.$t('metaTags[1].description'),
-      keywords: this.$t('metaTags[1].keywords'),
-      image: baseUrl + this.$t('metaTags[1].image.url'),
+      title: '',
+      description: '',
+      keywords: '',
+      image: '',
     }
   },
   head() {

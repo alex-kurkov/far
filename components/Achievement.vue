@@ -35,7 +35,7 @@ export default {
 .achievement {
   width: 100vw;
   height: auto;
-  background: #d5d5d5;
+  background: var(--main-grey);
 }
 
 .achievement__title {
@@ -44,7 +44,7 @@ export default {
   font-size: 40px;
   line-height: 0.8;
   padding: 16px;
-  color: #d5d5d5;
+  color: var(--main-grey);
   -webkit-text-stroke: 1px #000;
   text-align: left;
 }
@@ -66,7 +66,7 @@ export default {
 }
 .achievement__gethelp-link {
   font-family: 'Vollkorn', serif;
-  color: #b23438;
+  color: var(--main-red);
   font-size: 16px;
   font-weight: 600;
   line-height: 1.5;

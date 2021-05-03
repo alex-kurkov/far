@@ -56,26 +56,25 @@ import { baseUrl } from '@/utils/api'
 import Requisites from '@/components/Requisites'
 import SmileIcon from '@/components/icons/smile'
 import ToggleLanguage from '../components/promo/ToggleLanguage.vue'
+import Support from '@/components/Support'
 export default {
   components: {
     Requisites,
     SmileIcon,
     ToggleLanguage,
+    Support
   },
   data() {
     return {
-      title: this.$store.state.content.pages.support.metaTags['metaTitle'][
-        this.$i18n.locale
-      ],
-      description: this.$store.state.content.pages.support.metaTags[
-        'metaDescription'
-      ][this.$i18n.locale],
-      keywords: this.$store.state.content.pages.support.metaTags[
-        'metaKeyWords'
-      ][this.$i18n.locale],
-      image:
-        baseUrl +
-        this.$store.state.content.pages.support.metaTags['metaImage'].url,
+      title: this.$t('pages.mission.metaTagsLocale.metaTitle'),
+      description: this.$t('pages.mission.metaTagsLocale.metaDescription'),
+      keywords: this.$t('pages.mission.metaTagsLocale.metaKeyWords'),
+      imageMeta: this.$store.state.content.pages.mission.metaTags
+        ? this.$store.state.content.pages.mission.metaTags['metaImage']
+          ? baseUrl +
+            this.$store.state.content.pages.mission.metaTags['metaImage'].url
+          : null
+        : null,
       introText: this.$store.state.content.pages.support.pageTexts[0][
         this.$i18n.locale
       ],
@@ -135,7 +134,7 @@ export default {
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: this.image,
+          content: this.imageMeta,
         },
         {
           hid: 'twitter:image:alt',
@@ -155,12 +154,12 @@ export default {
         {
           hid: 'og:image',
           property: 'og:image',
-          content: this.image,
+          content: this.imageMeta,
         },
         {
           hid: 'og:image:secure_url',
           property: 'og:image:secure_url',
-          content: this.image,
+          content: this.imageMeta,
         },
         {
           hid: 'og:image:alt',
@@ -193,7 +192,7 @@ export default {
 }
 
 .support-page__text_type_intro {
-  color: #b23438;
+  color: var(--main-red);
   font-style: italic;
   font-size: 18px;
   line-height: 1;
@@ -223,7 +222,7 @@ export default {
 }
 
 .support-page__subtitle {
-  color: #b23438;
+  color: var(--main-red);
   margin: 0;
   padding: 19px 0 0 0;
   font-family: 'Vollkorn', Arial, Helvetica, sans-serif;
@@ -254,7 +253,7 @@ export default {
   float: right;
   width: 44%;
   height: auto;
-  border: 20px solid #b23438;
+  border: 20px solid var(--main-red);
   margin: 0 0 12px 12px;
 }
 
@@ -307,7 +306,7 @@ export default {
   }
 
   .support-page__qr-code {
-    border: 37px solid #b23438;
+    border: 37px solid var(--main-red);
   }
 }
 
@@ -322,7 +321,7 @@ export default {
 
   .support-page__container:nth-of-type(2) {
     overflow: hidden;
-    background: #b23438;
+    background: var(--main-red);
   }
 
   .support-page__text {
@@ -385,7 +384,7 @@ export default {
 
   .support-page__qr-code {
     width: 242px;
-    border: 22px solid #b23438;
+    border: 22px solid var(--main-red);
     position: absolute;
     z-index: 5;
     right: -23px;

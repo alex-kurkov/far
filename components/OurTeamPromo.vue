@@ -49,7 +49,7 @@ export default {
 }
 
 .our-team-promo__title {
-  color: #b23438;
+  color: var(--main-red);
   min-height: 245px;
   font-family: 'Vollkorn', Arial, Helvetica, sans-serif;
   font-weight: 500;

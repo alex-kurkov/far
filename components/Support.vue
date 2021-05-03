@@ -235,7 +235,7 @@ export default {
   font-weight: 500;
   font-size: 45px;
   line-height: 0.7;
-  color: #b23438;
+  color: var(--main-red);
   -webkit-text-stroke: unset;
   letter-spacing: -3px;
 }
@@ -258,7 +258,7 @@ export default {
   border: none;
   background: transparent;
   border-bottom: 1px solid #727272;
-  color: #b23438;
+  color: var(--main-red);
   font-family: 'Vollkorn', sans-serif;
   font-weight: 400;
   font-size: 19px;
@@ -269,7 +269,7 @@ export default {
 
 .support__input_invalid {
   color: #727272;
-  border-bottom: 1px solid #b23438;
+  border-bottom: 1px solid var(--main-red);
 }
 
 .support__input:focus {
@@ -281,7 +281,7 @@ export default {
   font-weight: 400;
   font-size: 11px;
   line-height: 1.2;
-  color: #b23438;
+  color: var(--main-red);
   margin: 5px 0 5px 0;
   align-self: flex-start;
   padding: 0 0 0 13px;
@@ -290,7 +290,7 @@ export default {
 .support__submit-btn {
   border: none;
   box-shadow: none;
-  background: #b23438;
+  background: var(--main-red);
   border-radius: 50%;
   min-height: 54px;
   width: 79%;

@@ -56,7 +56,7 @@ export default {
   margin: 0;
 }
 .report-promo__title {
-  color: #313131;
+  color: var(--main-black);
   font-family: 'Vollkorn', Arial, sans-serif;
   font-size: 32px;
   line-height: 0.8;

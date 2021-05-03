@@ -8,9 +8,9 @@ class Api {
     return axios.get(`${this._baseURL}/achievements`)
   }
 
-  getHelp() {
-    return axios.get(`${this._baseURL}/index-help`)
-  }
+  // getHelp() {
+  //   return axios.get(`${this._baseURL}/index-help`)
+  // }
 
   getSupport() {
     return axios.get(`${this._baseURL}/index-support`)
@@ -20,9 +20,9 @@ class Api {
     return axios.get(`${this._baseURL}/footer`)
   }
 
-  getMetas() {
-    return axios.get(`${this._baseURL}/metas`)
-  }
+  // getMetas() {
+  //   return axios.get(`${this._baseURL}/metas`)
+  // }
 
   getPages() {
     return axios.get(`${this._baseURL}/pages`)
@@ -52,11 +52,11 @@ class Api {
   getData() {
     return Promise.all([
       this.getAchievements(),
-      this.getHelp(),
+      // this.getHelp(),
       this.getSupport(),
       // this.getAchievement(),
       this.getFooter(),
-      this.getMetas(),
+      // this.getMetas(),
       this.getPages(),
       this.getTeamMembers(),
       this.getMenu(),

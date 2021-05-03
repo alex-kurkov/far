@@ -52,7 +52,7 @@ export default {
 
 .contact__name {
   font-family: 'Vollkorn', Arial, Helvetica, serif;
-  color: #b23438;
+  color: var(--main-red);
   font-weight: 800;
   font-size: 22px;
   line-height: 1;
@@ -90,7 +90,7 @@ export default {
   font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: 800;
   color: #fff;
-  background: #b23438;
+  background: var(--main-red);
   border-radius: 50%;
   z-index: 1;
   width: 143px;

@@ -128,7 +128,7 @@ export default {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 15px;
-  color: #313131;
+  color: var(--main-black);
   line-height: 1.3;
 }
 
@@ -138,11 +138,11 @@ export default {
 }
 
 .pay-options__option-btn_invalid {
-  border: 1px solid #b23438;
+  border: 1px solid var(--main-red);
 }
 
 .pay-options__radio:checked + .pay-options__option-btn {
-  background: #b23438;
+  background: var(--main-red);
   color: #fff;
 }
 

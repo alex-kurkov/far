@@ -1,27 +1,28 @@
 <template>
   <section class="help">
-    <h3 class="help__title">{{ $t('help.title') }}</h3>
+    <h3 class="help__title">{{ $t('pages.index.subTitlesLocale[16]') }}</h3>
     <p class="help__text">
-      {{ $t('help.text') }}
+      {{ $t('pages.index.pageTextsLocale[1]') }}
     </p>
     <Icon name="blade" class="help__blade"></Icon>
     <nuxt-link :to="helpLink" class="help__link"
-      >{{ $t('help.link') }} &rsaquo;</nuxt-link
+      >{{ this.$t('pages.index.subTitlesLocale[19]') }} &rsaquo;</nuxt-link
     >
     <a :href="telLink" class="help__ellipse help__ellipse_type_tel">{{
-      mainTel
+      this.$t('pages.index.subTitlesLocale[18]')
     }}</a>
     <a
       :href="emailLink"
       target="_blank"
       rel="noreferrer noopener"
       class="help__ellipse help__ellipse_type_email"
-      >{{ mainEmail }}</a
+      >{{ $t('pages.index.subTitlesLocale[17]') }}</a
     >
     <nuxt-link to="/support" class="help__logo-link">
       <Icon name="logo" class="help__logo" />
     </nuxt-link>
     <p class="help__side-text">TELEGRAM/WHATSAPPMAIL</p>
+    <!--    <p class="help__side-text">{{ $t ('pages.index.subTitlesLocale[15]') }}</p>-->
   </section>
 </template>
 
@@ -34,12 +35,9 @@ export default {
   },
   data() {
     return {
-      // phone: this.$store.state.content.help.phone,
-      helpLink: this.$store.state.content.help.link,
-      mainTel: this.$t('pages.contacts.subTitlesLocale[5]'),
-      mainEmail: this.$t('pages.contacts.subTitlesLocale[6]'),
-      telLink: 'tel:' + this.$t('pages.contacts.subTitlesLocale[5]'),
-      emailLink: 'mailto:' + this.$t('pages.contacts.subTitlesLocale[6]'),
+      helpLink: this.$t('pages.index.subTitlesLocale[20]'),
+      telLink: 'tel:' + this.$t('pages.index.subTitlesLocale[18]'),
+      emailLink: 'mailto:' + this.$t('pages.index.subTitlesLocale[17]'),
     }
   },
 }
@@ -57,7 +55,7 @@ export default {
 }
 
 .help__title {
-  background: #b23438;
+  background: var(--main-red);
   min-height: 92px;
   width: 100%;
   font-family: 'Vollkorn', sans-serif;
@@ -68,7 +66,7 @@ export default {
   padding: 16px;
   text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
   mix-blend-mode: multiply;
-  color: #b23438;
+  color: var(--main-red);
   text-align: left;
 }
 
@@ -77,7 +75,7 @@ export default {
   font-weight: 400;
   line-height: 1.1;
   text-align: left;
-  color: #313131;
+  color: var(--main-black);
   padding: 28px 78px 28px 16px;
 }
 
@@ -92,13 +90,13 @@ export default {
 .help__link {
   padding: 0;
   margin: 0 0 39px 16px;
-  color: #b23438;
+  color: var(--main-red);
   font-family: 'Vollkorn', sans-serif;
   font-weight: 800;
   font-size: 17px;
   line-height: 1.5;
   text-decoration: none;
-  border-bottom: 1px solid #b23438;
+  border-bottom: 1px solid var(--main-red);
   transition: opacity 0.5s linear;
 }
 
@@ -188,7 +186,7 @@ export default {
   font-style: italic;
   line-height: 0.9;
   color: transparent;
-  -webkit-text-stroke: 1px #b23438;
+  -webkit-text-stroke: 1px var(--main-red);
 }
 
 @media screen and (min-width: 768px) {

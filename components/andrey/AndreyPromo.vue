@@ -78,14 +78,14 @@ export default {
   position: relative;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to right, #000 50%, #b23438 50%);
+  background: linear-gradient(to right, #000 50%, var(--main-red) 50%);
 }
 
 .andrey-rylkov-promo__whois {
   min-height: 197px;
   box-sizing: border-box;
   margin: 0;
-  background-color: #b23438;
+  background-color: var(--main-red);
   background-repeat: no-repeat;
   background-position: bottom 20px right 75px;
 }
@@ -135,7 +135,7 @@ export default {
   }
 
   .andrey-rylkov-promo__whois {
-    background-color: #b23438;
+    background-color: var(--main-red);
     width: 40%;
     height: auto;
     background-position: top 0 right 0;

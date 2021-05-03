@@ -31,7 +31,7 @@ export default {
   left: 0;
   width: 40px;
   height: 40px;
-  background-color: #313131;
+  background-color: var(--main-black);
   border-radius: 50%;
   display: grid;
   place-items: center;

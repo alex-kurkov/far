@@ -92,11 +92,11 @@ export default {
 }
 .custom-page_red {
   color: #fff;
-  background-color: #b23438;
+  background-color: var(--main-red);
 }
 
 .custom-page_grey {
-  color: #b23438;
+  color: var(--main-red);
   background-color: #b3b3b3;
 }
 </style>

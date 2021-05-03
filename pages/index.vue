@@ -10,6 +10,7 @@
     <section class="container__donations">
       <Help />
       <Support :isOnSupportPage="false" />
+
     </section>
     <ToggleLanguage />
   </div>
@@ -41,66 +42,79 @@ export default {
   },
   name: 'index',
   data() {
-    return {}
+    return {
+      title: this.$t('pages.index.metaTagsLocale.metaTitle'),
+      description: this.$t('pages.index.metaTagsLocale.metaDescription'),
+      keywords: this.$t('pages.index.metaTagsLocale.metaKeyWords'),
+      imageMeta: this.$store.state.content.pages.index.metaTags
+        ? this.$store.state.content.pages.index.metaTags['metaImage']
+          ? baseUrl +
+            this.$store.state.content.pages.index.metaTags['metaImage'].url
+          : null
+        : null,
+    }
+  },
+  mounted() {
+    console.log(this.$store.state.content.pages.index)
   },
   head() {
     return {
-      title: this.$t('metaTags[0].title'),
+      title: this.title,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.$t('metaTags[0].description'),
+          content: this.description,
         },
         {
           hid: 'keywords',
           name: 'keywords',
-          content: this.$t('metaTags[0].keywords'),
+          content: this.keywords,
         },
         {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: this.$t('metaTags[0].title'),
+          content: this.title,
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: this.$t('metaTags[0].description'),
+          content: this.description,
         },
         {
           hid: 'twitter:image',
           name: 'twitter:image',
-          content: baseUrl + this.$t('metaTags[0].image.url'),
+          content: this.imageMeta,
         },
         {
           hid: 'twitter:image:alt',
           name: 'twitter:image:alt',
-          content: this.$t('metaTags[0].title'),
+          content: this.title,
         },
         {
           hid: 'og:title',
           property: 'og:title',
-          content: this.$t('metaTags[0].title'),
+          content: this.title,
         },
         {
           hid: 'og:description',
           property: 'og:description',
-          content: this.$t('metaTags[0].description'),
+          content: this.description,
         },
         {
           hid: 'og:image',
           property: 'og:image',
-          content: baseUrl + this.$t('metaTags[0].image.url'),
+          content: this.imageMeta,
         },
         {
           hid: 'og:image:secure_url',
           property: 'og:image:secure_url',
-          content: baseUrl + this.$t('metaTags[0].image.url'),
+          content: this.imageMeta,
         },
         {
           hid: 'og:image:alt',
           property: 'og:image:alt',
-          content: this.$t('metaTags[0].title'),
+          content: this.title,
         },
       ],
     }
@@ -140,14 +154,14 @@ export default {
     flex-direction: row;
     width: 100%;
     justify-content: center;
-    background: linear-gradient(to right, #d5d5d5 50%, #b23438 50%);
+    background: linear-gradient(to right, var(--main-grey) 50%, var(--main-red) 50%);
   }
 
   .container__donations {
     flex-direction: row;
     width: 100%;
     justify-content: center;
-    background: linear-gradient(to right, #000 50%, #d5d5d5 50%),
+    background: linear-gradient(to right, #000 50%, var(--main-grey) 50%),
       linear-gradient(to right, #000 50%, #fff 50%);
     background-repeat: no-repeat;
     background-size: 100vw 615px;
