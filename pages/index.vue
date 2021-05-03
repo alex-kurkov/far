@@ -10,6 +10,7 @@
     <section class="container__donations">
       <Help />
       <Support :isOnSupportPage="false" />
+
     </section>
     <ToggleLanguage />
   </div>

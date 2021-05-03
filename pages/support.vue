@@ -2,7 +2,6 @@
   <section class="support-page">
     <div class="support-page__container">
       <Support :isOnSupportPage="true" class="support-page__support" />
-      ````````````````
       <article class="support-page__text support-page__text_type_intro">
         {{ introText }}
         <span class="support-page__arrows"
@@ -57,11 +56,13 @@ import { baseUrl } from '@/utils/api'
 import Requisites from '@/components/Requisites'
 import SmileIcon from '@/components/icons/smile'
 import ToggleLanguage from '../components/promo/ToggleLanguage.vue'
+import Support from '@/components/Support'
 export default {
   components: {
     Requisites,
     SmileIcon,
     ToggleLanguage,
+    Support
   },
   data() {
     return {
