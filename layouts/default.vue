@@ -11,7 +11,17 @@
 import Notification from '../components/Notification.vue'
 export default {
   components: { Notification },
-  mounted() {
+  created() {
+    this.$i18n.mergeLocaleMessage(
+      'ru',
+      this.$store.getters.getLocaleMessage('ru')
+    )
+    this.$i18n.mergeLocaleMessage(
+      'en',
+      this.$store.getters.getLocaleMessage('en')
+    )
+  },
+   mounted() {
     const cookiesAccepted = localStorage.getItem('cookiesAccepted')
     if (!cookiesAccepted) {
       this.$notify({
@@ -30,16 +40,6 @@ export default {
         },
       })
     }
-  },
-  created() {
-    this.$i18n.mergeLocaleMessage(
-      'ru',
-      this.$store.getters.getLocaleMessage('ru')
-    )
-    this.$i18n.mergeLocaleMessage(
-      'en',
-      this.$store.getters.getLocaleMessage('en')
-    )
   },
 }
 </script>

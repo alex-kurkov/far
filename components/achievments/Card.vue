@@ -44,6 +44,8 @@ export default {
   overflow: hidden;
   flex-wrap: nowrap;
   background: transparent;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .card__stamp {
   display: flex;
