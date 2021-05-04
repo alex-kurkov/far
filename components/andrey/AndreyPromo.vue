@@ -79,6 +79,7 @@ export default {
   display: flex;
   flex-direction: column;
   background: linear-gradient(to right, #000 50%, var(--main-red) 50%);
+  overflow: hidden;
 }
 
 .andrey-rylkov-promo__whois {
@@ -98,6 +99,7 @@ export default {
   color: white;
   min-width: calc(100vw - 65 * (100vw - 768px) / 224);
   height: auto;
+  object-fit: cover;
 }
 
 .andrey-rylkov-promo__logo-link {

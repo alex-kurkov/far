@@ -90,7 +90,7 @@
             : $t('support.paymentBtnOnSupPage')
         }}
       </button>
-      <NuxtLink class="support__link" to="#">{{
+      <NuxtLink class="support__link" to="/cp/privacy-policy">{{
         $t('support.privacy')
       }}</NuxtLink>
     </form>

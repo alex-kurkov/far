@@ -16,7 +16,7 @@
       <h3 class="custom-page__text-title">
         {{ getCustomPageSubTitle(currentPage, 1) }}
       </h3>
-      <p class="custom-page__text">{{ getCustomPageText(currentPage, 0) }}</p>
+      <article class="custom-page__text">{{ getCustomPageText(currentPage, 0) }}</article>
       <!-- <ul class="custom-page__sections">
         <li
           v-for="element in getCustomPageSections(currentPage)"
