@@ -200,7 +200,7 @@ export default {
     width: 367px;
     right: -48px;
     top: -22px;
-    z-index: 20;
+    z-index: 15;
   }
 
   .help__text {

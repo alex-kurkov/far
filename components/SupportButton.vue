@@ -28,7 +28,7 @@ export default {
   position: fixed;
   top: 55%;
   right: 0;
-  z-index: 10;
+  z-index: 21;
 }
 
 .sup-button__link {

@@ -351,7 +351,7 @@ export default {
   }
 
   .support__title {
-    font-size: 90px;
+    font-size: 88px;
     width: 58%;
     line-height: 0.8;
     -webkit-text-stroke: 2px #000;
