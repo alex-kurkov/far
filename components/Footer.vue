@@ -63,6 +63,7 @@ export default {
 .footer__social-text {
   font-family: 'Roboto Slab', sans-serif;
   font-weight: 400;
+  font-size: 11px;
 }
 
 .footer__logo {
@@ -75,6 +76,8 @@ export default {
   grid-area: license;
   padding-top: 25px;
   text-align: center;
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 11px;
 }
 
 .footer__disclaimer {
@@ -82,6 +85,8 @@ export default {
   padding-top: 20px;
   text-align: center;
   grid-area: disclamer;
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 11px;
 }
 
 .footer__social {
@@ -96,10 +101,14 @@ export default {
   grid-area: copyright;
   text-align: center;
   padding: 25px 0 25px 0;
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 11px;
 }
 
 .footer__link {
   color: #999;
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 11px;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -122,20 +131,26 @@ export default {
   }
   .footer__disclaimer {
     padding-top: 60px;
+    font-size: 30px;
   }
   .footer__license {
     padding-top: 60px;
+    font-size: 30px;
   }
 
   .footer__copyright {
     padding: 70px 0 175px 0;
+    font-size: 30px;
+  }
+
+  .footer__link {
+    font-size: 30px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .footer {
     display: grid;
-    font-size: 20px;
     padding: 20px 30px 10px 30px;
   }
 

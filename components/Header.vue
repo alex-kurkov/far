@@ -1,15 +1,9 @@
 <template>
-  <div>
-    <header
-      class="header"
-      @mouseleave="toggleScroll"
-      @mouseenter="toggleScroll"
-    >
-      <span :class="`header__marquee header__marquee_animated_${animated}`">
-        {{ this.$t('header') }}
-      </span>
-    </header>
-  </div>
+  <header class="header" @mouseleave="toggleScroll" @mouseenter="toggleScroll">
+    <span :class="`header__marquee header__marquee_animated_${animated}`">
+      {{ this.$t('header') }}
+    </span>
+  </header>
 </template>
 
 <script>
