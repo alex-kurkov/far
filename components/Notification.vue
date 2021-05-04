@@ -3,7 +3,10 @@
     <template slot="body" slot-scope="{ item, close }">
       <div
         :class="`notification notification_type_${item.data.type}`"
-        @click="close"
+        @click="() => {
+          close();
+          if (item.data.action) item.data.action();
+          }"
       >
         <div class="notification__content">
           <h4 class="notification__title" v-html="item.title" />
@@ -12,7 +15,7 @@
             v-if="item.data.action"
             class="notification__btn"
             v-html="item.data.actionBtnText"
-            @click.prevent="item.data.action"
+            @click="item.data.action"
           />
         </div>
       </div>
