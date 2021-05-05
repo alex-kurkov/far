@@ -7,6 +7,7 @@
         name="periodCheckbox"
         value=""
         class="tumbler__checkbox"
+        @change="handleChange"
         v-model.trim="$v.choice.$model"
       />
       <span class="tumbler__slider"></span>
@@ -25,11 +26,21 @@ export default {
       choice: false,
     }
   },
+  props: {
+    onChoiceUpdate: {
+      type: Function
+    }
+  },
   validations: {
     choice: {
       required,
     },
   },
+  methods: {
+    handleChange() {
+      this.onChoiceUpdate(!this.choice)
+    }
+  }
 }
 </script>
 

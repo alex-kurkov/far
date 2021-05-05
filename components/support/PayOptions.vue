@@ -47,6 +47,7 @@
           class="pay-options__radio"
           :value="options.third.type"
           v-model.trim="$v.choice.$model"
+          :disabled="isAutoTrue"
         />
         <span
           class="pay-options__option-btn"
@@ -74,6 +75,10 @@ export default {
         second: () => ({}),
         third: () => ({}),
       }),
+    },
+    isAutoTrue: {
+      type: Boolean,
+      default: true,
     },
   },
   data() {
@@ -141,6 +146,10 @@ export default {
   border: 1px solid var(--main-red);
 }
 
+.pay-options__radio:disabled + .pay-options__option-btn{
+  opacity: 0.3;
+  cursor: default;
+}
 .pay-options__radio:checked + .pay-options__option-btn {
   background: var(--main-red);
   color: #fff;
