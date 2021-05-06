@@ -38,7 +38,7 @@ export default {
 }
 
 .toggle-switcher-link {
-  color: var( --simple-white);
+  color: var(--simple-white);
   font-family: 'Vollkorn', Arial, sans-serif;
   font-style: italic;
   text-transform: lowercase;

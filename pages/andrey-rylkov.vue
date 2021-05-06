@@ -194,7 +194,7 @@ export default {
   font-family: 'Vollkorn', Arial, sans-serif;
   margin: 0;
   padding: 0 0 17px;
-  background: var( --simple-white);
+  background: var(--simple-white);
 }
 
 .andrey-rylkov__content {
@@ -213,7 +213,7 @@ export default {
   font-family: 'Vollkorn', Arial, sans-serif;
   padding: 25px 0;
   align-self: flex-start;
-  background: var( --simple-white);
+  background: var(--simple-white);
 }
 
 .andrey-rylkov__subtitle_color_red {
@@ -227,7 +227,7 @@ export default {
 .andrey-rylkov__link {
   font-size: 15px;
   line-height: 1;
-  color: var( --main-red);
+  color: var(--main-red);
   font-weight: 800;
   font-style: normal;
   font-family: 'Vollkorn', Arial, sans-serif;
@@ -236,11 +236,11 @@ export default {
 .andrey-rylkov__text {
   font-size: 14px;
   line-height: 16px;
-  color: var( --lovely-grey);
+  color: var(--lovely-grey);
   font-weight: 400;
   font-family: 'Vollkorn', Arial, serif;
   padding: 0 0 30px;
-  background: var( --simple-white);
+  background: var(--simple-white);
 }
 
 .andrey-rylkov__text:last-of-type {
@@ -248,7 +248,7 @@ export default {
 }
 
 .andrey-rylkov__video-container {
-  background: var( --simple-white);
+  background: var(--simple-white);
   width: 100%;
 }
 
@@ -282,11 +282,19 @@ export default {
 
 @media screen and (min-width: 1280px) {
   .andrey-rylkov {
-    background: linear-gradient(to right, var(--simple-black) 50%, var( --main-red) 50%);
+    background: linear-gradient(
+      to right,
+      var(--simple-black) 50%,
+      var(--main-red) 50%
+    );
   }
 
   .andrey-rylkov__container {
-    background: linear-gradient(to right, var( --main-red) 50%, var(--light-grey) 50%);
+    background: linear-gradient(
+      to right,
+      var(--main-red) 50%,
+      var(--light-grey) 50%
+    );
     width: 100%;
     display: flex;
     justify-content: center;
@@ -296,7 +304,7 @@ export default {
   .andrey-rylkov__content {
     flex-direction: row;
     flex-wrap: wrap;
-    background: var( --simple-white);
+    background: var(--simple-white);
     max-width: 1100px;
   }
 

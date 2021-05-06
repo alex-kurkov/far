@@ -125,7 +125,7 @@ export default {
   height: 33px;
   box-shadow: none;
   border: none;
-  background: var( --simple-white);
+  background: var(--simple-white);
   border-radius: 17px;
   display: flex;
   justify-content: center;
@@ -146,13 +146,13 @@ export default {
   border: 1px solid var(--main-red);
 }
 
-.pay-options__radio:disabled + .pay-options__option-btn{
+.pay-options__radio:disabled + .pay-options__option-btn {
   opacity: 0.3;
   cursor: default;
 }
 .pay-options__radio:checked + .pay-options__option-btn {
   background: var(--main-red);
-  color: var( --simple-white);
+  color: var(--simple-white);
 }
 
 @media screen and (min-width: 768px) {

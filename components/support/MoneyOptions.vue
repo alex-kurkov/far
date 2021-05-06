@@ -167,7 +167,7 @@ export default {
 .money-options__option-btn {
   min-width: 133px;
   height: 83px;
-  background: var( --simple-white);
+  background: var(--simple-white);
   color: rgba(0, 0, 0, 0.2);
   font-family: 'Tomorrow Wind', sans-serif;
   font-size: 108px;
@@ -202,15 +202,17 @@ export default {
 }
 
 .money-options__ruble {
-  color: var( --simple-white);
+  color: var(--simple-white);
   font-family: 'Druk Cyr', sans-serif;
   font-size: 84px;
-  text-shadow: -2px 0 var(--light-grey), 0 2px var(--light-grey), 2px 0 var(--light-grey), 0 -2px var(--light-grey);
+  text-shadow: -2px 0 var(--light-grey), 0 2px var(--light-grey),
+    2px 0 var(--light-grey), 0 -2px var(--light-grey);
   mix-blend-mode: multiply;
 }
 
 .money-options__radio:checked ~ span > span {
-  text-shadow: -2px 0 var(--simple-black), 0 2px var(--simple-black), 2px 0 var(--simple-black), 0 -2px var(--simple-black);
+  text-shadow: -2px 0 var(--simple-black), 0 2px var(--simple-black),
+    2px 0 var(--simple-black), 0 -2px var(--simple-black);
 }
 
 .money-options__sum-option {

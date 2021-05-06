@@ -1,7 +1,11 @@
 <template>
   <div class="hamburger">
     <div class="hamburger__menu">
-      <HamburgerIcon :displayObj="displayObj" :handleMenuClick="handleMenuClick" :isMenuOpen="isMenuOpen"/>
+      <HamburgerIcon
+        :displayObj="displayObj"
+        :handleMenuClick="handleMenuClick"
+        :isMenuOpen="isMenuOpen"
+      />
       <icon name="drop" class="hamburger__drop"></icon>
     </div>
     <FallingDrop :isMenuOpen="isMenuOpen" />
@@ -16,7 +20,7 @@ import Icon from '~/components/Icon'
 import HamburgerIcon from './hamburger/HamburgerIcon'
 export default {
   name: 'Hamburger',
-  components: { FallingDrop, Navigation, Icon, HamburgerIcon},
+  components: { FallingDrop, Navigation, Icon, HamburgerIcon },
   data() {
     return {
       isMenuOpen: false,
@@ -50,7 +54,7 @@ export default {
 <style scoped>
 .hamburger {
   color: white;
-  background: var( --simple-white);
+  background: var(--simple-white);
   position: relative;
   z-index: 20;
 }
@@ -100,5 +104,4 @@ export default {
     top: 257px;
   }
 }
-
 </style>

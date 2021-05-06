@@ -1,6 +1,6 @@
 <template>
   <li class="contact">
-    <img class="contact__image" :src="image"  alt='contact__image'/>
+    <img class="contact__image" :src="image" alt="contact__image" />
     <p class="contact__name">{{ name }}</p>
     <p class="contact__position">{{ position }}</p>
     <a class="contact__tel" :href="telLink">{{ tel }}</a>
@@ -89,7 +89,7 @@ export default {
   transform: translate(0, -70%);
   font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: 800;
-  color: var( --simple-white);
+  color: var(--simple-white);
   background: var(--main-red);
   border-radius: 50%;
   z-index: 1;

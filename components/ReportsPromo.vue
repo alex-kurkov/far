@@ -16,7 +16,11 @@
         "
       />
       <div class="report-promo__graphics">
-        <Bolt class="report-promo__svg" mainColor="var(--simple-black)" boltColor="#fff" />
+        <Bolt
+          class="report-promo__svg"
+          mainColor="var(--simple-black)"
+          boltColor="#fff"
+        />
       </div>
     </div>
   </section>
@@ -32,7 +36,11 @@ export default {
 
 <style scoped>
 .report-promo {
-  background: linear-gradient(to right, var(--simple-black) 50%, var( --pure-grey) 0);
+  background: linear-gradient(
+    to right,
+    var(--simple-black) 50%,
+    var(--pure-grey) 0
+  );
 }
 .report-promo__content {
   padding: 24px 0;
@@ -41,7 +49,7 @@ export default {
   margin: 0 auto;
   height: auto;
   width: 100%;
-  background-color: var( --simple-white);
+  background-color: var(--simple-white);
   display: grid;
   grid-template-areas:
     'title title'
@@ -73,7 +81,7 @@ export default {
   font-family: 'Vollkorn', Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
-  color: var( --lovely-grey);
+  color: var(--lovely-grey);
   padding: 8px;
   width: 120%;
 }

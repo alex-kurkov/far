@@ -37,7 +37,11 @@ export default {
 <style scoped>
 .promo {
   width: 100%;
-  background: linear-gradient(to bottom, var(--main-red) 51px, var(--light-grey) 51px);
+  background: linear-gradient(
+    to bottom,
+    var(--main-red) 51px,
+    var(--light-grey) 51px
+  );
   /* color: white;
   text-align: left;
   display: grid;
@@ -76,11 +80,12 @@ export default {
 }
 
 .promo__ruble {
-  color: var( --simple-white);
+  color: var(--simple-white);
   font-family: 'Druk Cyr', sans-serif;
   font-weight: 500;
   font-size: 94px;
-  text-shadow: -1px 0 var(--simple-black), 0 1px var(--simple-black), 1px 0 var(--simple-black), 0 -1px var(--simple-black);
+  text-shadow: -1px 0 var(--simple-black), 0 1px var(--simple-black),
+    1px 0 var(--simple-black), 0 -1px var(--simple-black);
   mix-blend-mode: multiply;
 }
 
@@ -147,7 +152,11 @@ export default {
 @media screen and (min-width: 768px) {
   .promo {
     column-gap: 25px;
-    background: linear-gradient(to bottom, var(--main-red) 78px, var(--light-grey) 78px);
+    background: linear-gradient(
+      to bottom,
+      var(--main-red) 78px,
+      var(--light-grey) 78px
+    );
   }
 
   .promo__eye {
@@ -187,7 +196,11 @@ export default {
     padding: 0;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to bottom, var(--main-red) 96px, var(--light-grey) 96px);
+    background: linear-gradient(
+      to bottom,
+      var(--main-red) 96px,
+      var(--light-grey) 96px
+    );
     grid-template-rows: repeat(4, 0.25fr) 1fr;
     grid-template-columns:
       0.8fr minmax(min-content, max-content)
@@ -224,7 +237,8 @@ export default {
 
   .promo__ruble {
     font-size: 164px;
-    text-shadow: -2px 0 var(--simple-black), 0 2px var(--simple-black), 2px 0 var(--simple-black), 0 -2px var(--simple-black);
+    text-shadow: -2px 0 var(--simple-black), 0 2px var(--simple-black),
+      2px 0 var(--simple-black), 0 -2px var(--simple-black);
   }
 
   .promo__link {

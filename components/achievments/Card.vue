@@ -63,7 +63,7 @@ export default {
   text-align: center;
   font-family: 'Tomorrow Wind', sans-serif;
   font-size: 104px;
-  color: var( --simple-white);
+  color: var(--simple-white);
   z-index: 6;
   transform: translateX(-16px);
 }
@@ -81,7 +81,7 @@ export default {
 .card__line {
   width: 100%;
   height: 2px;
-  background: var( --simple-white);
+  background: var(--simple-white);
   margin-bottom: 4px;
 }
 .card__text {

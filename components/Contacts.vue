@@ -30,7 +30,7 @@ export default {
   list-style: none;
   margin: 0;
   padding: 46px 0 0;
-  background: var( --simple-white);
+  background: var(--simple-white);
   display: flex;
   flex-direction: column;
   justify-content: center;

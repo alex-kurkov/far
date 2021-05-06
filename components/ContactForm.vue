@@ -261,13 +261,13 @@ export default {
 }
 
 .contact-form__input_type_theme {
-  background: var( --simple-white);
+  background: var(--simple-white);
 }
 
 .contact-form__input_type_letter {
   width: 100%;
   grid-column: 1/3;
-  background: var( --simple-white);
+  background: var(--simple-white);
   border-radius: 20px;
   font-weight: 500;
   font-size: 16px;
@@ -311,7 +311,7 @@ export default {
 
 .contact-form__arrows {
   font-size: 22px;
-  color: var( --simple-white);
+  color: var(--simple-white);
   position: absolute;
   bottom: 10px;
   left: 18px;
@@ -322,7 +322,7 @@ export default {
   box-shadow: none;
   border-radius: 12px;
   background: var(--main-red);
-  color: var( --simple-white);
+  color: var(--simple-white);
   font-family: 'Roboto', Arial, sans-serif;
   font-weight: 400;
   font-size: 13px;
@@ -399,7 +399,11 @@ export default {
     grid-template-columns: 0.25fr 1fr;
     order: 2;
     grid-gap: 10px;
-    background: linear-gradient(to right, var(--light-grey) 580px, var( --simple-white) 580px);
+    background: linear-gradient(
+      to right,
+      var(--light-grey) 580px,
+      var(--simple-white) 580px
+    );
   }
 
   .contact-form__input {

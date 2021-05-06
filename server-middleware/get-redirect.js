@@ -43,7 +43,7 @@ app.get('/', (req, res) => {
     .then((response) => {
       console.log(response)
       //в тестовом режиме оплата наличными не работает
-      if(response && type_of_payment !== 'cash') {
+      if (response && type_of_payment !== 'cash') {
         paymentId = response.payment_method.id
       }
       res.send(response)
@@ -66,7 +66,7 @@ app.get('/status', (req, res) => {
       return response.json()
     })
     .then((response) => {
-      console.log('status',response)
+      console.log('status', response)
       res.send(response)
     })
 })
