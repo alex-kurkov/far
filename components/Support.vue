@@ -257,7 +257,7 @@ export default {
   width: 100%;
   border: none;
   background: transparent;
-  border-bottom: 1px solid #727272;
+  border-bottom: 1px solid var(--another-grey);
   color: var(--main-red);
   font-family: 'Vollkorn', sans-serif;
   font-weight: 400;
@@ -268,7 +268,7 @@ export default {
 }
 
 .support__input_invalid {
-  color: #727272;
+  color: var(--another-grey);
   border-bottom: 1px solid var(--main-red);
 }
 
@@ -317,7 +317,7 @@ export default {
 }
 
 .support__link {
-  color: #727272;
+  color: var(--another-grey);
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 11px;
@@ -325,7 +325,7 @@ export default {
   text-decoration: none;
   padding: 0;
   margin: 0;
-  border-bottom: 1px solid #727272;
+  border-bottom: 1px solid var(--another-grey);
   transition: opacity 0.5s linear;
 }
 

@@ -73,7 +73,7 @@ export default {
   font-weight: 700;
 }
 .notification__text {
-  color: #666666;
+  color: var(--devil-grey);
   font-family: Roboto, sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -86,7 +86,7 @@ export default {
   font-family: 'Vollkorn', sans-serif;
   font-size: 24px;
   font-weight: 700;
-  color: #ff0000;
+  color: var(--real-red);
   text-decoration: underline;
 }
 </style>

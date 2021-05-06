@@ -126,7 +126,7 @@ export default {
 
 .custom-page_grey {
   color: var(--main-red);
-  background-color: #b3b3b3;
+  background-color: var( --again-grey);
 }
 
 .custom-page__container {
@@ -149,7 +149,7 @@ export default {
   font-style: italic;
   font-size: 110px;
   line-height: 0.8;
-  text-decoration: underline 11px #b23438;
+  text-decoration: underline 11px var( --main-red);
   background: var(--light-grey);
   width: 100%;
   color: #fff;
@@ -212,7 +212,7 @@ export default {
   .custom-page__title {
     font-size: 220px;
     padding: 40px 211px 43px 52px;
-    text-decoration: underline 43px #b23438;
+    text-decoration: underline 43px var( --main-red);
   }
 
   .custom-page__subtitle {
@@ -241,7 +241,7 @@ export default {
   }
 
   .custom-page__container {
-    background: linear-gradient(to right, #b23438 50%, var(--light-grey) 50%);
+    background: linear-gradient(to right, var( --main-red) 50%, var(--light-grey) 50%);
     width: 100%;
   }
   .custom-page__title {

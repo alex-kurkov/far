@@ -2,8 +2,8 @@
   <div class="sup-button">
     <NuxtLink to="/support" class="sup-button__link">
       <span class="sup-button__text">Поддержать</span>
-      <img class="sup-button__heart" :src="image" />
-      <img class="sup-button__logo" :src="logo" />
+      <img class="sup-button__heart" :src="image"  alt='sup-button__heart'/>
+      <img class="sup-button__logo" :src="logo"  alt='sup-button__logo'/>
     </NuxtLink>
   </div>
 </template>
@@ -32,7 +32,7 @@ export default {
 }
 
 .sup-button__link {
-  background: #9c212a;
+  background: var(--just-red);
   position: relative;
   display: flex;
   justify-content: center;
@@ -55,7 +55,7 @@ export default {
 .sup-button__text {
   writing-mode: vertical-rl;
   transform: rotate(-180deg);
-  color: #ebd3d4;
+  color: var(--simple-pink);
   font-family: 'Vollkorn', Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 16px;

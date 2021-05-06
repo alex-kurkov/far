@@ -57,7 +57,7 @@ export default {
   font-family: 'Roboto Slab', sans-serif;
   font-weight: 400;
   font-size: 11px;
-  color: #999;
+  color: var(--true-grey);
 }
 
 .footer__social-text {
@@ -72,7 +72,7 @@ export default {
 }
 
 .footer__license {
-  color: #999;
+  color: var(--true-grey);
   grid-area: license;
   padding-top: 25px;
   text-align: center;
@@ -81,7 +81,7 @@ export default {
 }
 
 .footer__disclaimer {
-  color: #999;
+  color: var(--true-grey);
   padding-top: 20px;
   text-align: center;
   grid-area: disclamer;
@@ -106,7 +106,7 @@ export default {
 }
 
 .footer__link {
-  color: #999;
+  color: var(--true-grey);
   font-family: 'Roboto Slab', sans-serif;
   font-size: 11px;
 }

@@ -82,7 +82,7 @@ export default {
   height: 8px;
   width: 89px;
   position: absolute;
-  background-color: #b33438;
+  background-color: var(--another-red);
   top: 24px;
   left: 12px;
 }
@@ -92,7 +92,7 @@ export default {
   height: 8px;
   width: 121px;
   position: absolute;
-  background-color: #b33438;
+  background-color: var(--another-red);
   top: 44px;
   left: 12px;
 }

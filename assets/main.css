@@ -101,11 +101,25 @@
 
 
 :root {
+  --light-yellow:lightyellow;
+  --just-yellow: #fdf5d8;
+  --simple-pink:#ebd3d4;
   --main-red: #b23438;
+  --another-red:#b33438;
+  --just-red:#9c212a;
+  --real-red:#ff0000;
   --main-black:#313131;
   --simple-black:#000000;
+  --another-black:#303030;
+  --blacky-grey:#493e3e;
+  --lovely-grey:#484848;
   --light-grey:#cbcbcb;
+  --pure-grey:#c8c8c8;
   --main-grey:#d5d5d5;
+  --again-grey:#b3b3b3;
+  --another-grey:#727272;
+  --devil-grey:#666666;
+  --true-grey:#999999;
   --just-grey:#7f7f7f;
   --simple-grey:#838383;
 }

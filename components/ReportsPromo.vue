@@ -5,7 +5,7 @@
         <HeavilyUnderlinedTitle
           class="report-promo__title"
           :title="'Финансовые и содержательные годовые отчеты'"
-          lineColor="#b33438"
+          lineColor="var(--another-red)"
           height="11"
         />
       </div>
@@ -32,7 +32,7 @@ export default {
 
 <style scoped>
 .report-promo {
-  background: linear-gradient(to right, var(--simple-black) 50%, #c8c8c8 0);
+  background: linear-gradient(to right, var(--simple-black) 50%, var( --pure-grey) 0);
 }
 .report-promo__content {
   padding: 24px 0;
@@ -73,7 +73,7 @@ export default {
   font-family: 'Vollkorn', Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
-  color: #484848;
+  color: var( --lovely-grey);
   padding: 8px;
   width: 120%;
 }

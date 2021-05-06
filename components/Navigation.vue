@@ -116,7 +116,7 @@ export default {
   position: fixed;
   top: 5px;
   right: 5px;
-  background-color: black;
+  background-color: var(--simple-black);
   z-index: 5;
 }
 
@@ -127,7 +127,7 @@ export default {
 }
 
 .navigation__main-menu-item {
-  border-bottom: 1px solid #fdf5d8;
+  border-bottom: 1px solid var(--just-yellow);
   display: flex;
   flex-direction: row;
   justify-content: space-between;

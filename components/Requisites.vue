@@ -117,7 +117,7 @@ export default {
 }
 
 .requisites__content {
-  background: #c8c8c8;
+  background: var( --pure-grey);
   border-radius: 20px;
   padding: 12px;
   width: 88%;
@@ -138,7 +138,7 @@ export default {
   font-weight: 400;
   font-size: 11px;
   line-height: 1.1;
-  color: #666;
+  color: var(--devil-grey);
   text-transform: none;
 }
 

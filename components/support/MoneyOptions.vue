@@ -224,7 +224,7 @@ export default {
 .money-options__sum {
   background: transparent;
   border: none;
-  border-bottom: 1px solid #727272;
+  border-bottom: 1px solid var(--another-grey);
   margin: 0 0 17px 0;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
@@ -238,7 +238,7 @@ export default {
 }
 
 .money-options__sum_invalid {
-  color: #727272;
+  color: var(--another-grey);
   border-bottom: 1px solid var(--main-red);
 }
 
@@ -272,7 +272,7 @@ export default {
   right: 0;
   bottom: 0;
   background-color: transparent;
-  border: 1px solid #727272;
+  border: 1px solid var(--another-grey);
   -webkit-transition: 0.4s;
   transition: 0.4s;
   border-radius: 4px;
@@ -294,7 +294,7 @@ export default {
   font-family: 'Roboto', sans-serif;
   font-size: 11px;
   line-height: 1.4;
-  color: #727272;
+  color: var(--another-grey);
   display: flex;
   justify-content: space-between;
   min-width: 104px;
@@ -302,9 +302,9 @@ export default {
 }
 
 .money-options__agreement-link {
-  color: #727272;
+  color: var(--another-grey);
   text-decoration: none;
-  border-bottom: 1px solid #727272;
+  border-bottom: 1px solid var(--another-grey);
   transition: opacity 0.5s linear;
 }
 

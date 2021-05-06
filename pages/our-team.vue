@@ -144,7 +144,7 @@ export default {
     background: linear-gradient(to right, var(--simple-black) 50%, #fff 50%);
   }
   .our-team__members {
-    background: linear-gradient(to right, #727272 50%, var(--main-red) 50%);
+    background: linear-gradient(to right, var(--another-grey) 50%, var(--main-red) 50%);
   }
 }
 </style>

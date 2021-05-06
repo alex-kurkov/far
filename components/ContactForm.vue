@@ -246,7 +246,7 @@ export default {
   font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: 400;
   font-style: normal;
-  color: #303030;
+  color: var(--another-black);
   font-size: 11px;
   padding: 5px;
 }

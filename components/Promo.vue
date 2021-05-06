@@ -80,7 +80,7 @@ export default {
   font-family: 'Druk Cyr', sans-serif;
   font-weight: 500;
   font-size: 94px;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-shadow: -1px 0 var(--simple-black), 0 1px var(--simple-black), 1px 0 var(--simple-black), 0 -1px var(--simple-black);
   mix-blend-mode: multiply;
 }
 
@@ -98,7 +98,7 @@ export default {
   grid-row: 1;
   grid-column: 2;
   font-size: 80px;
-  color: #727272;
+  color: var(--another-grey);
 }
 
 .promo__donation:nth-child(3) {
@@ -224,7 +224,7 @@ export default {
 
   .promo__ruble {
     font-size: 164px;
-    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    text-shadow: -2px 0 var(--simple-black), 0 2px var(--simple-black), 2px 0 var(--simple-black), 0 -2px var(--simple-black);
   }
 
   .promo__link {
