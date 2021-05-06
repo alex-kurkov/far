@@ -15,7 +15,7 @@
         backgroundColor="#fff"
         mainColor="#000"
       />
-      <Tumbler ref="regularity" />
+      <Tumbler ref="regularity" :onChoiceUpdate="onChoiceUpdate" />
       <PayOptions
         :options="{
           first: { value: $t('support.card'), type: typeCard },
@@ -28,6 +28,7 @@
             type: typeTerminal,
           },
         }"
+        :isAutoTrue="isAutoTrue"
         ref="payOptions"
       />
       <MoneyOptions
@@ -126,6 +127,7 @@ export default {
       typeCard: this.$store.state.content.support.supportCard.type,
       typeUmoney: this.$store.state.content.support.supportUMoney.type,
       typeTerminal: this.$store.state.content.support.supportTerminal.type,
+      isAutoTrue: true,
     }
   },
   props: {
@@ -148,6 +150,10 @@ export default {
     },
   },
   methods: {
+    onChoiceUpdate(choice) {
+      this.isAutoTrue = choice
+      this.$refs.payOptions.choice=''
+    },
     handleSubmit() {
       if (
         this.$v.$invalid ||
@@ -173,22 +179,55 @@ export default {
       this.callRedirect(
         this.$refs.moneyOptions.$v.choice.$model,
         returnUrl,
-        this.$refs.payOptions.$v.choice.$model
+        this.$refs.payOptions.$v.choice.$model,
+        !this.$refs.regularity.$v.choice.$model
       )
         .then((res) => {
-          console.log(res)
           if (this.$refs.payOptions.$v.choice.$model === 'cash') {
             console.log('Оплата наличными не работает в тестовом режиме')
+          } else {
+            // window.location.href = `${res.data.confirmation.confirmation_url}`
+            window.open(`${res.data.confirmation.confirmation_url}`, '_blank')
+            localStorage.setItem('paymentId', res.data.id)
           }
-          window.location.href = `${res.data.confirmation.confirmation_url}`
         })
         .catch((err) => console.log(err))
+      this.checkStatusForAutoPay()
     },
 
-    callRedirect(value, returnUrl, typeOfPayment) {
+    callRedirect(value, returnUrl, typeOfPayment, isSaved) {
       return axios.get(
-        `/server-middleware/get-redirect?value=${value}&currency=RUB&return_url=${returnUrl}&type_of_payment=${typeOfPayment}`
+        `/server-middleware/get-redirect?value=${value}&currency=RUB&return_url=${returnUrl}&type_of_payment=${typeOfPayment}&is_saved=${isSaved}`
       )
+    },
+    getStatus(paymentId) {
+      return axios.get(`/server-middleware/get-redirect/status?id=${paymentId}`)
+    },
+    autoPay(value, payMethodId) {
+      return axios.get(
+        `/server-middleware/get-redirect/auto-pay?value=${value}&currency=RUB&id=${payMethodId}`
+      )
+    },
+    checkStatusForAutoPay() {
+      const interval = setInterval(() => {
+        if (localStorage.getItem('paymentId')) {
+          this.getStatus(localStorage.getItem('paymentId'))
+            .then((res) => {
+              console.log(res.data.status)
+              if (res.data.status === 'succeeded' && res.data.payment_method.type !== 'cash') {
+                if (res.data.payment_method.saved) {
+                  this.autoPay(
+                    res.data.amount.value,
+                    res.data.payment_method.id
+                  ).catch((err) => console.log(err))
+                }
+                localStorage.removeItem('paymentId')
+                clearInterval(interval)
+              }
+            })
+            .catch((err) => console.log(err))
+        }
+      }, 3000)
     },
   },
 }
