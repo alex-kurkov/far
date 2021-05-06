@@ -66,13 +66,13 @@ export default {
 }
 
 .navigation__sub-menu-item {
-  background: #000000;
+  background: var(--simple-black);
   opacity: 1;
 }
 
 .navigation__sub-link {
   text-decoration: none;
-  color: #ffffff;
+  color: var( --simple-white);
   font-family: PT, Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;

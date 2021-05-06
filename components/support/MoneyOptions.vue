@@ -167,7 +167,7 @@ export default {
 .money-options__option-btn {
   min-width: 133px;
   height: 83px;
-  background: #fff;
+  background: var( --simple-white);
   color: rgba(0, 0, 0, 0.2);
   font-family: 'Tomorrow Wind', sans-serif;
   font-size: 108px;
@@ -177,7 +177,7 @@ export default {
 }
 
 .money-options__option-btn:hover {
-  border: 1px solid #000;
+  border: 1px solid var(--simple-black);
   cursor: pointer;
 }
 
@@ -197,20 +197,20 @@ export default {
 
 .money-options__radio:checked + .money-options__option-btn {
   background-color: transparent;
-  color: #000;
-  border: 2px solid #000;
+  color: var(--simple-black);
+  border: 2px solid var(--simple-black);
 }
 
 .money-options__ruble {
-  color: #fff;
+  color: var( --simple-white);
   font-family: 'Druk Cyr', sans-serif;
   font-size: 84px;
-  text-shadow: -2px 0 #cbcbcb, 0 2px #cbcbcb, 2px 0 #cbcbcb, 0 -2px #cbcbcb;
+  text-shadow: -2px 0 var(--light-grey), 0 2px var(--light-grey), 2px 0 var(--light-grey), 0 -2px var(--light-grey);
   mix-blend-mode: multiply;
 }
 
 .money-options__radio:checked ~ span > span {
-  text-shadow: -2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000;
+  text-shadow: -2px 0 var(--simple-black), 0 2px var(--simple-black), 2px 0 var(--simple-black), 0 -2px var(--simple-black);
 }
 
 .money-options__sum-option {
@@ -224,7 +224,7 @@ export default {
 .money-options__sum {
   background: transparent;
   border: none;
-  border-bottom: 1px solid #727272;
+  border-bottom: 1px solid var(--another-grey);
   margin: 0 0 17px 0;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
@@ -238,7 +238,7 @@ export default {
 }
 
 .money-options__sum_invalid {
-  color: #727272;
+  color: var(--another-grey);
   border-bottom: 1px solid var(--main-red);
 }
 
@@ -272,7 +272,7 @@ export default {
   right: 0;
   bottom: 0;
   background-color: transparent;
-  border: 1px solid #727272;
+  border: 1px solid var(--another-grey);
   -webkit-transition: 0.4s;
   transition: 0.4s;
   border-radius: 4px;
@@ -294,7 +294,7 @@ export default {
   font-family: 'Roboto', sans-serif;
   font-size: 11px;
   line-height: 1.4;
-  color: #727272;
+  color: var(--another-grey);
   display: flex;
   justify-content: space-between;
   min-width: 104px;
@@ -302,9 +302,9 @@ export default {
 }
 
 .money-options__agreement-link {
-  color: #727272;
+  color: var(--another-grey);
   text-decoration: none;
-  border-bottom: 1px solid #727272;
+  border-bottom: 1px solid var(--another-grey);
   transition: opacity 0.5s linear;
 }
 

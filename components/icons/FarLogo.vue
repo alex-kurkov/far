@@ -35,7 +35,7 @@ export default {
   props: {
     supportColor: {
       type: String,
-      default: '#000',
+      default: 'var(--simple-black)',
     },
     mainColor: {
       type: String,

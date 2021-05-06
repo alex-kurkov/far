@@ -21,7 +21,7 @@ export default {
   max-width: 1280px;
   margin: auto;
   min-height: 90px;
-  background: #fff;
+  background: var( --simple-white);
 }
 
 .about__text {
@@ -49,7 +49,7 @@ export default {
   height: 11px;
   width: 71px;
   position: absolute;
-  background-color: #b33438;
+  background-color: var(--another-red);
   top: 14px;
   left: 0;
 }

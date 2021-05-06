@@ -42,7 +42,7 @@ export default {
   width: 100%;
   max-width: 1098px;
   min-height: auto;
-  background-color: #fff;
+  background-color: var( --simple-white);
   position: relative;
   display: flex;
   flex-direction: column;

@@ -22,7 +22,7 @@ export default {
 .current-projects-promo {
   width: 100%;
   height: 200px;
-  background-color: #999999;
+  background-color: var(--true-grey);
 }
 
 .current-projects-promo__title {
@@ -32,16 +32,16 @@ export default {
 
 .current-projects-promo__subtitle {
   height: 30px;
-  color: lightyellow;
+  color: var(--light-yellow);
 }
 
 .current-projects-promo__text {
   height: 30px;
-  color: lightyellow;
+  color: var(--light-yellow);
 }
 
 .current-projects-promo__image {
   height: 30px;
-  color: lightyellow;
+  color: var(--light-yellow);
 }
 </style>

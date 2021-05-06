@@ -172,9 +172,9 @@ export default {
   word-break: break-all;
   padding: 12px 45px 20px 12px;
   margin: 0;
-  color: #fff;
+  color: var( --simple-white);
   width: 100%;
-  background: #cbcbcb;
+  background: var(--light-grey);
   text-decoration: underline var(--main-red) 11px;
 }
 
@@ -187,7 +187,7 @@ export default {
   line-height: 1.2;
   display: flex;
   margin: auto;
-  background: #fff;
+  background: var( --simple-white);
 }
 
 @media screen and (min-width: 768px) {
@@ -205,15 +205,15 @@ export default {
 
 @media screen and (min-width: 1280px) {
   .contacts {
-    background: linear-gradient(to right, #000 50%, #fff 50%);
+    background: linear-gradient(to right, var(--simple-black) 50%, var( --simple-white) 50%);
   }
   .contacts__container {
-    background: linear-gradient(to right, #000 50%, #fff 50%);
+    background: linear-gradient(to right, var(--simple-black) 50%, var( --simple-white) 50%);
     width: 100%;
   }
 
   .contacts__container:nth-of-type(2) {
-    background: linear-gradient(to right, #cbcbcb 50%, var(--main-red) 50%);
+    background: linear-gradient(to right, var(--light-grey) 50%, var(--main-red) 50%);
     flex-direction: column;
   }
   .contacts__title {
@@ -221,10 +221,10 @@ export default {
     text-align: center;
     background: linear-gradient(
       to right,
-      #000 616px,
-      #cbcbcb 616px,
-      #cbcbcb 1196px,
-      #fff 1196px
+      var(--simple-black) 616px,
+      var(--light-grey) 616px,
+      var(--light-grey) 1196px,
+      var( --simple-white) 1196px
     );
   }
   .contacts__article {

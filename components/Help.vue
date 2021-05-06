@@ -47,7 +47,7 @@ export default {
 .help {
   width: 100%;
   height: auto;
-  background: #fff;
+  background: var( --simple-white);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -64,7 +64,7 @@ export default {
   line-height: 0.75;
   margin: 0;
   padding: 16px;
-  text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+  text-shadow: -1px 0 var( --simple-white), 0 1px var( --simple-white), 1px 0 var( --simple-white), 0 -1px var( --simple-white);
   mix-blend-mode: multiply;
   color: var(--main-red);
   text-align: left;
@@ -114,14 +114,14 @@ export default {
   font-weight: 700;
   width: 100%;
   border-radius: 50%;
-  background: #cbcbcb;
+  background: var(--light-grey);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0;
   padding: 0;
   text-decoration: none;
-  color: #000;
+  color: var(--simple-black);
   transition: opacity 0.5s linear;
 }
 
@@ -136,8 +136,8 @@ export default {
 
 .help__ellipse_type_tel {
   min-height: 70px;
-  background: #000;
-  color: #fff;
+  background: var(--simple-black);
+  color: var( --simple-white);
   font-family: 'Tomorrow Wind', sans-serif;
   font-size: 50px;
   font-weight: 400;

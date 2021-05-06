@@ -104,7 +104,7 @@ export default {
   transform: rotate(180deg);
 }
 .swiper-pagination-bullet {
-  background-color: #fff;
+  background-color: var( --simple-white);
   opacity: 100;
   margin: 6px;
 }
@@ -122,7 +122,7 @@ export default {
   width: 198px;
   height: 198px;
   background: transparent;
-  fill: #000;
+  fill: var(--simple-black);
   z-index: 2;
 }
 .swiper-wrapper,

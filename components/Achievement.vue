@@ -45,7 +45,7 @@ export default {
   line-height: 0.8;
   padding: 16px;
   color: var(--main-grey);
-  -webkit-text-stroke: 1px #000;
+  -webkit-text-stroke: 1px var(--simple-black);
   text-align: left;
 }
 .achievement__gethelp-wrapper {
@@ -79,7 +79,7 @@ export default {
     padding: 57px 102px 40px 53px;
     font-size: 90px;
     letter-spacing: -3px;
-    -webkit-text-stroke: 2px #000;
+    -webkit-text-stroke: 2px var(--simple-black);
   }
 
   .achievement__gethelp-wrapper {
@@ -109,7 +109,7 @@ export default {
     padding: 27px 116px 21px 34px;
     font-size: 63px;
     letter-spacing: -3px;
-    -webkit-text-stroke: 2px #000;
+    -webkit-text-stroke: 2px var(--simple-black);
   }
 
   .achievement__gethelp-wrapper {

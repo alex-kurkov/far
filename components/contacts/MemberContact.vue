@@ -1,6 +1,6 @@
 <template>
   <li class="contact">
-    <img class="contact__image" :src="image" />
+    <img class="contact__image" :src="image"  alt='contact__image'/>
     <p class="contact__name">{{ name }}</p>
     <p class="contact__position">{{ position }}</p>
     <a class="contact__tel" :href="telLink">{{ tel }}</a>
@@ -61,7 +61,7 @@ export default {
   transform: translate(0, -73%);
   position: relative;
   z-index: 1;
-  border-bottom: 2px solid #838383;
+  border-bottom: 2px solid var(--simple-grey);
 }
 
 .contact__name::before {
@@ -89,7 +89,7 @@ export default {
   transform: translate(0, -70%);
   font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: 800;
-  color: #fff;
+  color: var( --simple-white);
   background: var(--main-red);
   border-radius: 50%;
   z-index: 1;
@@ -102,11 +102,11 @@ export default {
 }
 
 .contact:nth-of-type(3n + 2) .contact__tel {
-  background: #7f7f7f;
+  background: var(--just-grey);
 }
 
 .contact:nth-of-type(3n + 3) .contact__tel {
-  background: #000;
+  background: var(--simple-black);
 }
 
 @media screen and (min-width: 768px) {
@@ -125,7 +125,7 @@ export default {
   .contact__name {
     font-size: 44px;
     width: 280px;
-    border-bottom: 3px solid #838383;
+    border-bottom: 3px solid var(--simple-grey);
   }
 
   .contact__name::before {

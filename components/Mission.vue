@@ -40,7 +40,7 @@ export default {
 <style scoped>
 .mission {
   width: 100vw;
-  background: #fff;
+  background: var( --simple-white);
   height: auto;
   display: flex;
   justify-content: flex-end;
@@ -82,7 +82,7 @@ export default {
   height: 8px;
   width: 89px;
   position: absolute;
-  background-color: #b33438;
+  background-color: var(--another-red);
   top: 24px;
   left: 12px;
 }
@@ -92,7 +92,7 @@ export default {
   height: 8px;
   width: 121px;
   position: absolute;
-  background-color: #b33438;
+  background-color: var(--another-red);
   top: 44px;
   left: 12px;
 }
@@ -192,7 +192,7 @@ export default {
   .mission__container {
     width: 716px;
     display: flex;
-    background: #fff;
+    background: var( --simple-white);
     justify-content: flex-end;
   }
 

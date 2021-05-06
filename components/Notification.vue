@@ -48,16 +48,16 @@ export default {
   border-radius: 20px;
   padding: 20px;
   margin: 24px;
-  box-shadow: 0 0 4px #000;
+  box-shadow: 0 0 4px var(--simple-black);
   cursor: pointer;
 }
 .notification_type_news {
-  background: #000;
-  color: #fff;
+  background: var(--simple-black);
+  color: var( --simple-white);
 }
 .notification_type_info {
-  background: #fff;
-  color: #000;
+  background: var( --simple-white);
+  color: var(--simple-black);
 }
 
 .notification__content {
@@ -73,7 +73,7 @@ export default {
   font-weight: 700;
 }
 .notification__text {
-  color: #666666;
+  color: var(--devil-grey);
   font-family: Roboto, sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -86,7 +86,7 @@ export default {
   font-family: 'Vollkorn', sans-serif;
   font-size: 24px;
   font-weight: 700;
-  color: #ff0000;
+  color: var(--real-red);
   text-decoration: underline;
 }
 </style>

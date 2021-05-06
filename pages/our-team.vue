@@ -141,10 +141,10 @@ export default {
 
 @media screen and (min-width: 1280px) {
   .our-team {
-    background: linear-gradient(to right, #000 50%, #fff 50%);
+    background: linear-gradient(to right, var(--simple-black) 50%, var( --simple-white) 50%);
   }
   .our-team__members {
-    background: linear-gradient(to right, #727272 50%, var(--main-red) 50%);
+    background: linear-gradient(to right, var(--another-grey) 50%, var(--main-red) 50%);
   }
 }
 </style>

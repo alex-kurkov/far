@@ -56,7 +56,7 @@ export default {
 
 <style scoped>
 .hamburger-icon {
-  background-color: #000000;
+  background-color: var(--simple-black);
   position: fixed;
   top: 5px;
   right: 5px;
@@ -79,10 +79,10 @@ export default {
 
 .hamburger-icon::after {
   content: 'МЕНЮ';
-  background-color: #000000;
+  background-color: var(--simple-black);
   transform: translateY(152px) rotate(-90deg);
   transform-origin: left top;
-  color: #ffffff;
+  color: var( --simple-white);
   font-style: italic;
   letter-spacing: normal;
   display: var(--display);
@@ -98,7 +98,7 @@ export default {
 
 .hamburger-icon__svg-path {
   fill: none;
-  stroke: #cbcbcb;
+  stroke: var(--light-grey);
   stroke-width: 8;
   transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
     stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);

@@ -12,8 +12,8 @@
       <SmileIcon
         class="support__smile"
         :class="{ 'support__smile_type_on-sup-page': isOnSupportPage }"
-        backgroundColor="#fff"
-        mainColor="#000"
+        backgroundColor="var( --simple-white)"
+        mainColor="var(--simple-black)"
       />
       <Tumbler ref="regularity" :onChoiceUpdate="onChoiceUpdate" />
       <PayOptions
@@ -237,7 +237,7 @@ export default {
 .support {
   width: 100%;
   height: auto;
-  background: #cbcbcb;
+  background: var(--light-grey);
   display: flex;
   padding: 20px 16px 16px;
 }
@@ -264,7 +264,7 @@ export default {
   line-height: 1;
   text-align: left;
   color: transparent;
-  -webkit-text-stroke: 1px #000;
+  -webkit-text-stroke: 1px var(--simple-black);
   width: 54%;
   word-wrap: break-word;
   align-self: flex-start;
@@ -288,7 +288,7 @@ export default {
 }
 
 .support__span {
-  color: #000;
+  color: var(--simple-black);
   font-size: 42px;
 }
 
@@ -296,7 +296,7 @@ export default {
   width: 100%;
   border: none;
   background: transparent;
-  border-bottom: 1px solid #727272;
+  border-bottom: 1px solid var(--another-grey);
   color: var(--main-red);
   font-family: 'Vollkorn', sans-serif;
   font-weight: 400;
@@ -307,7 +307,7 @@ export default {
 }
 
 .support__input_invalid {
-  color: #727272;
+  color: var(--another-grey);
   border-bottom: 1px solid var(--main-red);
 }
 
@@ -333,7 +333,7 @@ export default {
   border-radius: 50%;
   min-height: 54px;
   width: 79%;
-  color: #fff;
+  color: var( --simple-white);
   font-family: 'Vollkorn', sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -356,7 +356,7 @@ export default {
 }
 
 .support__link {
-  color: #727272;
+  color: var(--another-grey);
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 11px;
@@ -364,7 +364,7 @@ export default {
   text-decoration: none;
   padding: 0;
   margin: 0;
-  border-bottom: 1px solid #727272;
+  border-bottom: 1px solid var(--another-grey);
   transition: opacity 0.5s linear;
 }
 
@@ -393,7 +393,7 @@ export default {
     font-size: 88px;
     width: 58%;
     line-height: 0.8;
-    -webkit-text-stroke: 2px #000;
+    -webkit-text-stroke: 2px var(--simple-black);
   }
 
   .support__title_type_on-sup-page {
@@ -455,7 +455,7 @@ export default {
     display: flex;
     flex-direction: column;
     width: 100px;
-    background: #000;
+    background: var(--simple-black);
   }
 
   .support__title {

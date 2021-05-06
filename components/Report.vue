@@ -1,7 +1,7 @@
 <template>
   <article class="report">
     <div class="report__image-wrap">
-      <img v-bind:src="image || defaultImage" class="report__image" />
+      <img v-bind:src="image || defaultImage" class="report__image"  alt='report__image'/>
     </div>
     <div class="report__message-wrap" :class="`theme_${content.theme}`">
       <h3
@@ -134,39 +134,39 @@ export default {
 }
 
 .theme_red {
-  background-color: #b33438;
-  color: #fff;
+  background-color: var(--another-red);
+  color: var( --simple-white);
 }
 .theme_red .report__message-line {
-  background-color: #fff;
+  background-color: var( --simple-white);
 }
 .theme_red .report__message-date {
-  color: #b3b3b3;
+  color: var( --again-grey);
 }
 
 .theme_white {
-  background-color: #fff;
-  color: #000;
+  background-color: var( --simple-white);
+  color: var(--simple-black);
 }
 .theme_white .report__message-title {
-  color: #b33438;
+  color: var(--another-red);
 }
 .theme_white .report__message-line {
-  background-color: #b33438;
+  background-color: var(--another-red);
 }
 .theme_white .report__message-text {
-  color: #493e3e;
+  color: var(--blacky-grey);
 }
 
 .theme_gray {
-  background-color: #c8c8c8;
-  color: #000;
+  background-color: var( --pure-grey);
+  color: var(--simple-black);
 }
 .theme_gray .report__message-title {
-  color: #b33438;
+  color: var(--another-red);
 }
 .theme_gray .report__message-line {
-  background-color: #fff;
+  background-color: var( --simple-white);
 }
 
 @media screen and (min-width: 768px) {

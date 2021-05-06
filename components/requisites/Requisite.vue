@@ -34,12 +34,12 @@ export default {
   font-weight: 600;
   font-size: 10px;
   line-height: 1;
-  color: #666;
+  color: var(--devil-grey);
   text-transform: uppercase;
 }
 
 .requisite__text_type_value {
-  color: #000;
+  color: var(--simple-black);
   text-transform: none;
 }
 

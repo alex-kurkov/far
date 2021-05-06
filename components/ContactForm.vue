@@ -217,7 +217,7 @@ export default {
 
 <style scoped>
 .contact-form {
-  background: #cbcbcb;
+  background: var(--light-grey);
   display: grid;
   width: 100%;
   grid-template-columns: 0.3fr 1fr;
@@ -240,13 +240,13 @@ export default {
 }
 
 .contact-form__input {
-  border: 1px solid #838383;
+  border: 1px solid var(--simple-grey);
   border-radius: 8px;
   background: transparent;
   font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: 400;
   font-style: normal;
-  color: #303030;
+  color: var(--another-black);
   font-size: 11px;
   padding: 5px;
 }
@@ -261,13 +261,13 @@ export default {
 }
 
 .contact-form__input_type_theme {
-  background: #fff;
+  background: var( --simple-white);
 }
 
 .contact-form__input_type_letter {
   width: 100%;
   grid-column: 1/3;
-  background: #fff;
+  background: var( --simple-white);
   border-radius: 20px;
   font-weight: 500;
   font-size: 16px;
@@ -279,7 +279,7 @@ export default {
 }
 
 .contact-form__input_type_letter::placeholder {
-  color: #cbcbcb;
+  color: var(--light-grey);
 }
 
 .contact-form__input-error {
@@ -311,7 +311,7 @@ export default {
 
 .contact-form__arrows {
   font-size: 22px;
-  color: #fff;
+  color: var( --simple-white);
   position: absolute;
   bottom: 10px;
   left: 18px;
@@ -322,7 +322,7 @@ export default {
   box-shadow: none;
   border-radius: 12px;
   background: var(--main-red);
-  color: #fff;
+  color: var( --simple-white);
   font-family: 'Roboto', Arial, sans-serif;
   font-weight: 400;
   font-size: 13px;
@@ -399,7 +399,7 @@ export default {
     grid-template-columns: 0.25fr 1fr;
     order: 2;
     grid-gap: 10px;
-    background: linear-gradient(to right, #cbcbcb 580px, #fff 580px);
+    background: linear-gradient(to right, var(--light-grey) 580px, var( --simple-white) 580px);
   }
 
   .contact-form__input {
