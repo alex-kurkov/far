@@ -37,7 +37,7 @@ export default {
 <style scoped>
 .promo {
   width: 100%;
-  background: linear-gradient(to bottom, var(--main-red) 51px, #cbcbcb 51px);
+  background: linear-gradient(to bottom, var(--main-red) 51px, var(--light-grey) 51px);
   /* color: white;
   text-align: left;
   display: grid;
@@ -87,8 +87,8 @@ export default {
 .promo__donation:first-child {
   grid-row: 1/4;
   grid-column: 1;
-  color: #000;
-  border: 2px solid #000;
+  color: var(--simple-black);
+  border: 2px solid var(--simple-black);
   border-radius: 20px;
   padding: 0 8px;
   margin-left: 15px;
@@ -147,7 +147,7 @@ export default {
 @media screen and (min-width: 768px) {
   .promo {
     column-gap: 25px;
-    background: linear-gradient(to bottom, var(--main-red) 78px, #cbcbcb 78px);
+    background: linear-gradient(to bottom, var(--main-red) 78px, var(--light-grey) 78px);
   }
 
   .promo__eye {
@@ -187,7 +187,7 @@ export default {
     padding: 0;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to bottom, var(--main-red) 96px, #cbcbcb 96px);
+    background: linear-gradient(to bottom, var(--main-red) 96px, var(--light-grey) 96px);
     grid-template-rows: repeat(4, 0.25fr) 1fr;
     grid-template-columns:
       0.8fr minmax(min-content, max-content)

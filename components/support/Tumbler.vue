@@ -55,7 +55,7 @@ export default {
   right: -84px;
   bottom: 0;
   background-color: transparent;
-  border: 2px solid #000;
+  border: 2px solid var(--simple-black);
   -webkit-transition: 0.4s;
   transition: 0.4s;
   border-radius: 31px;
@@ -149,7 +149,7 @@ export default {
   .tumbler__slider {
     left: 128px;
     right: -132px;
-    border: 4px solid #000;
+    border: 4px solid var(--simple-black);
     border-radius: 50px;
   }
 

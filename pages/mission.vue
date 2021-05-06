@@ -171,11 +171,11 @@ export default {
 
 @media screen and (min-width: 1280px) {
   .about {
-    background: linear-gradient(to right, var(--main-red) 50%, #cbcbcb 50%);
+    background: linear-gradient(to right, var(--main-red) 50%, var(--light-grey) 50%);
   }
 
   .about__title-container {
-    background: linear-gradient(to right, #000 50%, #fff 50%);
+    background: linear-gradient(to right, var(--simple-black) 50%, #fff 50%);
   }
 
   .about__title {
@@ -184,7 +184,7 @@ export default {
     padding: 136px 0 0 92px;
     max-width: 1184px;
     margin-right: 94px;
-    background-color: linear-gradient(to right, #000 50%, #fff 50%);
+    background-color: linear-gradient(to right, var(--simple-black) 50%, #fff 50%);
     -webkit-text-stroke: 3px #fff;
   }
 

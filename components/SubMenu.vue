@@ -66,7 +66,7 @@ export default {
 }
 
 .navigation__sub-menu-item {
-  background: #000000;
+  background: var(--simple-black);
   opacity: 1;
 }
 

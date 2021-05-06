@@ -42,7 +42,7 @@
         </article>
         <SmileIcon
           class="support-page__smile"
-          backgroundColor="#000"
+          backgroundColor="var(--simple-black)"
           mainColor="#fff"
         />
       </div>
@@ -188,7 +188,7 @@ export default {
   line-height: 1.2;
   padding: 19px;
   margin: 0;
-  background: #000;
+  background: var(--simple-black);
 }
 
 .support-page__text_type_intro {
@@ -200,7 +200,7 @@ export default {
 
 .support-page__text_type_cf {
   background: #fff;
-  color: #000;
+  color: var(--simple-black);
   padding: 19px 9px 19px 19px;
 }
 
@@ -241,7 +241,7 @@ export default {
 }
 
 .support-page__subtitle_type_gl {
-  background: 50% 40%/8vw 16vw #000 no-repeat;
+  background: 50% 40%/8vw 16vw var(--simple-black) no-repeat;
   width: 100%;
   padding-top: 40px;
   text-align: center;
@@ -258,7 +258,7 @@ export default {
 }
 
 .support-page__smile-container {
-  background: #000;
+  background: var(--simple-black);
   position: relative;
   width: 100%;
   min-height: 354px;
@@ -315,7 +315,7 @@ export default {
     display: flex;
     flex-direction: row;
     width: 100%;
-    background: linear-gradient(to right, #000 50%, #fff 50%);
+    background: linear-gradient(to right, var(--simple-black) 50%, #fff 50%);
     justify-content: center;
   }
 
@@ -334,12 +334,12 @@ export default {
     order: 1;
     width: 508px;
     min-height: 655px;
-    background: #cbcbcb;
+    background: var(--light-grey);
     padding: 309px 110px 100px 133px;
     font-size: 16px;
     font-weight: 600;
     line-height: 1.2;
-    color: #000;
+    color: var(--simple-black);
   }
 
   .support-page__text_type_gl {
@@ -379,7 +379,7 @@ export default {
 
   .support-page__subtitle_type_gl {
     text-align: left;
-    background: 71% 40%/52px 79px #000 no-repeat;
+    background: 71% 40%/52px 79px var(--simple-black) no-repeat;
   }
 
   .support-page__qr-code {

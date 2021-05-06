@@ -47,7 +47,7 @@ export default {
   props: {
     mainColor: {
       type: String,
-      default: '#000',
+      default: 'var(--simple-black)',
     },
     boltColor: {
       type: String,

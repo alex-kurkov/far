@@ -103,5 +103,9 @@
 :root {
   --main-red: #b23438;
   --main-black:#313131;
-  --main-grey:#d5d5d5
+  --simple-black:#000000;
+  --light-grey:#cbcbcb;
+  --main-grey:#d5d5d5;
+  --just-grey:#7f7f7f;
+  --simple-grey:#838383;
 }

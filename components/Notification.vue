@@ -48,16 +48,16 @@ export default {
   border-radius: 20px;
   padding: 20px;
   margin: 24px;
-  box-shadow: 0 0 4px #000;
+  box-shadow: 0 0 4px var(--simple-black);
   cursor: pointer;
 }
 .notification_type_news {
-  background: #000;
+  background: var(--simple-black);
   color: #fff;
 }
 .notification_type_info {
   background: #fff;
-  color: #000;
+  color: var(--simple-black);
 }
 
 .notification__content {

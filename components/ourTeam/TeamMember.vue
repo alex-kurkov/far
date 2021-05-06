@@ -88,11 +88,11 @@ export default {
   font-size: 13px;
   line-height: 1.4;
   text-align: center;
-  color: #000;
+  color: var(--simple-black);
 }
 
 .member:nth-of-type(4n + 2) .member__info {
-  background: #000;
+  background: var(--simple-black);
 }
 
 .member:nth-of-type(4n + 2) .member__name {
@@ -109,7 +109,7 @@ export default {
 
 .member:nth-of-type(8n + 4) .member__info {
   background: var(--main-red);
-  border-color: #000;
+  border-color: var(--simple-black);
 }
 
 .member:nth-of-type(8n + 4) .member__name {

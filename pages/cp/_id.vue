@@ -150,7 +150,7 @@ export default {
   font-size: 110px;
   line-height: 0.8;
   text-decoration: underline 11px #b23438;
-  background: #cbcbcb;
+  background: var(--light-grey);
   width: 100%;
   color: #fff;
   padding: 18px 52px 27px 18px;
@@ -159,11 +159,11 @@ export default {
 }
 
 .custom-page__subtitle {
-  background: #cbcbcb;
+  background: var(--light-grey);
   font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: 500;
   font-style: italic;
-  color: #000;
+  color: var(--simple-black);
   font-size: 18px;
   padding: 0 62px 20px 18px;
   width: 100%;
@@ -181,7 +181,7 @@ export default {
   letter-spacing: -1px;
   width: 100%;
   text-align: center;
-  color: #000;
+  color: var(--simple-black);
   max-width: 1100px;
 }
 
@@ -237,11 +237,11 @@ export default {
 
 @media screen and (min-width: 1280px) {
   .custom-page {
-    background: linear-gradient(to right, #000 50%, #fff 50%);
+    background: linear-gradient(to right, var(--simple-black) 50%, #fff 50%);
   }
 
   .custom-page__container {
-    background: linear-gradient(to right, #b23438 50%, #cbcbcb 50%);
+    background: linear-gradient(to right, #b23438 50%, var(--light-grey) 50%);
     width: 100%;
   }
   .custom-page__title {
@@ -250,7 +250,7 @@ export default {
     max-width: 1280px;
     background: linear-gradient(
       to right,
-      #cbcbcb 1190px,
+      var(--light-grey) 1190px,
       #fff 1190px
     );
   }
@@ -260,7 +260,7 @@ export default {
     padding: 40px 92px;
     width: 590px;
     min-height: 300px;
-    background: #000;
+    background: var(--simple-black);
     color: #fff;
   }
 

@@ -13,7 +13,7 @@
         class="support__smile"
         :class="{ 'support__smile_type_on-sup-page': isOnSupportPage }"
         backgroundColor="#fff"
-        mainColor="#000"
+        mainColor="var(--simple-black)"
       />
       <Tumbler ref="regularity" />
       <PayOptions
@@ -198,7 +198,7 @@ export default {
 .support {
   width: 100%;
   height: auto;
-  background: #cbcbcb;
+  background: var(--light-grey);
   display: flex;
   padding: 20px 16px 16px;
 }
@@ -225,7 +225,7 @@ export default {
   line-height: 1;
   text-align: left;
   color: transparent;
-  -webkit-text-stroke: 1px #000;
+  -webkit-text-stroke: 1px var(--simple-black);
   width: 54%;
   word-wrap: break-word;
   align-self: flex-start;
@@ -249,7 +249,7 @@ export default {
 }
 
 .support__span {
-  color: #000;
+  color: var(--simple-black);
   font-size: 42px;
 }
 
@@ -354,7 +354,7 @@ export default {
     font-size: 88px;
     width: 58%;
     line-height: 0.8;
-    -webkit-text-stroke: 2px #000;
+    -webkit-text-stroke: 2px var(--simple-black);
   }
 
   .support__title_type_on-sup-page {
@@ -416,7 +416,7 @@ export default {
     display: flex;
     flex-direction: column;
     width: 100px;
-    background: #000;
+    background: var(--simple-black);
   }
 
   .support__title {

@@ -114,14 +114,14 @@ export default {
   font-weight: 700;
   width: 100%;
   border-radius: 50%;
-  background: #cbcbcb;
+  background: var(--light-grey);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0;
   padding: 0;
   text-decoration: none;
-  color: #000;
+  color: var(--simple-black);
   transition: opacity 0.5s linear;
 }
 
@@ -136,7 +136,7 @@ export default {
 
 .help__ellipse_type_tel {
   min-height: 70px;
-  background: #000;
+  background: var(--simple-black);
   color: #fff;
   font-family: 'Tomorrow Wind', sans-serif;
   font-size: 50px;

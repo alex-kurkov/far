@@ -39,7 +39,7 @@ export default {
 }
 
 .requisite__text_type_value {
-  color: #000;
+  color: var(--simple-black);
   text-transform: none;
 }
 

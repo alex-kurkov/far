@@ -51,7 +51,7 @@ export default {
 
 <style scoped>
 .contact-intro {
-  background: #000;
+  background: var(--simple-black);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,7 +69,7 @@ export default {
 
 .contact-intro__text {
   padding: 20px 18px;
-  color: #cbcbcb;
+  color: var(--light-grey);
   font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-style: italic;
   font-weight: 500;
@@ -83,14 +83,14 @@ export default {
   width: 90%;
   height: 58px;
   border-radius: 50%;
-  background: #cbcbcb;
+  background: var(--light-grey);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0;
   padding: 0;
   text-decoration: none;
-  color: #000;
+  color: var(--simple-black);
   transition: opacity 0.5s linear;
 }
 

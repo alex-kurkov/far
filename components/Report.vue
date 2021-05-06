@@ -146,7 +146,7 @@ export default {
 
 .theme_white {
   background-color: #fff;
-  color: #000;
+  color: var(--simple-black);
 }
 .theme_white .report__message-title {
   color: #b33438;
@@ -160,7 +160,7 @@ export default {
 
 .theme_gray {
   background-color: #c8c8c8;
-  color: #000;
+  color: var(--simple-black);
 }
 .theme_gray .report__message-title {
   color: #b33438;

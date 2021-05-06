@@ -16,7 +16,7 @@
         "
       />
       <div class="report-promo__graphics">
-        <Bolt class="report-promo__svg" mainColor="#000" boltColor="#fff" />
+        <Bolt class="report-promo__svg" mainColor="var(--simple-black)" boltColor="#fff" />
       </div>
     </div>
   </section>
@@ -32,7 +32,7 @@ export default {
 
 <style scoped>
 .report-promo {
-  background: linear-gradient(to right, #000 50%, #c8c8c8 0);
+  background: linear-gradient(to right, var(--simple-black) 50%, #c8c8c8 0);
 }
 .report-promo__content {
   padding: 24px 0;

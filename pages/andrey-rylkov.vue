@@ -207,7 +207,7 @@ export default {
 .andrey-rylkov__subtitle {
   font-size: 15px;
   line-height: 15px;
-  color: #000000;
+  color: var(--simple-black);
   font-weight: 800;
   font-style: normal;
   font-family: 'Vollkorn', Arial, sans-serif;
@@ -282,11 +282,11 @@ export default {
 
 @media screen and (min-width: 1280px) {
   .andrey-rylkov {
-    background: linear-gradient(to right, #000 50%, #b23438 50%);
+    background: linear-gradient(to right, var(--simple-black) 50%, #b23438 50%);
   }
 
   .andrey-rylkov__container {
-    background: linear-gradient(to right, #b23438 50%, #cbcbcb 50%);
+    background: linear-gradient(to right, #b23438 50%, var(--light-grey) 50%);
     width: 100%;
     display: flex;
     justify-content: center;

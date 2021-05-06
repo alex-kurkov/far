@@ -122,7 +122,7 @@ export default {
   width: 198px;
   height: 198px;
   background: transparent;
-  fill: #000;
+  fill: var(--simple-black);
   z-index: 2;
 }
 .swiper-wrapper,

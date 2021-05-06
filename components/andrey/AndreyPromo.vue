@@ -47,25 +47,6 @@ export default {
   data() {
     return {}
   },
-  // methods: {
-  //   handleWindowResize() {
-  //     if (window.innerWidth >= 1140) {
-  //       this.currentBackgroundImage = this.imageWhoIsL
-  //     } else if (window.innerWidth < 1140 && window.innerWidth >= 750) {
-  //       this.currentBackgroundImage = this.imageWhoIsM
-  //     } else if (window.innerWidth < 750) {
-  //       this.currentBackgroundImage = this.imageWhoIsS
-  //     }
-  //   },
-  // },
-  // mounted() {
-  //   window.addEventListener('resize', this.handleWindowResize)
-  //   this.handleWindowResize()
-  // },
-  // destroyed() {
-  //   window.removeEventListener('resize', this.handleWindowResize)
-  // },
-  computed: {},
 }
 </script>
 
@@ -78,7 +59,7 @@ export default {
   position: relative;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to right, #000 50%, var(--main-red) 50%);
+  background: linear-gradient(to right, var(--simple-black) 50%, var(--main-red) 50%);
   overflow: hidden;
 }
 
