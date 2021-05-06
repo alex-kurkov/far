@@ -194,7 +194,7 @@ export default {
   font-family: 'Vollkorn', Arial, sans-serif;
   margin: 0;
   padding: 0 0 17px;
-  background: #fff;
+  background: var( --simple-white);
 }
 
 .andrey-rylkov__content {
@@ -213,7 +213,7 @@ export default {
   font-family: 'Vollkorn', Arial, sans-serif;
   padding: 25px 0;
   align-self: flex-start;
-  background: #fff;
+  background: var( --simple-white);
 }
 
 .andrey-rylkov__subtitle_color_red {
@@ -240,7 +240,7 @@ export default {
   font-weight: 400;
   font-family: 'Vollkorn', Arial, serif;
   padding: 0 0 30px;
-  background: #fff;
+  background: var( --simple-white);
 }
 
 .andrey-rylkov__text:last-of-type {
@@ -248,7 +248,7 @@ export default {
 }
 
 .andrey-rylkov__video-container {
-  background: #fff;
+  background: var( --simple-white);
   width: 100%;
 }
 
@@ -296,7 +296,7 @@ export default {
   .andrey-rylkov__content {
     flex-direction: row;
     flex-wrap: wrap;
-    background: #fff;
+    background: var( --simple-white);
     max-width: 1100px;
   }
 

@@ -167,7 +167,7 @@ export default {
 .money-options__option-btn {
   min-width: 133px;
   height: 83px;
-  background: #fff;
+  background: var( --simple-white);
   color: rgba(0, 0, 0, 0.2);
   font-family: 'Tomorrow Wind', sans-serif;
   font-size: 108px;
@@ -202,7 +202,7 @@ export default {
 }
 
 .money-options__ruble {
-  color: #fff;
+  color: var( --simple-white);
   font-family: 'Druk Cyr', sans-serif;
   font-size: 84px;
   text-shadow: -2px 0 var(--light-grey), 0 2px var(--light-grey), 2px 0 var(--light-grey), 0 -2px var(--light-grey);

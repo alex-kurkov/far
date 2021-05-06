@@ -135,17 +135,17 @@ export default {
 
 .theme_red {
   background-color: var(--another-red);
-  color: #fff;
+  color: var( --simple-white);
 }
 .theme_red .report__message-line {
-  background-color: #fff;
+  background-color: var( --simple-white);
 }
 .theme_red .report__message-date {
   color: var( --again-grey);
 }
 
 .theme_white {
-  background-color: #fff;
+  background-color: var( --simple-white);
   color: var(--simple-black);
 }
 .theme_white .report__message-title {
@@ -166,7 +166,7 @@ export default {
   color: var(--another-red);
 }
 .theme_gray .report__message-line {
-  background-color: #fff;
+  background-color: var( --simple-white);
 }
 
 @media screen and (min-width: 768px) {

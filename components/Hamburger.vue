@@ -50,7 +50,7 @@ export default {
 <style scoped>
 .hamburger {
   color: white;
-  background: #ffffff;
+  background: var( --simple-white);
   position: relative;
   z-index: 20;
 }

@@ -51,7 +51,7 @@ export default {
     },
     boltColor: {
       type: String,
-      default: '#fff',
+      default: 'var( --simple-white)',
     },
   },
 }

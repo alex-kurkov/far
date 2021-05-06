@@ -89,7 +89,7 @@ export default {
   transform: translate(0, -70%);
   font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: 800;
-  color: #fff;
+  color: var( --simple-white);
   background: var(--main-red);
   border-radius: 50%;
   z-index: 1;

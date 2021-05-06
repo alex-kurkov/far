@@ -44,7 +44,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background: #fff;
+  background: var( --simple-white);
   max-width: 768px;
   width: 100%;
   position: relative;
@@ -65,7 +65,7 @@ export default {
   box-sizing: border-box;
   border: 4px solid var(--main-red);
   border-radius: 49px;
-  background: #fff;
+  background: var( --simple-white);
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -96,7 +96,7 @@ export default {
 }
 
 .member:nth-of-type(4n + 2) .member__name {
-  color: #fff;
+  color: var( --simple-white);
 }
 
 .member:nth-of-type(4n + 2) .member__name .underline {
@@ -104,7 +104,7 @@ export default {
 }
 
 .member:nth-of-type(4n + 2) .member__text {
-  color: #fff;
+  color: var( --simple-white);
 }
 
 .member:nth-of-type(8n + 4) .member__info {
@@ -113,11 +113,11 @@ export default {
 }
 
 .member:nth-of-type(8n + 4) .member__name {
-  color: #fff;
+  color: var( --simple-white);
 }
 
 .member:nth-of-type(8n + 4) .member__text {
-  color: #fff;
+  color: var( --simple-white);
 }
 
 @media screen and (min-width: 768px) {

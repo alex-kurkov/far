@@ -12,7 +12,7 @@
       <SmileIcon
         class="support__smile"
         :class="{ 'support__smile_type_on-sup-page': isOnSupportPage }"
-        backgroundColor="#fff"
+        backgroundColor="var( --simple-white)"
         mainColor="var(--simple-black)"
       />
       <Tumbler ref="regularity" />
@@ -294,7 +294,7 @@ export default {
   border-radius: 50%;
   min-height: 54px;
   width: 79%;
-  color: #fff;
+  color: var( --simple-white);
   font-family: 'Vollkorn', sans-serif;
   font-weight: 400;
   font-size: 16px;

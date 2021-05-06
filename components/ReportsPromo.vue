@@ -41,7 +41,7 @@ export default {
   margin: 0 auto;
   height: auto;
   width: 100%;
-  background-color: #fff;
+  background-color: var( --simple-white);
   display: grid;
   grid-template-areas:
     'title title'

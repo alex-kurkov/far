@@ -98,7 +98,7 @@ export default {
   font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-size: 15px;
   font-weight: 700;
-  color: #fff;
+  color: var( --simple-white);
   background: var(--main-red);
 }
 

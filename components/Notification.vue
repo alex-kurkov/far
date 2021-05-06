@@ -53,10 +53,10 @@ export default {
 }
 .notification_type_news {
   background: var(--simple-black);
-  color: #fff;
+  color: var( --simple-white);
 }
 .notification_type_info {
-  background: #fff;
+  background: var( --simple-white);
   color: var(--simple-black);
 }
 

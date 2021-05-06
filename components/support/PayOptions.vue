@@ -120,7 +120,7 @@ export default {
   height: 33px;
   box-shadow: none;
   border: none;
-  background: #fff;
+  background: var( --simple-white);
   border-radius: 17px;
   display: flex;
   justify-content: center;
@@ -143,7 +143,7 @@ export default {
 
 .pay-options__radio:checked + .pay-options__option-btn {
   background: var(--main-red);
-  color: #fff;
+  color: var( --simple-white);
 }
 
 @media screen and (min-width: 768px) {

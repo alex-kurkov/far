@@ -76,7 +76,7 @@ export default {
 }
 
 .promo__ruble {
-  color: #fff;
+  color: var( --simple-white);
   font-family: 'Druk Cyr', sans-serif;
   font-weight: 500;
   font-size: 94px;

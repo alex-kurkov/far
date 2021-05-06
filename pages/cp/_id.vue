@@ -120,7 +120,7 @@ export default {
   flex-direction: column;
 }
 .custom-page_red {
-  color: #fff;
+  color: var( --simple-white);
   background-color: var(--main-red);
 }
 
@@ -152,7 +152,7 @@ export default {
   text-decoration: underline 11px var( --main-red);
   background: var(--light-grey);
   width: 100%;
-  color: #fff;
+  color: var( --simple-white);
   padding: 18px 52px 27px 18px;
   word-break: break-all;
   margin: 0;
@@ -175,7 +175,7 @@ export default {
   font-size: 21px;
   font-weight: 700;
   text-transform: uppercase;
-  background: #fff;
+  background: var( --simple-white);
   padding: 26px 0;
   margin: 0;
   letter-spacing: -1px;
@@ -197,7 +197,7 @@ export default {
   font-weight: 400;
   font-size: 14px;
   padding: 0 18px 18px;
-  background: #fff;
+  background: var( --simple-white);
   max-width: 1100px;
 }
 
@@ -205,7 +205,7 @@ export default {
   width: 100%;
   height: 330px;
   object-fit: cover;
-  background: #fff;
+  background: var( --simple-white);
 }
 
 @media screen and (min-width: 768px) {
@@ -237,7 +237,7 @@ export default {
 
 @media screen and (min-width: 1280px) {
   .custom-page {
-    background: linear-gradient(to right, var(--simple-black) 50%, #fff 50%);
+    background: linear-gradient(to right, var(--simple-black) 50%, var( --simple-white) 50%);
   }
 
   .custom-page__container {
@@ -251,7 +251,7 @@ export default {
     background: linear-gradient(
       to right,
       var(--light-grey) 1190px,
-      #fff 1190px
+      var( --simple-white) 1190px
     );
   }
 
@@ -261,7 +261,7 @@ export default {
     width: 590px;
     min-height: 300px;
     background: var(--simple-black);
-    color: #fff;
+    color: var( --simple-white);
   }
 
   .custom-page__text-title {

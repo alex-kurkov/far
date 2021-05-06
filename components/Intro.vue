@@ -37,7 +37,7 @@ export default {
 }
 
 .intro__text {
-  color: #fff;
+  color: var( --simple-white);
   font-family: 'Vollkorn', sans-serif;
   font-size: 23px;
   font-weight: 400;
@@ -98,7 +98,7 @@ export default {
     display: block;
     width: 44%;
     min-height: 128px;
-    background: center/110px 82px url('./intro/diamond.svg') #fff;
+    background: center/110px 82px url('./intro/diamond.svg') var( --simple-white);
     background-repeat: space no-repeat;
   }
 }

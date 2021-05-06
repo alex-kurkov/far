@@ -47,7 +47,7 @@ export default {
 .help {
   width: 100%;
   height: auto;
-  background: #fff;
+  background: var( --simple-white);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -64,7 +64,7 @@ export default {
   line-height: 0.75;
   margin: 0;
   padding: 16px;
-  text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+  text-shadow: -1px 0 var( --simple-white), 0 1px var( --simple-white), 1px 0 var( --simple-white), 0 -1px var( --simple-white);
   mix-blend-mode: multiply;
   color: var(--main-red);
   text-align: left;
@@ -137,7 +137,7 @@ export default {
 .help__ellipse_type_tel {
   min-height: 70px;
   background: var(--simple-black);
-  color: #fff;
+  color: var( --simple-white);
   font-family: 'Tomorrow Wind', sans-serif;
   font-size: 50px;
   font-weight: 400;

@@ -145,7 +145,7 @@ export default {
 
 .navigation__menu-item {
   position: relative;
-  color: #ffffff;
+  color: var( --simple-white);
   font-size: 16px;
   line-height: 32px;
   font-weight: 400;
@@ -158,7 +158,7 @@ export default {
 
 .navigation__link {
   text-decoration: none;
-  color: #ffffff;
+  color: var( --simple-white);
   transition: opacity 0.5s linear;
 }
 
@@ -183,7 +183,7 @@ export default {
 .navigation__arrow-right {
   width: 14px;
   height: 14px;
-  fill: #ffffff;
+  fill: var( --simple-white);
   cursor: pointer;
 }
 

@@ -82,7 +82,7 @@ export default {
   background-color: var(--simple-black);
   transform: translateY(152px) rotate(-90deg);
   transform-origin: left top;
-  color: #ffffff;
+  color: var( --simple-white);
   font-style: italic;
   letter-spacing: normal;
   display: var(--display);
