@@ -27,7 +27,7 @@ export default {
 .all-reports {
   background: linear-gradient(
     to right,
-    var(--pure-grey) 50%,
+    var(--light-grey) 50%,
     var(--simple-black) 0
   );
 }

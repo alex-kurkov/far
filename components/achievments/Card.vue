@@ -57,7 +57,7 @@ export default {
   width: calc(100% - 150px);
   padding: 12px;
   overflow: hidden;
-  background: linear-gradient(to right, transparent 10%, var(--main-grey) 10%);
+  background: linear-gradient(to right, transparent 10%, var(--light-grey) 10%);
 }
 .card__stamp-text {
   text-align: center;

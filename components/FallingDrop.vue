@@ -51,7 +51,7 @@ export default {
 .falling-drop {
   position: absolute;
   right: 13px;
-  fill: var(--pure-grey);
+  fill: var(--light-grey);
   width: 22px;
   height: 40px;
   z-index: 2;

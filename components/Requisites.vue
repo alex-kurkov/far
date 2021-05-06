@@ -117,7 +117,7 @@ export default {
 }
 
 .requisites__content {
-  background: var(--pure-grey);
+  background: var(--light-grey);
   border-radius: 20px;
   padding: 12px;
   width: 88%;

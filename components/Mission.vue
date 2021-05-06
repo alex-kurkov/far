@@ -49,7 +49,7 @@ export default {
 .mission__sideblock {
   width: 100px;
   min-height: 440px;
-  background: var(--main-grey);
+  background: var(--light-grey);
   display: none;
 }
 .mission__info-wrapper {
@@ -82,7 +82,7 @@ export default {
   height: 8px;
   width: 89px;
   position: absolute;
-  background-color: var(--another-red);
+  background-color: var(--main-red);
   top: 24px;
   left: 12px;
 }
@@ -92,7 +92,7 @@ export default {
   height: 8px;
   width: 121px;
   position: absolute;
-  background-color: var(--another-red);
+  background-color: var(--main-red);
   top: 44px;
   left: 12px;
 }

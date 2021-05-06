@@ -134,7 +134,7 @@ export default {
 
 .custom-page_grey {
   color: var(--main-red);
-  background-color: var(--again-grey);
+  background-color: var(--light-grey);
 }
 
 .custom-page__container {

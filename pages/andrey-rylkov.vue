@@ -236,7 +236,7 @@ export default {
 .andrey-rylkov__text {
   font-size: 14px;
   line-height: 16px;
-  color: var(--lovely-grey);
+  color: var(--blacky-grey);
   font-weight: 400;
   font-family: 'Vollkorn', Arial, serif;
   padding: 0 0 30px;

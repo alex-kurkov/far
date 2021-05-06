@@ -155,7 +155,7 @@ export default {
     justify-content: center;
     background: linear-gradient(
       to right,
-      var(--main-grey) 50%,
+      var(--light-grey) 50%,
       var(--main-red) 50%
     );
   }
@@ -167,7 +167,7 @@ export default {
     background: linear-gradient(
         to right,
         var(--simple-black) 50%,
-        var(--main-grey) 50%
+        var(--light-grey) 50%
       ),
       linear-gradient(
         to right,

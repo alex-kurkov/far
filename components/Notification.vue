@@ -88,7 +88,7 @@ export default {
   font-family: 'Vollkorn', sans-serif;
   font-size: 24px;
   font-weight: 700;
-  color: var(--real-red);
+  color: var(--main-red);
   text-decoration: underline;
 }
 </style>

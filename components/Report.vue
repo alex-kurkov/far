@@ -138,14 +138,14 @@ export default {
 }
 
 .theme_red {
-  background-color: var(--another-red);
+  background-color: var(--main-red);
   color: var(--simple-white);
 }
 .theme_red .report__message-line {
   background-color: var(--simple-white);
 }
 .theme_red .report__message-date {
-  color: var(--again-grey);
+  color: var(--light-grey);
 }
 
 .theme_white {
@@ -153,21 +153,21 @@ export default {
   color: var(--simple-black);
 }
 .theme_white .report__message-title {
-  color: var(--another-red);
+  color: var(--main-red);
 }
 .theme_white .report__message-line {
-  background-color: var(--another-red);
+  background-color: var(--main-red);
 }
 .theme_white .report__message-text {
   color: var(--blacky-grey);
 }
 
 .theme_gray {
-  background-color: var(--pure-grey);
+  background-color: var(--light-grey);
   color: var(--simple-black);
 }
 .theme_gray .report__message-title {
-  color: var(--another-red);
+  color: var(--main-red);
 }
 .theme_gray .report__message-line {
   background-color: var(--simple-white);

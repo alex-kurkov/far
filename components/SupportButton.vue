@@ -32,7 +32,7 @@ export default {
 }
 
 .sup-button__link {
-  background: var(--just-red);
+  background: var(--main-red);
   position: relative;
   display: flex;
   justify-content: center;

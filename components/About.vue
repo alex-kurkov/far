@@ -49,7 +49,7 @@ export default {
   height: 11px;
   width: 71px;
   position: absolute;
-  background-color: var(--another-red);
+  background-color: var(--main-red);
   top: 14px;
   left: 0;
 }
