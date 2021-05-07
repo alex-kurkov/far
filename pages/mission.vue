@@ -166,6 +166,7 @@ export default {
   .about__article {
     padding: 54px;
     font-size: 33px;
+    color: var(--blacky-grey);
   }
 }
 

@@ -88,7 +88,7 @@ export default {
   font-size: 13px;
   line-height: 1.4;
   text-align: center;
-  color: var(--simple-black);
+  color: var(--blacky-grey);
 }
 
 .member:nth-of-type(4n + 2) .member__info {

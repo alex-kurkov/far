@@ -71,6 +71,7 @@ export default {
   font-size: 27px;
   line-height: 0.8;
   font-weight: 600;
+  color: var(--blacky-grey);
   display: inline;
   white-space: pre-wrap;
   text-transform: uppercase;
@@ -83,6 +84,7 @@ export default {
   width: 89px;
   position: absolute;
   background-color: var(--main-red);
+
   top: 24px;
   left: 12px;
 }
@@ -102,6 +104,7 @@ export default {
   font-size: 16px;
   font-weight: 400;
   margin-top: 12px;
+  color: var(--blacky-grey);
 }
 .mission__text:first-of-type {
   display: inline;

@@ -200,7 +200,7 @@ export default {
 
 .support-page__text_type_cf {
   background: var(--simple-white);
-  color: var(--simple-black);
+  color: var(--blacky-grey);
   padding: 19px 9px 19px 19px;
 }
 

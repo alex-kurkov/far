@@ -189,7 +189,7 @@ export default {
   letter-spacing: -1px;
   width: 100%;
   text-align: center;
-  color: var(--simple-black);
+  color: var(--blacky-grey);
   max-width: 1100px;
 }
 
@@ -206,6 +206,7 @@ export default {
   font-size: 14px;
   padding: 0 18px 18px;
   background: var(--simple-white);
+  color: var(--blacky-grey);
   max-width: 1100px;
 }
 

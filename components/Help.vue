@@ -76,7 +76,7 @@ export default {
   font-weight: 400;
   line-height: 1.1;
   text-align: left;
-  color: var(--main-black);
+  color: var(--blacky-grey);
   padding: 28px 78px 28px 16px;
 }
 

@@ -207,7 +207,7 @@ export default {
 .andrey-rylkov__subtitle {
   font-size: 15px;
   line-height: 15px;
-  color: var(--simple-black);
+  color: var(--blacky-grey);
   font-weight: 800;
   font-style: normal;
   font-family: 'Vollkorn', Arial, sans-serif;
