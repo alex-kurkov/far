@@ -35,7 +35,7 @@ export default {
 .achievement {
   width: 100vw;
   height: auto;
-  background: var(--main-grey);
+  background: var(--light-grey);
 }
 
 .achievement__title {
@@ -44,7 +44,7 @@ export default {
   font-size: 40px;
   line-height: 0.8;
   padding: 16px;
-  color: var(--main-grey);
+  color: var(--light-grey);
   -webkit-text-stroke: 1px var(--simple-black);
   text-align: left;
 }

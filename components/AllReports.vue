@@ -25,7 +25,11 @@ export default {
 
 <style scoped>
 .all-reports {
-  background: linear-gradient(to right, var( --pure-grey) 50%, var(--simple-black) 0);
+  background: linear-gradient(
+    to right,
+    var(--light-grey) 50%,
+    var(--simple-black) 0
+  );
 }
 .all-reports__content {
   max-width: 1280px;

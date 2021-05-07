@@ -57,13 +57,13 @@ export default {
   width: calc(100% - 150px);
   padding: 12px;
   overflow: hidden;
-  background: linear-gradient(to right, transparent 10%, var(--main-grey) 10%);
+  background: linear-gradient(to right, transparent 10%, var(--light-grey) 10%);
 }
 .card__stamp-text {
   text-align: center;
   font-family: 'Tomorrow Wind', sans-serif;
   font-size: 104px;
-  color: var( --simple-white);
+  color: var(--simple-white);
   z-index: 6;
   transform: translateX(-16px);
 }
@@ -81,7 +81,7 @@ export default {
 .card__line {
   width: 100%;
   height: 2px;
-  background: var( --simple-white);
+  background: var(--simple-white);
   margin-bottom: 4px;
 }
 .card__text {

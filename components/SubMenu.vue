@@ -72,7 +72,7 @@ export default {
 
 .navigation__sub-link {
   text-decoration: none;
-  color: var( --simple-white);
+  color: var(--simple-white);
   font-family: PT, Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;

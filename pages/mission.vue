@@ -138,7 +138,7 @@ export default {
   font-weight: 400;
   line-height: 0.8;
   font-size: 115px;
-  color: var( --simple-white);
+  color: var(--simple-white);
 }
 
 .about__article {
@@ -148,7 +148,7 @@ export default {
   font-size: 11px;
   line-height: 1.4;
   min-height: 500px;
-  background: var( --simple-white);
+  background: var(--simple-white);
 }
 
 @media screen and (min-width: 768px) {
@@ -159,23 +159,32 @@ export default {
     font-size: 173px;
     line-height: 0.7;
     color: transparent;
-    -webkit-text-stroke: 2px var( --simple-white);
+    -webkit-text-stroke: 2px var(--simple-white);
     letter-spacing: -12px;
   }
 
   .about__article {
     padding: 54px;
     font-size: 33px;
+    color: var(--blacky-grey);
   }
 }
 
 @media screen and (min-width: 1280px) {
   .about {
-    background: linear-gradient(to right, var(--main-red) 50%, var(--light-grey) 50%);
+    background: linear-gradient(
+      to right,
+      var(--main-red) 50%,
+      var(--light-grey) 50%
+    );
   }
 
   .about__title-container {
-    background: linear-gradient(to right, var(--simple-black) 50%, var( --simple-white) 50%);
+    background: linear-gradient(
+      to right,
+      var(--simple-black) 50%,
+      var(--simple-white) 50%
+    );
   }
 
   .about__title {
@@ -184,8 +193,12 @@ export default {
     padding: 136px 0 0 92px;
     max-width: 1184px;
     margin-right: 94px;
-    background-color: linear-gradient(to right, var(--simple-black) 50%, var( --simple-white) 50%);
-    -webkit-text-stroke: 3px var( --simple-white);
+    background-color: linear-gradient(
+      to right,
+      var(--simple-black) 50%,
+      var(--simple-white) 50%
+    );
+    -webkit-text-stroke: 3px var(--simple-white);
   }
 
   .about__article {

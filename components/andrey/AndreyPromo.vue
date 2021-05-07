@@ -55,11 +55,15 @@ export default {
   width: 100%;
   max-width: 1098px;
   min-height: auto;
-  background-color: var( --simple-white);
+  background-color: var(--simple-white);
   position: relative;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to right, var(--simple-black) 50%, var(--main-red) 50%);
+  background: linear-gradient(
+    to right,
+    var(--simple-black) 50%,
+    var(--main-red) 50%
+  );
   overflow: hidden;
 }
 

@@ -28,8 +28,8 @@ export default {
   },
   props: {
     onChoiceUpdate: {
-      type: Function
-    }
+      type: Function,
+    },
   },
   validations: {
     choice: {
@@ -39,8 +39,8 @@ export default {
   methods: {
     handleChange() {
       this.onChoiceUpdate(!this.choice)
-    }
-  }
+    },
+  },
 }
 </script>
 

@@ -152,7 +152,7 @@ export default {
   methods: {
     onChoiceUpdate(choice) {
       this.isAutoTrue = choice
-      this.$refs.payOptions.choice=''
+      this.$refs.payOptions.choice = ''
     },
     handleSubmit() {
       if (
@@ -214,7 +214,10 @@ export default {
           this.getStatus(localStorage.getItem('paymentId'))
             .then((res) => {
               console.log(res.data.status)
-              if (res.data.status === 'succeeded' && res.data.payment_method.type !== 'cash') {
+              if (
+                res.data.status === 'succeeded' &&
+                res.data.payment_method.type !== 'cash'
+              ) {
                 if (res.data.payment_method.saved) {
                   this.autoPay(
                     res.data.amount.value,
@@ -296,7 +299,7 @@ export default {
   width: 100%;
   border: none;
   background: transparent;
-  border-bottom: 1px solid var(--another-grey);
+  border-bottom: 1px solid var(--simple-grey);
   color: var(--main-red);
   font-family: 'Vollkorn', sans-serif;
   font-weight: 400;
@@ -307,7 +310,7 @@ export default {
 }
 
 .support__input_invalid {
-  color: var(--another-grey);
+  color: var(--simple-grey);
   border-bottom: 1px solid var(--main-red);
 }
 
@@ -333,7 +336,7 @@ export default {
   border-radius: 50%;
   min-height: 54px;
   width: 79%;
-  color: var( --simple-white);
+  color: var(--simple-white);
   font-family: 'Vollkorn', sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -356,7 +359,7 @@ export default {
 }
 
 .support__link {
-  color: var(--another-grey);
+  color: var(--simple-grey);
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 11px;
@@ -364,7 +367,7 @@ export default {
   text-decoration: none;
   padding: 0;
   margin: 0;
-  border-bottom: 1px solid var(--another-grey);
+  border-bottom: 1px solid var(--simple-grey);
   transition: opacity 0.5s linear;
 }
 

@@ -21,13 +21,13 @@ export default {
   max-width: 1280px;
   margin: auto;
   min-height: 90px;
-  background: var( --simple-white);
+  background: var(--simple-white);
 }
 
 .about__text {
   width: 263px;
   min-height: 104px;
-  color: var(--main-black);
+  color: var(--blacky-grey);
   font-family: Vollkorn, Arial, sans-serif;
   font-style: italic;
   font-size: 25px;
@@ -49,7 +49,7 @@ export default {
   height: 11px;
   width: 71px;
   position: absolute;
-  background-color: var(--another-red);
+  background-color: var(--main-red);
   top: 14px;
   left: 0;
 }

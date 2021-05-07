@@ -21,7 +21,7 @@ export default {
       this.$store.getters.getLocaleMessage('en')
     )
   },
-   mounted() {
+  mounted() {
     const cookiesAccepted = localStorage.getItem('cookiesAccepted')
     if (!cookiesAccepted) {
       this.$notify({
@@ -58,9 +58,5 @@ export default {
   /* max-width: 1280px; */
   width: 100%;
   font-family: Vollkorn, Arial, sans-serif;
-
 }
-
-
-
 </style>

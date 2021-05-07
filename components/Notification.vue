@@ -3,10 +3,12 @@
     <template slot="body" slot-scope="{ item, close }">
       <div
         :class="`notification notification_type_${item.data.type}`"
-        @click="() => {
-          close();
-          if (item.data.action) item.data.action();
-          }"
+        @click="
+          () => {
+            close()
+            if (item.data.action) item.data.action()
+          }
+        "
       >
         <div class="notification__content">
           <h4 class="notification__title" v-html="item.title" />
@@ -53,10 +55,10 @@ export default {
 }
 .notification_type_news {
   background: var(--simple-black);
-  color: var( --simple-white);
+  color: var(--simple-white);
 }
 .notification_type_info {
-  background: var( --simple-white);
+  background: var(--simple-white);
   color: var(--simple-black);
 }
 
@@ -73,7 +75,7 @@ export default {
   font-weight: 700;
 }
 .notification__text {
-  color: var(--devil-grey);
+  color: var(--simple-grey);
   font-family: Roboto, sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -86,7 +88,7 @@ export default {
   font-family: 'Vollkorn', sans-serif;
   font-size: 24px;
   font-weight: 700;
-  color: var(--real-red);
+  color: var(--main-red);
   text-decoration: underline;
 }
 </style>

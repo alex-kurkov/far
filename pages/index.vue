@@ -10,7 +10,6 @@
     <section class="container__donations">
       <Help />
       <Support :isOnSupportPage="false" />
-
     </section>
     <ToggleLanguage />
   </div>
@@ -154,15 +153,27 @@ export default {
     flex-direction: row;
     width: 100%;
     justify-content: center;
-    background: linear-gradient(to right, var(--main-grey) 50%, var(--main-red) 50%);
+    background: linear-gradient(
+      to right,
+      var(--light-grey) 50%,
+      var(--main-red) 50%
+    );
   }
 
   .container__donations {
     flex-direction: row;
     width: 100%;
     justify-content: center;
-    background: linear-gradient(to right, var(--simple-black) 50%, var(--main-grey) 50%),
-      linear-gradient(to right, var(--simple-black) 50%, var( --simple-white) 50%);
+    background: linear-gradient(
+        to right,
+        var(--simple-black) 50%,
+        var(--light-grey) 50%
+      ),
+      linear-gradient(
+        to right,
+        var(--simple-black) 50%,
+        var(--simple-white) 50%
+      );
     background-repeat: no-repeat;
     background-size: 100vw 615px;
     background-position: bottom right, 0 0;

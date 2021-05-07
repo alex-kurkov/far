@@ -49,7 +49,7 @@ export default {
   text-transform: uppercase;
   padding-left: 100%;
   font-size: 36px;
-  -webkit-text-stroke: 0.5px var( --simple-white);
+  -webkit-text-stroke: 0.5px var(--simple-white);
   text-align: left;
   letter-spacing: 3px;
   word-spacing: 10px;

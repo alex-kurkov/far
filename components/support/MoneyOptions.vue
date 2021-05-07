@@ -167,7 +167,7 @@ export default {
 .money-options__option-btn {
   min-width: 133px;
   height: 83px;
-  background: var( --simple-white);
+  background: var(--simple-white);
   color: rgba(0, 0, 0, 0.2);
   font-family: 'Tomorrow Wind', sans-serif;
   font-size: 108px;
@@ -202,15 +202,17 @@ export default {
 }
 
 .money-options__ruble {
-  color: var( --simple-white);
+  color: var(--simple-white);
   font-family: 'Druk Cyr', sans-serif;
   font-size: 84px;
-  text-shadow: -2px 0 var(--light-grey), 0 2px var(--light-grey), 2px 0 var(--light-grey), 0 -2px var(--light-grey);
+  text-shadow: -2px 0 var(--light-grey), 0 2px var(--light-grey),
+    2px 0 var(--light-grey), 0 -2px var(--light-grey);
   mix-blend-mode: multiply;
 }
 
 .money-options__radio:checked ~ span > span {
-  text-shadow: -2px 0 var(--simple-black), 0 2px var(--simple-black), 2px 0 var(--simple-black), 0 -2px var(--simple-black);
+  text-shadow: -2px 0 var(--simple-black), 0 2px var(--simple-black),
+    2px 0 var(--simple-black), 0 -2px var(--simple-black);
 }
 
 .money-options__sum-option {
@@ -224,7 +226,7 @@ export default {
 .money-options__sum {
   background: transparent;
   border: none;
-  border-bottom: 1px solid var(--another-grey);
+  border-bottom: 1px solid var(--simple-grey);
   margin: 0 0 17px 0;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
@@ -238,7 +240,7 @@ export default {
 }
 
 .money-options__sum_invalid {
-  color: var(--another-grey);
+  color: var(--simple-grey);
   border-bottom: 1px solid var(--main-red);
 }
 
@@ -272,7 +274,7 @@ export default {
   right: 0;
   bottom: 0;
   background-color: transparent;
-  border: 1px solid var(--another-grey);
+  border: 1px solid var(--simple-grey);
   -webkit-transition: 0.4s;
   transition: 0.4s;
   border-radius: 4px;
@@ -294,7 +296,7 @@ export default {
   font-family: 'Roboto', sans-serif;
   font-size: 11px;
   line-height: 1.4;
-  color: var(--another-grey);
+  color: var(--simple-grey);
   display: flex;
   justify-content: space-between;
   min-width: 104px;
@@ -302,9 +304,9 @@ export default {
 }
 
 .money-options__agreement-link {
-  color: var(--another-grey);
+  color: var(--simple-grey);
   text-decoration: none;
-  border-bottom: 1px solid var(--another-grey);
+  border-bottom: 1px solid var(--simple-grey);
   transition: opacity 0.5s linear;
 }
 

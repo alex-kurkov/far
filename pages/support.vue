@@ -62,7 +62,7 @@ export default {
     Requisites,
     SmileIcon,
     ToggleLanguage,
-    Support
+    Support,
   },
   data() {
     return {
@@ -199,26 +199,26 @@ export default {
 }
 
 .support-page__text_type_cf {
-  background: var( --simple-white);
-  color: var(--simple-black);
+  background: var(--simple-white);
+  color: var(--blacky-grey);
   padding: 19px 9px 19px 19px;
 }
 
 .support-page__text_type_gl {
-  color: var( --simple-white);
+  color: var(--simple-white);
   padding-top: 0;
 }
 
 .support-page__arrows {
   display: none;
-  color: var( --simple-white);
+  color: var(--simple-white);
   font-size: 36px;
   transform: translate(-88px, 47px);
   max-width: 204px;
 }
 
 .support-page__info {
-  background: var( --simple-white);
+  background: var(--simple-white);
 }
 
 .support-page__subtitle {
@@ -230,7 +230,7 @@ export default {
   font-size: 22px;
   line-height: 1.5;
   text-align: center;
-  background: var( --simple-white);
+  background: var(--simple-white);
 }
 
 .support-page__subtitle_type_cf {
@@ -315,7 +315,11 @@ export default {
     display: flex;
     flex-direction: row;
     width: 100%;
-    background: linear-gradient(to right, var(--simple-black) 50%, var( --simple-white) 50%);
+    background: linear-gradient(
+      to right,
+      var(--simple-black) 50%,
+      var(--simple-white) 50%
+    );
     justify-content: center;
   }
 
