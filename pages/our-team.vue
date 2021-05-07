@@ -150,7 +150,7 @@ export default {
   .our-team__members {
     background: linear-gradient(
       to right,
-      var(--another-grey) 50%,
+      var(--simple-grey) 50%,
       var(--main-red) 50%
     );
   }

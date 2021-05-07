@@ -240,7 +240,7 @@ export default {
 }
 
 .contact-form__input {
-  border: 1px solid var(--simple-grey);
+  border: 1px solid var(--true-grey);
   border-radius: 8px;
   background: transparent;
   font-family: 'Vollkorn', Arial, Helvetica, serif;

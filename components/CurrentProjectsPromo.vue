@@ -32,16 +32,16 @@ export default {
 
 .current-projects-promo__subtitle {
   height: 30px;
-  color: var(--light-yellow);
+  color: var(--just-yellow);
 }
 
 .current-projects-promo__text {
   height: 30px;
-  color: var(--light-yellow);
+  color: var(--just-yellow);
 }
 
 .current-projects-promo__image {
   height: 30px;
-  color: var(--light-yellow);
+  color: var(--just-yellow);
 }
 </style>

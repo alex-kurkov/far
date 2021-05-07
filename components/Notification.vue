@@ -75,7 +75,7 @@ export default {
   font-weight: 700;
 }
 .notification__text {
-  color: var(--devil-grey);
+  color: var(--simple-grey);
   font-family: Roboto, sans-serif;
   font-size: 14px;
   font-weight: 400;

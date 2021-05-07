@@ -61,7 +61,7 @@ export default {
   transform: translate(0, -73%);
   position: relative;
   z-index: 1;
-  border-bottom: 2px solid var(--simple-grey);
+  border-bottom: 2px solid var(--true-grey);
 }
 
 .contact__name::before {
@@ -102,7 +102,7 @@ export default {
 }
 
 .contact:nth-of-type(3n + 2) .contact__tel {
-  background: var(--just-grey);
+  background: var(--true-grey);
 }
 
 .contact:nth-of-type(3n + 3) .contact__tel {
@@ -125,7 +125,7 @@ export default {
   .contact__name {
     font-size: 44px;
     width: 280px;
-    border-bottom: 3px solid var(--simple-grey);
+    border-bottom: 3px solid var(--true-grey);
   }
 
   .contact__name::before {

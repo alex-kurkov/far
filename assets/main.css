@@ -101,7 +101,6 @@
 
 :root {
   --simple-white: #ffffff;
-  --light-yellow: lightyellow;
   --just-yellow: #fdf5d8;
   --simple-pink: #ebd3d4;
   --main-red: #b23438;
@@ -109,9 +108,6 @@
   --simple-black: #000000;
   --blacky-grey: #493e3e;
   --light-grey: #cbcbcb;
-  --another-grey: #727272;
-  --devil-grey: #666666;
+  --simple-grey: #727272;
   --true-grey: #999999;
-  --just-grey: #7f7f7f;
-  --simple-grey: #838383;
 }

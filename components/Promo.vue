@@ -103,7 +103,7 @@ export default {
   grid-row: 1;
   grid-column: 2;
   font-size: 80px;
-  color: var(--another-grey);
+  color: var(--simple-grey);
 }
 
 .promo__donation:nth-child(3) {
