@@ -1,14 +1,30 @@
 <template>
   <article class="report">
-    <div class="report__image-wrap">
+    <div 
+      :class="`report__image-wrap theme_${content.theme}`"
+      :style="currentProject && { padding: '16px' }"
+      >
       <img
+        v-if="!currentProject"
         v-bind:src="image || defaultImage"
         class="report__image"
         alt="report__image"
       />
+      <h3
+        v-if="currentProject"
+        class="report__message-title"
+        v-html="content.title[`${$i18n.locale}`]"
+      />
+      <img
+        v-if="currentProject"
+        v-bind:src="image || defaultImage"
+        class="report__current-project-image"
+        alt="current project logo"
+      />
     </div>
     <div class="report__message-wrap" :class="`theme_${content.theme}`">
       <h3
+        v-if="!currentProject"
         class="report__message-title"
         v-html="content.title[`${$i18n.locale}`]"
       />
@@ -28,7 +44,7 @@ export default {
   name: 'Report',
   data() {
     return {
-      defaultImage: '/images/defReports.png',
+      defaultImage: '/images/logo.png',
     }
   },
   props: {
@@ -36,6 +52,10 @@ export default {
       type: Object,
       default: () => ({}),
     },
+    currentProject: {
+      type: Boolean,
+      default: false,
+    }
   },
   computed: {
     image() {
@@ -92,13 +112,20 @@ export default {
 .report__image-wrap {
   width: 100%;
   height: 200px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
 }
+
 .report__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
+.report__current-project-image {
+  width: 30%;
+  height: fit-content;
+}
 .report__message-wrap {
   width: 100%;
   min-height: inherit;
@@ -117,6 +144,7 @@ export default {
   line-height: 1.05;
   text-transform: uppercase;
   margin-bottom: 4px;
+  overflow-wrap: anywhere;
 }
 .report__message-date {
   font-family: 'Vollkorn', Arial, sans-serif;
@@ -135,6 +163,7 @@ export default {
   line-height: 1.15;
   font-weight: 400;
   overflow: hidden;
+  overflow-wrap: anywhere;
 }
 
 .theme_red {

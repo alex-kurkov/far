@@ -48,6 +48,9 @@ class Api {
   getRequisites() {
     return axios.get(`${this._baseURL}/requisites`)
   }
+  getProjects() {
+    return axios.get(`${this._baseURL}/current-projects`)
+  }
 
   getData() {
     return Promise.all([
@@ -64,6 +67,7 @@ class Api {
       this.getHeader(),
       this.getReports(),
       this.getRequisites(),
+      this.getProjects(),
     ])
   }
 }
