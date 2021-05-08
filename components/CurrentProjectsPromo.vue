@@ -32,15 +32,12 @@
 
 <style scoped>
 .promo {
-  padding-top: 24px;
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  background: var(--simple-black);
+  background: linear-gradient(to right, var(--simple-black) 50%, var(--simple-white) 50%);
 }
 .content {
   background: linear-gradient(to bottom, var(--simple-black) 75%, var(--simple-white) 25%);
   width: 100%;
+  max-width: 1280px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
@@ -49,17 +46,18 @@
     'title'
     'image'
     'text';
-  padding: 8px;
+  padding: 24px 8px 8px 8px;
 }
 .title-aria {
   grid-area: title;
   padding: 12px;
+  margin-top: 12px;
 }
 .title {
   color: var(--simple-white);
   font-family: 'Vollkorn', Arial, sans-serif;
   font-size: 40px;
-  line-height: 0.8;
+  line-height: 1;
   font-weight: 500;
   letter-spacing: normal;
   text-align: left;

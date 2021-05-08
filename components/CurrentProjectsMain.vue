@@ -26,12 +26,11 @@ export default {
 
 <style scoped>
 .projects {
-  margin-top: 8px;
   position: relative;
   background:
   linear-gradient(
     to right,
-    var(--light-grey) 50%,
+    var(--main-red) 50%,
     var(--simple-black) 0
   );
 }
@@ -53,5 +52,6 @@ export default {
   display: flex;
   flex-direction: column;
   gap: 0;
+  border-bottom: var(--simple-white) 8px solid;
 }
 </style>

@@ -89,11 +89,12 @@ export default {
 </script>
 
 <style scoped>
-.about {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 80vh;
+.current-projects {
+  background:
+    linear-gradient(
+      to right,
+      var(--main-red) 50%,
+      var(--simple-black) 0
+    );
 }
 </style>
