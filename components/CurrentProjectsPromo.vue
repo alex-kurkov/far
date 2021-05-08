@@ -86,10 +86,9 @@
   grid-area: image;
   width: calc(100% - 12px);
   padding-bottom: calc(100% - 12px);
-  background-image: url('/images/promo-bg350px.png');
+  background-image: url('/images/promo-bg320px.png');
   background-repeat: no-repeat;
   background-size: contain;
-  box-shadow: 4px 4px 0 4px var(--simple-black);
 }
 @media screen and (min-width: 420px) {
   .title {
