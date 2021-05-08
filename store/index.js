@@ -17,6 +17,10 @@ export const getters = {
   getReports: (state) => {
     return state.content.reports
   },
+
+  getProjects: (state) => {
+    return state.content.projects
+  },
 }
 
 export const mutations = {
@@ -44,6 +48,7 @@ export const actions = {
         header,
         reports,
         requisites,
+        projects
       ]) => {
         const sortedMenu = menu.data
         sortedMenu.sort((a, b) => {
@@ -76,6 +81,7 @@ export const actions = {
           header: header.data,
           reports: reports.data,
           requisites: requisites.data,
+          projects: projects.data
         }
         commit('SET_CONTENT', allData)
       }

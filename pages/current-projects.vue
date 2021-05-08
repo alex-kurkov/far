@@ -1,10 +1,7 @@
 <template>
   <section class="current-projects">
     <CurrentProjectsPromo />
-    <!-- <Report />
-    <Report />
-    <Report />
-    <Report /> -->
+    <CurrentProjectsMain />
     <SupportButton />
     <ToggleLanguage />
   </section>
@@ -14,10 +11,10 @@
 import CurrentProjectsPromo from '@/components/CurrentProjectsPromo'
 import SupportButton from '@/components/SupportButton'
 import ToggleLanguage from '@/components/promo/ToggleLanguage'
-import Report from '@/components/Report'
+import CurrentProjectsMain from '@/components/CurrentProjectsMain'
 import { baseUrl } from '@/utils/api'
 export default {
-  components: { Report, CurrentProjectsPromo, SupportButton, ToggleLanguage },
+  components: { CurrentProjectsMain, CurrentProjectsPromo, SupportButton, ToggleLanguage },
   // data() {
   //   return {
   //     title: '',

@@ -112,7 +112,7 @@
     grid-template-areas:
       'title image'
       'text image';
-    column-gap: 16px;
+    column-gap: 24px;
     padding: 0;
   }
   .title-aria {
