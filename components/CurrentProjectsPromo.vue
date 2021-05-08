@@ -47,6 +47,7 @@
     'image'
     'text';
   padding: 24px 8px 8px 8px;
+  border-top: var(--simple-black) 16px solid;
 }
 .title-aria {
   grid-area: title;
