@@ -4,16 +4,14 @@
       <div class="report-promo__title-wrap">
         <HeavilyUnderlinedTitle
           class="report-promo__title"
-          :title="'Финансовые и содержательные годовые отчеты'"
+          :title="$t('pages.reports.mainTitleLocale')"
           lineColor="var(--main-red)"
           height="11"
         />
       </div>
       <p
         class="report-promo__text"
-        v-html="
-          'В данном разделе представлена информация о реализующихся в настоящее время проектах Фонда'
-        "
+        v-html="$t('pages.reports.subTitlesLocale[0]')"
       />
       <div class="report-promo__graphics">
         <Bolt

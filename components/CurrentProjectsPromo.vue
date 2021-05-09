@@ -4,19 +4,19 @@
       <div class="title-aria">
         <HeavilyUnderlinedTitle
           class="title"
-          :title="'Текущие проекты'"
+          :title="$t('pages.current-projects.mainTitleLocale')"
           lineColor="var(--main-red)"
           height="11"
         />
         <p
           class="subtitle"
-          v-html="'В данном разделе представлена информация о реализующихся в настоящее время проектах фонда'"
+          v-html="$t('pages.current-projects.subTitlesLocale[0]')"
         />
       </div>
       <div class="promo-image"></div>
       <p
         class="text"
-        v-html="'В данном разделе представлена информация о реализующихся в настоящее время проектах фонда'"
+        v-html="$t('pages.current-projects.subTitlesLocale[0]')"
       />
     </div>
 
