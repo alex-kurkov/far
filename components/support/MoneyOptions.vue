@@ -95,9 +95,9 @@
           class="money-options__agreement-text"
         >
           <template v-slot:offer>
-            <a class="money-options__agreement-link" href="#">
+            <NuxtLink class="money-options__agreement-link" to="/cp/offer">
               {{ $t('support.offer') }}
-            </a>
+            </NuxtLink>
           </template>
         </i18n>
       </label>
@@ -169,7 +169,7 @@ export default {
   height: 83px;
   background: var(--simple-white);
   color: rgba(0, 0, 0, 0.2);
-  font-family: 'Tomorrow Wind', sans-serif;
+  font-family: 'Tomorrow Wind', Arial, sans-serif;
   font-size: 108px;
   line-height: 0.8;
   text-align: center;
@@ -203,7 +203,7 @@ export default {
 
 .money-options__ruble {
   color: var(--simple-white);
-  font-family: 'Druk Cyr', sans-serif;
+  font-family: 'Druk Cyr', Arial, sans-serif;
   font-size: 84px;
   text-shadow: -2px 0 var(--light-grey), 0 2px var(--light-grey),
     2px 0 var(--light-grey), 0 -2px var(--light-grey);
@@ -228,7 +228,7 @@ export default {
   border: none;
   border-bottom: 1px solid var(--simple-grey);
   margin: 0 0 17px 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-weight: 400;
   font-size: 15px;
   line-height: 1.3;
@@ -245,7 +245,7 @@ export default {
 }
 
 .money-options__input-error {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-weight: 400;
   font-size: 11px;
   line-height: 1.2;
@@ -293,7 +293,7 @@ export default {
 }
 
 .money-options__agreement-text {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-size: 11px;
   line-height: 1.4;
   color: var(--simple-grey);

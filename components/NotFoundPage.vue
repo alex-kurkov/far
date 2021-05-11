@@ -3,18 +3,16 @@
     <div class="container-404">
       <Icon name="404" class="icon-404"></Icon>
     </div>
-    <ToggleLanguage/>
     <SupportButton/>
   </section>
 </template>
 
 <script>
 import Icon from '@/components/Icon'
-import ToggleLanguage from '@/components/promo/ToggleLanguage'
 import SupportButton from '@/components/SupportButton'
 export default {
   name: 'NotFoundPage',
-  components: { ToggleLanguage, SupportButton, Icon },
+  components: { SupportButton, Icon },
   props: {
     error: {
       type: Object,

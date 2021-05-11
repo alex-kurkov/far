@@ -163,7 +163,7 @@ export default {
 }
 
 .contacts__title {
-  font-family: 'Vollkorn', Arial, Helvetica, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: 400;
   font-style: italic;
   font-size: 101px;
@@ -180,7 +180,7 @@ export default {
 
 .contacts__article {
   padding: 13px 18px 25px;
-  font-family: 'Vollkorn', Arial, Helvetica, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;

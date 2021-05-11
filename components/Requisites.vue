@@ -107,7 +107,7 @@ export default {
 }
 
 .requisites__title {
-  font-family: 'Vollkorn', Arial, Helvetica, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: 400;
   font-size: 50px;
   line-height: 1;
@@ -124,7 +124,7 @@ export default {
 }
 
 .requisites__company {
-  font-family: 'Vollkorn', Arial, Helvetica, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-size: 11px;
   line-height: 1.1;
   text-transform: uppercase;
@@ -134,7 +134,7 @@ export default {
 }
 
 .requisites__span {
-  font-family: 'Vollkorn', Arial, Helvetica, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: 400;
   font-size: 11px;
   line-height: 1.1;
@@ -143,7 +143,7 @@ export default {
 }
 
 .requisites__subtitle {
-  font-family: 'Vollkorn', Arial, Helvetica, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: 700;
   font-size: 19px;
   font-style: italic;

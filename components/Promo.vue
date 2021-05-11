@@ -72,7 +72,7 @@ export default {
 }
 
 .promo__donation {
-  font-family: 'Tomorrow Wind', sans-serif;
+  font-family: 'Tomorrow Wind', Arial, sans-serif;
   font-size: 121px;
   line-height: 0.9;
   margin: 0;
@@ -81,7 +81,7 @@ export default {
 
 .promo__ruble {
   color: var(--simple-white);
-  font-family: 'Druk Cyr', sans-serif;
+  font-family: 'Druk Cyr', Arial, sans-serif;
   font-weight: 500;
   font-size: 94px;
   text-shadow: -1px 0 var(--simple-black), 0 1px var(--simple-black),
@@ -113,7 +113,7 @@ export default {
 }
 
 .promo__link {
-  font-family: 'Vollkorn', Arial, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: 700;
   color: var(--main-red);
   text-decoration: none;

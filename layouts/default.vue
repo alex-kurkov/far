@@ -57,6 +57,6 @@ export default {
   margin: 0 auto;
   /* max-width: 1280px; */
   width: 100%;
-  font-family: Vollkorn, Arial, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
 }
 </style>

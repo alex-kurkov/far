@@ -56,7 +56,7 @@
 }
 .title {
   color: var(--simple-white);
-  font-family: 'Vollkorn', Arial, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-size: 40px;
   line-height: 1;
   font-weight: 500;
@@ -68,7 +68,7 @@
 .subtitle {
   text-align: left;
   margin: 0;
-  font-family: 'Vollkorn', Arial, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-size: 16px;
   font-weight: 500;
   color: var(--light-grey);
@@ -77,7 +77,7 @@
   grid-area: text;
   text-align: left;
   margin: 0;
-  font-family: 'Vollkorn', Arial, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-size: 16px;
   font-weight: 500;
   color: var(--simple-black);

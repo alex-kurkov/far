@@ -67,7 +67,7 @@ export default {
   position: relative;
 }
 .mission__title {
-  font-family: 'Vollkorn', serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-size: 27px;
   line-height: 0.8;
   font-weight: 600;
@@ -100,7 +100,7 @@ export default {
 }
 
 .mission__text {
-  font-family: 'Vollkorn', serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-size: 16px;
   font-weight: 400;
   margin-top: 12px;
@@ -112,7 +112,7 @@ export default {
 }
 
 .mission__about-link {
-  font-family: 'Vollkorn', serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   color: var(--main-red);
   font-size: 16px;
   font-weight: 600;

@@ -78,7 +78,7 @@ export default {
 }
 
 .contact-intro__contact {
-  font-family: 'Tomorrow Wind', sans-serif;
+  font-family: 'Tomorrow Wind', Arial, sans-serif;
   font-size: 45px;
   width: 90%;
   height: 58px;

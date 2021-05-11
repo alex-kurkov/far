@@ -41,7 +41,7 @@ export default {
   background: var(--main-red);
 }
 .header__marquee {
-  font-family: 'Vollkorn', Arial, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-size: 24px;
   font-weight: 600;
   display: inline-block;

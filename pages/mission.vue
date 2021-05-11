@@ -1,12 +1,8 @@
 <template>
   <section class="about">
     <div class="about__title-container">
-      <HeavilyUnderlinedTitle
-        class="about__title"
-        :style="promoImage"
-        lineColor="var(--main-red)"
-        :title="pageTitle"
-      />
+      <h1 class="about__title"
+        :style="promoImage">{{pageTitle}}</h1>
     </div>
     <article class="about__article" v-html="article"></article>
     <SupportButton />
@@ -133,17 +129,18 @@ export default {
   min-height: 345px;
   margin: 0;
   padding: 17px 133px 0 21px;
-  font-family: 'Vollkorn', Arial, Helvetica, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-style: italic;
   font-weight: 400;
   line-height: 0.8;
   font-size: 115px;
   color: var(--simple-white);
+  text-decoration: underline 11px var(--main-red);
 }
 
 .about__article {
   padding: 32px;
-  font-family: 'Vollkorn', Arial, Helvetica, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: 400;
   font-size: 11px;
   line-height: 1.4;
@@ -161,6 +158,7 @@ export default {
     color: transparent;
     -webkit-text-stroke: 2px var(--simple-white);
     letter-spacing: -12px;
+    text-decoration: underline 25px var(--main-red);
   }
 
   .about__article {
@@ -199,6 +197,7 @@ export default {
       var(--simple-white) 50%
     );
     -webkit-text-stroke: 3px var(--simple-white);
+    text-decoration: underline 43px var(--main-red);
   }
 
   .about__article {

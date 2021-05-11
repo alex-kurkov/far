@@ -2,7 +2,7 @@
   <section class="about">
     <h1 class="about__text">
       <span class="about__abbreviation"
-        >{{ $t('pages.index.mainTitleLocale') }}&nbsp;</span
+        >{{ $t('pages.index.subTitlesLocale[21]') }}&nbsp;</span
       >
       &#8212; {{ $t('pages.index.subTitlesLocale[0]') }}
     </h1>
@@ -28,7 +28,7 @@ export default {
   width: 263px;
   min-height: 104px;
   color: var(--blacky-grey);
-  font-family: Vollkorn, Arial, sans-serif;
+  font-family: Vollkorn, Arial, Helvetica, serif;
   font-style: italic;
   font-size: 25px;
   line-height: 23px;

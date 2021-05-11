@@ -70,13 +70,13 @@ export default {
   justify-items: flex-start;
 }
 .notification__title {
-  font-family: 'Vollkorn', sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-size: 24px;
   font-weight: 700;
 }
 .notification__text {
   color: var(--simple-grey);
-  font-family: Roboto, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 19px;
@@ -85,7 +85,7 @@ export default {
 .notification__btn {
   cursor: pointer;
   display: block;
-  font-family: 'Vollkorn', sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-size: 24px;
   font-weight: 700;
   color: var(--main-red);

@@ -182,7 +182,7 @@ export default {
 }
 
 .support-page__text {
-  font-family: 'Vollkorn', Arial, Helvetica, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.2;
@@ -225,7 +225,7 @@ export default {
   color: var(--main-red);
   margin: 0;
   padding: 19px 0 0 0;
-  font-family: 'Vollkorn', Arial, Helvetica, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: 500;
   font-size: 22px;
   line-height: 1.5;

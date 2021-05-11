@@ -2,7 +2,6 @@
   <li class="member">
     <img class="member__image" :src="image" :alt="name" />
     <div class="member__info">
-      <!-- <h3 class="member__name" v-html="name"></h3> -->
       <HeavilyUnderlinedTitle
         :title="name"
         class="member__name"
@@ -74,7 +73,7 @@ export default {
 
 .member__name {
   color: var(--main-red);
-  font-family: 'Vollkorn', Arial, Helvetica, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: 700;
   line-height: 0.8;
   font-size: 31.5px;
@@ -83,7 +82,7 @@ export default {
 }
 
 .member__text {
-  font-family: 'Vollkorn', Arial, Helvetica, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: 400;
   font-size: 13px;
   line-height: 1.4;

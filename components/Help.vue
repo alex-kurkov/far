@@ -58,7 +58,7 @@ export default {
   background: var(--main-red);
   min-height: 92px;
   width: 100%;
-  font-family: 'Vollkorn', sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-size: 40px;
   font-weight: 700;
   line-height: 0.75;
@@ -72,7 +72,7 @@ export default {
 }
 
 .help__text {
-  font-family: 'Vollkorn', sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: 400;
   line-height: 1.1;
   text-align: left;
@@ -92,7 +92,7 @@ export default {
   padding: 0;
   margin: 0 0 39px 16px;
   color: var(--main-red);
-  font-family: 'Vollkorn', sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: 800;
   font-size: 17px;
   line-height: 1.5;
@@ -139,7 +139,7 @@ export default {
   min-height: 70px;
   background: var(--simple-black);
   color: var(--simple-white);
-  font-family: 'Tomorrow Wind', sans-serif;
+  font-family: 'Tomorrow Wind', Arial, sans-serif;
   font-size: 50px;
   font-weight: 400;
   line-height: 0.7;
@@ -181,7 +181,7 @@ export default {
   transform: rotate(-90deg);
   bottom: 290px;
   right: -219px;
-  font-family: 'Vollkorn', sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: 700;
   font-size: 34px;
   font-style: italic;

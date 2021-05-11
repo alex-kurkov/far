@@ -25,7 +25,7 @@ export default {
   },
   data() {
     return {
-      helpLink: this.$t('pages.index.subTitlesLocale[14]'),
+      helpLink: this.$t('pages.index.subTitlesLocale[8]'),
     }
   },
 }
@@ -39,7 +39,7 @@ export default {
 }
 
 .achievement__title {
-  font-family: 'Vollkorn', serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: bold;
   font-size: 40px;
   line-height: 0.8;
@@ -65,7 +65,7 @@ export default {
   align-self: flex-end;
 }
 .achievement__gethelp-link {
-  font-family: 'Vollkorn', serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   color: var(--main-red);
   font-size: 16px;
   font-weight: 600;
