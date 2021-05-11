@@ -38,7 +38,7 @@ import ToggleLanguage from '@/components/promo/ToggleLanguage'
 import SupportButton from '@/components/SupportButton'
 import { baseUrl } from '@/utils/api'
 export default {
-  components: { NotFoundPage, ToggleLanguage, SupportButton },
+  components: { NotFoundPage},
   data() {
     return {
       baseUrl: baseUrl,
