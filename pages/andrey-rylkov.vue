@@ -72,7 +72,6 @@ export default {
       videoWidth: this.videoWidth,
       videoHeight: this.videoHeight,
       contentMargin: this.contentMargin,
-      currentBackgroundImage: this.imageWhoIsS,
       imageWhoIsS:
         baseUrl + this.$store.state.content.pages.andrey.images[0].image[0].url,
       imageWhoIsM:
@@ -84,6 +83,7 @@ export default {
       imageAndreyAlt: this.$t('pages.andrey.imageAltsLocale[3]'),
       url: this.$t('pages.andrey.subTitlesLocale[3]'),
       videoLink: this.$store.state.content.pages.andrey.videoLinks[0].videoLink,
+      currentBackgroundImage: baseUrl + this.$store.state.content.pages.andrey.images[0].image[0].url,
     }
   },
   methods: {
@@ -191,7 +191,7 @@ export default {
   color: var(--main-red);
   font-weight: 600;
   font-style: normal;
-  font-family: 'Vollkorn', Arial, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   margin: 0;
   padding: 0 0 17px;
   background: var(--simple-white);
@@ -210,7 +210,7 @@ export default {
   color: var(--blacky-grey);
   font-weight: 800;
   font-style: normal;
-  font-family: 'Vollkorn', Arial, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   padding: 25px 0;
   align-self: flex-start;
   background: var(--simple-white);
@@ -230,7 +230,7 @@ export default {
   color: var(--main-red);
   font-weight: 800;
   font-style: normal;
-  font-family: 'Vollkorn', Arial, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
 }
 
 .andrey-rylkov__text {
@@ -238,7 +238,7 @@ export default {
   line-height: 16px;
   color: var(--blacky-grey);
   font-weight: 400;
-  font-family: 'Vollkorn', Arial, serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   padding: 0 0 30px;
   background: var(--simple-white);
 }

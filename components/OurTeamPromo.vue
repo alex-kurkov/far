@@ -51,7 +51,7 @@ export default {
 .our-team-promo__title {
   color: var(--main-red);
   min-height: 245px;
-  font-family: 'Vollkorn', Arial, Helvetica, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: 500;
   font-size: 93px;
   line-height: 0.8;

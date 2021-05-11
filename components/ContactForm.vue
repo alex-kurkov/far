@@ -283,7 +283,7 @@ export default {
 }
 
 .contact-form__input-error {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-weight: 400;
   font-size: 11px;
   line-height: 1.2;

@@ -1,8 +1,10 @@
 <template>
-  <!-- <section :class="['custom-page', `custom-page_${getTheme(currentPage)}`]"> -->
   <div>
     <section v-show="getTheme(currentPage) !== 'error'" class="custom-page">
-      <h1 class="custom-page__title">{{ getCustomPageTitle(currentPage) }}</h1>
+      <h1
+        class="custom-page__title"
+        v-html="getCustomPageTitle(currentPage)"
+      ></h1>
       <div class="custom-page__container">
         <div class="custom-page__intro">
           <h2 class="custom-page__subtitle">
@@ -20,18 +22,6 @@
         <article class="custom-page__text">
           {{ getCustomPageText(currentPage, 0) }}
         </article>
-        <!-- <ul class="custom-page__sections">
-        <li
-          v-for="element in getCustomPageSections(currentPage)"
-          class="custom-page__section"
-          :key="element.customPageSectionTitle[$i18n.locale]"
-        >
-          <div :class="['custom-page__section-item']">
-            {{ element.customPageSectionTitle[$i18n.locale] }}
-          </div>
-          <img class="custom-page__image" :src="baseUrl + element.customPageSectionImage.url" alt=""/>
-        </li>
-      </ul> -->
       </div>
       <SupportButton />
       <ToggleLanguage />
@@ -91,8 +81,8 @@ export default {
     },
 
     getCustomPageText(currentPage, index) {
-      if (currentPage.pageText[index]) {
-        return currentPage.pageText[index][this.$i18n.locale]
+      if (currentPage.customPageText[index]) {
+        return currentPage.customPageText[index][this.$i18n.locale]
       } else {
         return ''
       }
@@ -106,14 +96,6 @@ export default {
         }
       } else {
         return { url: '/images/defReports.png', alt: 'default' }
-      }
-    },
-
-    getCustomPageSections(currentPage) {
-      if (currentPage) {
-        return currentPage.customPageSection
-      } else {
-        return ''
       }
     },
   },
@@ -262,8 +244,8 @@ export default {
     width: 100%;
   }
   .custom-page__title {
-    font-size: 247px;
-    padding: 132px 177px 110px 92px;
+    font-size: 220px;
+    padding: 132px 120px 110px 92px;
     max-width: 1280px;
     background: linear-gradient(
       to right,

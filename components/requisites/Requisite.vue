@@ -30,7 +30,7 @@ export default {
 }
 
 .requisite__text {
-  font-family: 'Vollkorn', Arial, Helvetica, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: 600;
   font-size: 10px;
   line-height: 1;

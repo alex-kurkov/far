@@ -38,7 +38,7 @@ export default {
 
 .intro__text {
   color: var(--simple-white);
-  font-family: 'Vollkorn', sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-size: 23px;
   font-weight: 400;
   margin: 0;

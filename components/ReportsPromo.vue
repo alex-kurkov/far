@@ -63,7 +63,7 @@ export default {
 }
 .report-promo__title {
   color: var(--main-black);
-  font-family: 'Vollkorn', Arial, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-size: 32px;
   line-height: 0.8;
   font-weight: 600;
@@ -76,7 +76,7 @@ export default {
   margin: 12px 0 0 0;
   text-align: left;
   padding: 0;
-  font-family: 'Vollkorn', Arial, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-size: 16px;
   font-weight: 400;
   color: var(--blacky-grey);

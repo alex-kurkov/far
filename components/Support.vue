@@ -166,16 +166,7 @@ export default {
         this.$refs.payOptions.$v.$touch()
         return
       }
-      console.log(
-        'submit data',
-        this.$refs.moneyOptions.$v.choice.$model,
-        this.$refs.payOptions.$v.choice.$model,
-        this.formData.email,
-        this.formData.name
-      )
-      console.log('согласие с офертой', this.$refs.moneyOptions.$v.agree.$model)
-      console.log('однократно', this.$refs.regularity.$v.choice.$model)
-
+      
       this.callRedirect(
         this.$refs.moneyOptions.$v.choice.$model,
         returnUrl,
@@ -186,7 +177,6 @@ export default {
           if (this.$refs.payOptions.$v.choice.$model === 'cash') {
             console.log('Оплата наличными не работает в тестовом режиме')
           } else {
-            // window.location.href = `${res.data.confirmation.confirmation_url}`
             window.open(`${res.data.confirmation.confirmation_url}`, '_blank')
             localStorage.setItem('paymentId', res.data.id)
           }
@@ -261,7 +251,7 @@ export default {
 .support__title {
   margin: 0;
   padding: 0;
-  font-family: 'Vollkorn', sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: 900;
   font-size: 40px;
   line-height: 1;
@@ -301,7 +291,7 @@ export default {
   background: transparent;
   border-bottom: 1px solid var(--simple-grey);
   color: var(--main-red);
-  font-family: 'Vollkorn', sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: 400;
   font-size: 19px;
   line-height: 0.7;
@@ -319,7 +309,7 @@ export default {
 }
 
 .support__input-error {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-weight: 400;
   font-size: 11px;
   line-height: 1.2;
@@ -337,7 +327,7 @@ export default {
   min-height: 54px;
   width: 79%;
   color: var(--simple-white);
-  font-family: 'Vollkorn', sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
@@ -360,7 +350,7 @@ export default {
 
 .support__link {
   color: var(--simple-grey);
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   font-weight: 400;
   font-size: 11px;
   line-height: 1.4;

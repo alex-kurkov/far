@@ -54,14 +54,14 @@ export default {
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: 'Roboto Slab', Arial, sans-serif;
   font-weight: 400;
   font-size: 11px;
   color: var(--true-grey);
 }
 
 .footer__social-text {
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: 'Roboto Slab', Arial, sans-serif;
   font-weight: 400;
   font-size: 11px;
 }
@@ -76,7 +76,7 @@ export default {
   grid-area: license;
   padding-top: 25px;
   text-align: center;
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: 'Roboto Slab', Arial, sans-serif;
   font-size: 11px;
 }
 
@@ -85,7 +85,7 @@ export default {
   padding-top: 20px;
   text-align: center;
   grid-area: disclamer;
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: 'Roboto Slab', Arial, sans-serif;
   font-size: 11px;
 }
 
@@ -101,13 +101,13 @@ export default {
   grid-area: copyright;
   text-align: center;
   padding: 25px 0 25px 0;
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: 'Roboto Slab', Arial, sans-serif;
   font-size: 11px;
 }
 
 .footer__link {
   color: var(--true-grey);
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: 'Roboto Slab', Arial, sans-serif;
   font-size: 11px;
 }
 

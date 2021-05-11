@@ -56,7 +56,7 @@ export default {
   writing-mode: vertical-rl;
   transform: rotate(-180deg);
   color: var(--simple-pink);
-  font-family: 'Vollkorn', Arial, Helvetica, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.1;

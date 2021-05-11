@@ -61,7 +61,7 @@ export default {
 }
 .card__stamp-text {
   text-align: center;
-  font-family: 'Tomorrow Wind', sans-serif;
+  font-family: 'Tomorrow Wind', Arial, sans-serif;
   font-size: 104px;
   color: var(--simple-white);
   z-index: 6;
@@ -69,7 +69,7 @@ export default {
 }
 .card__title {
   color: var(--main-red);
-  font-family: 'Vollkorn', 'Times New Roman', serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   /* font-size: 28px; */
   font-size: 18px;
   font-weight: 700;
@@ -85,7 +85,7 @@ export default {
   margin-bottom: 4px;
 }
 .card__text {
-  font-family: 'Vollkorn', serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-size: 14px;
   font-weight: 400;
   overflow: hidden;

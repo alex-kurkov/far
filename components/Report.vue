@@ -138,7 +138,7 @@ export default {
 }
 
 .report__message-title {
-  font-family: 'Vollkorn', Arial, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-size: 24px;
   font-weight: 500;
   line-height: 1.05;
@@ -147,7 +147,7 @@ export default {
   overflow-wrap: anywhere;
 }
 .report__message-date {
-  font-family: 'Vollkorn', Arial, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-size: 16px;
   line-height: 1.15;
   font-weight: 400;
@@ -158,7 +158,7 @@ export default {
 }
 .report__message-text {
   width: 100%;
-  font-family: 'Vollkorn', Arial, sans-serif;
+  font-family: 'Vollkorn', Arial, Helvetica, serif;
   font-size: 16px;
   line-height: 1.15;
   font-weight: 400;
