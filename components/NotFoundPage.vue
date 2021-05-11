@@ -3,6 +3,8 @@
     <div class="container-404">
       <Icon name="404" class="icon-404"></Icon>
     </div>
+    <ToggleLanguage/>
+    <SupportButton/>
   </section>
 </template>
 
