@@ -1,9 +1,1 @@
-# far
-
-end points
-
-https://rylkov.ga/achievements
-
-Допущения
-картинки одинаковые на разных языках
-тексты, линки, альты, метатеги - разные для разных языков
+## [Visit site](https://far.listen-me.ru/)
